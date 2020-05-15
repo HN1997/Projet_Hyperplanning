@@ -9,7 +9,8 @@ public class Login_Utilities
     // Fin des variables
 
     //Constructeur
-    public Login_Utilities() {
+    public Login_Utilities() 
+    {
         this.connSQL = new ConnexionSQL();
     }
     

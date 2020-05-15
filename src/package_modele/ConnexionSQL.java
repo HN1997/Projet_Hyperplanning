@@ -19,12 +19,11 @@ public class ConnexionSQL
     {
         
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Erreur connection a la base de donnee");
         }
 
-       
         try 
         {
             //création d'une connexion JDBC à la base
