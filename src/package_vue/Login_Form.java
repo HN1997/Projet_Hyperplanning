@@ -1,8 +1,4 @@
 package package_vue;
-import java.awt.HeadlessException;
-import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.*;
 import package_controleur.Login_Utilities;
 
@@ -174,6 +170,15 @@ public class Login_Form extends javax.swing.JFrame {
     private void connexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connexionButtonActionPerformed
         lu = new Login_Utilities();
         Object[] res = lu.Connexion(emailInput.getText(), passwordInput.getPassword().toString());
+        if((boolean)res[0])
+        {
+            JOptionPane.showMessageDialog(null, "L'utilisateur s'est bien conntecte!");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Email or password incorrect.");
+            passwordInput.setText("");
+        }
     }//GEN-LAST:event_connexionButtonActionPerformed
 
     private void rememberCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rememberCheckBoxActionPerformed

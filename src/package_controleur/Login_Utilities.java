@@ -14,10 +14,14 @@ public class Login_Utilities
     public Object[] Connexion(String email, String password)
     {
         Object[] result = {false,0};
-        result[0] = connSQL.CheckConnection(email, password); //Regarde si on s'est bien connecté (email/password OK)
-        if((boolean)result[0])
+        
+        if(this.connSQL != null)
         {
-            result[1] = connSQL.CheckDroit(email, password);
+            result[0] = connSQL.CheckConnection(email, password); //Regarde si on s'est bien connecté (email/password OK)
+            if((boolean)result[0])
+            {
+                result[1] = connSQL.CheckDroit(email, password);
+            }
         }
         
         return result;
