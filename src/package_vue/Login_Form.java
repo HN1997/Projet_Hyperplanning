@@ -184,6 +184,7 @@ public class Login_Form extends javax.swing.JFrame {
     //Si on decide de se rappeler de son email/password
     private void rememberCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rememberCheckBoxActionPerformed
         // TODO add your handling code here:
+        //blabla
     }//GEN-LAST:event_rememberCheckBoxActionPerformed
 
     public static void main(String[] args) {
