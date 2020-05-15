@@ -27,11 +27,21 @@ public class ConnexionSQL
         {
             //création d'une connexion JDBC à la base
             conn = DriverManager.getConnection("jdbc:mysql://localhost/planning", "root", "");
-            //JOptionPane.showMessageDialog(null, "Connection a la bdd reussie!");
+            JOptionPane.showMessageDialog(null, "Connection a la bdd reussie!");
         } catch (SQLException ex) 
         {
             JOptionPane.showMessageDialog(null, "Erreur connection a la base de donnee");
         }
+    }
+    
+    public boolean CheckConnection(String email, String password)
+    {
+        return false;
+    }
+    
+    public int CheckDroit(String email, String password)
+    {
+        return 0;
     }
     
 }

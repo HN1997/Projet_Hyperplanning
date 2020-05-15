@@ -1,19 +1,19 @@
 package package_vue;
-import package_modele.ConnexionSQL;
 import java.awt.HeadlessException;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
+import package_controleur.Login_Utilities;
 
 
-public class Register extends javax.swing.JFrame {
+public class Login_Form extends javax.swing.JFrame {
     
-    // La BDD
-    ConnexionSQL connSQL;
-    //Fin de la BDD
+    // Recup du controleur
+    Login_Utilities lu;
+    //Fin recup controleur
     
-    public Register() {
+    public Login_Form() {
         initComponents();
     }
 
@@ -170,12 +170,10 @@ public class Register extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //CONNEXION A LA BDD QUAND ON APPUIE SUR VALIDER
+    // Appuie sur le bouton "connexion"
     private void connexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connexionButtonActionPerformed
-
-        connSQL = new ConnexionSQL();
-        //JOptionPane.showMessageDialog(null, "Connexion to bdd succ");
-       
+        lu = new Login_Utilities();
+        Object[] res = lu.Connexion(emailInput.getText(), passwordInput.getPassword().toString());
     }//GEN-LAST:event_connexionButtonActionPerformed
 
     private void rememberCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rememberCheckBoxActionPerformed
@@ -185,7 +183,7 @@ public class Register extends javax.swing.JFrame {
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Register().setVisible(true);
+                new Login_Form().setVisible(true);
             }
         });
     }
