@@ -1,43 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package connexionsql;
+package package_modele;
 import java.sql.*;
 import java.lang.*;
 import java.util.*;
 
-/**
- *
- * @author ShadowZeus
- */
 
-
-public class ConnexionSQL {
-
-    /**
-     * Attributs prives : connexion JDBC, statement, ordre requete et resultat
-     * requete
-     */
+public class ConnexionSQL 
+{
     private final Connection conn;
     private final Statement stmt;
     private final ResultSet rset;
-    private final ResultSetMetaData rsetMeta;
-
     
 
-    /**
-     * Constructeur avec 3 paramètres : nom, login et password de la BDD locale
-     *
-     * @param email
-     * @param Password
-     * @throws java.sql.SQLException
-     * @throws java.lang.ClassNotFoundException
-     */
-    public ConnexionSQL(String email, String Password) throws SQLException, ClassNotFoundException{
-        // chargement driver "com.mysql.jdbc.Driver"
-        ArrayList Array = new ArrayList();
+    //Constructeur qui nous connecte a la BDD
+    public ConnexionSQL() throws SQLException, ClassNotFoundException
+    {
+        
         Class.forName("com.mysql.jdbc.Driver");
 
        
@@ -49,19 +26,10 @@ public class ConnexionSQL {
         // création d'un ordre SQL (statement)
         stmt = conn.createStatement();
         rset = stmt.executeQuery("SELECT Droit FROM utilisateur WHERE Passwd='Password' AND Email='email'");
-        rsetMeta = rset.getMetaData();
         
-        if (rset.next()) {
-            Array.add(rset);
-            Array.add(true);
-            
-        }
-        else {
-            Array.add(null);
-            Array.add(false);
-        }
-            }
+        
     }
+}
 
 
    
