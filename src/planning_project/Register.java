@@ -208,7 +208,7 @@ public class Register extends javax.swing.JFrame {
             */
         try {
             connSQL = new ConnexionSQL();
-            JOptionPane.showMessageDialog(null, "Connexion to bdd succ");
+            //JOptionPane.showMessageDialog(null, "Connexion to bdd succ");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         } catch (ClassNotFoundException ex) {
