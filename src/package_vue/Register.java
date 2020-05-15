@@ -1,14 +1,11 @@
-package planning_project;
-import package_sql.ConnexionSQL;
+package package_vue;
+import package_modele.ConnexionSQL;
 import java.awt.HeadlessException;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
-import javax.swing.DefaultListModel;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.tree.DefaultMutableTreeNode;
 
 public class Register extends javax.swing.JFrame {
     
@@ -52,7 +49,6 @@ public class Register extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
-        setPreferredSize(new java.awt.Dimension(750, 550));
         setResizable(false);
 
         greenBackgroundPanel.setBackground(new java.awt.Color(0, 113, 121));

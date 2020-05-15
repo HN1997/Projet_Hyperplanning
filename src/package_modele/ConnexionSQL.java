@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package package_sql;
+package package_modele;
 import java.sql.*;
 import java.lang.*;
 
