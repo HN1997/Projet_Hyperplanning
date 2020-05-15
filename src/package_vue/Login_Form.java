@@ -172,7 +172,7 @@ public class Login_Form extends javax.swing.JFrame {
         Object[] res = lu.Connexion(emailInput.getText(), passwordInput.getText());
         if((boolean)res[0])
         {
-            JOptionPane.showMessageDialog(null, "L'utilisateur s'est bien conntecte! Son droit est = " + (Integer)res[1]);
+            JOptionPane.showMessageDialog(null, "L'utilisateur s'est bien connetecte! Son droit est = " + (Integer)res[1]);
         }
         else
         {
