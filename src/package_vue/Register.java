@@ -173,14 +173,9 @@ public class Register extends javax.swing.JFrame {
     //CONNEXION A LA BDD QUAND ON APPUIE SUR VALIDER
     private void connexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connexionButtonActionPerformed
 
-        try {
-            connSQL = new ConnexionSQL();
-            //JOptionPane.showMessageDialog(null, "Connexion to bdd succ");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, ex);
-        } catch (ClassNotFoundException ex) {
-            JOptionPane.showMessageDialog(null, ex);
-        }
+        connSQL = new ConnexionSQL();
+        //JOptionPane.showMessageDialog(null, "Connexion to bdd succ");
+       
     }//GEN-LAST:event_connexionButtonActionPerformed
 
     private void rememberCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rememberCheckBoxActionPerformed
