@@ -4,8 +4,11 @@ import package_modele.ConnexionSQL;
 //Classe permettant de donner a la fenetre login les informations de la bdd
 public class Login_Utilities 
 {
+    // Debut des variables
     private final ConnexionSQL connSQL;
+    // Fin des variables
 
+    //Constructeur
     public Login_Utilities() {
         this.connSQL = new ConnexionSQL();
     }
@@ -15,12 +18,12 @@ public class Login_Utilities
     {
         Object[] result = {false,0};
         
-        if(this.connSQL != null)
+        if(this.connSQL != null) //Si la connecion a la BDD a bien ete initialise
         {
             result[0] = connSQL.CheckConnection(email, password); //Regarde si on s'est bien connecté (email/password OK)
             if((boolean)result[0])
             {
-                result[1] = connSQL.CheckDroit(email, password);
+                result[1] = connSQL.CheckDroit(email, password); //On recuperer le droit de l'utilisateur
             }
         }
         

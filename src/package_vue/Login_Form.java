@@ -169,10 +169,10 @@ public class Login_Form extends javax.swing.JFrame {
     // Appuie sur le bouton "connexion"
     private void connexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connexionButtonActionPerformed
         lu = new Login_Utilities();
-        Object[] res = lu.Connexion(emailInput.getText(), passwordInput.getPassword().toString());
+        Object[] res = lu.Connexion(emailInput.getText(), passwordInput.getText());
         if((boolean)res[0])
         {
-            JOptionPane.showMessageDialog(null, "L'utilisateur s'est bien conntecte!");
+            JOptionPane.showMessageDialog(null, "L'utilisateur s'est bien conntecte! Son droit est = " + (Integer)res[1]);
         }
         else
         {
@@ -181,6 +181,7 @@ public class Login_Form extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_connexionButtonActionPerformed
 
+    //Si on decide de se rappeler de son email/password
     private void rememberCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rememberCheckBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rememberCheckBoxActionPerformed

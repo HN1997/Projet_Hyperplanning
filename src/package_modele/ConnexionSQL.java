@@ -59,15 +59,12 @@ public class ConnexionSQL
             rs = pst.executeQuery();
             if(rs.next()) // veut dire, s'il y a un resultat (on a trouve une ligne)
             {
-                /*
-                int droit = rs.getInt("Droit"); //On recupere ce qu'il y a dans la colonne droit
+                int droit = rs.getInt("Droit"); //On recupere ce qu'il y a dans la colonne droit, ATTENTION si Droit mal ecrit cela renverra une erreur dans la console
 
                 if(droit >= 1 && droit <= 4) //On verifie que le droit est bien 1 2 3 ou 4
                     return droit;
                 else //Sinon il y a une erreur, on revoie 0
                     return 0;
-                */
-                return 1;
             }
             else //Si pas de resultat on est pas co
             {
