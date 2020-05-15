@@ -11,15 +11,10 @@ import javax.swing.tree.DefaultMutableTreeNode;
 
 public class Register extends javax.swing.JFrame {
     
-    // Variables BDD 
-    Connection conn = null;
-    PreparedStatement pst = null;
-    ResultSet rs = null;
-    // End of variables BDD
-    
-    // Anand BDD 
+    // La BDD
     ConnexionSQL connSQL;
-    //Fin Annand bdd
+    //Fin de la BDD
+    
     public Register() {
         initComponents();
     }
@@ -180,32 +175,7 @@ public class Register extends javax.swing.JFrame {
 
     //CONNEXION A LA BDD QUAND ON APPUIE SUR VALIDER
     private void connexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connexionButtonActionPerformed
-        
-            /*
-            conn = MySqlConnect.ConnectDB();
-            String sql = "SELECT * FROM utilisateur where Email=? and Passwd=?";
-            try
-            {
-            pst=conn.prepareStatement(sql);
-            pst.setString(1, emailInput.getText());
-            pst.setString(2, passwordInput.getText());
-            rs=pst.executeQuery();
-            if(rs.next())
-            {
-            JOptionPane.showMessageDialog(null, "Welcome user");
-            
-            }
-            else
-            {
-            JOptionPane.showMessageDialog(null, "Invalid username or password","Access Denied",JOptionPane.ERROR_MESSAGE);
-            
-            }
-            
-            } catch(HeadlessException | SQLException e)
-            {
-            JOptionPane.showMessageDialog(null,e);
-            }
-            */
+
         try {
             connSQL = new ConnexionSQL();
             //JOptionPane.showMessageDialog(null, "Connexion to bdd succ");
