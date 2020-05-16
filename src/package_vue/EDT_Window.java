@@ -34,7 +34,13 @@ public class EDT_Window extends javax.swing.JFrame {
         firstBackgroundPanel = new javax.swing.JPanel();
         leftGreenPanel = new javax.swing.JPanel();
         iconEce = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
         welcomeLabel = new javax.swing.JLabel();
+        nameUserLabel = new javax.swing.JLabel();
+        promotionLabel = new javax.swing.JLabel();
+        tdLabel = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        emploidutempsLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,36 +52,82 @@ public class EDT_Window extends javax.swing.JFrame {
 
         iconEce.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ece_200.png"))); // NOI18N
 
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
+
         welcomeLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-        welcomeLabel.setForeground(new java.awt.Color(255, 255, 255));
+        welcomeLabel.setForeground(new java.awt.Color(204, 204, 204));
         welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         welcomeLabel.setText("Welcome,");
+
+        nameUserLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+        nameUserLabel.setForeground(new java.awt.Color(255, 255, 255));
+        nameUserLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nameUserLabel.setText("Hugo Navillod");
+
+        promotionLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        promotionLabel.setForeground(new java.awt.Color(204, 204, 204));
+        promotionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        promotionLabel.setText("ING3");
+
+        tdLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        tdLabel.setForeground(new java.awt.Color(255, 255, 255));
+        tdLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        tdLabel.setText("TD05");
+
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+
+        emploidutempsLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+        emploidutempsLabel.setForeground(new java.awt.Color(255, 255, 255));
+        emploidutempsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        emploidutempsLabel.setText("Emploi Du Temps");
+        emploidutempsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel1.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Hugo Navillod");
+        jLabel1.setText("Récapitulatif Période");
 
         javax.swing.GroupLayout leftGreenPanelLayout = new javax.swing.GroupLayout(leftGreenPanel);
         leftGreenPanel.setLayout(leftGreenPanelLayout);
         leftGreenPanelLayout.setHorizontalGroup(
             leftGreenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(nameUserLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(emploidutempsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(promotionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(tdLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(leftGreenPanelLayout.createSequentialGroup()
-                .addGroup(leftGreenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(iconEce, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(iconEce)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(leftGreenPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(leftGreenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1)
+                    .addComponent(jSeparator2))
+                .addContainerGap())
         );
         leftGreenPanelLayout.setVerticalGroup(
             leftGreenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftGreenPanelLayout.createSequentialGroup()
-                .addComponent(iconEce, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(iconEce, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(welcomeLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nameUserLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(promotionLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tdLabel)
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(emploidutempsLabel)
+                .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addGap(0, 601, Short.MAX_VALUE))
+                .addGap(0, 432, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout firstBackgroundPanelLayout = new javax.swing.GroupLayout(firstBackgroundPanel);
@@ -84,7 +136,7 @@ public class EDT_Window extends javax.swing.JFrame {
             firstBackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(firstBackgroundPanelLayout.createSequentialGroup()
                 .addComponent(leftGreenPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1100, Short.MAX_VALUE))
+                .addGap(0, 1077, Short.MAX_VALUE))
         );
         firstBackgroundPanelLayout.setVerticalGroup(
             firstBackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,10 +193,16 @@ public class EDT_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel emploidutempsLabel;
     private javax.swing.JPanel firstBackgroundPanel;
     private javax.swing.JLabel iconEce;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel leftGreenPanel;
+    private javax.swing.JLabel nameUserLabel;
+    private javax.swing.JLabel promotionLabel;
+    private javax.swing.JLabel tdLabel;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
 }
