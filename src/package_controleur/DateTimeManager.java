@@ -44,7 +44,7 @@ public class DateTimeManager
                                 mois = "avril";
                                 break;
                             case 4:
-                                mois = "mais";
+                                mois = "mai";
                                 break;
                             case 5:
                                 mois = "juin";
