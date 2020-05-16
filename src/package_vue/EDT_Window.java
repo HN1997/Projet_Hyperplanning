@@ -5,7 +5,9 @@
  */
 package package_vue;
 
+import javax.swing.JToggleButton;
 import package_controleur.DateTimeManager;
+import package_modele.GetSemaine;
 
 /**
  *
@@ -32,6 +34,8 @@ public class EDT_Window extends javax.swing.JFrame {
     public EDT_Window() {
         initComponents();
         DateTimeManager.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
+        InitialiseSemaine(GetSemaine.getWeek());
+        
     }
 
     /**
@@ -982,9 +986,9 @@ public class EDT_Window extends javax.swing.JFrame {
         edtPanel.setLayout(edtPanelLayout);
         edtPanelLayout.setHorizontalGroup(
             edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edtPanelLayout.createSequentialGroup()
-                .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
+            .addGroup(edtPanelLayout.createSequentialGroup()
+                .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
                     .addComponent(edtAffichagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1026,6 +1030,172 @@ public class EDT_Window extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    public void InitialiseSemaine(int semaineActuelle) //Fonction pour pré-selectionner la semaine a l'ouverture de l'application
+    {
+        switch(semaineActuelle)
+        {
+            case 1:
+                semaine1.setSelected(true);
+                break;
+            case 2:
+                semaine2.setSelected(true);
+                break;
+            case 3:
+                semaine3.setSelected(true);
+                break;
+            case 4:
+                semaine4.setSelected(true);
+                break;
+            case 5:
+                semaine2.setSelected(true);
+                break;
+            case 52:
+                semaine52.setSelected(true);
+                break;
+            case 6:
+                semaine6.setSelected(true);
+                break;
+            case 7:
+                semaine7.setSelected(true);
+                break;
+            case 8:
+                semaine8.setSelected(true);
+                break;
+            case 9:
+                semaine9.setSelected(true);
+                break;
+            case 10:
+                semaine10.setSelected(true);
+                break;
+            case 11:
+                semaine11.setSelected(true);
+                break;
+            case 12:
+                semaine12.setSelected(true);
+                break;
+            case 13:
+                semaine13.setSelected(true);
+                break;
+            case 14:
+                semaine14.setSelected(true);
+                break;
+            case 15:
+                semaine15.setSelected(true);
+                break;
+            case 16:
+                semaine16.setSelected(true);
+                break;
+            case 17:
+                semaine17.setSelected(true);
+                break;
+            case 18:
+                semaine18.setSelected(true);
+                break;
+            case 19:
+                semaine19.setSelected(true);
+                break;
+            case 20:
+                semaine20.setSelected(true);
+                break;
+            case 21:
+                semaine20.setSelected(true);
+                break;
+            case 22:
+                semaine22.setSelected(true);
+                break;
+            case 23:
+                semaine23.setSelected(true);
+                break;
+            case 24:
+                semaine24.setSelected(true);
+                break;
+            case 25:
+                semaine25.setSelected(true);
+                break;
+            case 26:
+                semaine26.setSelected(true);
+                break;
+            case 27:
+                semaine27.setSelected(true);
+                break;
+            case 28:
+                semaine28.setSelected(true);
+                break;
+            case 29:
+                semaine29.setSelected(true);
+                break;
+            case 30:
+                semaine30.setSelected(true);
+                break;
+            case 31:
+                semaine31.setSelected(true);
+                break;
+            case 32:
+                semaine32.setSelected(true);
+                break;
+            case 33:
+                semaine33.setSelected(true);
+                break;
+            case 34:
+                semaine34.setSelected(true);
+                break;
+            case 35:
+                semaine35.setSelected(true);
+                break;
+            case 36:
+                semaine36.setSelected(true);
+                break;
+            case 37:
+                semaine37.setSelected(true);
+                break;
+            case 38:
+                semaine38.setSelected(true);
+                break;
+            case 39:
+                semaine39.setSelected(true);
+                break;
+            case 40:
+                semaine40.setSelected(true);
+                break;
+            case 41:
+                semaine41.setSelected(true);
+                break;
+            case 42:
+                semaine42.setSelected(true);
+                break;
+            case 43:
+                semaine43.setSelected(true);
+                break;
+            case 44:
+                semaine44.setSelected(true);
+                break;
+            case 45:
+                semaine45.setSelected(true);
+                break;
+            case 46:
+                semaine46.setSelected(true);
+                break;
+            case 47:
+                semaine47.setSelected(true);
+                break;
+            case 48:
+                semaine48.setSelected(true);
+                break;
+            case 49:
+                semaine49.setSelected(true);
+                break;
+            case 50:
+                semaine50.setSelected(true);
+                break;
+            case 51:
+                semaine51.setSelected(true);
+                break;
+            default:
+                break;
+        }
+    }
+    
     // Si on clique sur l'emploi du temps
     private void emploidutempsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseClicked
         // TODO add your handling code here:
@@ -1105,6 +1275,7 @@ public class EDT_Window extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reportingLabelMouseClicked
 
+    
     private void semaine31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine31ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_semaine31ActionPerformed
