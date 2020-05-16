@@ -35,37 +35,37 @@ public class DateTimeManager
                                 mois = "janvier";
                                 break;
                             case 1:
-                                mois = "janvier";
+                                mois = "février";
                                 break;
                             case 2:
-                                mois = "janvier";
+                                mois = "mars";
                                 break;
                             case 3:
-                                mois = "janvier";
+                                mois = "avril";
                                 break;
                             case 4:
-                                mois = "janvier";
+                                mois = "mai";
                                 break;
                             case 5:
-                                mois = "janvier";
+                                mois = "juin";
                                 break;
                             case 6:
-                                mois = "janvier";
+                                mois = "juillet";
                                 break;
                             case 7:
-                                mois = "janvier";
+                                mois = "août";
                                 break;
                             case 8:
-                                mois = "janvier";
+                                mois = "septembre";
                                 break;
                             case 9:
-                                mois = "janvier";
+                                mois = "octobre";
                                 break;
                             case 10:
-                                mois = "janvier";
+                                mois = "novembre";
                                 break;
                             case 11:
-                                mois = "janvier";
+                                mois = "décembre";
                                 break;
                             default:
                                 break;
