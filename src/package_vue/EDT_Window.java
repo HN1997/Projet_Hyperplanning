@@ -49,6 +49,8 @@ public class EDT_Window extends javax.swing.JFrame {
         deconnexionLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Emploi du temps");
+        setPreferredSize(new java.awt.Dimension(1300, 900));
         setResizable(false);
 
         firstBackgroundPanel.setBackground(new java.awt.Color(204, 204, 204));
