@@ -6,6 +6,7 @@
 package package_controleur;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  *
@@ -22,46 +23,58 @@ public class Semaine {
     ArrayList<Cours> Vendredi;
     int idUtilisateur;
     
-    //Création du constructeur qui nous renvoie les cours par jour pour une semaine précise
     
-    public Semaine(String email, String password){
-        
-        //Renvoie tous les cours pour le lundi
-
-        public ArrayList<Cours> GetLundi(int numSemaine) 
+    
+//Renvoie tous les cours pour le lundi    
+    public ArrayList<Cours> GetLundi(int numSemaine) 
         {
         return null;
             
         }
-        //Renvoie tous les cours pour le mardi
+    
+//Renvoie tous les cours pour le mardi
         public ArrayList<Cours> GetMardi(int numSemaine) 
         {
         return null;
-            
+         
         }
-        //Renvoie tous les cours pour le Mercredi
+        
+//Renvoie tous les cours pour le Mercredi
         public ArrayList<Cours> GetMercredi(int numSemaine) 
         {
         return null;
             
         }
-        //Renvoie tous les cours pour le Jeudi
+        
+//Renvoie tous les cours pour le Jeudi
         public ArrayList<Cours> GetJeudi(int numSemaine) 
         {
         return null;
             
         }
-        //Renvoie tous les cours pour le vendredi
+        
+//Renvoie tous les cours pour le vendredi
         public ArrayList<Cours> GetVendredi(int numSemaine) 
         {
         return null;
             
         }
         
-        public int GetNumSemaine() 
+        public ArrayList<Integer> GetNumSemaine(int Semaine) 
         {
+        return null;
             
-            return 0; 
         }
+        
+        //Cette méthode renvoie la semaine actuelle à laquelle on est
+        public int GetSemaineActuelle(){
+            return Calendar.getInstance().get(Calendar.WEEK_OF_YEAR);
+        }
+        
+        
+        
+    //Création du constructeur qui nous renvoie les cours par jour pour une semaine précise
+    public Semaine(String email, String password){
+                
     }
 }
