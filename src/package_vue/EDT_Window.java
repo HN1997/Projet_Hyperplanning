@@ -37,11 +37,14 @@ public class EDT_Window extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         welcomeLabel = new javax.swing.JLabel();
         nameUserLabel = new javax.swing.JLabel();
+        droitLabel = new javax.swing.JLabel();
         promotionLabel = new javax.swing.JLabel();
         tdLabel = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         emploidutempsLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        recapitulatifLabel = new javax.swing.JLabel();
+        gestionnaireLabel = new javax.swing.JLabel();
+        deconnexionLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -57,12 +60,17 @@ public class EDT_Window extends javax.swing.JFrame {
         welcomeLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         welcomeLabel.setForeground(new java.awt.Color(204, 204, 204));
         welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        welcomeLabel.setText("Welcome,");
+        welcomeLabel.setText("Bienvenue,");
 
         nameUserLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         nameUserLabel.setForeground(new java.awt.Color(255, 255, 255));
         nameUserLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         nameUserLabel.setText("Hugo Navillod");
+
+        droitLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        droitLabel.setForeground(new java.awt.Color(204, 204, 204));
+        droitLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        droitLabel.setText("Etudiant");
 
         promotionLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         promotionLabel.setForeground(new java.awt.Color(204, 204, 204));
@@ -70,7 +78,7 @@ public class EDT_Window extends javax.swing.JFrame {
         promotionLabel.setText("ING3");
 
         tdLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        tdLabel.setForeground(new java.awt.Color(255, 255, 255));
+        tdLabel.setForeground(new java.awt.Color(204, 204, 204));
         tdLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         tdLabel.setText("TD05");
 
@@ -82,30 +90,41 @@ public class EDT_Window extends javax.swing.JFrame {
         emploidutempsLabel.setText("Emploi Du Temps");
         emploidutempsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel1.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Récapitulatif Période");
+        recapitulatifLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+        recapitulatifLabel.setForeground(new java.awt.Color(153, 153, 153));
+        recapitulatifLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        recapitulatifLabel.setText("Récapitulatif Période");
+
+        gestionnaireLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+        gestionnaireLabel.setForeground(new java.awt.Color(153, 153, 153));
+        gestionnaireLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gestionnaireLabel.setText("Gestionnaire EDT");
+
+        deconnexionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        deconnexionLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/DeconnexionIcon_50.png"))); // NOI18N
 
         javax.swing.GroupLayout leftGreenPanelLayout = new javax.swing.GroupLayout(leftGreenPanel);
         leftGreenPanel.setLayout(leftGreenPanelLayout);
         leftGreenPanelLayout.setHorizontalGroup(
             leftGreenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(nameUserLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(emploidutempsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(promotionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(tdLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(deconnexionLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(emploidutempsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(recapitulatifLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(leftGreenPanelLayout.createSequentialGroup()
                 .addComponent(iconEce)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(droitLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(leftGreenPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(leftGreenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
-                    .addComponent(jSeparator2))
+                    .addComponent(jSeparator2)
+                    .addComponent(promotionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tdLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addComponent(gestionnaireLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         leftGreenPanelLayout.setVerticalGroup(
             leftGreenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -117,17 +136,23 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addComponent(welcomeLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nameUserLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(droitLabel)
+                .addGap(5, 5, 5)
                 .addComponent(promotionLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tdLabel)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(emploidutempsLabel)
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addGap(0, 432, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(recapitulatifLabel)
+                .addGap(18, 18, 18)
+                .addComponent(gestionnaireLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 341, Short.MAX_VALUE)
+                .addComponent(deconnexionLabel)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout firstBackgroundPanelLayout = new javax.swing.GroupLayout(firstBackgroundPanel);
@@ -193,15 +218,18 @@ public class EDT_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel deconnexionLabel;
+    private javax.swing.JLabel droitLabel;
     private javax.swing.JLabel emploidutempsLabel;
     private javax.swing.JPanel firstBackgroundPanel;
+    private javax.swing.JLabel gestionnaireLabel;
     private javax.swing.JLabel iconEce;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPanel leftGreenPanel;
     private javax.swing.JLabel nameUserLabel;
     private javax.swing.JLabel promotionLabel;
+    private javax.swing.JLabel recapitulatifLabel;
     private javax.swing.JLabel tdLabel;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
