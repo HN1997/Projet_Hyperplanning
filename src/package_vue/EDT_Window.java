@@ -5,22 +5,33 @@
  */
 package package_vue;
 
+import package_controleur.DateTimeManager;
+
 /**
  *
  * @author hugon
  */
 public class EDT_Window extends javax.swing.JFrame {
 
+    // Variables pour savoir quelle fenetre est ouverte
     private boolean edtSelected = true;
     private boolean recapSelected = false;
     private boolean majSelected = false;
     private boolean reportingSelected = false;
+    // Fin
+    
+    // Variable pour l'heure et la date
+    //private DateTimeManager dtm = new DateTimeManager();
+    // Fin
+    
+    
     
     /**
      * Creates new form EDT_Window
      */
     public EDT_Window() {
         initComponents();
+        DateTimeManager.Clock(dateLabel, heureLabel);
     }
 
     /**
@@ -396,8 +407,10 @@ public class EDT_Window extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new EDT_Window().setVisible(true);
+                
             }
         });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
