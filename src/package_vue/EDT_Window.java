@@ -31,7 +31,7 @@ public class EDT_Window extends javax.swing.JFrame {
      */
     public EDT_Window() {
         initComponents();
-        DateTimeManager.Clock(dateLabel, heureLabel);
+        DateTimeManager.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
     }
 
     /**
@@ -43,6 +43,7 @@ public class EDT_Window extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         firstBackgroundPanel = new javax.swing.JPanel();
         leftGreenPanel = new javax.swing.JPanel();
         iconEce = new javax.swing.JLabel();
@@ -63,6 +64,8 @@ public class EDT_Window extends javax.swing.JFrame {
         deconnexionLabel = new javax.swing.JLabel();
         edtPanel = new javax.swing.JPanel();
         semainePickerPanel = new javax.swing.JPanel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
         edtAffichagePanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -236,13 +239,29 @@ public class EDT_Window extends javax.swing.JFrame {
         semainePickerPanel.setBackground(new java.awt.Color(0, 113, 121));
         semainePickerPanel.setLayout(new java.awt.GridLayout(1, 53, 5, 0));
 
+        buttonGroup1.add(jToggleButton1);
+        jToggleButton1.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        jToggleButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jToggleButton1.setSelected(true);
+        jToggleButton1.setText("1");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        semainePickerPanel.add(jToggleButton1);
+
+        buttonGroup1.add(jToggleButton2);
+        jToggleButton2.setText("jToggleButton2");
+        semainePickerPanel.add(jToggleButton2);
+
         edtAffichagePanel.setBackground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout edtAffichagePanelLayout = new javax.swing.GroupLayout(edtAffichagePanel);
         edtAffichagePanel.setLayout(edtAffichagePanelLayout);
         edtAffichagePanelLayout.setHorizontalGroup(
             edtAffichagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1086, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         edtAffichagePanelLayout.setVerticalGroup(
             edtAffichagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +274,7 @@ public class EDT_Window extends javax.swing.JFrame {
             edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edtPanelLayout.createSequentialGroup()
                 .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 1086, Short.MAX_VALUE)
                     .addComponent(edtAffichagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -376,6 +395,10 @@ public class EDT_Window extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reportingLabelMouseClicked
 
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -414,6 +437,7 @@ public class EDT_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel deconnexionLabel;
     private javax.swing.JLabel droitLabel;
@@ -427,6 +451,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JPanel leftGreenPanel;
     private javax.swing.JLabel nameUserLabel;
     private javax.swing.JLabel promotionLabel;
