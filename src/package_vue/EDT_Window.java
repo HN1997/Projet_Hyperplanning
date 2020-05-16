@@ -14,6 +14,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private boolean edtSelected = true;
     private boolean recapSelected = false;
     private boolean majSelected = false;
+    private boolean reportingSelected = false;
     
     /**
      * Creates new form EDT_Window
@@ -43,6 +44,7 @@ public class EDT_Window extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         emploidutempsLabel = new javax.swing.JLabel();
         recapitulatifLabel = new javax.swing.JLabel();
+        reportingLabel = new javax.swing.JLabel();
         gestionnaireLabel = new javax.swing.JLabel();
         deconnexionLabel = new javax.swing.JLabel();
 
@@ -88,20 +90,54 @@ public class EDT_Window extends javax.swing.JFrame {
         emploidutempsLabel.setForeground(new java.awt.Color(255, 255, 255));
         emploidutempsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         emploidutempsLabel.setText("Emploi Du Temps");
-        emploidutempsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        emploidutempsLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        emploidutempsLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                emploidutempsLabelMouseClicked(evt);
+            }
+        });
 
         recapitulatifLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         recapitulatifLabel.setForeground(new java.awt.Color(153, 153, 153));
         recapitulatifLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         recapitulatifLabel.setText("Récapitulatif Période");
+        recapitulatifLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recapitulatifLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                recapitulatifLabelMouseClicked(evt);
+            }
+        });
+
+        reportingLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+        reportingLabel.setForeground(new java.awt.Color(153, 153, 153));
+        reportingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        reportingLabel.setText("Reporting");
+        reportingLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        reportingLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                reportingLabelMouseClicked(evt);
+            }
+        });
 
         gestionnaireLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         gestionnaireLabel.setForeground(new java.awt.Color(153, 153, 153));
         gestionnaireLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         gestionnaireLabel.setText("Gestionnaire EDT");
+        gestionnaireLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gestionnaireLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                gestionnaireLabelMouseClicked(evt);
+            }
+        });
 
         deconnexionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         deconnexionLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/DeconnexionIcon_50.png"))); // NOI18N
+        deconnexionLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deconnexionLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deconnexionLabelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout leftGreenPanelLayout = new javax.swing.GroupLayout(leftGreenPanel);
         leftGreenPanel.setLayout(leftGreenPanelLayout);
@@ -116,6 +152,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addComponent(iconEce)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(droitLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(gestionnaireLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(leftGreenPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(leftGreenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +161,7 @@ public class EDT_Window extends javax.swing.JFrame {
                     .addComponent(promotionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(tdLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(gestionnaireLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(reportingLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         leftGreenPanelLayout.setVerticalGroup(
             leftGreenPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,8 +186,10 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(recapitulatifLabel)
                 .addGap(18, 18, 18)
+                .addComponent(reportingLabel)
+                .addGap(18, 18, 18)
                 .addComponent(gestionnaireLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 341, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 301, Short.MAX_VALUE)
                 .addComponent(deconnexionLabel)
                 .addContainerGap())
         );
@@ -181,6 +220,85 @@ public class EDT_Window extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    // Si on clique sur l'emploi du temps
+    private void emploidutempsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseClicked
+        // TODO add your handling code here:
+        if(!edtSelected) //Si il n'est pas selectionne
+        {
+            //On change la couleur de l'edt a blanc et les autres a gris
+            emploidutempsLabel.setForeground(new java.awt.Color(255, 255, 255));
+            recapitulatifLabel.setForeground(new java.awt.Color(153, 153, 153));
+            gestionnaireLabel.setForeground(new java.awt.Color(153, 153, 153));
+            reportingLabel.setForeground(new java.awt.Color(153, 153, 153));
+            //l'edt est maintenant selectionne
+            edtSelected = true;
+            recapSelected = false;
+            majSelected = false;
+            reportingSelected = false;
+        }
+    }//GEN-LAST:event_emploidutempsLabelMouseClicked
+
+    // Quand on clique sur le bouton recapitulatif de la periode
+    private void recapitulatifLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recapitulatifLabelMouseClicked
+        // TODO add your handling code here:
+        if(!recapSelected) //Si il n'est pas selectionne
+        {
+            //On change la couleur de l'edt a blanc et les autres a gris
+            emploidutempsLabel.setForeground(new java.awt.Color(153, 153, 153));
+            recapitulatifLabel.setForeground(new java.awt.Color(255, 255, 255));
+            gestionnaireLabel.setForeground(new java.awt.Color(153, 153, 153));
+            reportingLabel.setForeground(new java.awt.Color(153, 153, 153));
+            //l'edt est maintenant selectionne
+            edtSelected = false;
+            recapSelected = true;
+            majSelected = false;
+            reportingSelected = false;
+        }
+    }//GEN-LAST:event_recapitulatifLabelMouseClicked
+
+    // Si on clique sur le bouton Gestionnaire de l'EDT
+    private void gestionnaireLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gestionnaireLabelMouseClicked
+        // TODO add your handling code here:
+        if(!majSelected) //Si il n'est pas selectionne
+        {
+            //On change la couleur de l'edt a blanc et les autres a gris
+            emploidutempsLabel.setForeground(new java.awt.Color(153, 153, 153));
+            recapitulatifLabel.setForeground(new java.awt.Color(153, 153, 153));
+            gestionnaireLabel.setForeground(new java.awt.Color(255, 255, 255));
+            reportingLabel.setForeground(new java.awt.Color(153, 153, 153));
+            //l'edt est maintenant selectionne
+            edtSelected = false;
+            recapSelected = false;
+            majSelected = true;
+            reportingSelected = false;
+        }
+    }//GEN-LAST:event_gestionnaireLabelMouseClicked
+
+    // Si on appuie sur le bouton deconnexion
+    private void deconnexionLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deconnexionLabelMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_deconnexionLabelMouseClicked
+
+    //Quand on clique sur le bouton Reporting
+    private void reportingLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportingLabelMouseClicked
+        // TODO add your handling code here:
+        
+        if(!reportingSelected) //Si il n'est pas selectionne
+        {
+            //On change la couleur de l'edt a blanc et les autres a gris
+            emploidutempsLabel.setForeground(new java.awt.Color(153, 153, 153));
+            recapitulatifLabel.setForeground(new java.awt.Color(153, 153, 153));
+            gestionnaireLabel.setForeground(new java.awt.Color(153, 153, 153));
+            reportingLabel.setForeground(new java.awt.Color(255, 255, 255));
+            //l'edt est maintenant selectionne
+            edtSelected = false;
+            recapSelected = false;
+            majSelected = false;
+            reportingSelected = true;
+        }
+    }//GEN-LAST:event_reportingLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -230,6 +348,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel nameUserLabel;
     private javax.swing.JLabel promotionLabel;
     private javax.swing.JLabel recapitulatifLabel;
+    private javax.swing.JLabel reportingLabel;
     private javax.swing.JLabel tdLabel;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables

@@ -77,7 +77,8 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Component id="droitLabel" max="32767" attributes="0"/>
-                  <Group type="102" attributes="0">
+                  <Component id="gestionnaireLabel" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jSeparator1" max="32767" attributes="0"/>
@@ -87,7 +88,7 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Component id="gestionnaireLabel" alignment="0" max="32767" attributes="0"/>
+                  <Component id="reportingLabel" alignment="1" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -113,8 +114,10 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="recapitulatifLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="reportingLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="gestionnaireLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="341" max="32767" attributes="0"/>
+                      <EmptySpace pref="301" max="32767" attributes="0"/>
                       <Component id="deconnexionLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -214,9 +217,12 @@
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Emploi Du Temps"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Curseur par d&#xe9;faut"/>
+                  <Color id="Curseur en forme de main"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="emploidutempsLabelMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="recapitulatifLabel">
               <Properties>
@@ -228,7 +234,31 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="R&#xe9;capitulatif P&#xe9;riode"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Curseur en forme de main"/>
+                </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="recapitulatifLabelMouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="reportingLabel">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Cambria" size="18" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="99" red="99" type="rgb"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Reporting"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Curseur en forme de main"/>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="reportingLabelMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="gestionnaireLabel">
               <Properties>
@@ -240,7 +270,13 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Gestionnaire EDT"/>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Curseur en forme de main"/>
+                </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="gestionnaireLabelMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="deconnexionLabel">
               <Properties>
@@ -248,7 +284,13 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/images/DeconnexionIcon_50.png"/>
                 </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Curseur en forme de main"/>
+                </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="deconnexionLabelMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
