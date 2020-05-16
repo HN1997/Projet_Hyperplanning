@@ -121,6 +121,7 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine29 = new javax.swing.JToggleButton();
         semaine30 = new javax.swing.JToggleButton();
         edtAffichagePanel = new javax.swing.JPanel();
+        edtDisplayPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Emploi du temps");
@@ -971,15 +972,34 @@ public class EDT_Window extends javax.swing.JFrame {
 
         edtAffichagePanel.setBackground(new java.awt.Color(51, 51, 51));
 
+        edtDisplayPanel.setBackground(new java.awt.Color(204, 204, 204));
+
+        javax.swing.GroupLayout edtDisplayPanelLayout = new javax.swing.GroupLayout(edtDisplayPanel);
+        edtDisplayPanel.setLayout(edtDisplayPanelLayout);
+        edtDisplayPanelLayout.setHorizontalGroup(
+            edtDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1030, Short.MAX_VALUE)
+        );
+        edtDisplayPanelLayout.setVerticalGroup(
+            edtDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 776, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout edtAffichagePanelLayout = new javax.swing.GroupLayout(edtAffichagePanel);
         edtAffichagePanel.setLayout(edtAffichagePanelLayout);
         edtAffichagePanelLayout.setHorizontalGroup(
             edtAffichagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edtAffichagePanelLayout.createSequentialGroup()
+                .addContainerGap(52, Short.MAX_VALUE)
+                .addComponent(edtDisplayPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         edtAffichagePanelLayout.setVerticalGroup(
             edtAffichagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 823, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edtAffichagePanelLayout.createSequentialGroup()
+                .addContainerGap(41, Short.MAX_VALUE)
+                .addComponent(edtDisplayPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout edtPanelLayout = new javax.swing.GroupLayout(edtPanel);
@@ -988,7 +1008,7 @@ public class EDT_Window extends javax.swing.JFrame {
             edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edtPanelLayout.createSequentialGroup()
                 .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
+                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(edtAffichagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1527,6 +1547,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel deconnexionLabel;
     private javax.swing.JLabel droitLabel;
     private javax.swing.JPanel edtAffichagePanel;
+    private javax.swing.JPanel edtDisplayPanel;
     private javax.swing.JPanel edtPanel;
     private javax.swing.JLabel emploidutempsLabel;
     private javax.swing.JPanel firstBackgroundPanel;
