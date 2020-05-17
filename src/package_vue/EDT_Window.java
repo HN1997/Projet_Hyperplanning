@@ -120,11 +120,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine28 = new javax.swing.JToggleButton();
         semaine29 = new javax.swing.JToggleButton();
         semaine30 = new javax.swing.JToggleButton();
-        edtAffichagePanel = new javax.swing.JPanel();
         edtDisplayPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Emploi du temps");
+        setPreferredSize(new java.awt.Dimension(1300, 900));
         setResizable(false);
 
         firstBackgroundPanel.setBackground(new java.awt.Color(204, 204, 204));
@@ -286,7 +286,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addComponent(dateLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(heureLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
                 .addComponent(deconnexionLabel)
                 .addContainerGap())
         );
@@ -970,54 +970,38 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine30);
 
-        edtAffichagePanel.setBackground(new java.awt.Color(51, 51, 51));
-
-        edtDisplayPanel.setBackground(new java.awt.Color(204, 204, 204));
+        edtDisplayPanel.setBackground(new java.awt.Color(153, 153, 153));
+        edtDisplayPanel.setForeground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout edtDisplayPanelLayout = new javax.swing.GroupLayout(edtDisplayPanel);
         edtDisplayPanel.setLayout(edtDisplayPanelLayout);
         edtDisplayPanelLayout.setHorizontalGroup(
             edtDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1030, Short.MAX_VALUE)
+            .addGap(0, 1027, Short.MAX_VALUE)
         );
         edtDisplayPanelLayout.setVerticalGroup(
             edtDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 776, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout edtAffichagePanelLayout = new javax.swing.GroupLayout(edtAffichagePanel);
-        edtAffichagePanel.setLayout(edtAffichagePanelLayout);
-        edtAffichagePanelLayout.setHorizontalGroup(
-            edtAffichagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edtAffichagePanelLayout.createSequentialGroup()
-                .addContainerGap(52, Short.MAX_VALUE)
-                .addComponent(edtDisplayPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        edtAffichagePanelLayout.setVerticalGroup(
-            edtAffichagePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edtAffichagePanelLayout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
-                .addComponent(edtDisplayPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGap(0, 786, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout edtPanelLayout = new javax.swing.GroupLayout(edtPanel);
         edtPanel.setLayout(edtPanelLayout);
         edtPanelLayout.setHorizontalGroup(
             edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(edtPanelLayout.createSequentialGroup()
-                .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(edtAffichagePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edtPanelLayout.createSequentialGroup()
+                .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(edtPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(edtDisplayPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE))
                 .addContainerGap())
         );
         edtPanelLayout.setVerticalGroup(
             edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edtPanelLayout.createSequentialGroup()
                 .addComponent(semainePickerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(edtAffichagePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(edtDisplayPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -1546,7 +1530,6 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel deconnexionLabel;
     private javax.swing.JLabel droitLabel;
-    private javax.swing.JPanel edtAffichagePanel;
     private javax.swing.JPanel edtDisplayPanel;
     private javax.swing.JPanel edtPanel;
     private javax.swing.JLabel emploidutempsLabel;
