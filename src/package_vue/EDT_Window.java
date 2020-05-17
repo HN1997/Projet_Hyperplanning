@@ -5,6 +5,8 @@
  */
 package package_vue;
 
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 import package_controleur.DateTimeManager;
 import package_modele.GetSemaine;
@@ -126,7 +128,7 @@ public class EDT_Window extends javax.swing.JFrame {
         mardiDisplayPanel = new javax.swing.JPanel();
         mercrediDisplayPanel = new javax.swing.JPanel();
         jeudiDisplayPanel = new javax.swing.JPanel();
-        vendrediDisplayPanel = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
         lundiLabel = new javax.swing.JLabel();
         mardiLabel = new javax.swing.JLabel();
         mercrediLabel = new javax.swing.JLabel();
@@ -1049,16 +1051,16 @@ public class EDT_Window extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        vendrediDisplayPanel.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel5.setBackground(new java.awt.Color(51, 51, 51));
 
-        javax.swing.GroupLayout vendrediDisplayPanelLayout = new javax.swing.GroupLayout(vendrediDisplayPanel);
-        vendrediDisplayPanel.setLayout(vendrediDisplayPanelLayout);
-        vendrediDisplayPanelLayout.setHorizontalGroup(
-            vendrediDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        vendrediDisplayPanelLayout.setVerticalGroup(
-            vendrediDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -1075,7 +1077,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jeudiDisplayPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(vendrediDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         edtDisplayPanelLayout.setVerticalGroup(
             edtDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1083,7 +1085,7 @@ public class EDT_Window extends javax.swing.JFrame {
             .addComponent(mardiDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(mercrediDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jeudiDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(vendrediDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         lundiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
@@ -1301,6 +1303,29 @@ public class EDT_Window extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void clickItemMenu(JPanel active, boolean panel, JLabel labelSelected) //Quand on appuie a gauche sur un menu, on desactive tous les panels, on réactive celui passé en parametre et on change la couleur de tous les textes a gauche du menu
+    {
+        //Desactive tous les panels
+        edtPanel.setVisible(false);
+        edtPanel.setEnabled(false);
+        edtSelected = false;
+        emploidutempsLabel.setForeground(new java.awt.Color(153, 153, 153));
+        
+        recapSelected = false;
+        recapitulatifLabel.setForeground(new java.awt.Color(153, 153, 153));
+        
+        majSelected = false;
+        gestionnaireLabel.setForeground(new java.awt.Color(153, 153, 153));
+        
+        reportingSelected = false;
+        reportingLabel.setForeground(new java.awt.Color(153, 153, 153));
+        
+        //Active le panel sur lequel on clique
+        active.setVisible(true);
+        active.setEnabled(true);
+        panel = true;
+        labelSelected.setForeground(new java.awt.Color(255, 255, 255));
+    }
     
     public void InitialiseSemaine(int semaineActuelle) //Fonction pour pré-selectionner la semaine a l'ouverture de l'application
     {
@@ -1470,19 +1495,8 @@ public class EDT_Window extends javax.swing.JFrame {
     // Si on clique sur l'emploi du temps
     private void emploidutempsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseClicked
         // TODO add your handling code here:
-        if(!edtSelected) //Si il n'est pas selectionne
-        {
-            //On change la couleur de l'edt a blanc et les autres a gris
-            emploidutempsLabel.setForeground(new java.awt.Color(255, 255, 255));
-            recapitulatifLabel.setForeground(new java.awt.Color(153, 153, 153));
-            gestionnaireLabel.setForeground(new java.awt.Color(153, 153, 153));
-            reportingLabel.setForeground(new java.awt.Color(153, 153, 153));
-            //l'edt est maintenant selectionne
-            edtSelected = true;
-            recapSelected = false;
-            majSelected = false;
-            reportingSelected = false;
-        }
+        clickItemMenu(edtPanel, edtSelected, emploidutempsLabel);
+        InitialiseSemaine(GetSemaine.getWeek());
     }//GEN-LAST:event_emploidutempsLabelMouseClicked
 
     // Quand on clique sur le bouton recapitulatif de la periode
@@ -1546,207 +1560,6 @@ public class EDT_Window extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_reportingLabelMouseClicked
 
-    
-    private void semaine31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine31ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine31ActionPerformed
-
-    private void semaine32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine32ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine32ActionPerformed
-
-    private void semaine33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine33ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine33ActionPerformed
-
-    private void semaine34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine34ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine34ActionPerformed
-
-    private void semaine35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine35ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine35ActionPerformed
-
-    private void semaine36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine36ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine36ActionPerformed
-
-    private void semaine37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine37ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine37ActionPerformed
-
-    private void semaine38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine38ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine38ActionPerformed
-
-    private void semaine39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine39ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine39ActionPerformed
-
-    private void semaine40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine40ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine40ActionPerformed
-
-    private void semaine41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine41ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine41ActionPerformed
-
-    private void semaine42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine42ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine42ActionPerformed
-
-    private void semaine43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine43ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine43ActionPerformed
-
-    private void semaine44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine44ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine44ActionPerformed
-
-    private void semaine45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine45ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine45ActionPerformed
-
-    private void semaine46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine46ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine46ActionPerformed
-
-    private void semaine47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine47ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine47ActionPerformed
-
-    private void semaine48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine48ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine48ActionPerformed
-
-    private void semaine49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine49ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine49ActionPerformed
-
-    private void semaine50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine50ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine50ActionPerformed
-
-    private void semaine51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine51ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine51ActionPerformed
-
-    private void semaine52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine52ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine52ActionPerformed
-
-    private void semaine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine1ActionPerformed
-
-    private void semaine2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine2ActionPerformed
-
-    private void semaine3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine3ActionPerformed
-
-    private void semaine4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine4ActionPerformed
-
-    private void semaine5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine5ActionPerformed
-
-    private void semaine6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine6ActionPerformed
-
-    private void semaine7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine7ActionPerformed
-
-    private void semaine8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine8ActionPerformed
-
-    private void semaine9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine9ActionPerformed
-
-    private void semaine10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine10ActionPerformed
-
-    private void semaine11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine11ActionPerformed
-
-    private void semaine12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine12ActionPerformed
-
-    private void semaine13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine13ActionPerformed
-
-    private void semaine14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine14ActionPerformed
-
-    private void semaine15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine15ActionPerformed
-
-    private void semaine16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine16ActionPerformed
-
-    private void semaine17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine17ActionPerformed
-
-    private void semaine18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine18ActionPerformed
-
-    private void semaine19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine19ActionPerformed
-
-    private void semaine20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine20ActionPerformed
-
-    private void semaine21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine21ActionPerformed
-
-    private void semaine22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine22ActionPerformed
-
-    private void semaine23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine23ActionPerformed
-
-    private void semaine24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine24ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine24ActionPerformed
-
-    private void semaine25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine25ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine25ActionPerformed
-
-    private void semaine26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine26ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine26ActionPerformed
-
-    private void semaine27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine27ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine27ActionPerformed
-
-    private void semaine28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine28ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine28ActionPerformed
-
     private void semaine30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine30ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_semaine30ActionPerformed
@@ -1755,6 +1568,207 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_semaine29ActionPerformed
 
+    private void semaine28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine28ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine28ActionPerformed
+
+    private void semaine27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine27ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine27ActionPerformed
+
+    private void semaine26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine26ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine26ActionPerformed
+
+    private void semaine25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine25ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine25ActionPerformed
+
+    private void semaine24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine24ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine24ActionPerformed
+
+    private void semaine23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine23ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine23ActionPerformed
+
+    private void semaine22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine22ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine22ActionPerformed
+
+    private void semaine21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine21ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine21ActionPerformed
+
+    private void semaine20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine20ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine20ActionPerformed
+
+    private void semaine19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine19ActionPerformed
+
+    private void semaine18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine18ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine18ActionPerformed
+
+    private void semaine17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine17ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine17ActionPerformed
+
+    private void semaine16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine16ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine16ActionPerformed
+
+    private void semaine15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine15ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine15ActionPerformed
+
+    private void semaine14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine14ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine14ActionPerformed
+
+    private void semaine13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine13ActionPerformed
+
+    private void semaine12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine12ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine12ActionPerformed
+
+    private void semaine11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine11ActionPerformed
+
+    private void semaine10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine10ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine10ActionPerformed
+
+    private void semaine9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine9ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine9ActionPerformed
+
+    private void semaine8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine8ActionPerformed
+
+    private void semaine7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine7ActionPerformed
+
+    private void semaine6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine6ActionPerformed
+
+    private void semaine5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine5ActionPerformed
+
+    private void semaine4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine4ActionPerformed
+
+    private void semaine3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine3ActionPerformed
+
+    private void semaine2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine2ActionPerformed
+
+    private void semaine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine1ActionPerformed
+
+    private void semaine52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine52ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine52ActionPerformed
+
+    private void semaine51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine51ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine51ActionPerformed
+
+    private void semaine50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine50ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine50ActionPerformed
+
+    private void semaine49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine49ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine49ActionPerformed
+
+    private void semaine48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine48ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine48ActionPerformed
+
+    private void semaine47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine47ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine47ActionPerformed
+
+    private void semaine46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine46ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine46ActionPerformed
+
+    private void semaine45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine45ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine45ActionPerformed
+
+    private void semaine44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine44ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine44ActionPerformed
+
+    private void semaine43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine43ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine43ActionPerformed
+
+    private void semaine42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine42ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine42ActionPerformed
+
+    private void semaine41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine41ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine41ActionPerformed
+
+    private void semaine40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine40ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine40ActionPerformed
+
+    private void semaine39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine39ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine39ActionPerformed
+
+    private void semaine38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine38ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine38ActionPerformed
+
+    private void semaine37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine37ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine37ActionPerformed
+
+    private void semaine36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine36ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine36ActionPerformed
+
+    private void semaine35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine35ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine35ActionPerformed
+
+    private void semaine34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine34ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine34ActionPerformed
+
+    private void semaine33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine33ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine33ActionPerformed
+
+    private void semaine32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine32ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine32ActionPerformed
+
+    private void semaine31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine31ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine31ActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -1818,6 +1832,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -1894,7 +1909,6 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel semainePickerPanel;
     private javax.swing.JLabel tdLabel;
     private javax.swing.JLabel treizeLabel;
-    private javax.swing.JPanel vendrediDisplayPanel;
     private javax.swing.JLabel vendrediLabel;
     private javax.swing.JLabel vingtLabel;
     private javax.swing.JLabel welcomeLabel;
