@@ -120,11 +120,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine28 = new javax.swing.JToggleButton();
         semaine29 = new javax.swing.JToggleButton();
         semaine30 = new javax.swing.JToggleButton();
+        edtPanelBotRight = new javax.swing.JPanel();
         edtDisplayPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Emploi du temps");
-        setPreferredSize(new java.awt.Dimension(1300, 900));
         setResizable(false);
 
         firstBackgroundPanel.setBackground(new java.awt.Color(204, 204, 204));
@@ -970,38 +970,54 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine30);
 
-        edtDisplayPanel.setBackground(new java.awt.Color(153, 153, 153));
-        edtDisplayPanel.setForeground(new java.awt.Color(204, 204, 204));
+        edtPanelBotRight.setBackground(new java.awt.Color(153, 153, 153));
+
+        edtDisplayPanel.setBackground(new java.awt.Color(102, 102, 102));
 
         javax.swing.GroupLayout edtDisplayPanelLayout = new javax.swing.GroupLayout(edtDisplayPanel);
         edtDisplayPanel.setLayout(edtDisplayPanelLayout);
         edtDisplayPanelLayout.setHorizontalGroup(
             edtDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1027, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         edtDisplayPanelLayout.setVerticalGroup(
             edtDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 786, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout edtPanelBotRightLayout = new javax.swing.GroupLayout(edtPanelBotRight);
+        edtPanelBotRight.setLayout(edtPanelBotRightLayout);
+        edtPanelBotRightLayout.setHorizontalGroup(
+            edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(edtPanelBotRightLayout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(edtDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        edtPanelBotRightLayout.setVerticalGroup(
+            edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(edtPanelBotRightLayout.createSequentialGroup()
+                .addGap(55, 55, 55)
+                .addComponent(edtDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout edtPanelLayout = new javax.swing.GroupLayout(edtPanel);
         edtPanel.setLayout(edtPanelLayout);
         edtPanelLayout.setHorizontalGroup(
             edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edtPanelLayout.createSequentialGroup()
-                .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(edtPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(edtDisplayPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE))
+            .addGroup(edtPanelLayout.createSequentialGroup()
+                .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
+                    .addComponent(edtPanelBotRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         edtPanelLayout.setVerticalGroup(
             edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edtPanelLayout.createSequentialGroup()
                 .addComponent(semainePickerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(edtDisplayPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edtPanelBotRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -1532,6 +1548,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel droitLabel;
     private javax.swing.JPanel edtDisplayPanel;
     private javax.swing.JPanel edtPanel;
+    private javax.swing.JPanel edtPanelBotRight;
     private javax.swing.JLabel emploidutempsLabel;
     private javax.swing.JPanel firstBackgroundPanel;
     private javax.swing.JLabel gestionnaireLabel;
