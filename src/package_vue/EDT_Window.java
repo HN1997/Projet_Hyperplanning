@@ -1495,8 +1495,8 @@ public class EDT_Window extends javax.swing.JFrame {
     // Si on clique sur l'emploi du temps
     private void emploidutempsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseClicked
         // TODO add your handling code here:
-        clickItemMenu(edtPanel, edtSelected, emploidutempsLabel);
-        InitialiseSemaine(GetSemaine.getWeek());
+        clickItemMenu(edtPanel, edtSelected, emploidutempsLabel); //On ouvre la fenetre de l'emploi du temps
+        InitialiseSemaine(GetSemaine.getWeek()); //On se remet a la semaine actuelle
     }//GEN-LAST:event_emploidutempsLabelMouseClicked
 
     // Quand on clique sur le bouton recapitulatif de la periode
@@ -1825,13 +1825,6 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel heureLabel;
     private javax.swing.JLabel huitLabel;
     private javax.swing.JLabel iconEce;
-    private javax.swing.JPanel jPanel19;
-    private javax.swing.JPanel jPanel20;
-    private javax.swing.JPanel jPanel21;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel25;
-    private javax.swing.JPanel jPanel26;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
