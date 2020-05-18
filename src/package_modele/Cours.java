@@ -16,6 +16,10 @@ public class Cours {
         this.id=cours.id;
         this.Nom=cours.Nom;
     }
+
+    Cours() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public int getId()
     {
