@@ -1,10 +1,9 @@
 package package_modele;
-import java.util.*;
+
 public class Site {
     protected int id;
     protected String Nom;
 
-    private Set<Salle> ListSalle = new HashSet<>();
     
     public Site(int id, String Nom)
     {
@@ -16,6 +15,10 @@ public class Site {
     {
         this.id=site.id;
         this.Nom=site.Nom;
+    }
+
+    Site() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public int getId()
