@@ -1,4 +1,7 @@
 package package_modele;
+import java.util.*;
+
+
 public class Seance {
     
     private int id;
@@ -11,6 +14,9 @@ public class Seance {
     private int R;
     private int V;
     private int B;
+    
+    private Set<Cours> ListCours = new HashSet<>();
+    private Set<Type_Cours> ListType_Cours = new HashSet<>();
     
     
     public Seance(int id, int semaine,int date,int Heure_Debut,int Heure_Fin,String Etat,String Status, int R, int V, int B)
@@ -138,5 +144,45 @@ public class Seance {
     public void setB(int B)
     {
         this.B = B;
+    }
+    
+    public Set<Cours> getListCours() {
+        return ListCours;
+    }
+
+    public void setListCours(Set<Cours> ListCours) {
+        this.ListCours = ListCours;
+    }
+
+    //Ajoute une salle à un cours
+    public void addCours(Cours cours) {
+        this.ListCours.add(cours);
+    }
+
+    //Retire une salle à un cours
+    public void removeCours(Cours cours) {
+        this.ListCours.remove(cours);
+    }
+    
+            public Set<Type_Cours> getListType_Cours() 
+    {
+        return ListType_Cours;
+    }
+
+    public void setListType_Cours(Set<Type_Cours> ListType_Cours) 
+    {
+        this.ListType_Cours = ListType_Cours;
+    }
+
+  //Ajoute une salle à un type_cours
+    public void addType_Cours(Type_Cours type_cours)
+    {
+        this.ListType_Cours.add(type_cours);
+    }
+
+  //Retire une salle à un type_cours
+    public void removeType_Cours(Type_Cours type_cours)
+    {
+        this.ListType_Cours.remove(type_cours);
     }
 }
