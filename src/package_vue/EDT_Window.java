@@ -1103,92 +1103,105 @@ public class EDT_Window extends javax.swing.JFrame {
         );
 
         lundiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        lundiLabel.setForeground(new java.awt.Color(255, 255, 255));
+        lundiLabel.setForeground(new java.awt.Color(61, 43, 31));
         lundiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lundiLabel.setText("Lundi 2 mai");
 
         mardiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        mardiLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mardiLabel.setForeground(new java.awt.Color(61, 43, 31));
         mardiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mardiLabel.setText("Mardi 3 mai");
 
         mercrediLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        mercrediLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mercrediLabel.setForeground(new java.awt.Color(61, 43, 31));
         mercrediLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mercrediLabel.setText("Mercredi 4 mai");
 
         jeudiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        jeudiLabel.setForeground(new java.awt.Color(255, 255, 255));
+        jeudiLabel.setForeground(new java.awt.Color(61, 43, 31));
         jeudiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jeudiLabel.setText("Jeudi 5 mai");
 
         vendrediLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        vendrediLabel.setForeground(new java.awt.Color(255, 255, 255));
+        vendrediLabel.setForeground(new java.awt.Color(61, 43, 31));
         vendrediLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vendrediLabel.setText("Vendredi 6 mai");
 
+        huitLabel.setBackground(new java.awt.Color(61, 43, 31));
         huitLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        huitLabel.setForeground(new java.awt.Color(51, 51, 51));
+        huitLabel.setForeground(new java.awt.Color(61, 43, 31));
         huitLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         huitLabel.setText("8:30");
 
+        neufLabel.setBackground(new java.awt.Color(61, 43, 31));
         neufLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        neufLabel.setForeground(new java.awt.Color(51, 51, 51));
+        neufLabel.setForeground(new java.awt.Color(61, 43, 31));
         neufLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         neufLabel.setText("9:30");
 
+        dixLabel.setBackground(new java.awt.Color(61, 43, 31));
         dixLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        dixLabel.setForeground(new java.awt.Color(51, 51, 51));
+        dixLabel.setForeground(new java.awt.Color(61, 43, 31));
         dixLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dixLabel.setText("10:30");
 
+        onzeLabel.setBackground(new java.awt.Color(61, 43, 31));
         onzeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        onzeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        onzeLabel.setForeground(new java.awt.Color(61, 43, 31));
         onzeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         onzeLabel.setText("11:30");
 
+        douzeLabel.setBackground(new java.awt.Color(61, 43, 31));
         douzeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        douzeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        douzeLabel.setForeground(new java.awt.Color(61, 43, 31));
         douzeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         douzeLabel.setText("12:30");
 
+        treizeLabel.setBackground(new java.awt.Color(61, 43, 31));
         treizeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        treizeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        treizeLabel.setForeground(new java.awt.Color(61, 43, 31));
         treizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         treizeLabel.setText("13:30");
 
+        quatorzeLabel.setBackground(new java.awt.Color(61, 43, 31));
         quatorzeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        quatorzeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        quatorzeLabel.setForeground(new java.awt.Color(61, 43, 31));
         quatorzeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         quatorzeLabel.setText("14:30");
 
+        quinzeLabel.setBackground(new java.awt.Color(61, 43, 31));
         quinzeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        quinzeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        quinzeLabel.setForeground(new java.awt.Color(61, 43, 31));
         quinzeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         quinzeLabel.setText("15:30");
 
+        seizeLabel.setBackground(new java.awt.Color(61, 43, 31));
         seizeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        seizeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        seizeLabel.setForeground(new java.awt.Color(61, 43, 31));
         seizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         seizeLabel.setText("16:30");
 
+        dixseptLabel.setBackground(new java.awt.Color(61, 43, 31));
         dixseptLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        dixseptLabel.setForeground(new java.awt.Color(51, 51, 51));
+        dixseptLabel.setForeground(new java.awt.Color(61, 43, 31));
         dixseptLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dixseptLabel.setText("17:30");
 
+        dixhuitLabel.setBackground(new java.awt.Color(61, 43, 31));
         dixhuitLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        dixhuitLabel.setForeground(new java.awt.Color(51, 51, 51));
+        dixhuitLabel.setForeground(new java.awt.Color(61, 43, 31));
         dixhuitLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dixhuitLabel.setText("18:30");
 
+        dixneufLabel.setBackground(new java.awt.Color(61, 43, 31));
         dixneufLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        dixneufLabel.setForeground(new java.awt.Color(51, 51, 51));
+        dixneufLabel.setForeground(new java.awt.Color(61, 43, 31));
         dixneufLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dixneufLabel.setText("19:30");
 
+        vingtLabel.setBackground(new java.awt.Color(61, 43, 31));
         vingtLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        vingtLabel.setForeground(new java.awt.Color(51, 51, 51));
+        vingtLabel.setForeground(new java.awt.Color(61, 43, 31));
         vingtLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vingtLabel.setText("20:30");
 
