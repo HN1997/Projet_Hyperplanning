@@ -9,7 +9,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 import package_controleur.DateTimeManager;
-import package_modele.GetSemaine;
 
 /**
  *
@@ -36,7 +35,7 @@ public class EDT_Window extends javax.swing.JFrame {
     public EDT_Window() {
         initComponents();
         DateTimeManager.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
-        InitialiseSemaine(GetSemaine.getWeek());
+        //InitialiseSemaine(GetSemaine.getWeek());
         
     }
 
@@ -1817,7 +1816,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private void emploidutempsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseClicked
         // TODO add your handling code here:
         clickItemMenu(edtPanel, edtSelected, emploidutempsLabel); //On ouvre la fenetre de l'emploi du temps
-        InitialiseSemaine(GetSemaine.getWeek()); //On se remet a la semaine actuelle
+        //InitialiseSemaine(GetSemaine.getWeek()); //On se remet a la semaine actuelle
     }//GEN-LAST:event_emploidutempsLabelMouseClicked
 
     
