@@ -145,6 +145,8 @@ public class EDT_Window extends javax.swing.JFrame {
         dixneufLabel = new javax.swing.JLabel();
         vingtLabel = new javax.swing.JLabel();
         recapPanel = new javax.swing.JPanel();
+        recapScrollPane = new javax.swing.JScrollPane();
+        recapTable = new javax.swing.JTable();
         reportingPanel = new javax.swing.JPanel();
         gestionnairePanel = new javax.swing.JPanel();
 
@@ -1286,15 +1288,48 @@ public class EDT_Window extends javax.swing.JFrame {
 
         recapPanel.setBackground(new java.awt.Color(204, 204, 204));
 
+        recapTable.setAutoCreateRowSorter(true);
+        recapTable.setBackground(new java.awt.Color(0, 113, 121));
+        recapTable.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
+        recapTable.setForeground(new java.awt.Color(255, 255, 255));
+        recapTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"", null, null, null, null},
+                {"", null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Matières", "Première Séance", "Dernière Séance", "Durée totale", "Nombre de Cours"
+            }
+        ));
+        recapTable.setAutoscrolls(false);
+        recapTable.setFocusable(false);
+        recapTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        recapTable.setRowHeight(25);
+        recapTable.setSelectionBackground(new java.awt.Color(0, 153, 153));
+        recapTable.setShowHorizontalLines(false);
+        recapTable.getTableHeader().setReorderingAllowed(false);
+        recapTable.setVerifyInputWhenFocusTarget(false);
+        recapScrollPane.setViewportView(recapTable);
+
         javax.swing.GroupLayout recapPanelLayout = new javax.swing.GroupLayout(recapPanel);
         recapPanel.setLayout(recapPanelLayout);
         recapPanelLayout.setHorizontalGroup(
             recapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1088, Short.MAX_VALUE)
+            .addComponent(recapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
         );
         recapPanelLayout.setVerticalGroup(
             recapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 888, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recapPanelLayout.createSequentialGroup()
+                .addGap(0, 131, Short.MAX_VALUE)
+                .addComponent(recapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         rightCardPanel.add(recapPanel, "card3");
@@ -1883,6 +1918,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel quatorzeLabel;
     private javax.swing.JLabel quinzeLabel;
     private javax.swing.JPanel recapPanel;
+    private javax.swing.JScrollPane recapScrollPane;
+    private javax.swing.JTable recapTable;
     private javax.swing.JLabel recapitulatifLabel;
     private javax.swing.JLabel reportingLabel;
     private javax.swing.JPanel reportingPanel;
