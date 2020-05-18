@@ -12,18 +12,7 @@ public class ConnexionSQL
     private Connection conn = null; //gerer la connection a la bdd
     private PreparedStatement pst = null; //executer les requetes (=query)
     private ResultSet rs = null;
-    ArrayList<Object> Utilisateurs;
-    ArrayList<Object> Type_Cours;
-    ArrayList<Object> Sites;
-    ArrayList<Object> Sceance_Salles;
-    ArrayList<Object> Sceance_Groupes;
-    ArrayList<Object> Sceance_Enseignant;
-    ArrayList<Object> Sceance;
-    ArrayList<Object> Salle;
-    ArrayList<Object> Promotion;
-    ArrayList<Object> Groupe;
-    ArrayList<Object> Enseignant;
-    ArrayList<Object> Cours;
+
     
 
     //Constructeur qui nous connecte a la BDD
@@ -86,71 +75,6 @@ public class ConnexionSQL
         }
         
         return 0; // le try n'a pas fonctionne
-    }
-    
-    public ArrayList<Object> Utilisateur (String email, String password)
-    {
-        String sql = "SELECT * FROM utilisateur WHERE Email='email' AND Passwd='password' ";
-        try {
-            pst = conn.prepareStatement(sql);
-            rs = pst.executeQuery();
-            Utilisateurs.add(rs.next()); // renverra true si il y a un resultat, false sinon
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnexionSQL.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return Utilisateurs;
-    }
-    
-    public ArrayList<Object> Type_Cours ()
-    {
-        String sql = "SELECT * FROM type_cours ";
-        try {
-            pst = conn.prepareStatement(sql);
-            rs = pst.executeQuery();
-            Type_Cours.add(rs.next()); // renverra true si il y a un resultat, false sinon
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnexionSQL.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return Type_Cours;
-    }
-    
-    public ArrayList<Object> Site ()
-    {
-        String sql = "SELECT * FROM site ";
-        try {
-            pst = conn.prepareStatement(sql);
-            rs = pst.executeQuery();
-            Sites.add(rs.next()); // renverra true si il y a un resultat, false sinon
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnexionSQL.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return Sites;
-    }
-    
-    public ArrayList<Object> Salle ()
-    {
-        String sql = "SELECT * FROM salle ";
-        try {
-            pst = conn.prepareStatement(sql);
-            rs = pst.executeQuery();
-            Salle.add(rs.next()); // renverra true si il y a un resultat, false sinon
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnexionSQL.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return Salle;
-    }
-    
-    public ArrayList<Object> Seance_Salle ()
-    {
-        String sql = "SELECT * FROM sceance_salles ";
-        try {
-            pst = conn.prepareStatement(sql);
-            rs = pst.executeQuery();
-            Sceance_Salles.add(rs.next()); // renverra true si il y a un resultat, false sinon
-        } catch (SQLException ex) {
-            Logger.getLogger(ConnexionSQL.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return Sceance_Salles;
     }
     
     
