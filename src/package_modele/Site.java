@@ -5,6 +5,9 @@
  */
 package package_modele;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  *
  * @author ShadowZeus
@@ -12,6 +15,8 @@ package package_modele;
 public class Site {
     protected int id;
     protected String Nom;
+
+    private Set<Salle> ListSalle = new HashSet<>();
     
     public Site(int id, String Nom)
     {
@@ -43,5 +48,27 @@ public class Site {
     public void setNom(String Nom)
     {
         this.Nom = Nom;
+    }
+    
+    public Set<Salle> getListSalle() 
+    {
+        return ListSalle;
+    }
+
+    public void setListSalle(Set<Salle> ListSalle) 
+    {
+        this.ListSalle = ListSalle;
+    }
+
+  //Ajoute une salle à un site
+    public void addSalle(Salle salle)
+    {
+        this.ListSalle.add(salle);
+    }
+
+  //Retire une salle à un site
+    public void removeSalle(Salle salle)
+    {
+        this.ListSalle.remove(salle);
     }
 }
