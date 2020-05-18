@@ -12,6 +12,7 @@ public class ConnexionSQL
     private Connection conn = null; //gerer la connection a la bdd
     private PreparedStatement pst = null; //executer les requetes (=query)
     private ResultSet rs = null;
+
     
 
     //Constructeur qui nous connecte a la BDD
@@ -75,6 +76,7 @@ public class ConnexionSQL
         
         return 0; // le try n'a pas fonctionne
     }
+    
     
 }
 
