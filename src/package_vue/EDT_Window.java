@@ -9,7 +9,9 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import package_controleur.DateTimeManager;
 
 /**
@@ -1289,7 +1291,7 @@ public class EDT_Window extends javax.swing.JFrame {
         recapPanel.setBackground(new java.awt.Color(204, 204, 204));
 
         recapTable.setAutoCreateRowSorter(true);
-        recapTable.setBackground(new java.awt.Color(0, 113, 121));
+        recapTable.setBackground(new java.awt.Color(0, 147, 162));
         recapTable.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         recapTable.setForeground(new java.awt.Color(255, 255, 255));
         recapTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -1310,6 +1312,7 @@ public class EDT_Window extends javax.swing.JFrame {
             }
         ));
         recapTable.setAutoscrolls(false);
+        recapTable.setColumnSelectionAllowed(false);
         recapTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         recapTable.setFocusable(false);
         recapTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
@@ -1317,6 +1320,8 @@ public class EDT_Window extends javax.swing.JFrame {
         recapTable.setSelectionBackground(new java.awt.Color(0, 153, 153));
         recapTable.setShowHorizontalLines(false);
         recapTable.getTableHeader().setReorderingAllowed(false);
+        DefaultTableCellRenderer renderer = (DefaultTableCellRenderer) recapTable.getTableHeader().getDefaultRenderer();
+        renderer.setHorizontalAlignment(0);
         recapTable.setVerifyInputWhenFocusTarget(false);
         recapTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1863,7 +1868,7 @@ public class EDT_Window extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) recapTable.getModel();
         int index = recapTable.getSelectedRow(); //L'index sur lequel on clique
         
-        
+        recapTable.setSelectionBackground(new Color(0, 113, 121)); //Chance la couleur sur le row qu'on a cliqué
     }//GEN-LAST:event_recapTableMouseClicked
 
 
