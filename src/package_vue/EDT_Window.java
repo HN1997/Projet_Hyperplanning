@@ -196,6 +196,12 @@ public class EDT_Window extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 emploidutempsLabelMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                emploidutempsLabelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                emploidutempsLabelMouseExited(evt);
+            }
         });
 
         recapitulatifLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
@@ -1096,22 +1102,22 @@ public class EDT_Window extends javax.swing.JFrame {
         mardiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         mardiLabel.setForeground(new java.awt.Color(255, 255, 255));
         mardiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mardiLabel.setText("Mardi 2 mai");
+        mardiLabel.setText("Mardi 3 mai");
 
         mercrediLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         mercrediLabel.setForeground(new java.awt.Color(255, 255, 255));
         mercrediLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        mercrediLabel.setText("Mercredi 3 mai");
+        mercrediLabel.setText("Mercredi 4 mai");
 
         jeudiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         jeudiLabel.setForeground(new java.awt.Color(255, 255, 255));
         jeudiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jeudiLabel.setText("Jeudi 4 mai");
+        jeudiLabel.setText("Jeudi 5 mai");
 
         vendrediLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         vendrediLabel.setForeground(new java.awt.Color(255, 255, 255));
         vendrediLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        vendrediLabel.setText("Vendredi 5 mai");
+        vendrediLabel.setText("Vendredi 6 mai");
 
         huitLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         huitLabel.setForeground(new java.awt.Color(51, 51, 51));
@@ -1311,12 +1317,18 @@ public class EDT_Window extends javax.swing.JFrame {
         edtSelected = false;
         emploidutempsLabel.setForeground(new java.awt.Color(153, 153, 153));
         
+        edtPanel.setVisible(false);
+        edtPanel.setEnabled(false);
         recapSelected = false;
         recapitulatifLabel.setForeground(new java.awt.Color(153, 153, 153));
         
+        edtPanel.setVisible(false);
+        edtPanel.setEnabled(false);
         majSelected = false;
         gestionnaireLabel.setForeground(new java.awt.Color(153, 153, 153));
         
+        edtPanel.setVisible(false);
+        edtPanel.setEnabled(false);
         reportingSelected = false;
         reportingLabel.setForeground(new java.awt.Color(153, 153, 153));
         
@@ -1327,7 +1339,8 @@ public class EDT_Window extends javax.swing.JFrame {
         labelSelected.setForeground(new java.awt.Color(255, 255, 255));
     }
     
-    public void InitialiseSemaine(int semaineActuelle) //Fonction pour pré-selectionner la semaine a l'ouverture de l'application
+    //Fonction pour pré-selectionner la semaine a l'ouverture de l'application
+    public void InitialiseSemaine(int semaineActuelle) 
     {
         switch(semaineActuelle)
         {
@@ -1492,74 +1505,6 @@ public class EDT_Window extends javax.swing.JFrame {
         }
     }
     
-    // Si on clique sur l'emploi du temps
-    private void emploidutempsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseClicked
-        // TODO add your handling code here:
-        clickItemMenu(edtPanel, edtSelected, emploidutempsLabel); //On ouvre la fenetre de l'emploi du temps
-        InitialiseSemaine(GetSemaine.getWeek()); //On se remet a la semaine actuelle
-    }//GEN-LAST:event_emploidutempsLabelMouseClicked
-
-    // Quand on clique sur le bouton recapitulatif de la periode
-    private void recapitulatifLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recapitulatifLabelMouseClicked
-        // TODO add your handling code here:
-        if(!recapSelected) //Si il n'est pas selectionne
-        {
-            //On change la couleur de l'edt a blanc et les autres a gris
-            emploidutempsLabel.setForeground(new java.awt.Color(153, 153, 153));
-            recapitulatifLabel.setForeground(new java.awt.Color(255, 255, 255));
-            gestionnaireLabel.setForeground(new java.awt.Color(153, 153, 153));
-            reportingLabel.setForeground(new java.awt.Color(153, 153, 153));
-            //l'edt est maintenant selectionne
-            edtSelected = false;
-            recapSelected = true;
-            majSelected = false;
-            reportingSelected = false;
-        }
-    }//GEN-LAST:event_recapitulatifLabelMouseClicked
-
-    // Si on clique sur le bouton Gestionnaire de l'EDT
-    private void gestionnaireLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gestionnaireLabelMouseClicked
-        // TODO add your handling code here:
-        if(!majSelected) //Si il n'est pas selectionne
-        {
-            //On change la couleur de l'edt a blanc et les autres a gris
-            emploidutempsLabel.setForeground(new java.awt.Color(153, 153, 153));
-            recapitulatifLabel.setForeground(new java.awt.Color(153, 153, 153));
-            gestionnaireLabel.setForeground(new java.awt.Color(255, 255, 255));
-            reportingLabel.setForeground(new java.awt.Color(153, 153, 153));
-            //l'edt est maintenant selectionne
-            edtSelected = false;
-            recapSelected = false;
-            majSelected = true;
-            reportingSelected = false;
-        }
-    }//GEN-LAST:event_gestionnaireLabelMouseClicked
-
-    // Si on appuie sur le bouton deconnexion
-    private void deconnexionLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deconnexionLabelMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_deconnexionLabelMouseClicked
-
-    //Quand on clique sur le bouton Reporting
-    private void reportingLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportingLabelMouseClicked
-        // TODO add your handling code here:
-        
-        if(!reportingSelected) //Si il n'est pas selectionne
-        {
-            //On change la couleur de l'edt a blanc et les autres a gris
-            emploidutempsLabel.setForeground(new java.awt.Color(153, 153, 153));
-            recapitulatifLabel.setForeground(new java.awt.Color(153, 153, 153));
-            gestionnaireLabel.setForeground(new java.awt.Color(153, 153, 153));
-            reportingLabel.setForeground(new java.awt.Color(255, 255, 255));
-            //l'edt est maintenant selectionne
-            edtSelected = false;
-            recapSelected = false;
-            majSelected = false;
-            reportingSelected = true;
-        }
-    }//GEN-LAST:event_reportingLabelMouseClicked
-
     private void semaine30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine30ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_semaine30ActionPerformed
@@ -1768,6 +1713,45 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_semaine31ActionPerformed
 
+    // Si on appuie sur le bouton deconnexion
+    private void deconnexionLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deconnexionLabelMouseClicked
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_deconnexionLabelMouseClicked
+
+    // Si on clique sur le bouton Gestionnaire de l'EDT
+    private void gestionnaireLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gestionnaireLabelMouseClicked
+
+    }//GEN-LAST:event_gestionnaireLabelMouseClicked
+
+    //Quand on clique sur le bouton Reporting
+    private void reportingLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportingLabelMouseClicked
+
+    }//GEN-LAST:event_reportingLabelMouseClicked
+
+    // Quand on clique sur le bouton recapitulatif de la periode
+    private void recapitulatifLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recapitulatifLabelMouseClicked
+
+    }//GEN-LAST:event_recapitulatifLabelMouseClicked
+
+    //Si la souris quitte le texte emploi du temps
+    private void emploidutempsLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseExited
+
+    }//GEN-LAST:event_emploidutempsLabelMouseExited
+
+    //Si la souris passe sur le texte emploi du temps
+    private void emploidutempsLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseEntered
+
+    }//GEN-LAST:event_emploidutempsLabelMouseEntered
+
+    // Si on clique sur l'onglet emploi du temps
+    private void emploidutempsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseClicked
+        // TODO add your handling code here:
+        clickItemMenu(edtPanel, edtSelected, emploidutempsLabel); //On ouvre la fenetre de l'emploi du temps
+        InitialiseSemaine(GetSemaine.getWeek()); //On se remet a la semaine actuelle
+    }//GEN-LAST:event_emploidutempsLabelMouseClicked
+
+    
     
     /**
      * @param args the command line arguments
