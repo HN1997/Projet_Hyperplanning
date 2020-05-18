@@ -1,21 +1,20 @@
 package package_modele;
-import java.util.*;
-public class Site {
+
+public class Cours {
+    
     protected int id;
     protected String Nom;
-
-    private Set<Salle> ListSalle = new HashSet<>();
     
-    public Site(int id, String Nom)
+    public Cours(int id, String Nom)
     {
         this.id=id;
         this.Nom=Nom;
     }
     
-    public Site(Site site)
+    public Cours(Cours cours)
     {
-        this.id=site.id;
-        this.Nom=site.Nom;
+        this.id=cours.id;
+        this.Nom=cours.Nom;
     }
     
     public int getId()
@@ -37,6 +36,4 @@ public class Site {
     {
         this.Nom = Nom;
     }
-    
-
 }
