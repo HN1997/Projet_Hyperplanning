@@ -151,6 +151,9 @@ public class EDT_Window extends javax.swing.JFrame {
         recapPanel = new javax.swing.JPanel();
         recapScrollPane = new javax.swing.JScrollPane();
         recapTable = new javax.swing.JTable();
+        topRecapPanel = new javax.swing.JPanel();
+        recapPeriodeLabelTop = new javax.swing.JLabel();
+        recapPeriodeChoosePanel = new javax.swing.JPanel();
         reportingPanel = new javax.swing.JPanel();
         gestionnairePanel = new javax.swing.JPanel();
 
@@ -1359,16 +1362,60 @@ public class EDT_Window extends javax.swing.JFrame {
             });
             recapScrollPane.setViewportView(recapTable);
 
+            topRecapPanel.setBackground(new java.awt.Color(57, 17, 45));
+            topRecapPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+            recapPeriodeLabelTop.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            recapPeriodeLabelTop.setForeground(new java.awt.Color(255, 255, 255));
+            recapPeriodeLabelTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            recapPeriodeLabelTop.setText("Récapitulatif de la période");
+
+            recapPeriodeChoosePanel.setBackground(new java.awt.Color(57, 17, 45));
+
+            javax.swing.GroupLayout recapPeriodeChoosePanelLayout = new javax.swing.GroupLayout(recapPeriodeChoosePanel);
+            recapPeriodeChoosePanel.setLayout(recapPeriodeChoosePanelLayout);
+            recapPeriodeChoosePanelLayout.setHorizontalGroup(
+                recapPeriodeChoosePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 0, Short.MAX_VALUE)
+            );
+            recapPeriodeChoosePanelLayout.setVerticalGroup(
+                recapPeriodeChoosePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 63, Short.MAX_VALUE)
+            );
+
+            javax.swing.GroupLayout topRecapPanelLayout = new javax.swing.GroupLayout(topRecapPanel);
+            topRecapPanel.setLayout(topRecapPanelLayout);
+            topRecapPanelLayout.setHorizontalGroup(
+                topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(topRecapPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(recapPeriodeChoosePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addContainerGap())
+            );
+            topRecapPanelLayout.setVerticalGroup(
+                topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(topRecapPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(recapPeriodeChoosePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+
             javax.swing.GroupLayout recapPanelLayout = new javax.swing.GroupLayout(recapPanel);
             recapPanel.setLayout(recapPanelLayout);
             recapPanelLayout.setHorizontalGroup(
                 recapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(recapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
+                .addComponent(topRecapPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             );
             recapPanelLayout.setVerticalGroup(
                 recapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recapPanelLayout.createSequentialGroup()
-                    .addGap(0, 131, Short.MAX_VALUE)
+                    .addComponent(topRecapPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(recapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE))
             );
 
@@ -1980,6 +2027,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel quatorzeLabel;
     private javax.swing.JLabel quinzeLabel;
     private javax.swing.JPanel recapPanel;
+    private javax.swing.JPanel recapPeriodeChoosePanel;
+    private javax.swing.JLabel recapPeriodeLabelTop;
     private javax.swing.JScrollPane recapScrollPane;
     private javax.swing.JTable recapTable;
     private javax.swing.JLabel recapitulatifLabel;
@@ -2041,6 +2090,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JToggleButton semaine9;
     private javax.swing.JPanel semainePickerPanel;
     private javax.swing.JLabel tdLabel;
+    private javax.swing.JPanel topRecapPanel;
     private javax.swing.JLabel treizeLabel;
     private javax.swing.JLabel vendrediLabel;
     private javax.swing.JLabel vingtLabel;
