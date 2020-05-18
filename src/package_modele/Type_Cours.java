@@ -15,6 +15,10 @@ public class Type_Cours {
         this.id=type_cours.id;
         this.Nom=type_cours.Nom;
     }
+
+    Type_Cours() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public int getId()
     {
