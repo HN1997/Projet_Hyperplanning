@@ -149,9 +149,7 @@ public class EDT_Window extends javax.swing.JFrame {
         vingtLabel = new javax.swing.JLabel();
         recapPanel = new javax.swing.JPanel();
         reportingPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         gestionnairePanel = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Emploi du temps");
@@ -1289,6 +1287,8 @@ public class EDT_Window extends javax.swing.JFrame {
 
         rightCardPanel.add(edtPanel, "card2");
 
+        recapPanel.setBackground(new java.awt.Color(204, 204, 204));
+
         javax.swing.GroupLayout recapPanelLayout = new javax.swing.GroupLayout(recapPanel);
         recapPanel.setLayout(recapPanelLayout);
         recapPanelLayout.setHorizontalGroup(
@@ -1302,44 +1302,32 @@ public class EDT_Window extends javax.swing.JFrame {
 
         rightCardPanel.add(recapPanel, "card3");
 
-        jLabel2.setText("reporting");
+        reportingPanel.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout reportingPanelLayout = new javax.swing.GroupLayout(reportingPanel);
         reportingPanel.setLayout(reportingPanelLayout);
         reportingPanelLayout.setHorizontalGroup(
             reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(reportingPanelLayout.createSequentialGroup()
-                .addGap(469, 469, 469)
-                .addComponent(jLabel2)
-                .addContainerGap(567, Short.MAX_VALUE))
+            .addGap(0, 1088, Short.MAX_VALUE)
         );
         reportingPanelLayout.setVerticalGroup(
             reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(reportingPanelLayout.createSequentialGroup()
-                .addGap(217, 217, 217)
-                .addComponent(jLabel2)
-                .addContainerGap(655, Short.MAX_VALUE))
+            .addGap(0, 888, Short.MAX_VALUE)
         );
 
         rightCardPanel.add(reportingPanel, "card4");
 
-        jLabel3.setText("jLabel3");
+        gestionnairePanel.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout gestionnairePanelLayout = new javax.swing.GroupLayout(gestionnairePanel);
         gestionnairePanel.setLayout(gestionnairePanelLayout);
         gestionnairePanelLayout.setHorizontalGroup(
             gestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, gestionnairePanelLayout.createSequentialGroup()
-                .addContainerGap(569, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(478, 478, 478))
+            .addGap(0, 1088, Short.MAX_VALUE)
         );
         gestionnairePanelLayout.setVerticalGroup(
             gestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(gestionnairePanelLayout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(jLabel3)
-                .addContainerGap(763, Short.MAX_VALUE))
+            .addGap(0, 888, Short.MAX_VALUE)
         );
 
         rightCardPanel.add(gestionnairePanel, "card5");
@@ -1878,8 +1866,6 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel heureLabel;
     private javax.swing.JLabel huitLabel;
     private javax.swing.JLabel iconEce;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
