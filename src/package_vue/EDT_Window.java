@@ -5,9 +5,11 @@
  */
 package package_vue;
 
+import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JToggleButton;
+import javax.swing.table.DefaultTableModel;
 import package_controleur.DateTimeManager;
 
 /**
@@ -22,8 +24,6 @@ public class EDT_Window extends javax.swing.JFrame {
     private boolean majSelected = false;
     private boolean reportingSelected = false;
     // Fin
-    
-    
     
     
     /**
@@ -1310,6 +1310,7 @@ public class EDT_Window extends javax.swing.JFrame {
             }
         ));
         recapTable.setAutoscrolls(false);
+        recapTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         recapTable.setFocusable(false);
         recapTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
         recapTable.setRowHeight(25);
@@ -1317,6 +1318,11 @@ public class EDT_Window extends javax.swing.JFrame {
         recapTable.setShowHorizontalLines(false);
         recapTable.getTableHeader().setReorderingAllowed(false);
         recapTable.setVerifyInputWhenFocusTarget(false);
+        recapTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                recapTableMouseClicked(evt);
+            }
+        });
         recapScrollPane.setViewportView(recapTable);
 
         javax.swing.GroupLayout recapPanelLayout = new javax.swing.GroupLayout(recapPanel);
@@ -1593,6 +1599,10 @@ public class EDT_Window extends javax.swing.JFrame {
         }
     }
     
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////// CLIQUE SUR LES JOURS DE LA SEMAINE ///////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
     private void semaine30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine30ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_semaine30ActionPerformed
@@ -1801,6 +1811,8 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_semaine31ActionPerformed
 
+    //////////////////////////////////// CLIQUE SUR LES JOURS DE LA SEMAINE ///////////////////////////////////
+    
     // Si on appuie sur le bouton deconnexion
     private void deconnexionLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deconnexionLabelMouseClicked
         // TODO add your handling code here:
@@ -1839,6 +1851,23 @@ public class EDT_Window extends javax.swing.JFrame {
         //InitialiseSemaine(GetSemaine.getWeek()); //On se remet a la semaine actuelle
     }//GEN-LAST:event_emploidutempsLabelMouseClicked
 
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////// TABLEAU RECAPITULATIF PERIODE ////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    //Quand on clique sur le tableau du recapitulatif de la periode
+    private void recapTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recapTableMouseClicked
+        // TODO add your handling code here:
+        
+        DefaultTableModel model = (DefaultTableModel) recapTable.getModel();
+        int index = recapTable.getSelectedRow(); //L'index sur lequel on clique
+        
+        
+    }//GEN-LAST:event_recapTableMouseClicked
+
+
+    //////////////////////////////////// FIN TABLEAU RECAPITULATIF PERIODE ////////////////////////////////////////
     
     
     /**
