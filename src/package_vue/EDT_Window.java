@@ -153,9 +153,28 @@ public class EDT_Window extends javax.swing.JFrame {
         recapTable = new javax.swing.JTable();
         topRecapPanel = new javax.swing.JPanel();
         recapPeriodeLabelTop = new javax.swing.JLabel();
-        recapPeriodeChoosePanel = new javax.swing.JPanel();
+        recapPeriodeTriPanel = new javax.swing.JPanel();
+        trierparRecapLabel = new javax.swing.JLabel();
         reportingPanel = new javax.swing.JPanel();
+        topReportingPanel1 = new javax.swing.JPanel();
+        ReportingLabelTop = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        trierparReportingLabel = new javax.swing.JLabel();
         gestionnairePanel = new javax.swing.JPanel();
+        topgestionnairePanel = new javax.swing.JPanel();
+        topGestionnaireLabel = new javax.swing.JLabel();
+        insererLabel = new javax.swing.JLabel();
+        supprimerLabel = new javax.swing.JLabel();
+        modifierLabel = new javax.swing.JLabel();
+        separatorGEDT1 = new javax.swing.JSeparator();
+        separatorGEDT2 = new javax.swing.JSeparator();
+        gestionnaireContainerPanel = new javax.swing.JPanel();
+        insererPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        supprimerPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        modifierPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Emploi du temps");
@@ -1239,7 +1258,7 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jeudiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(vendrediLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)))
+                        .addComponent(vendrediLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         edtPanelBotRightLayout.setVerticalGroup(
@@ -1291,7 +1310,7 @@ public class EDT_Window extends javax.swing.JFrame {
             edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edtPanelLayout.createSequentialGroup()
                 .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1082, Short.MAX_VALUE)
+                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
                     .addComponent(edtPanelBotRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1365,23 +1384,10 @@ public class EDT_Window extends javax.swing.JFrame {
             topRecapPanel.setBackground(new java.awt.Color(57, 17, 45));
             topRecapPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-            recapPeriodeLabelTop.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            recapPeriodeLabelTop.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
             recapPeriodeLabelTop.setForeground(new java.awt.Color(255, 255, 255));
             recapPeriodeLabelTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             recapPeriodeLabelTop.setText("Récapitulatif de la période");
-
-            recapPeriodeChoosePanel.setBackground(new java.awt.Color(57, 17, 45));
-
-            javax.swing.GroupLayout recapPeriodeChoosePanelLayout = new javax.swing.GroupLayout(recapPeriodeChoosePanel);
-            recapPeriodeChoosePanel.setLayout(recapPeriodeChoosePanelLayout);
-            recapPeriodeChoosePanelLayout.setHorizontalGroup(
-                recapPeriodeChoosePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 0, Short.MAX_VALUE)
-            );
-            recapPeriodeChoosePanelLayout.setVerticalGroup(
-                recapPeriodeChoosePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 63, Short.MAX_VALUE)
-            );
 
             javax.swing.GroupLayout topRecapPanelLayout = new javax.swing.GroupLayout(topRecapPanel);
             topRecapPanel.setLayout(topRecapPanelLayout);
@@ -1389,64 +1395,299 @@ public class EDT_Window extends javax.swing.JFrame {
                 topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(topRecapPanelLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addGroup(topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(recapPeriodeChoosePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap())
             );
             topRecapPanelLayout.setVerticalGroup(
                 topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(topRecapPanelLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(recapPeriodeChoosePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                     .addContainerGap())
+            );
+
+            recapPeriodeTriPanel.setBackground(new java.awt.Color(153, 153, 153));
+            recapPeriodeTriPanel.setForeground(new java.awt.Color(153, 153, 153));
+
+            trierparRecapLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            trierparRecapLabel.setForeground(new java.awt.Color(255, 255, 255));
+            trierparRecapLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            trierparRecapLabel.setText("Trier par : ");
+
+            javax.swing.GroupLayout recapPeriodeTriPanelLayout = new javax.swing.GroupLayout(recapPeriodeTriPanel);
+            recapPeriodeTriPanel.setLayout(recapPeriodeTriPanelLayout);
+            recapPeriodeTriPanelLayout.setHorizontalGroup(
+                recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
+                    .addComponent(trierparRecapLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+            recapPeriodeTriPanelLayout.setVerticalGroup(
+                recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(trierparRecapLabel)
+                    .addContainerGap(111, Short.MAX_VALUE))
             );
 
             javax.swing.GroupLayout recapPanelLayout = new javax.swing.GroupLayout(recapPanel);
             recapPanel.setLayout(recapPanelLayout);
             recapPanelLayout.setHorizontalGroup(
                 recapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(recapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
+                .addComponent(recapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1096, Short.MAX_VALUE)
                 .addComponent(topRecapPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recapPanelLayout.createSequentialGroup()
+                    .addComponent(recapPeriodeTriPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
             );
             recapPanelLayout.setVerticalGroup(
                 recapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recapPanelLayout.createSequentialGroup()
                     .addComponent(topRecapPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(recapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(recapPeriodeTriPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(recapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE))
             );
 
             rightCardPanel.add(recapPanel, "card3");
 
             reportingPanel.setBackground(new java.awt.Color(204, 204, 204));
 
+            topReportingPanel1.setBackground(new java.awt.Color(57, 17, 45));
+            topReportingPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+            ReportingLabelTop.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
+            ReportingLabelTop.setForeground(new java.awt.Color(255, 255, 255));
+            ReportingLabelTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            ReportingLabelTop.setText("Reporting");
+
+            javax.swing.GroupLayout topReportingPanel1Layout = new javax.swing.GroupLayout(topReportingPanel1);
+            topReportingPanel1.setLayout(topReportingPanel1Layout);
+            topReportingPanel1Layout.setHorizontalGroup(
+                topReportingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(topReportingPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(ReportingLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 1082, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+            topReportingPanel1Layout.setVerticalGroup(
+                topReportingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(topReportingPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(ReportingLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+
+            jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+            jPanel1.setForeground(new java.awt.Color(153, 153, 153));
+
+            trierparReportingLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            trierparReportingLabel.setForeground(new java.awt.Color(255, 255, 255));
+            trierparReportingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            trierparReportingLabel.setText("Trier par :");
+
+            javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+            jPanel1.setLayout(jPanel1Layout);
+            jPanel1Layout.setHorizontalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(trierparReportingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+            jPanel1Layout.setVerticalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(trierparReportingLabel)
+                    .addContainerGap(117, Short.MAX_VALUE))
+            );
+
             javax.swing.GroupLayout reportingPanelLayout = new javax.swing.GroupLayout(reportingPanel);
             reportingPanel.setLayout(reportingPanelLayout);
             reportingPanelLayout.setHorizontalGroup(
                 reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 1088, Short.MAX_VALUE)
+                .addGroup(reportingPanelLayout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+                .addGroup(reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(topReportingPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
             reportingPanelLayout.setVerticalGroup(
                 reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 888, Short.MAX_VALUE)
+                .addGroup(reportingPanelLayout.createSequentialGroup()
+                    .addGap(127, 127, 127)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(616, Short.MAX_VALUE))
+                .addGroup(reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(reportingPanelLayout.createSequentialGroup()
+                        .addComponent(topReportingPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 766, Short.MAX_VALUE)))
             );
 
             rightCardPanel.add(reportingPanel, "card4");
 
             gestionnairePanel.setBackground(new java.awt.Color(204, 204, 204));
 
+            topgestionnairePanel.setBackground(new java.awt.Color(57, 17, 45));
+
+            topGestionnaireLabel.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
+            topGestionnaireLabel.setForeground(new java.awt.Color(255, 255, 255));
+            topGestionnaireLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            topGestionnaireLabel.setText("Gestionnaire de l'Emploi Du Temps");
+
+            insererLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            insererLabel.setForeground(new java.awt.Color(255, 255, 255));
+            insererLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            insererLabel.setText("Insérer");
+            insererLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            supprimerLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            supprimerLabel.setForeground(new java.awt.Color(153, 153, 153));
+            supprimerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            supprimerLabel.setText("Supprimer");
+            supprimerLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            modifierLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            modifierLabel.setForeground(new java.awt.Color(153, 153, 153));
+            modifierLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            modifierLabel.setText("Modifier");
+            modifierLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            separatorGEDT1.setBackground(new java.awt.Color(255, 255, 255));
+            separatorGEDT1.setForeground(new java.awt.Color(255, 255, 255));
+            separatorGEDT1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+            separatorGEDT2.setBackground(new java.awt.Color(255, 255, 255));
+            separatorGEDT2.setForeground(new java.awt.Color(255, 255, 255));
+            separatorGEDT2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+            javax.swing.GroupLayout topgestionnairePanelLayout = new javax.swing.GroupLayout(topgestionnairePanel);
+            topgestionnairePanel.setLayout(topgestionnairePanelLayout);
+            topgestionnairePanelLayout.setHorizontalGroup(
+                topgestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(topGestionnaireLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(topgestionnairePanelLayout.createSequentialGroup()
+                    .addComponent(insererLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(separatorGEDT1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(supprimerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(separatorGEDT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(modifierLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+            );
+            topgestionnairePanelLayout.setVerticalGroup(
+                topgestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(topgestionnairePanelLayout.createSequentialGroup()
+                    .addComponent(topGestionnaireLabel)
+                    .addGroup(topgestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(topgestionnairePanelLayout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(topgestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(insererLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(supprimerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(modifierLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(topgestionnairePanelLayout.createSequentialGroup()
+                                    .addGap(11, 11, 11)
+                                    .addComponent(separatorGEDT1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap())))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topgestionnairePanelLayout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(separatorGEDT2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())))
+            );
+
+            gestionnaireContainerPanel.setBackground(new java.awt.Color(153, 153, 153));
+            gestionnaireContainerPanel.setForeground(new java.awt.Color(153, 153, 153));
+            gestionnaireContainerPanel.setLayout(new java.awt.CardLayout());
+
+            insererPanel.setBackground(new java.awt.Color(153, 153, 153));
+            insererPanel.setForeground(new java.awt.Color(153, 153, 153));
+
+            jLabel1.setText("Inserer Test");
+
+            javax.swing.GroupLayout insererPanelLayout = new javax.swing.GroupLayout(insererPanel);
+            insererPanel.setLayout(insererPanelLayout);
+            insererPanelLayout.setHorizontalGroup(
+                insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(insererPanelLayout.createSequentialGroup()
+                    .addGap(261, 261, 261)
+                    .addComponent(jLabel1)
+                    .addContainerGap(766, Short.MAX_VALUE))
+            );
+            insererPanelLayout.setVerticalGroup(
+                insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(insererPanelLayout.createSequentialGroup()
+                    .addGap(108, 108, 108)
+                    .addComponent(jLabel1)
+                    .addContainerGap(636, Short.MAX_VALUE))
+            );
+
+            gestionnaireContainerPanel.add(insererPanel, "card2");
+
+            supprimerPanel.setBackground(new java.awt.Color(153, 153, 153));
+            supprimerPanel.setForeground(new java.awt.Color(153, 153, 153));
+
+            jLabel2.setText("Supprimer test");
+
+            javax.swing.GroupLayout supprimerPanelLayout = new javax.swing.GroupLayout(supprimerPanel);
+            supprimerPanel.setLayout(supprimerPanelLayout);
+            supprimerPanelLayout.setHorizontalGroup(
+                supprimerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(supprimerPanelLayout.createSequentialGroup()
+                    .addGap(401, 401, 401)
+                    .addComponent(jLabel2)
+                    .addContainerGap(610, Short.MAX_VALUE))
+            );
+            supprimerPanelLayout.setVerticalGroup(
+                supprimerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(supprimerPanelLayout.createSequentialGroup()
+                    .addGap(74, 74, 74)
+                    .addComponent(jLabel2)
+                    .addContainerGap(670, Short.MAX_VALUE))
+            );
+
+            gestionnaireContainerPanel.add(supprimerPanel, "card3");
+
+            modifierPanel.setBackground(new java.awt.Color(153, 153, 153));
+            modifierPanel.setForeground(new java.awt.Color(153, 153, 153));
+
+            jLabel3.setText("Modifier test");
+
+            javax.swing.GroupLayout modifierPanelLayout = new javax.swing.GroupLayout(modifierPanel);
+            modifierPanel.setLayout(modifierPanelLayout);
+            modifierPanelLayout.setHorizontalGroup(
+                modifierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(modifierPanelLayout.createSequentialGroup()
+                    .addGap(379, 379, 379)
+                    .addComponent(jLabel3)
+                    .addContainerGap(646, Short.MAX_VALUE))
+            );
+            modifierPanelLayout.setVerticalGroup(
+                modifierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(modifierPanelLayout.createSequentialGroup()
+                    .addGap(137, 137, 137)
+                    .addComponent(jLabel3)
+                    .addContainerGap(607, Short.MAX_VALUE))
+            );
+
+            gestionnaireContainerPanel.add(modifierPanel, "card4");
+
             javax.swing.GroupLayout gestionnairePanelLayout = new javax.swing.GroupLayout(gestionnairePanel);
             gestionnairePanel.setLayout(gestionnairePanelLayout);
             gestionnairePanelLayout.setHorizontalGroup(
                 gestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 1088, Short.MAX_VALUE)
+                .addComponent(topgestionnairePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(gestionnaireContainerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             );
             gestionnairePanelLayout.setVerticalGroup(
                 gestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 888, Short.MAX_VALUE)
+                .addGroup(gestionnairePanelLayout.createSequentialGroup()
+                    .addComponent(topgestionnairePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(gestionnaireContainerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
 
             rightCardPanel.add(gestionnairePanel, "card5");
@@ -1458,7 +1699,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(firstBackgroundPanelLayout.createSequentialGroup()
                     .addComponent(leftGreenPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(rightCardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(rightCardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1096, Short.MAX_VALUE)
                     .addContainerGap())
             );
             firstBackgroundPanelLayout.setVerticalGroup(
@@ -1988,6 +2229,7 @@ public class EDT_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ReportingLabelTop;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel deconnexionLabel;
@@ -2002,11 +2244,18 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel edtPanelBotRight;
     private javax.swing.JLabel emploidutempsLabel;
     private javax.swing.JPanel firstBackgroundPanel;
+    private javax.swing.JPanel gestionnaireContainerPanel;
     private javax.swing.JLabel gestionnaireLabel;
     private javax.swing.JPanel gestionnairePanel;
     private javax.swing.JLabel heureLabel;
     private javax.swing.JLabel huitLabel;
     private javax.swing.JLabel iconEce;
+    private javax.swing.JLabel insererLabel;
+    private javax.swing.JPanel insererPanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -2020,6 +2269,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel mardiLabel;
     private javax.swing.JPanel mercrediDisplayPanel;
     private javax.swing.JLabel mercrediLabel;
+    private javax.swing.JLabel modifierLabel;
+    private javax.swing.JPanel modifierPanel;
     private javax.swing.JLabel nameUserLabel;
     private javax.swing.JLabel neufLabel;
     private javax.swing.JLabel onzeLabel;
@@ -2027,8 +2278,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel quatorzeLabel;
     private javax.swing.JLabel quinzeLabel;
     private javax.swing.JPanel recapPanel;
-    private javax.swing.JPanel recapPeriodeChoosePanel;
     private javax.swing.JLabel recapPeriodeLabelTop;
+    private javax.swing.JPanel recapPeriodeTriPanel;
     private javax.swing.JScrollPane recapScrollPane;
     private javax.swing.JTable recapTable;
     private javax.swing.JLabel recapitulatifLabel;
@@ -2089,9 +2340,18 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JToggleButton semaine8;
     private javax.swing.JToggleButton semaine9;
     private javax.swing.JPanel semainePickerPanel;
+    private javax.swing.JSeparator separatorGEDT1;
+    private javax.swing.JSeparator separatorGEDT2;
+    private javax.swing.JLabel supprimerLabel;
+    private javax.swing.JPanel supprimerPanel;
     private javax.swing.JLabel tdLabel;
+    private javax.swing.JLabel topGestionnaireLabel;
     private javax.swing.JPanel topRecapPanel;
+    private javax.swing.JPanel topReportingPanel1;
+    private javax.swing.JPanel topgestionnairePanel;
     private javax.swing.JLabel treizeLabel;
+    private javax.swing.JLabel trierparRecapLabel;
+    private javax.swing.JLabel trierparReportingLabel;
     private javax.swing.JLabel vendrediLabel;
     private javax.swing.JLabel vingtLabel;
     private javax.swing.JLabel welcomeLabel;
