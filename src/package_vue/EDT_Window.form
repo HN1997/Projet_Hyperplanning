@@ -52,7 +52,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <Component id="leftGreenPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="rightCardPanel" pref="1096" max="32767" attributes="0"/>
+                  <Component id="rightCardPanel" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -2521,6 +2521,9 @@
                           <Color id="Curseur en forme de main"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="insererLabelMouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="supprimerLabel">
                       <Properties>
@@ -2536,6 +2539,9 @@
                           <Color id="Curseur en forme de main"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="supprimerLabelMouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="modifierLabel">
                       <Properties>
@@ -2551,6 +2557,9 @@
                           <Color id="Curseur en forme de main"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="modifierLabelMouseClicked"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JSeparator" name="separatorGEDT1">
                       <Properties>
