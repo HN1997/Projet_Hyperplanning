@@ -29,6 +29,12 @@ public class EDT_Window extends javax.swing.JFrame {
     private boolean reportingSelected = false;
     // Fin
     
+    // Variables pour savoir quelle categorie du gestionnaire de l'edt est ouverte
+    private boolean insererBool = true;
+    private boolean supprimerBool = false;
+    private boolean modifierBool = false;
+    // Fin
+    
     
     /**
      * Creates new form EDT_Window
@@ -1541,18 +1547,33 @@ public class EDT_Window extends javax.swing.JFrame {
             insererLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             insererLabel.setText("Insérer");
             insererLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            insererLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    insererLabelMouseClicked(evt);
+                }
+            });
 
             supprimerLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
             supprimerLabel.setForeground(new java.awt.Color(153, 153, 153));
             supprimerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             supprimerLabel.setText("Supprimer");
             supprimerLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            supprimerLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    supprimerLabelMouseClicked(evt);
+                }
+            });
 
             modifierLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
             modifierLabel.setForeground(new java.awt.Color(153, 153, 153));
             modifierLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
             modifierLabel.setText("Modifier");
             modifierLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            modifierLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    modifierLabelMouseClicked(evt);
+                }
+            });
 
             separatorGEDT1.setBackground(new java.awt.Color(255, 255, 255));
             separatorGEDT1.setForeground(new java.awt.Color(255, 255, 255));
@@ -1699,7 +1720,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(firstBackgroundPanelLayout.createSequentialGroup()
                     .addComponent(leftGreenPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(rightCardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1096, Short.MAX_VALUE)
+                    .addComponent(rightCardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap())
             );
             firstBackgroundPanelLayout.setVerticalGroup(
@@ -1725,6 +1746,11 @@ public class EDT_Window extends javax.swing.JFrame {
             pack();
         }// </editor-fold>//GEN-END:initComponents
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////// ACTIVATION/DESACTIVATION DES PANELS //////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    //Pour les 4 catégories a gauche
     public void clickItemMenu(JPanel active, boolean panel, JLabel labelSelected) //Quand on appuie a gauche sur un menu, on desactive tous les panels, on réactive celui passé en parametre et on change la couleur de tous les textes a gauche du menu
     {
         //Desactive tous les panels
@@ -1754,6 +1780,35 @@ public class EDT_Window extends javax.swing.JFrame {
         panel = true;
         labelSelected.setForeground(new java.awt.Color(255, 255, 255));
     }
+    
+    public void clickItemGestionnaire(JPanel active, boolean panel, JLabel labelSelected)
+    {
+        //Desactive tous les panels
+        insererPanel.setVisible(false);
+        insererPanel.setEnabled(false);
+        insererBool = false;
+        insererLabel.setForeground(new java.awt.Color(153, 153, 153));
+        
+        supprimerPanel.setVisible(false);
+        supprimerPanel.setEnabled(false);
+        supprimerBool = false;
+        supprimerLabel.setForeground(new java.awt.Color(153, 153, 153));
+        
+        modifierPanel.setVisible(false);
+        modifierPanel.setEnabled(false);
+        modifierBool = false;
+        modifierLabel.setForeground(new java.awt.Color(153, 153, 153));
+        
+        //Active le panel sur lequel on clique
+        active.setVisible(true);
+        active.setEnabled(true);
+        panel = true;
+        labelSelected.setForeground(new java.awt.Color(255, 255, 255));
+    }
+    
+    //Pour le menu Reporting
+    
+    //////////////////////////////////// FIN ACTIVATION/DESACTIVATION DES PANELS //////////////////////////////////
     
     //Fonction pour pré-selectionner la semaine a l'ouverture de l'application
     public void InitialiseSemaine(int semaineActuelle) 
@@ -2187,8 +2242,32 @@ public class EDT_Window extends javax.swing.JFrame {
         
     }//GEN-LAST:event_recapTableMouseClicked
 
-
     //////////////////////////////////// FIN TABLEAU RECAPITULATIF PERIODE ////////////////////////////////////////
+    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////// LES 3 BOUTONS INSERER SUPPRIMER MODIFIER /////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    private void insererLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insererLabelMouseClicked
+        // TODO add your handling code here:
+        clickItemGestionnaire(insererPanel, insererBool, insererLabel);
+    }//GEN-LAST:event_insererLabelMouseClicked
+
+    private void supprimerLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supprimerLabelMouseClicked
+        // TODO add your handling code here:
+        clickItemGestionnaire(supprimerPanel, supprimerBool, supprimerLabel);
+    }//GEN-LAST:event_supprimerLabelMouseClicked
+
+    private void modifierLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifierLabelMouseClicked
+        // TODO add your handling code here:
+        clickItemGestionnaire(modifierPanel, modifierBool, modifierLabel);
+    }//GEN-LAST:event_modifierLabelMouseClicked
+
+
+    //////////////////////////////////// FIN - LES 3 BOUTONS INSERER SUPPRIMER MODIFIER ////////////////////////
     
     
     /**
