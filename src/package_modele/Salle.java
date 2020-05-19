@@ -1,18 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package package_modele;
+import java.util.*;
 
-/**
- *
- * @author ShadowZeus
- */
+
 public class Salle {
     protected int id;
     protected String Nom;
     protected int Capacite;
+    private Set<Site> ListSite = new HashSet<>();
     
     public Salle(int id, String Nom,int Capacite)
     {
@@ -56,5 +50,27 @@ public class Salle {
     public void setCapacite(int Capacite)
     {
         this.Capacite = Capacite;
+    }
+    
+        public Set<Site> getListSite() 
+    {
+        return ListSite;
+    }
+
+    public void setListSite(Set<Site> ListSite) 
+    {
+        this.ListSite = ListSite;
+    }
+
+  //Ajoute une salle à un site
+    public void addSite(Site site)
+    {
+        this.ListSite.add(site);
+    }
+
+  //Retire une salle à un site
+    public void removeSite(Site site)
+    {
+        this.ListSite.remove(site);
     }
 }

@@ -1,17 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package package_modele;
+import java.util.*;
 
-/**
- *
- * @author ShadowZeus
- */
+
 public class Groupe {
     protected int id;
     protected String Nom;
+    
+    private Set<Promotion> ListPromotion = new HashSet<>();
     
     public Groupe(int id, String Nom)
     {
@@ -43,5 +38,23 @@ public class Groupe {
     public void setNom(String Nom)
     {
         this.Nom = Nom;
+    }
+    
+    public Set<Promotion> getListPromotion() {
+        return ListPromotion;
+    }
+
+    public void setListPromotion(Set<Promotion> ListPromotion) {
+        this.ListPromotion = ListPromotion;
+    }
+
+    //Ajoute une salle à un promotion
+    public void addPromotion(Promotion promotion) {
+        this.ListPromotion.add(promotion);
+    }
+
+    //Retire une salle à un promotion
+    public void removePromotion(Promotion promotion) {
+        this.ListPromotion.remove(promotion);
     }
 }
