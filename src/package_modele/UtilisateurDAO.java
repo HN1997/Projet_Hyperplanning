@@ -23,18 +23,18 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
   }
    
   @Override
-  public Utilisateur find(int id) {
+  public Utilisateur find(String Email, String Password ) {
     Utilisateur utilisateur = new Utilisateur();      
       
     try {
       ResultSet result = this.connect.createStatement(
         ResultSet.TYPE_SCROLL_INSENSITIVE,
-        ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM utilisateur WHERE ID_Utilisateur = " + id);
+        ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM utilisateur WHERE Email='" + Email + "' and Passwd='" + Password + "'");
       if(result.first())
         utilisateur = new Utilisateur(
-          id,
-          result.getString("Email"),
-          result.getString("Passwd"),
+          Email,
+          Password,      
+          result.getInt("id"),
           result.getString("Nom"),
           result.getString("Prenom"),
           result.getInt("Droit"
@@ -43,5 +43,10 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
     }
     return utilisateur;
   }
+
+    @Override
+    public Utilisateur find(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 
