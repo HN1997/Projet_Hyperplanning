@@ -36,6 +36,15 @@ public class ConnexionSQL
         }
     }
     
+    private static Connection connc;
+    
+    public static Connection getInstance() throws SQLException {
+        if (connc == null) {
+            connc = DriverManager.getConnection("jdbc:mysql://localhost/planning", "root", "");
+        }
+        return connc;
+    }
+    
     //Lance une requete savoir si email et mot de passe se trouve bien dans notre bdd, renvoie vrai si c'est le cas
     public boolean CheckConnection(String email, String password)
     {
