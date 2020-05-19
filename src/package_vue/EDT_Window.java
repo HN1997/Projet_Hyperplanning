@@ -5,9 +5,15 @@
  */
 package package_vue;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JToggleButton;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import package_controleur.DateTimeManager;
 
 /**
@@ -23,7 +29,11 @@ public class EDT_Window extends javax.swing.JFrame {
     private boolean reportingSelected = false;
     // Fin
     
-    
+    // Variables pour savoir quelle categorie du gestionnaire de l'edt est ouverte
+    private boolean insererBool = true;
+    private boolean supprimerBool = false;
+    private boolean modifierBool = false;
+    // Fin
     
     
     /**
@@ -147,8 +157,30 @@ public class EDT_Window extends javax.swing.JFrame {
         recapPanel = new javax.swing.JPanel();
         recapScrollPane = new javax.swing.JScrollPane();
         recapTable = new javax.swing.JTable();
+        topRecapPanel = new javax.swing.JPanel();
+        recapPeriodeLabelTop = new javax.swing.JLabel();
+        recapPeriodeTriPanel = new javax.swing.JPanel();
+        trierparRecapLabel = new javax.swing.JLabel();
         reportingPanel = new javax.swing.JPanel();
+        topReportingPanel1 = new javax.swing.JPanel();
+        ReportingLabelTop = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        trierparReportingLabel = new javax.swing.JLabel();
         gestionnairePanel = new javax.swing.JPanel();
+        topgestionnairePanel = new javax.swing.JPanel();
+        topGestionnaireLabel = new javax.swing.JLabel();
+        insererLabel = new javax.swing.JLabel();
+        supprimerLabel = new javax.swing.JLabel();
+        modifierLabel = new javax.swing.JLabel();
+        separatorGEDT1 = new javax.swing.JSeparator();
+        separatorGEDT2 = new javax.swing.JSeparator();
+        gestionnaireContainerPanel = new javax.swing.JPanel();
+        insererPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        supprimerPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        modifierPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Emploi du temps");
@@ -329,7 +361,7 @@ public class EDT_Window extends javax.swing.JFrame {
         semainePickerPanel.setBackground(new java.awt.Color(0, 113, 121));
         semainePickerPanel.setLayout(new java.awt.GridLayout(3, 53));
 
-        semaine31.setBackground(new java.awt.Color(0, 0, 0));
+        semaine31.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine31);
         semaine31.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine31.setForeground(new java.awt.Color(255, 255, 255));
@@ -342,7 +374,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine31);
 
-        semaine32.setBackground(new java.awt.Color(0, 0, 0));
+        semaine32.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine32);
         semaine32.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine32.setForeground(new java.awt.Color(255, 255, 255));
@@ -355,7 +387,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine32);
 
-        semaine33.setBackground(new java.awt.Color(0, 0, 0));
+        semaine33.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine33);
         semaine33.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine33.setForeground(new java.awt.Color(255, 255, 255));
@@ -368,7 +400,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine33);
 
-        semaine34.setBackground(new java.awt.Color(0, 0, 0));
+        semaine34.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine34);
         semaine34.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine34.setForeground(new java.awt.Color(255, 255, 255));
@@ -381,7 +413,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine34);
 
-        semaine35.setBackground(new java.awt.Color(0, 0, 0));
+        semaine35.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine35);
         semaine35.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine35.setForeground(new java.awt.Color(255, 255, 255));
@@ -394,7 +426,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine35);
 
-        semaine36.setBackground(new java.awt.Color(0, 0, 0));
+        semaine36.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine36);
         semaine36.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine36.setForeground(new java.awt.Color(255, 255, 255));
@@ -407,7 +439,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine36);
 
-        semaine37.setBackground(new java.awt.Color(0, 0, 0));
+        semaine37.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine37);
         semaine37.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine37.setForeground(new java.awt.Color(255, 255, 255));
@@ -420,7 +452,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine37);
 
-        semaine38.setBackground(new java.awt.Color(0, 0, 0));
+        semaine38.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine38);
         semaine38.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine38.setForeground(new java.awt.Color(255, 255, 255));
@@ -433,7 +465,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine38);
 
-        semaine39.setBackground(new java.awt.Color(0, 0, 0));
+        semaine39.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine39);
         semaine39.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine39.setForeground(new java.awt.Color(255, 255, 255));
@@ -446,7 +478,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine39);
 
-        semaine40.setBackground(new java.awt.Color(0, 0, 0));
+        semaine40.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine40);
         semaine40.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine40.setForeground(new java.awt.Color(255, 255, 255));
@@ -459,7 +491,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine40);
 
-        semaine41.setBackground(new java.awt.Color(0, 0, 0));
+        semaine41.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine41);
         semaine41.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine41.setForeground(new java.awt.Color(255, 255, 255));
@@ -472,7 +504,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine41);
 
-        semaine42.setBackground(new java.awt.Color(0, 0, 0));
+        semaine42.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine42);
         semaine42.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine42.setForeground(new java.awt.Color(255, 255, 255));
@@ -485,7 +517,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine42);
 
-        semaine43.setBackground(new java.awt.Color(0, 0, 0));
+        semaine43.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine43);
         semaine43.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine43.setForeground(new java.awt.Color(255, 255, 255));
@@ -498,7 +530,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine43);
 
-        semaine44.setBackground(new java.awt.Color(0, 0, 0));
+        semaine44.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine44);
         semaine44.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine44.setForeground(new java.awt.Color(255, 255, 255));
@@ -511,7 +543,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine44);
 
-        semaine45.setBackground(new java.awt.Color(0, 0, 0));
+        semaine45.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine45);
         semaine45.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine45.setForeground(new java.awt.Color(255, 255, 255));
@@ -524,7 +556,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine45);
 
-        semaine46.setBackground(new java.awt.Color(0, 0, 0));
+        semaine46.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine46);
         semaine46.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine46.setForeground(new java.awt.Color(255, 255, 255));
@@ -537,7 +569,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine46);
 
-        semaine47.setBackground(new java.awt.Color(0, 0, 0));
+        semaine47.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine47);
         semaine47.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine47.setForeground(new java.awt.Color(255, 255, 255));
@@ -550,7 +582,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine47);
 
-        semaine48.setBackground(new java.awt.Color(0, 0, 0));
+        semaine48.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine48);
         semaine48.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine48.setForeground(new java.awt.Color(255, 255, 255));
@@ -563,7 +595,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine48);
 
-        semaine49.setBackground(new java.awt.Color(0, 0, 0));
+        semaine49.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine49);
         semaine49.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine49.setForeground(new java.awt.Color(255, 255, 255));
@@ -576,7 +608,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine49);
 
-        semaine50.setBackground(new java.awt.Color(0, 0, 0));
+        semaine50.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine50);
         semaine50.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine50.setForeground(new java.awt.Color(255, 255, 255));
@@ -589,7 +621,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine50);
 
-        semaine51.setBackground(new java.awt.Color(0, 0, 0));
+        semaine51.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine51);
         semaine51.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine51.setForeground(new java.awt.Color(255, 255, 255));
@@ -602,7 +634,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine51);
 
-        semaine52.setBackground(new java.awt.Color(0, 0, 0));
+        semaine52.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine52);
         semaine52.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine52.setForeground(new java.awt.Color(255, 255, 255));
@@ -615,7 +647,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine52);
 
-        semaine1.setBackground(new java.awt.Color(0, 0, 0));
+        semaine1.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine1);
         semaine1.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine1.setForeground(new java.awt.Color(255, 255, 255));
@@ -628,7 +660,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine1);
 
-        semaine2.setBackground(new java.awt.Color(0, 0, 0));
+        semaine2.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine2);
         semaine2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine2.setForeground(new java.awt.Color(255, 255, 255));
@@ -641,7 +673,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine2);
 
-        semaine3.setBackground(new java.awt.Color(0, 0, 0));
+        semaine3.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine3);
         semaine3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine3.setForeground(new java.awt.Color(255, 255, 255));
@@ -654,7 +686,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine3);
 
-        semaine4.setBackground(new java.awt.Color(0, 0, 0));
+        semaine4.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine4);
         semaine4.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine4.setForeground(new java.awt.Color(255, 255, 255));
@@ -667,7 +699,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine4);
 
-        semaine5.setBackground(new java.awt.Color(0, 0, 0));
+        semaine5.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine5);
         semaine5.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine5.setForeground(new java.awt.Color(255, 255, 255));
@@ -680,7 +712,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine5);
 
-        semaine6.setBackground(new java.awt.Color(0, 0, 0));
+        semaine6.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine6);
         semaine6.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine6.setForeground(new java.awt.Color(255, 255, 255));
@@ -693,7 +725,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine6);
 
-        semaine7.setBackground(new java.awt.Color(0, 0, 0));
+        semaine7.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine7);
         semaine7.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine7.setForeground(new java.awt.Color(255, 255, 255));
@@ -706,7 +738,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine7);
 
-        semaine8.setBackground(new java.awt.Color(0, 0, 0));
+        semaine8.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine8);
         semaine8.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine8.setForeground(new java.awt.Color(255, 255, 255));
@@ -719,7 +751,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine8);
 
-        semaine9.setBackground(new java.awt.Color(0, 0, 0));
+        semaine9.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine9);
         semaine9.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine9.setForeground(new java.awt.Color(255, 255, 255));
@@ -732,7 +764,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine9);
 
-        semaine10.setBackground(new java.awt.Color(0, 0, 0));
+        semaine10.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine10);
         semaine10.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine10.setForeground(new java.awt.Color(255, 255, 255));
@@ -745,7 +777,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine10);
 
-        semaine11.setBackground(new java.awt.Color(0, 0, 0));
+        semaine11.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine11);
         semaine11.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine11.setForeground(new java.awt.Color(255, 255, 255));
@@ -758,7 +790,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine11);
 
-        semaine12.setBackground(new java.awt.Color(0, 0, 0));
+        semaine12.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine12);
         semaine12.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine12.setForeground(new java.awt.Color(255, 255, 255));
@@ -771,7 +803,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine12);
 
-        semaine13.setBackground(new java.awt.Color(0, 0, 0));
+        semaine13.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine13);
         semaine13.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine13.setForeground(new java.awt.Color(255, 255, 255));
@@ -784,7 +816,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine13);
 
-        semaine14.setBackground(new java.awt.Color(0, 0, 0));
+        semaine14.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine14);
         semaine14.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine14.setForeground(new java.awt.Color(255, 255, 255));
@@ -797,7 +829,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine14);
 
-        semaine15.setBackground(new java.awt.Color(0, 0, 0));
+        semaine15.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine15);
         semaine15.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine15.setForeground(new java.awt.Color(255, 255, 255));
@@ -810,7 +842,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine15);
 
-        semaine16.setBackground(new java.awt.Color(0, 0, 0));
+        semaine16.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine16);
         semaine16.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine16.setForeground(new java.awt.Color(255, 255, 255));
@@ -823,7 +855,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine16);
 
-        semaine17.setBackground(new java.awt.Color(0, 0, 0));
+        semaine17.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine17);
         semaine17.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine17.setForeground(new java.awt.Color(255, 255, 255));
@@ -836,7 +868,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine17);
 
-        semaine18.setBackground(new java.awt.Color(0, 0, 0));
+        semaine18.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine18);
         semaine18.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine18.setForeground(new java.awt.Color(255, 255, 255));
@@ -849,7 +881,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine18);
 
-        semaine19.setBackground(new java.awt.Color(0, 0, 0));
+        semaine19.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine19);
         semaine19.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine19.setForeground(new java.awt.Color(255, 255, 255));
@@ -862,7 +894,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine19);
 
-        semaine20.setBackground(new java.awt.Color(0, 0, 0));
+        semaine20.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine20);
         semaine20.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine20.setForeground(new java.awt.Color(255, 255, 255));
@@ -875,7 +907,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine20);
 
-        semaine21.setBackground(new java.awt.Color(0, 0, 0));
+        semaine21.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine21);
         semaine21.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine21.setForeground(new java.awt.Color(255, 255, 255));
@@ -888,7 +920,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine21);
 
-        semaine22.setBackground(new java.awt.Color(0, 0, 0));
+        semaine22.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine22);
         semaine22.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine22.setForeground(new java.awt.Color(255, 255, 255));
@@ -901,7 +933,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine22);
 
-        semaine23.setBackground(new java.awt.Color(0, 0, 0));
+        semaine23.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine23);
         semaine23.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine23.setForeground(new java.awt.Color(255, 255, 255));
@@ -914,7 +946,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine23);
 
-        semaine24.setBackground(new java.awt.Color(0, 0, 0));
+        semaine24.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine24);
         semaine24.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine24.setForeground(new java.awt.Color(255, 255, 255));
@@ -927,7 +959,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine24);
 
-        semaine25.setBackground(new java.awt.Color(0, 0, 0));
+        semaine25.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine25);
         semaine25.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine25.setForeground(new java.awt.Color(255, 255, 255));
@@ -940,7 +972,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine25);
 
-        semaine26.setBackground(new java.awt.Color(0, 0, 0));
+        semaine26.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine26);
         semaine26.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine26.setForeground(new java.awt.Color(255, 255, 255));
@@ -953,7 +985,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine26);
 
-        semaine27.setBackground(new java.awt.Color(0, 0, 0));
+        semaine27.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine27);
         semaine27.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine27.setForeground(new java.awt.Color(255, 255, 255));
@@ -966,7 +998,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine27);
 
-        semaine28.setBackground(new java.awt.Color(0, 0, 0));
+        semaine28.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine28);
         semaine28.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine28.setForeground(new java.awt.Color(255, 255, 255));
@@ -979,7 +1011,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine28);
 
-        semaine29.setBackground(new java.awt.Color(0, 0, 0));
+        semaine29.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine29);
         semaine29.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine29.setForeground(new java.awt.Color(255, 255, 255));
@@ -992,7 +1024,7 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine29);
 
-        semaine30.setBackground(new java.awt.Color(0, 0, 0));
+        semaine30.setBackground(new java.awt.Color(57, 14, 35));
         buttonGroup1.add(semaine30);
         semaine30.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine30.setForeground(new java.awt.Color(255, 255, 255));
@@ -1099,92 +1131,105 @@ public class EDT_Window extends javax.swing.JFrame {
         );
 
         lundiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        lundiLabel.setForeground(new java.awt.Color(255, 255, 255));
+        lundiLabel.setForeground(new java.awt.Color(61, 43, 31));
         lundiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lundiLabel.setText("Lundi 2 mai");
 
         mardiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        mardiLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mardiLabel.setForeground(new java.awt.Color(61, 43, 31));
         mardiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mardiLabel.setText("Mardi 3 mai");
 
         mercrediLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        mercrediLabel.setForeground(new java.awt.Color(255, 255, 255));
+        mercrediLabel.setForeground(new java.awt.Color(61, 43, 31));
         mercrediLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mercrediLabel.setText("Mercredi 4 mai");
 
         jeudiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        jeudiLabel.setForeground(new java.awt.Color(255, 255, 255));
+        jeudiLabel.setForeground(new java.awt.Color(61, 43, 31));
         jeudiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jeudiLabel.setText("Jeudi 5 mai");
 
         vendrediLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        vendrediLabel.setForeground(new java.awt.Color(255, 255, 255));
+        vendrediLabel.setForeground(new java.awt.Color(61, 43, 31));
         vendrediLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vendrediLabel.setText("Vendredi 6 mai");
 
+        huitLabel.setBackground(new java.awt.Color(61, 43, 31));
         huitLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        huitLabel.setForeground(new java.awt.Color(51, 51, 51));
+        huitLabel.setForeground(new java.awt.Color(61, 43, 31));
         huitLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         huitLabel.setText("8:30");
 
+        neufLabel.setBackground(new java.awt.Color(61, 43, 31));
         neufLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        neufLabel.setForeground(new java.awt.Color(51, 51, 51));
+        neufLabel.setForeground(new java.awt.Color(61, 43, 31));
         neufLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         neufLabel.setText("9:30");
 
+        dixLabel.setBackground(new java.awt.Color(61, 43, 31));
         dixLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        dixLabel.setForeground(new java.awt.Color(51, 51, 51));
+        dixLabel.setForeground(new java.awt.Color(61, 43, 31));
         dixLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dixLabel.setText("10:30");
 
+        onzeLabel.setBackground(new java.awt.Color(61, 43, 31));
         onzeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        onzeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        onzeLabel.setForeground(new java.awt.Color(61, 43, 31));
         onzeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         onzeLabel.setText("11:30");
 
+        douzeLabel.setBackground(new java.awt.Color(61, 43, 31));
         douzeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        douzeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        douzeLabel.setForeground(new java.awt.Color(61, 43, 31));
         douzeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         douzeLabel.setText("12:30");
 
+        treizeLabel.setBackground(new java.awt.Color(61, 43, 31));
         treizeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        treizeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        treizeLabel.setForeground(new java.awt.Color(61, 43, 31));
         treizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         treizeLabel.setText("13:30");
 
+        quatorzeLabel.setBackground(new java.awt.Color(61, 43, 31));
         quatorzeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        quatorzeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        quatorzeLabel.setForeground(new java.awt.Color(61, 43, 31));
         quatorzeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         quatorzeLabel.setText("14:30");
 
+        quinzeLabel.setBackground(new java.awt.Color(61, 43, 31));
         quinzeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        quinzeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        quinzeLabel.setForeground(new java.awt.Color(61, 43, 31));
         quinzeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         quinzeLabel.setText("15:30");
 
+        seizeLabel.setBackground(new java.awt.Color(61, 43, 31));
         seizeLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        seizeLabel.setForeground(new java.awt.Color(51, 51, 51));
+        seizeLabel.setForeground(new java.awt.Color(61, 43, 31));
         seizeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         seizeLabel.setText("16:30");
 
+        dixseptLabel.setBackground(new java.awt.Color(61, 43, 31));
         dixseptLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        dixseptLabel.setForeground(new java.awt.Color(51, 51, 51));
+        dixseptLabel.setForeground(new java.awt.Color(61, 43, 31));
         dixseptLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dixseptLabel.setText("17:30");
 
+        dixhuitLabel.setBackground(new java.awt.Color(61, 43, 31));
         dixhuitLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        dixhuitLabel.setForeground(new java.awt.Color(51, 51, 51));
+        dixhuitLabel.setForeground(new java.awt.Color(61, 43, 31));
         dixhuitLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dixhuitLabel.setText("18:30");
 
+        dixneufLabel.setBackground(new java.awt.Color(61, 43, 31));
         dixneufLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        dixneufLabel.setForeground(new java.awt.Color(51, 51, 51));
+        dixneufLabel.setForeground(new java.awt.Color(61, 43, 31));
         dixneufLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dixneufLabel.setText("19:30");
 
+        vingtLabel.setBackground(new java.awt.Color(61, 43, 31));
         vingtLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        vingtLabel.setForeground(new java.awt.Color(51, 51, 51));
+        vingtLabel.setForeground(new java.awt.Color(61, 43, 31));
         vingtLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vingtLabel.setText("20:30");
 
@@ -1219,7 +1264,7 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jeudiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(vendrediLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)))
+                        .addComponent(vendrediLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 204, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         edtPanelBotRightLayout.setVerticalGroup(
@@ -1271,7 +1316,7 @@ public class EDT_Window extends javax.swing.JFrame {
             edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edtPanelLayout.createSequentialGroup()
                 .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1082, Short.MAX_VALUE)
+                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
                     .addComponent(edtPanelBotRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1289,7 +1334,7 @@ public class EDT_Window extends javax.swing.JFrame {
         recapPanel.setBackground(new java.awt.Color(204, 204, 204));
 
         recapTable.setAutoCreateRowSorter(true);
-        recapTable.setBackground(new java.awt.Color(0, 113, 121));
+        recapTable.setBackground(new java.awt.Color(0, 188, 197));
         recapTable.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         recapTable.setForeground(new java.awt.Color(255, 255, 255));
         recapTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -1310,93 +1355,402 @@ public class EDT_Window extends javax.swing.JFrame {
             }
         ));
         recapTable.setAutoscrolls(false);
+        recapTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         recapTable.setFocusable(false);
         recapTable.setIntercellSpacing(new java.awt.Dimension(0, 0));
         recapTable.setRowHeight(25);
+        recapTable.setRowSelectionAllowed(false);
         recapTable.setSelectionBackground(new java.awt.Color(0, 153, 153));
         recapTable.setShowHorizontalLines(false);
-        recapTable.getTableHeader().setReorderingAllowed(false);
-        recapTable.setVerifyInputWhenFocusTarget(false);
-        recapScrollPane.setViewportView(recapTable);
+        //Mon Code En Plus
+        DefaultTableCellRenderer renderer = (DefaultTableCellRenderer) recapTable.getTableHeader().getDefaultRenderer();
+        renderer.setHorizontalAlignment(0);
+        recapTable.setDefaultRenderer(Object.class, new DefaultTableCellRenderer()
+            {
+                @Override
+                public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
+                {
+                    final Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+                    c.setBackground(row % 2 == 0 ? new Color(0, 113, 121) : new Color(0, 143, 151));
+                    return c;
+                }
+            });
 
-        javax.swing.GroupLayout recapPanelLayout = new javax.swing.GroupLayout(recapPanel);
-        recapPanel.setLayout(recapPanelLayout);
-        recapPanelLayout.setHorizontalGroup(
-            recapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(recapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
-        );
-        recapPanelLayout.setVerticalGroup(
-            recapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recapPanelLayout.createSequentialGroup()
-                .addGap(0, 131, Short.MAX_VALUE)
-                .addComponent(recapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+            recapTable.getTableHeader().setBackground(new Color(255, 255, 255));
+            recapTable.getTableHeader().setForeground(new Color(2, 129, 166));
+            //Fin de mon code en plus
+            recapTable.setVerifyInputWhenFocusTarget(false);
+            recapTable.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    recapTableMouseClicked(evt);
+                }
+            });
+            recapScrollPane.setViewportView(recapTable);
 
-        rightCardPanel.add(recapPanel, "card3");
+            topRecapPanel.setBackground(new java.awt.Color(57, 17, 45));
+            topRecapPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
-        reportingPanel.setBackground(new java.awt.Color(204, 204, 204));
+            recapPeriodeLabelTop.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
+            recapPeriodeLabelTop.setForeground(new java.awt.Color(255, 255, 255));
+            recapPeriodeLabelTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            recapPeriodeLabelTop.setText("Récapitulatif de la période");
 
-        javax.swing.GroupLayout reportingPanelLayout = new javax.swing.GroupLayout(reportingPanel);
-        reportingPanel.setLayout(reportingPanelLayout);
-        reportingPanelLayout.setHorizontalGroup(
-            reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1088, Short.MAX_VALUE)
-        );
-        reportingPanelLayout.setVerticalGroup(
-            reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 888, Short.MAX_VALUE)
-        );
+            javax.swing.GroupLayout topRecapPanelLayout = new javax.swing.GroupLayout(topRecapPanel);
+            topRecapPanel.setLayout(topRecapPanelLayout);
+            topRecapPanelLayout.setHorizontalGroup(
+                topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(topRecapPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+            topRecapPanelLayout.setVerticalGroup(
+                topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(topRecapPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
 
-        rightCardPanel.add(reportingPanel, "card4");
+            recapPeriodeTriPanel.setBackground(new java.awt.Color(153, 153, 153));
+            recapPeriodeTriPanel.setForeground(new java.awt.Color(153, 153, 153));
 
-        gestionnairePanel.setBackground(new java.awt.Color(204, 204, 204));
+            trierparRecapLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            trierparRecapLabel.setForeground(new java.awt.Color(255, 255, 255));
+            trierparRecapLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            trierparRecapLabel.setText("Trier par : ");
 
-        javax.swing.GroupLayout gestionnairePanelLayout = new javax.swing.GroupLayout(gestionnairePanel);
-        gestionnairePanel.setLayout(gestionnairePanelLayout);
-        gestionnairePanelLayout.setHorizontalGroup(
-            gestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1088, Short.MAX_VALUE)
-        );
-        gestionnairePanelLayout.setVerticalGroup(
-            gestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 888, Short.MAX_VALUE)
-        );
+            javax.swing.GroupLayout recapPeriodeTriPanelLayout = new javax.swing.GroupLayout(recapPeriodeTriPanel);
+            recapPeriodeTriPanel.setLayout(recapPeriodeTriPanelLayout);
+            recapPeriodeTriPanelLayout.setHorizontalGroup(
+                recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
+                    .addComponent(trierparRecapLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+            recapPeriodeTriPanelLayout.setVerticalGroup(
+                recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(trierparRecapLabel)
+                    .addContainerGap(111, Short.MAX_VALUE))
+            );
 
-        rightCardPanel.add(gestionnairePanel, "card5");
+            javax.swing.GroupLayout recapPanelLayout = new javax.swing.GroupLayout(recapPanel);
+            recapPanel.setLayout(recapPanelLayout);
+            recapPanelLayout.setHorizontalGroup(
+                recapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(recapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1096, Short.MAX_VALUE)
+                .addComponent(topRecapPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recapPanelLayout.createSequentialGroup()
+                    .addComponent(recapPeriodeTriPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+            recapPanelLayout.setVerticalGroup(
+                recapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recapPanelLayout.createSequentialGroup()
+                    .addComponent(topRecapPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(recapPeriodeTriPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(recapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 618, javax.swing.GroupLayout.PREFERRED_SIZE))
+            );
 
-        javax.swing.GroupLayout firstBackgroundPanelLayout = new javax.swing.GroupLayout(firstBackgroundPanel);
-        firstBackgroundPanel.setLayout(firstBackgroundPanelLayout);
-        firstBackgroundPanelLayout.setHorizontalGroup(
-            firstBackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(firstBackgroundPanelLayout.createSequentialGroup()
-                .addComponent(leftGreenPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rightCardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        firstBackgroundPanelLayout.setVerticalGroup(
-            firstBackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(leftGreenPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(firstBackgroundPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rightCardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+            rightCardPanel.add(recapPanel, "card3");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(firstBackgroundPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(firstBackgroundPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+            reportingPanel.setBackground(new java.awt.Color(204, 204, 204));
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+            topReportingPanel1.setBackground(new java.awt.Color(57, 17, 45));
+            topReportingPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
+            ReportingLabelTop.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
+            ReportingLabelTop.setForeground(new java.awt.Color(255, 255, 255));
+            ReportingLabelTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            ReportingLabelTop.setText("Reporting");
+
+            javax.swing.GroupLayout topReportingPanel1Layout = new javax.swing.GroupLayout(topReportingPanel1);
+            topReportingPanel1.setLayout(topReportingPanel1Layout);
+            topReportingPanel1Layout.setHorizontalGroup(
+                topReportingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(topReportingPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(ReportingLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 1082, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+            topReportingPanel1Layout.setVerticalGroup(
+                topReportingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(topReportingPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(ReportingLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+
+            jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+            jPanel1.setForeground(new java.awt.Color(153, 153, 153));
+
+            trierparReportingLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            trierparReportingLabel.setForeground(new java.awt.Color(255, 255, 255));
+            trierparReportingLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            trierparReportingLabel.setText("Trier par :");
+
+            javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+            jPanel1.setLayout(jPanel1Layout);
+            jPanel1Layout.setHorizontalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(trierparReportingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+            jPanel1Layout.setVerticalGroup(
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(trierparReportingLabel)
+                    .addContainerGap(117, Short.MAX_VALUE))
+            );
+
+            javax.swing.GroupLayout reportingPanelLayout = new javax.swing.GroupLayout(reportingPanel);
+            reportingPanel.setLayout(reportingPanelLayout);
+            reportingPanelLayout.setHorizontalGroup(
+                reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(reportingPanelLayout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+                .addGroup(reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(topReportingPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
+            reportingPanelLayout.setVerticalGroup(
+                reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(reportingPanelLayout.createSequentialGroup()
+                    .addGap(127, 127, 127)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(616, Short.MAX_VALUE))
+                .addGroup(reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(reportingPanelLayout.createSequentialGroup()
+                        .addComponent(topReportingPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 766, Short.MAX_VALUE)))
+            );
+
+            rightCardPanel.add(reportingPanel, "card4");
+
+            gestionnairePanel.setBackground(new java.awt.Color(204, 204, 204));
+
+            topgestionnairePanel.setBackground(new java.awt.Color(57, 17, 45));
+
+            topGestionnaireLabel.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
+            topGestionnaireLabel.setForeground(new java.awt.Color(255, 255, 255));
+            topGestionnaireLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            topGestionnaireLabel.setText("Gestionnaire de l'Emploi Du Temps");
+
+            insererLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            insererLabel.setForeground(new java.awt.Color(255, 255, 255));
+            insererLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            insererLabel.setText("Insérer");
+            insererLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            insererLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    insererLabelMouseClicked(evt);
+                }
+            });
+
+            supprimerLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            supprimerLabel.setForeground(new java.awt.Color(153, 153, 153));
+            supprimerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            supprimerLabel.setText("Supprimer");
+            supprimerLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            supprimerLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    supprimerLabelMouseClicked(evt);
+                }
+            });
+
+            modifierLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+            modifierLabel.setForeground(new java.awt.Color(153, 153, 153));
+            modifierLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+            modifierLabel.setText("Modifier");
+            modifierLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            modifierLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    modifierLabelMouseClicked(evt);
+                }
+            });
+
+            separatorGEDT1.setBackground(new java.awt.Color(255, 255, 255));
+            separatorGEDT1.setForeground(new java.awt.Color(255, 255, 255));
+            separatorGEDT1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+            separatorGEDT2.setBackground(new java.awt.Color(255, 255, 255));
+            separatorGEDT2.setForeground(new java.awt.Color(255, 255, 255));
+            separatorGEDT2.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+            javax.swing.GroupLayout topgestionnairePanelLayout = new javax.swing.GroupLayout(topgestionnairePanel);
+            topgestionnairePanel.setLayout(topgestionnairePanelLayout);
+            topgestionnairePanelLayout.setHorizontalGroup(
+                topgestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(topGestionnaireLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(topgestionnairePanelLayout.createSequentialGroup()
+                    .addComponent(insererLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(separatorGEDT1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(supprimerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(separatorGEDT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(modifierLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+            );
+            topgestionnairePanelLayout.setVerticalGroup(
+                topgestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(topgestionnairePanelLayout.createSequentialGroup()
+                    .addComponent(topGestionnaireLabel)
+                    .addGroup(topgestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(topgestionnairePanelLayout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(topgestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(insererLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(supprimerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(modifierLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(topgestionnairePanelLayout.createSequentialGroup()
+                                    .addGap(11, 11, 11)
+                                    .addComponent(separatorGEDT1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addContainerGap())))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topgestionnairePanelLayout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(separatorGEDT2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())))
+            );
+
+            gestionnaireContainerPanel.setBackground(new java.awt.Color(153, 153, 153));
+            gestionnaireContainerPanel.setForeground(new java.awt.Color(153, 153, 153));
+            gestionnaireContainerPanel.setLayout(new java.awt.CardLayout());
+
+            insererPanel.setBackground(new java.awt.Color(153, 153, 153));
+            insererPanel.setForeground(new java.awt.Color(153, 153, 153));
+
+            jLabel1.setText("Inserer Test");
+
+            javax.swing.GroupLayout insererPanelLayout = new javax.swing.GroupLayout(insererPanel);
+            insererPanel.setLayout(insererPanelLayout);
+            insererPanelLayout.setHorizontalGroup(
+                insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(insererPanelLayout.createSequentialGroup()
+                    .addGap(261, 261, 261)
+                    .addComponent(jLabel1)
+                    .addContainerGap(766, Short.MAX_VALUE))
+            );
+            insererPanelLayout.setVerticalGroup(
+                insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(insererPanelLayout.createSequentialGroup()
+                    .addGap(108, 108, 108)
+                    .addComponent(jLabel1)
+                    .addContainerGap(636, Short.MAX_VALUE))
+            );
+
+            gestionnaireContainerPanel.add(insererPanel, "card2");
+
+            supprimerPanel.setBackground(new java.awt.Color(153, 153, 153));
+            supprimerPanel.setForeground(new java.awt.Color(153, 153, 153));
+
+            jLabel2.setText("Supprimer test");
+
+            javax.swing.GroupLayout supprimerPanelLayout = new javax.swing.GroupLayout(supprimerPanel);
+            supprimerPanel.setLayout(supprimerPanelLayout);
+            supprimerPanelLayout.setHorizontalGroup(
+                supprimerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(supprimerPanelLayout.createSequentialGroup()
+                    .addGap(401, 401, 401)
+                    .addComponent(jLabel2)
+                    .addContainerGap(610, Short.MAX_VALUE))
+            );
+            supprimerPanelLayout.setVerticalGroup(
+                supprimerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(supprimerPanelLayout.createSequentialGroup()
+                    .addGap(74, 74, 74)
+                    .addComponent(jLabel2)
+                    .addContainerGap(670, Short.MAX_VALUE))
+            );
+
+            gestionnaireContainerPanel.add(supprimerPanel, "card3");
+
+            modifierPanel.setBackground(new java.awt.Color(153, 153, 153));
+            modifierPanel.setForeground(new java.awt.Color(153, 153, 153));
+
+            jLabel3.setText("Modifier test");
+
+            javax.swing.GroupLayout modifierPanelLayout = new javax.swing.GroupLayout(modifierPanel);
+            modifierPanel.setLayout(modifierPanelLayout);
+            modifierPanelLayout.setHorizontalGroup(
+                modifierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(modifierPanelLayout.createSequentialGroup()
+                    .addGap(379, 379, 379)
+                    .addComponent(jLabel3)
+                    .addContainerGap(646, Short.MAX_VALUE))
+            );
+            modifierPanelLayout.setVerticalGroup(
+                modifierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(modifierPanelLayout.createSequentialGroup()
+                    .addGap(137, 137, 137)
+                    .addComponent(jLabel3)
+                    .addContainerGap(607, Short.MAX_VALUE))
+            );
+
+            gestionnaireContainerPanel.add(modifierPanel, "card4");
+
+            javax.swing.GroupLayout gestionnairePanelLayout = new javax.swing.GroupLayout(gestionnairePanel);
+            gestionnairePanel.setLayout(gestionnairePanelLayout);
+            gestionnairePanelLayout.setHorizontalGroup(
+                gestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(topgestionnairePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(gestionnaireContainerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            );
+            gestionnairePanelLayout.setVerticalGroup(
+                gestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(gestionnairePanelLayout.createSequentialGroup()
+                    .addComponent(topgestionnairePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(gestionnaireContainerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
+
+            rightCardPanel.add(gestionnairePanel, "card5");
+
+            javax.swing.GroupLayout firstBackgroundPanelLayout = new javax.swing.GroupLayout(firstBackgroundPanel);
+            firstBackgroundPanel.setLayout(firstBackgroundPanelLayout);
+            firstBackgroundPanelLayout.setHorizontalGroup(
+                firstBackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(firstBackgroundPanelLayout.createSequentialGroup()
+                    .addComponent(leftGreenPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(rightCardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+            firstBackgroundPanelLayout.setVerticalGroup(
+                firstBackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(leftGreenPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(firstBackgroundPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(rightCardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+            );
+
+            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+            getContentPane().setLayout(layout);
+            layout.setHorizontalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(firstBackgroundPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            );
+            layout.setVerticalGroup(
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(firstBackgroundPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            );
+
+            pack();
+        }// </editor-fold>//GEN-END:initComponents
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////// ACTIVATION/DESACTIVATION DES PANELS //////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    //Pour les 4 catégories a gauche
     public void clickItemMenu(JPanel active, boolean panel, JLabel labelSelected) //Quand on appuie a gauche sur un menu, on desactive tous les panels, on réactive celui passé en parametre et on change la couleur de tous les textes a gauche du menu
     {
         //Desactive tous les panels
@@ -1426,6 +1780,35 @@ public class EDT_Window extends javax.swing.JFrame {
         panel = true;
         labelSelected.setForeground(new java.awt.Color(255, 255, 255));
     }
+    
+    public void clickItemGestionnaire(JPanel active, boolean panel, JLabel labelSelected)
+    {
+        //Desactive tous les panels
+        insererPanel.setVisible(false);
+        insererPanel.setEnabled(false);
+        insererBool = false;
+        insererLabel.setForeground(new java.awt.Color(153, 153, 153));
+        
+        supprimerPanel.setVisible(false);
+        supprimerPanel.setEnabled(false);
+        supprimerBool = false;
+        supprimerLabel.setForeground(new java.awt.Color(153, 153, 153));
+        
+        modifierPanel.setVisible(false);
+        modifierPanel.setEnabled(false);
+        modifierBool = false;
+        modifierLabel.setForeground(new java.awt.Color(153, 153, 153));
+        
+        //Active le panel sur lequel on clique
+        active.setVisible(true);
+        active.setEnabled(true);
+        panel = true;
+        labelSelected.setForeground(new java.awt.Color(255, 255, 255));
+    }
+    
+    //Pour le menu Reporting
+    
+    //////////////////////////////////// FIN ACTIVATION/DESACTIVATION DES PANELS //////////////////////////////////
     
     //Fonction pour pré-selectionner la semaine a l'ouverture de l'application
     public void InitialiseSemaine(int semaineActuelle) 
@@ -1592,6 +1975,10 @@ public class EDT_Window extends javax.swing.JFrame {
                 break;
         }
     }
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////// CLIQUE SUR LES JOURS DE LA SEMAINE ///////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     private void semaine30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine30ActionPerformed
         // TODO add your handling code here:
@@ -1801,6 +2188,8 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_semaine31ActionPerformed
 
+    //////////////////////////////////// CLIQUE SUR LES JOURS DE LA SEMAINE ///////////////////////////////////
+    
     // Si on appuie sur le bouton deconnexion
     private void deconnexionLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deconnexionLabelMouseClicked
         // TODO add your handling code here:
@@ -1839,6 +2228,46 @@ public class EDT_Window extends javax.swing.JFrame {
         //InitialiseSemaine(GetSemaine.getWeek()); //On se remet a la semaine actuelle
     }//GEN-LAST:event_emploidutempsLabelMouseClicked
 
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////// TABLEAU RECAPITULATIF PERIODE ////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    //Quand on clique sur le tableau du recapitulatif de la periode
+    private void recapTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recapTableMouseClicked
+        // TODO add your handling code here:
+        
+        DefaultTableModel model = (DefaultTableModel) recapTable.getModel();
+        int index = recapTable.getSelectedRow(); //L'index sur lequel on clique
+        
+    }//GEN-LAST:event_recapTableMouseClicked
+
+    //////////////////////////////////// FIN TABLEAU RECAPITULATIF PERIODE ////////////////////////////////////////
+    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //////////////////////////////////// LES 3 BOUTONS INSERER SUPPRIMER MODIFIER /////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    private void insererLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insererLabelMouseClicked
+        // TODO add your handling code here:
+        clickItemGestionnaire(insererPanel, insererBool, insererLabel);
+    }//GEN-LAST:event_insererLabelMouseClicked
+
+    private void supprimerLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supprimerLabelMouseClicked
+        // TODO add your handling code here:
+        clickItemGestionnaire(supprimerPanel, supprimerBool, supprimerLabel);
+    }//GEN-LAST:event_supprimerLabelMouseClicked
+
+    private void modifierLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifierLabelMouseClicked
+        // TODO add your handling code here:
+        clickItemGestionnaire(modifierPanel, modifierBool, modifierLabel);
+    }//GEN-LAST:event_modifierLabelMouseClicked
+
+
+    //////////////////////////////////// FIN - LES 3 BOUTONS INSERER SUPPRIMER MODIFIER ////////////////////////
     
     
     /**
@@ -1879,6 +2308,7 @@ public class EDT_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ReportingLabelTop;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel deconnexionLabel;
@@ -1893,11 +2323,18 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel edtPanelBotRight;
     private javax.swing.JLabel emploidutempsLabel;
     private javax.swing.JPanel firstBackgroundPanel;
+    private javax.swing.JPanel gestionnaireContainerPanel;
     private javax.swing.JLabel gestionnaireLabel;
     private javax.swing.JPanel gestionnairePanel;
     private javax.swing.JLabel heureLabel;
     private javax.swing.JLabel huitLabel;
     private javax.swing.JLabel iconEce;
+    private javax.swing.JLabel insererLabel;
+    private javax.swing.JPanel insererPanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -1911,6 +2348,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel mardiLabel;
     private javax.swing.JPanel mercrediDisplayPanel;
     private javax.swing.JLabel mercrediLabel;
+    private javax.swing.JLabel modifierLabel;
+    private javax.swing.JPanel modifierPanel;
     private javax.swing.JLabel nameUserLabel;
     private javax.swing.JLabel neufLabel;
     private javax.swing.JLabel onzeLabel;
@@ -1918,6 +2357,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel quatorzeLabel;
     private javax.swing.JLabel quinzeLabel;
     private javax.swing.JPanel recapPanel;
+    private javax.swing.JLabel recapPeriodeLabelTop;
+    private javax.swing.JPanel recapPeriodeTriPanel;
     private javax.swing.JScrollPane recapScrollPane;
     private javax.swing.JTable recapTable;
     private javax.swing.JLabel recapitulatifLabel;
@@ -1978,8 +2419,18 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JToggleButton semaine8;
     private javax.swing.JToggleButton semaine9;
     private javax.swing.JPanel semainePickerPanel;
+    private javax.swing.JSeparator separatorGEDT1;
+    private javax.swing.JSeparator separatorGEDT2;
+    private javax.swing.JLabel supprimerLabel;
+    private javax.swing.JPanel supprimerPanel;
     private javax.swing.JLabel tdLabel;
+    private javax.swing.JLabel topGestionnaireLabel;
+    private javax.swing.JPanel topRecapPanel;
+    private javax.swing.JPanel topReportingPanel1;
+    private javax.swing.JPanel topgestionnairePanel;
     private javax.swing.JLabel treizeLabel;
+    private javax.swing.JLabel trierparRecapLabel;
+    private javax.swing.JLabel trierparReportingLabel;
     private javax.swing.JLabel vendrediLabel;
     private javax.swing.JLabel vingtLabel;
     private javax.swing.JLabel welcomeLabel;

@@ -1,26 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package package_modele;
-
-/**
- *
- * @author ShadowZeus
- */
 public class Utilisateur {
     
     protected int id; 
     protected String email;
     protected String password;
-    protected char Nom;
-    protected char Prenom;
+    protected String Nom;
+    protected String Prenom;
     protected int droit;
     
 //Création du constructeur 
     
-    public Utilisateur(int id, String email, String password, char Nom, char Prenom, int droit)
+    public Utilisateur(){
+        
+    }
+    
+    public Utilisateur(int id, String email, String password, String Nom, String Prenom, int droit)
     {
         this.id=id;
         this.email=email;
@@ -64,22 +58,22 @@ public class Utilisateur {
         this.email = email;
     }
     
-    public char getNom()
+    public String getNom()
     {
         return Nom;
     }
     
-    public void setNom(char Nom)
+    public void setNom(String Nom)
     {
         this.Nom = Nom;
     }
     
-    public char getPrenom()
+    public String getPrenom()
     {
         return Prenom;
     }
     
-    public void setPrenom(char Prenom)
+    public void setPrenom(String Prenom)
     {
         this.Prenom = Prenom;
     }
