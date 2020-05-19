@@ -36,10 +36,14 @@ public abstract class DAO<T> {
   * @return T
   */
   public abstract T find(int id);
-
-    public Utilisateur find(String Email, String Passwd) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+  /**
+  * Méthode de recherche des informations
+     * @param Email
+     * @param Password
+  * @return T
+  */
+  public abstract T find(String Email, String Password);
 }
     
 

@@ -40,5 +40,10 @@ public class Type_CoursDAO extends DAO<Type_Cours> {
         }
         return type_cours;
     }
+
+    @Override
+    public Type_Cours find(String Email, String Password) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

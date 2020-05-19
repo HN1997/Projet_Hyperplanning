@@ -23,7 +23,7 @@ public class PromotionDAO extends DAO<Promotion> {
     return false;
   }
    
-  @Override
+    @Override
   public Promotion find(int id) {
     Promotion promotion = new Promotion();      
       
@@ -40,4 +40,9 @@ public class PromotionDAO extends DAO<Promotion> {
     }
     return promotion;
   }
+
+    @Override
+    public Promotion find(String Email, String Password) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
