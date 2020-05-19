@@ -41,5 +41,10 @@ public class SiteDAO extends DAO<Site>{
         }
         return site;
     }
+
+    @Override
+    public Site find(String Email, String Password) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

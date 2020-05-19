@@ -36,6 +36,10 @@ public class Utilisateur {
         
     }
 
+    Utilisateur(String Email, String Password, int aInt, String string, String string0, int aInt0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     // Création des getteurs et setteurs pour chaque attributs 
     
     public int getId()

@@ -36,6 +36,14 @@ public abstract class DAO<T> {
   * @return T
   */
   public abstract T find(int id);
+    
+  /**
+  * Méthode de recherche des informations
+     * @param Email
+     * @param Password
+  * @return T
+  */
+  public abstract T find(String Email, String Password);
 }
     
 
