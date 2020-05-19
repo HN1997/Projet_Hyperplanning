@@ -196,8 +196,8 @@ public class EDT_Window extends javax.swing.JFrame {
         moisCB = new javax.swing.JComboBox<>();
         anneeLabel = new javax.swing.JLabel();
         anneeCB = new javax.swing.JComboBox<>();
-        anneeLabel1 = new javax.swing.JLabel();
-        anneeCB1 = new javax.swing.JComboBox<>();
+        heureDebutlabel = new javax.swing.JLabel();
+        heureDebutCB = new javax.swing.JComboBox<>();
         supprimerPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         modifierPanel = new javax.swing.JPanel();
@@ -1807,12 +1807,12 @@ public class EDT_Window extends javax.swing.JFrame {
             anneeCB.setBackground(new java.awt.Color(0, 153, 153));
             anneeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2021" }));
 
-            anneeLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            anneeLabel1.setForeground(new java.awt.Color(255, 255, 255));
-            anneeLabel1.setText("Heure de Début : ");
+            heureDebutlabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            heureDebutlabel.setForeground(new java.awt.Color(255, 255, 255));
+            heureDebutlabel.setText("Heure de début : ");
 
-            anneeCB1.setBackground(new java.awt.Color(0, 153, 153));
-            anneeCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2021" }));
+            heureDebutCB.setBackground(new java.awt.Color(0, 153, 153));
+            heureDebutCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:30", "8:35", "8:40", "8:45", "8:50", "8:55", "9:00", "9:05", "9:10", "9:15", "9:20", "9:25", "9:30", "9:35", "9:40", "9:45", "9:50", "9:55", "10:00", "10:05", "10:10", "10:15", "10:20", "10:25", "10:30", "10:35", "10:40", "10:45", "10:50", "10:55", "11:00", "11:05", "11:10", "11:15", "11:20", "11:25", "11:30", "11:35", "11:40", "11:45", "11:50", "11:55", "12:00", " " }));
 
             javax.swing.GroupLayout insererPanelLayout = new javax.swing.GroupLayout(insererPanel);
             insererPanel.setLayout(insererPanelLayout);
@@ -1834,9 +1834,9 @@ public class EDT_Window extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(anneeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(insererPanelLayout.createSequentialGroup()
-                            .addComponent(anneeLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(heureDebutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(anneeCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(heureDebutCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addContainerGap(830, Short.MAX_VALUE))
             );
             insererPanelLayout.setVerticalGroup(
@@ -1856,8 +1856,8 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addComponent(anneeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(anneeLabel1)
-                        .addComponent(anneeCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(heureDebutlabel)
+                        .addComponent(heureDebutCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(627, Short.MAX_VALUE))
             );
 
@@ -1923,7 +1923,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(gestionnairePanelLayout.createSequentialGroup()
                     .addComponent(topgestionnairePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(gestionnaireContainerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE))
+                    .addComponent(gestionnaireContainerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
 
             rightCardPanel.add(gestionnairePanel, "card5");
@@ -1943,7 +1943,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addComponent(leftGreenPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(firstBackgroundPanelLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(rightCardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 890, Short.MAX_VALUE)
+                    .addComponent(rightCardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap())
             );
 
@@ -2533,9 +2533,7 @@ public class EDT_Window extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ReportingLabelTop;
     private javax.swing.JComboBox<String> anneeCB;
-    private javax.swing.JComboBox<String> anneeCB1;
     private javax.swing.JLabel anneeLabel;
-    private javax.swing.JLabel anneeLabel1;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel deconnexionLabel;
@@ -2553,6 +2551,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel gestionnaireContainerPanel;
     private javax.swing.JLabel gestionnaireLabel;
     private javax.swing.JPanel gestionnairePanel;
+    private javax.swing.JComboBox<String> heureDebutCB;
+    private javax.swing.JLabel heureDebutlabel;
     private javax.swing.JLabel heureLabel;
     private javax.swing.JLabel huitLabel;
     private javax.swing.JLabel iconEce;
