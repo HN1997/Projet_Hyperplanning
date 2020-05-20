@@ -11,10 +11,12 @@ import java.util.ArrayList;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import package_controleur.DateTimeManager;
+import package_controleur.Rechercheinformations;
 
 /**
  *
@@ -35,6 +37,10 @@ public class EDT_Window extends javax.swing.JFrame {
     private boolean modifierBool = false;
     // Fin
     
+    // Variable Rechercheinformations
+    Rechercheinformations ri;
+    //Fin variable Rechercheinformations
+    
     
     /**
      * Creates new form EDT_Window
@@ -42,7 +48,7 @@ public class EDT_Window extends javax.swing.JFrame {
     public EDT_Window() {
         initComponents();
         DateTimeManager.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
-        //InitialiseSemaine(GetSemaine.getWeek());
+        //InitialiseSemaine(Rechercheinformations.GetSemaine());
         
     }
 
@@ -1185,27 +1191,27 @@ public class EDT_Window extends javax.swing.JFrame {
         );
 
         lundiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        lundiLabel.setForeground(new java.awt.Color(61, 43, 31));
+        lundiLabel.setForeground(new java.awt.Color(110, 35, 72));
         lundiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lundiLabel.setText("Lundi 2 mai");
 
         mardiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        mardiLabel.setForeground(new java.awt.Color(61, 43, 31));
+        mardiLabel.setForeground(new java.awt.Color(110, 35, 72));
         mardiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mardiLabel.setText("Mardi 3 mai");
 
         mercrediLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        mercrediLabel.setForeground(new java.awt.Color(61, 43, 31));
+        mercrediLabel.setForeground(new java.awt.Color(110, 35, 72));
         mercrediLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         mercrediLabel.setText("Mercredi 4 mai");
 
         jeudiLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        jeudiLabel.setForeground(new java.awt.Color(61, 43, 31));
+        jeudiLabel.setForeground(new java.awt.Color(110, 35, 72));
         jeudiLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jeudiLabel.setText("Jeudi 5 mai");
 
         vendrediLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-        vendrediLabel.setForeground(new java.awt.Color(61, 43, 31));
+        vendrediLabel.setForeground(new java.awt.Color(110, 35, 72));
         vendrediLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vendrediLabel.setText("Vendredi 6 mai");
 
@@ -1513,7 +1519,7 @@ public class EDT_Window extends javax.swing.JFrame {
             });
 
             recapMessageErreur.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-            recapMessageErreur.setForeground(new java.awt.Color(255, 0, 0));
+            recapMessageErreur.setForeground(new java.awt.Color(110, 35, 72));
             recapMessageErreur.setText("ERREUR : Nom de l'enseignant manquant");
 
             javax.swing.GroupLayout recapPeriodeTriPanelLayout = new javax.swing.GroupLayout(recapPeriodeTriPanel);
@@ -1655,7 +1661,7 @@ public class EDT_Window extends javax.swing.JFrame {
             });
 
             reportingMessageErreur.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-            reportingMessageErreur.setForeground(new java.awt.Color(255, 0, 0));
+            reportingMessageErreur.setForeground(new java.awt.Color(110, 35, 72));
             reportingMessageErreur.setText("ERREUR : Nom de l'enseignant manquant");
 
             javax.swing.GroupLayout reportingPeriodeTriPanelLayout = new javax.swing.GroupLayout(reportingPeriodeTriPanel);
@@ -2759,6 +2765,7 @@ public class EDT_Window extends javax.swing.JFrame {
         
     }//GEN-LAST:event_recapTableMouseClicked
 
+    
     //////////////////////////////////// FIN TABLEAU RECAPITULATIF PERIODE ////////////////////////////////////////
     
     
