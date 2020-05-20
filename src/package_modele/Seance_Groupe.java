@@ -4,10 +4,10 @@ import java.util.*;
 public class Seance_Groupe {
     
     //Liste des Seance
-    private Set<Seance> listSeance = new HashSet<Seance>();
+    private Set<Seance> listSeance = new HashSet<>();
 
     //Liste des Groupes
-    private Set<Groupe> listGroupe = new HashSet<Groupe>();
+    private Set<Groupe> listGroupe = new HashSet<>();
 
     public Set<Seance> getListSeance() {
         return listSeance;
