@@ -19,6 +19,10 @@ public class Groupe {
         this.id=groupe.id;
         this.Nom=groupe.Nom;
     }
+
+    Groupe() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public int getId()
     {

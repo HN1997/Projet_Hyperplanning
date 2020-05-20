@@ -9,6 +9,18 @@ public class Enseignant {
     //Liste des Courss
     private Set<Cours> listCours = new HashSet<Cours>();
 
+    Enseignant(int id, String string, String string0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Enseignant() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Enseignant(int id, String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Set<Utilisateur> getListUtilisateur() {
         return listUtilisateur;
     }

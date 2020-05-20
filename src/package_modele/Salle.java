@@ -21,6 +21,10 @@ public class Salle {
         this.Nom=salle.Nom;
         this.Capacite=salle.Capacite;
     }
+
+    Salle() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public int getId()
     {

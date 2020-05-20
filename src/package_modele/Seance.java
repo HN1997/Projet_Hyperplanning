@@ -46,6 +46,14 @@ public class Seance {
         this.V=seance.V;
         this.B=seance.B;
     }
+
+    Seance(int id, int aInt, int aInt0, int aInt1, int aInt2, String string, int aInt3, int aInt4, int aInt5) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Seance() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public int getId()
     {
