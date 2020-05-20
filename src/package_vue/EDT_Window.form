@@ -2209,7 +2209,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="recapPeriodeLabelTop" pref="107" max="32767" attributes="0"/>
+                              <Component id="recapPeriodeLabelTop" pref="112" max="32767" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -2460,13 +2460,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="topReportingPanel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="768" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="773" max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
                               <Component id="reportingPeriodeTriPanel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="691" max="32767" attributes="0"/>
+                              <EmptySpace pref="696" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -2937,32 +2937,49 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="containerTypeCours" max="32767" attributes="0"/>
                                       <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="moisLabel" max="32767" attributes="0"/>
-                                              <Component id="jourLabel" pref="178" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jourCB" min="-2" pref="78" max="-2" attributes="0"/>
-                                              <Component id="moisCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Group type="102" attributes="0">
+                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                      <Component id="moisLabel" max="32767" attributes="0"/>
+                                                      <Component id="jourLabel" pref="178" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jourCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                                      <Component id="moisCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="anneeLabel" min="-2" pref="178" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="anneeCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="heureDebutlabel" min="-2" pref="178" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="heureDebutCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="typeCoursLabel" max="32767" attributes="0"/>
+                                                      <Component id="heureFinlabel" pref="178" max="32767" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="heureFinCB" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                                                      <Component id="typeCoursCB" alignment="1" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
                                           </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="anneeLabel" min="-2" pref="178" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="anneeCB" min="-2" pref="78" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="heureDebutlabel" min="-2" pref="178" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="heureDebutCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="830" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2989,7 +3006,19 @@
                                       <Component id="heureDebutlabel" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="heureDebutCB" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="627" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="heureFinlabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="heureFinCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="typeCoursLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="typeCoursCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="containerTypeCours" max="32767" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3047,6 +3076,9 @@
                                 <StringItem index="30" value="31"/>
                               </StringArray>
                             </Property>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Curseur en forme de main"/>
+                            </Property>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -3084,6 +3116,9 @@
                                 <StringItem index="11" value="D&#xe9;cembre"/>
                               </StringArray>
                             </Property>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Curseur en forme de main"/>
+                            </Property>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -3111,6 +3146,9 @@
                                 <StringItem index="1" value="2021"/>
                               </StringArray>
                             </Property>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Curseur en forme de main"/>
+                            </Property>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -3133,7 +3171,7 @@
                               <Color blue="99" green="99" red="0" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="44">
+                              <StringArray count="151">
                                 <StringItem index="0" value="8:30"/>
                                 <StringItem index="1" value="8:35"/>
                                 <StringItem index="2" value="8:40"/>
@@ -3177,14 +3215,1792 @@
                                 <StringItem index="40" value="11:50"/>
                                 <StringItem index="41" value="11:55"/>
                                 <StringItem index="42" value="12:00"/>
-                                <StringItem index="43" value=" "/>
+                                <StringItem index="43" value="12:05"/>
+                                <StringItem index="44" value="12:10"/>
+                                <StringItem index="45" value="12:15"/>
+                                <StringItem index="46" value="12:20"/>
+                                <StringItem index="47" value="12:25"/>
+                                <StringItem index="48" value="12:30"/>
+                                <StringItem index="49" value="12:35"/>
+                                <StringItem index="50" value="12:40"/>
+                                <StringItem index="51" value="12:45"/>
+                                <StringItem index="52" value="12:50"/>
+                                <StringItem index="53" value="12:55"/>
+                                <StringItem index="54" value="13:00"/>
+                                <StringItem index="55" value="13:05"/>
+                                <StringItem index="56" value="13:10"/>
+                                <StringItem index="57" value="13:15"/>
+                                <StringItem index="58" value="13:20"/>
+                                <StringItem index="59" value="13:25"/>
+                                <StringItem index="60" value="13:30"/>
+                                <StringItem index="61" value="13:35"/>
+                                <StringItem index="62" value="13:40"/>
+                                <StringItem index="63" value="13:45"/>
+                                <StringItem index="64" value="13:50"/>
+                                <StringItem index="65" value="13:55"/>
+                                <StringItem index="66" value="14:00"/>
+                                <StringItem index="67" value="14:05"/>
+                                <StringItem index="68" value="14:10"/>
+                                <StringItem index="69" value="14:15"/>
+                                <StringItem index="70" value="14:20"/>
+                                <StringItem index="71" value="14:25"/>
+                                <StringItem index="72" value="14:30"/>
+                                <StringItem index="73" value="14:35"/>
+                                <StringItem index="74" value="14:40"/>
+                                <StringItem index="75" value="14:45"/>
+                                <StringItem index="76" value="14:50"/>
+                                <StringItem index="77" value="14:55"/>
+                                <StringItem index="78" value="15:00"/>
+                                <StringItem index="79" value="15:05"/>
+                                <StringItem index="80" value="15:10"/>
+                                <StringItem index="81" value="15:15"/>
+                                <StringItem index="82" value="15:20"/>
+                                <StringItem index="83" value="15:25"/>
+                                <StringItem index="84" value="15:30"/>
+                                <StringItem index="85" value="15:35"/>
+                                <StringItem index="86" value="15:40"/>
+                                <StringItem index="87" value="15:45"/>
+                                <StringItem index="88" value="15:50"/>
+                                <StringItem index="89" value="15:55"/>
+                                <StringItem index="90" value="16:00"/>
+                                <StringItem index="91" value="16:05"/>
+                                <StringItem index="92" value="16:10"/>
+                                <StringItem index="93" value="16:15"/>
+                                <StringItem index="94" value="16:20"/>
+                                <StringItem index="95" value="16:25"/>
+                                <StringItem index="96" value="16:30"/>
+                                <StringItem index="97" value="16:35"/>
+                                <StringItem index="98" value="16:40"/>
+                                <StringItem index="99" value="16:45"/>
+                                <StringItem index="100" value="16:50"/>
+                                <StringItem index="101" value="16:55"/>
+                                <StringItem index="102" value="17:00"/>
+                                <StringItem index="103" value="17:05"/>
+                                <StringItem index="104" value="17:10"/>
+                                <StringItem index="105" value="17:15"/>
+                                <StringItem index="106" value="17:20"/>
+                                <StringItem index="107" value="17:25"/>
+                                <StringItem index="108" value="17:30"/>
+                                <StringItem index="109" value="17:35"/>
+                                <StringItem index="110" value="17:40"/>
+                                <StringItem index="111" value="17:45"/>
+                                <StringItem index="112" value="17:50"/>
+                                <StringItem index="113" value="17:55"/>
+                                <StringItem index="114" value="18:00"/>
+                                <StringItem index="115" value="18:05"/>
+                                <StringItem index="116" value="18:10"/>
+                                <StringItem index="117" value="18:15"/>
+                                <StringItem index="118" value="18:20"/>
+                                <StringItem index="119" value="18:25"/>
+                                <StringItem index="120" value="18:30"/>
+                                <StringItem index="121" value="18:35"/>
+                                <StringItem index="122" value="18:40"/>
+                                <StringItem index="123" value="18:45"/>
+                                <StringItem index="124" value="18:50"/>
+                                <StringItem index="125" value="18:55"/>
+                                <StringItem index="126" value="19:00"/>
+                                <StringItem index="127" value="19:05"/>
+                                <StringItem index="128" value="19:10"/>
+                                <StringItem index="129" value="19:15"/>
+                                <StringItem index="130" value="19:20"/>
+                                <StringItem index="131" value="19:25"/>
+                                <StringItem index="132" value="19:30"/>
+                                <StringItem index="133" value="19:35"/>
+                                <StringItem index="134" value="19:40"/>
+                                <StringItem index="135" value="19:45"/>
+                                <StringItem index="136" value="19:50"/>
+                                <StringItem index="137" value="19:55"/>
+                                <StringItem index="138" value="20:00"/>
+                                <StringItem index="139" value="20:05"/>
+                                <StringItem index="140" value="20:10"/>
+                                <StringItem index="141" value="20:15"/>
+                                <StringItem index="142" value="20:20"/>
+                                <StringItem index="143" value="20:25"/>
+                                <StringItem index="144" value="20:30"/>
+                                <StringItem index="145" value="20:35"/>
+                                <StringItem index="146" value="20:40"/>
+                                <StringItem index="147" value="20:45"/>
+                                <StringItem index="148" value="20:50"/>
+                                <StringItem index="149" value="20:55"/>
+                                <StringItem index="150" value="21:00"/>
                               </StringArray>
+                            </Property>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Curseur en forme de main"/>
                             </Property>
                           </Properties>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
                         </Component>
+                        <Component class="javax.swing.JLabel" name="heureFinlabel">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Cambria" size="14" style="1"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Heure de fin : "/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="heureFinCB">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="151">
+                                <StringItem index="0" value="9:00"/>
+                                <StringItem index="1" value="9:05"/>
+                                <StringItem index="2" value="9:10"/>
+                                <StringItem index="3" value="9:15"/>
+                                <StringItem index="4" value="9:20"/>
+                                <StringItem index="5" value="9:25"/>
+                                <StringItem index="6" value="9:30"/>
+                                <StringItem index="7" value="9:35"/>
+                                <StringItem index="8" value="9:40"/>
+                                <StringItem index="9" value="9:45"/>
+                                <StringItem index="10" value="9:50"/>
+                                <StringItem index="11" value="9:55"/>
+                                <StringItem index="12" value="10:00"/>
+                                <StringItem index="13" value="10:05"/>
+                                <StringItem index="14" value="10:10"/>
+                                <StringItem index="15" value="10:15"/>
+                                <StringItem index="16" value="10:20"/>
+                                <StringItem index="17" value="10:25"/>
+                                <StringItem index="18" value="10:30"/>
+                                <StringItem index="19" value="10:35"/>
+                                <StringItem index="20" value="10:40"/>
+                                <StringItem index="21" value="10:45"/>
+                                <StringItem index="22" value="10:50"/>
+                                <StringItem index="23" value="10:55"/>
+                                <StringItem index="24" value="11:00"/>
+                                <StringItem index="25" value="11:05"/>
+                                <StringItem index="26" value="11:10"/>
+                                <StringItem index="27" value="11:15"/>
+                                <StringItem index="28" value="11:20"/>
+                                <StringItem index="29" value="11:25"/>
+                                <StringItem index="30" value="11:30"/>
+                                <StringItem index="31" value="11:35"/>
+                                <StringItem index="32" value="11:40"/>
+                                <StringItem index="33" value="11:45"/>
+                                <StringItem index="34" value="11:50"/>
+                                <StringItem index="35" value="11:55"/>
+                                <StringItem index="36" value="12:00"/>
+                                <StringItem index="37" value="12:05"/>
+                                <StringItem index="38" value="12:10"/>
+                                <StringItem index="39" value="12:15"/>
+                                <StringItem index="40" value="12:20"/>
+                                <StringItem index="41" value="12:25"/>
+                                <StringItem index="42" value="12:30"/>
+                                <StringItem index="43" value="12:35"/>
+                                <StringItem index="44" value="12:40"/>
+                                <StringItem index="45" value="12:45"/>
+                                <StringItem index="46" value="12:50"/>
+                                <StringItem index="47" value="12:55"/>
+                                <StringItem index="48" value="13:00"/>
+                                <StringItem index="49" value="13:05"/>
+                                <StringItem index="50" value="13:10"/>
+                                <StringItem index="51" value="13:15"/>
+                                <StringItem index="52" value="13:20"/>
+                                <StringItem index="53" value="13:25"/>
+                                <StringItem index="54" value="13:30"/>
+                                <StringItem index="55" value="13:35"/>
+                                <StringItem index="56" value="13:40"/>
+                                <StringItem index="57" value="13:45"/>
+                                <StringItem index="58" value="13:50"/>
+                                <StringItem index="59" value="13:55"/>
+                                <StringItem index="60" value="14:00"/>
+                                <StringItem index="61" value="14:05"/>
+                                <StringItem index="62" value="14:10"/>
+                                <StringItem index="63" value="14:15"/>
+                                <StringItem index="64" value="14:20"/>
+                                <StringItem index="65" value="14:25"/>
+                                <StringItem index="66" value="14:30"/>
+                                <StringItem index="67" value="14:35"/>
+                                <StringItem index="68" value="14:40"/>
+                                <StringItem index="69" value="14:45"/>
+                                <StringItem index="70" value="14:50"/>
+                                <StringItem index="71" value="14:55"/>
+                                <StringItem index="72" value="15:00"/>
+                                <StringItem index="73" value="15:05"/>
+                                <StringItem index="74" value="15:10"/>
+                                <StringItem index="75" value="15:15"/>
+                                <StringItem index="76" value="15:20"/>
+                                <StringItem index="77" value="15:25"/>
+                                <StringItem index="78" value="15:30"/>
+                                <StringItem index="79" value="15:35"/>
+                                <StringItem index="80" value="15:40"/>
+                                <StringItem index="81" value="15:45"/>
+                                <StringItem index="82" value="15:50"/>
+                                <StringItem index="83" value="15:55"/>
+                                <StringItem index="84" value="16:00"/>
+                                <StringItem index="85" value="16:05"/>
+                                <StringItem index="86" value="16:10"/>
+                                <StringItem index="87" value="16:15"/>
+                                <StringItem index="88" value="16:20"/>
+                                <StringItem index="89" value="16:25"/>
+                                <StringItem index="90" value="16:30"/>
+                                <StringItem index="91" value="16:35"/>
+                                <StringItem index="92" value="16:40"/>
+                                <StringItem index="93" value="16:45"/>
+                                <StringItem index="94" value="16:50"/>
+                                <StringItem index="95" value="16:55"/>
+                                <StringItem index="96" value="17:00"/>
+                                <StringItem index="97" value="17:05"/>
+                                <StringItem index="98" value="17:10"/>
+                                <StringItem index="99" value="17:15"/>
+                                <StringItem index="100" value="17:20"/>
+                                <StringItem index="101" value="17:25"/>
+                                <StringItem index="102" value="17:30"/>
+                                <StringItem index="103" value="17:35"/>
+                                <StringItem index="104" value="17:40"/>
+                                <StringItem index="105" value="17:45"/>
+                                <StringItem index="106" value="17:50"/>
+                                <StringItem index="107" value="17:55"/>
+                                <StringItem index="108" value="18:00"/>
+                                <StringItem index="109" value="18:05"/>
+                                <StringItem index="110" value="18:10"/>
+                                <StringItem index="111" value="18:15"/>
+                                <StringItem index="112" value="18:20"/>
+                                <StringItem index="113" value="18:25"/>
+                                <StringItem index="114" value="18:30"/>
+                                <StringItem index="115" value="18:35"/>
+                                <StringItem index="116" value="18:40"/>
+                                <StringItem index="117" value="18:45"/>
+                                <StringItem index="118" value="18:50"/>
+                                <StringItem index="119" value="18:55"/>
+                                <StringItem index="120" value="19:00"/>
+                                <StringItem index="121" value="19:05"/>
+                                <StringItem index="122" value="19:10"/>
+                                <StringItem index="123" value="19:15"/>
+                                <StringItem index="124" value="19:20"/>
+                                <StringItem index="125" value="19:25"/>
+                                <StringItem index="126" value="19:30"/>
+                                <StringItem index="127" value="19:35"/>
+                                <StringItem index="128" value="19:40"/>
+                                <StringItem index="129" value="19:45"/>
+                                <StringItem index="130" value="19:50"/>
+                                <StringItem index="131" value="19:55"/>
+                                <StringItem index="132" value="20:00"/>
+                                <StringItem index="133" value="20:05"/>
+                                <StringItem index="134" value="20:10"/>
+                                <StringItem index="135" value="20:15"/>
+                                <StringItem index="136" value="20:20"/>
+                                <StringItem index="137" value="20:25"/>
+                                <StringItem index="138" value="20:30"/>
+                                <StringItem index="139" value="20:35"/>
+                                <StringItem index="140" value="20:40"/>
+                                <StringItem index="141" value="20:45"/>
+                                <StringItem index="142" value="20:50"/>
+                                <StringItem index="143" value="20:55"/>
+                                <StringItem index="144" value="21:00"/>
+                                <StringItem index="145" value="21:05"/>
+                                <StringItem index="146" value="21:10"/>
+                                <StringItem index="147" value="21:15"/>
+                                <StringItem index="148" value="21:20"/>
+                                <StringItem index="149" value="21:25"/>
+                                <StringItem index="150" value="21:30"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Curseur en forme de main"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="typeCoursLabel">
+                          <Properties>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Cambria" size="14" style="1"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                            </Property>
+                            <Property name="text" type="java.lang.String" value="Type de cours : "/>
+                          </Properties>
+                        </Component>
+                        <Component class="javax.swing.JComboBox" name="typeCoursCB">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="0" type="rgb"/>
+                            </Property>
+                            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                              <StringArray count="6">
+                                <StringItem index="0" value="CM"/>
+                                <StringItem index="1" value="TD"/>
+                                <StringItem index="2" value="TP"/>
+                                <StringItem index="3" value="Soutien"/>
+                                <StringItem index="4" value="Reunion"/>
+                                <StringItem index="5" value="Conf&#xe9;rence"/>
+                              </StringArray>
+                            </Property>
+                            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                              <Color id="Curseur en forme de main"/>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                        <Container class="javax.swing.JPanel" name="containerTypeCours">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="99" type="rgb"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="99" green="99" red="99" type="rgb"/>
+                            </Property>
+                          </Properties>
+
+                          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+                          <SubComponents>
+                            <Container class="javax.swing.JPanel" name="magistralSoutienPanel">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                                  <CardConstraints cardName="card2"/>
+                                </Constraint>
+                              </Constraints>
+
+                              <Layout>
+                                <DimensionLayout dim="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="nbrGroupeMagistralLabel1" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="ListGrpLabel" pref="129" max="32767" attributes="0"/>
+                                              <Component id="nbrGroupeMagistralLabel2" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="grpCB1" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB2" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB3" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB4" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB5" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB6" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB7" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                                  <Component id="grpCB8" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB9" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB10" min="-2" pref="78" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="grpCB11" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Component id="grpCB12" min="-2" pref="78" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="promtionMagistralLabel" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="nbrGroupeMagistralLabel" alignment="0" pref="178" max="32767" attributes="0"/>
+                                              <Component id="enseignantMagistralLabel" alignment="1" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="promotionMagistralCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Component id="nbrGroupeMagistralCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Component id="enseignantMagistralCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                </DimensionLayout>
+                                <DimensionLayout dim="1">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="enseignantMagistralLabel" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="enseignantMagistralCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="promtionMagistralLabel" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="promotionMagistralCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="nbrGroupeMagistralLabel" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="nbrGroupeMagistralCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="grpCB1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB7" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB8" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB9" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB10" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ListGrpLabel" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="nbrGroupeMagistralLabel1" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="grpCB11" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="nbrGroupeMagistralLabel2" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="grpCB12" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="334" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                </DimensionLayout>
+                              </Layout>
+                              <SubComponents>
+                                <Component class="javax.swing.JLabel" name="enseignantMagistralLabel">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Enseignant : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="enseignantMagistralCB">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="4">
+                                        <StringItem index="0" value="M.SEGADO"/>
+                                        <StringItem index="1" value="M.RAVAUD"/>
+                                        <StringItem index="2" value="M.HINA"/>
+                                        <StringItem index="3" value="M.BOUBEZOUL"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="promtionMagistralLabel">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Promotion :"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="promotionMagistralCB">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="5">
+                                        <StringItem index="0" value="ING1"/>
+                                        <StringItem index="1" value="ING2"/>
+                                        <StringItem index="2" value="ING3"/>
+                                        <StringItem index="3" value="ING4"/>
+                                        <StringItem index="4" value="ING5"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="nbrGroupeMagistralLabel">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Nombre de Groupe : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="nbrGroupeMagistralCB">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="10">
+                                        <StringItem index="0" value="1"/>
+                                        <StringItem index="1" value="2"/>
+                                        <StringItem index="2" value="3"/>
+                                        <StringItem index="3" value="4"/>
+                                        <StringItem index="4" value="5"/>
+                                        <StringItem index="5" value="6"/>
+                                        <StringItem index="6" value="7"/>
+                                        <StringItem index="7" value="8"/>
+                                        <StringItem index="8" value="9"/>
+                                        <StringItem index="9" value="10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="ListGrpLabel">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="Liste des groupes : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB1">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB2">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB3">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB4">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB5">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB6">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB7">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB8">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB9">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB10">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="nbrGroupeMagistralLabel1">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Site : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB11">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="5">
+                                        <StringItem index="0" value="E1"/>
+                                        <StringItem index="1" value="E2"/>
+                                        <StringItem index="2" value="E3"/>
+                                        <StringItem index="3" value="E4"/>
+                                        <StringItem index="4" value="E5"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="nbrGroupeMagistralLabel2">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Salle : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB12">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="10">
+                                        <StringItem index="0" value="P1"/>
+                                        <StringItem index="1" value="P2"/>
+                                        <StringItem index="2" value="P3"/>
+                                        <StringItem index="3" value="P4"/>
+                                        <StringItem index="4" value="P5"/>
+                                        <StringItem index="5" value="P6"/>
+                                        <StringItem index="6" value="P7"/>
+                                        <StringItem index="7" value="P8"/>
+                                        <StringItem index="8" value="P9"/>
+                                        <StringItem index="9" value="P10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                              </SubComponents>
+                            </Container>
+                            <Container class="javax.swing.JPanel" name="TPTDPanel">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                                  <CardConstraints cardName="card2"/>
+                                </Constraint>
+                              </Constraints>
+
+                              <Layout>
+                                <DimensionLayout dim="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="salleTPTDLabel" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="promtionTPTDLabel" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="enseignantTPTDLabel" alignment="1" pref="178" max="32767" attributes="0"/>
+                                              <Component id="groupeTPTDLabel" alignment="0" pref="178" max="32767" attributes="0"/>
+                                              <Component id="siteTPTDLabel" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="promotionTPTDCB" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Component id="enseignantTPTDCB" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Component id="groupeTPTDCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Component id="siteTPTDCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Component id="salleTPTDCB" min="-2" pref="78" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace pref="824" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                </DimensionLayout>
+                                <DimensionLayout dim="1">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="enseignantTPTDLabel" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="enseignantTPTDCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="promtionTPTDLabel" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="promotionTPTDCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="groupeTPTDLabel" alignment="3" max="32767" attributes="0"/>
+                                              <Component id="groupeTPTDCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="siteTPTDLabel" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="siteTPTDCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="salleTPTDLabel" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="salleTPTDCB" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="376" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                </DimensionLayout>
+                              </Layout>
+                              <SubComponents>
+                                <Component class="javax.swing.JLabel" name="enseignantTPTDLabel">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Enseignant : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="enseignantTPTDCB">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="4">
+                                        <StringItem index="0" value="M.SEGADO"/>
+                                        <StringItem index="1" value="M.RAVAUD"/>
+                                        <StringItem index="2" value="M.HINA"/>
+                                        <StringItem index="3" value="M.BOUBEZOUL"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="promtionTPTDLabel">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Promotion :"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="promotionTPTDCB">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="5">
+                                        <StringItem index="0" value="ING1"/>
+                                        <StringItem index="1" value="ING2"/>
+                                        <StringItem index="2" value="ING3"/>
+                                        <StringItem index="3" value="ING4"/>
+                                        <StringItem index="4" value="ING5"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="groupeTPTDLabel">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="Groupe : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="groupeTPTDCB">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="siteTPTDLabel">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Site : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="siteTPTDCB">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="5">
+                                        <StringItem index="0" value="E1"/>
+                                        <StringItem index="1" value="E2"/>
+                                        <StringItem index="2" value="E3"/>
+                                        <StringItem index="3" value="E4"/>
+                                        <StringItem index="4" value="E5"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="salleTPTDLabel">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Salle : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="salleTPTDCB">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="10">
+                                        <StringItem index="0" value="P1"/>
+                                        <StringItem index="1" value="P2"/>
+                                        <StringItem index="2" value="P3"/>
+                                        <StringItem index="3" value="P4"/>
+                                        <StringItem index="4" value="P5"/>
+                                        <StringItem index="5" value="P6"/>
+                                        <StringItem index="6" value="P7"/>
+                                        <StringItem index="7" value="P8"/>
+                                        <StringItem index="8" value="P9"/>
+                                        <StringItem index="9" value="P10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                              </SubComponents>
+                            </Container>
+                            <Container class="javax.swing.JPanel" name="magistralSoutienPanel1">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                                  <CardConstraints cardName="card2"/>
+                                </Constraint>
+                              </Constraints>
+
+                              <Layout>
+                                <DimensionLayout dim="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="nbrGroupeMagistralLabel4" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="ListGrpLabel1" alignment="1" pref="129" max="32767" attributes="0"/>
+                                              <Component id="nbrGroupeMagistralLabel5" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="grpCB13" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB14" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB15" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB16" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB17" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB18" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB19" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                                  <Component id="grpCB20" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB21" min="-2" pref="78" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="grpCB22" min="-2" pref="78" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="grpCB23" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Component id="grpCB24" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="promtionMagistralLabel1" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="nbrGroupeMagistralLabel3" alignment="0" pref="178" max="32767" attributes="0"/>
+                                              <Component id="enseignantMagistralLabel1" alignment="1" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="promotionMagistralCB1" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Component id="nbrGroupeMagistralCB1" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                                              <Component id="enseignantMagistralCB1" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                </DimensionLayout>
+                                <DimensionLayout dim="1">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="enseignantMagistralLabel1" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="enseignantMagistralCB1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="promtionMagistralLabel1" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="promotionMagistralCB1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="nbrGroupeMagistralLabel3" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="nbrGroupeMagistralCB1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="grpCB13" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB14" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB15" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB16" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB17" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB18" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB19" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB20" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB21" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="grpCB22" alignment="3" min="-2" max="-2" attributes="0"/>
+                                              <Component id="ListGrpLabel1" alignment="3" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="nbrGroupeMagistralLabel4" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="grpCB23" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="3" attributes="0">
+                                              <Component id="nbrGroupeMagistralLabel5" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
+                                              <Component id="grpCB24" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="334" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                </DimensionLayout>
+                              </Layout>
+                              <SubComponents>
+                                <Component class="javax.swing.JLabel" name="enseignantMagistralLabel1">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Enseignant : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="enseignantMagistralCB1">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="4">
+                                        <StringItem index="0" value="M.SEGADO"/>
+                                        <StringItem index="1" value="M.RAVAUD"/>
+                                        <StringItem index="2" value="M.HINA"/>
+                                        <StringItem index="3" value="M.BOUBEZOUL"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="promtionMagistralLabel1">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Promotion :"/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="promotionMagistralCB1">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="5">
+                                        <StringItem index="0" value="ING1"/>
+                                        <StringItem index="1" value="ING2"/>
+                                        <StringItem index="2" value="ING3"/>
+                                        <StringItem index="3" value="ING4"/>
+                                        <StringItem index="4" value="ING5"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="nbrGroupeMagistralLabel3">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Nombre de Groupe : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="nbrGroupeMagistralCB1">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="10">
+                                        <StringItem index="0" value="1"/>
+                                        <StringItem index="1" value="2"/>
+                                        <StringItem index="2" value="3"/>
+                                        <StringItem index="3" value="4"/>
+                                        <StringItem index="4" value="5"/>
+                                        <StringItem index="5" value="6"/>
+                                        <StringItem index="6" value="7"/>
+                                        <StringItem index="7" value="8"/>
+                                        <StringItem index="8" value="9"/>
+                                        <StringItem index="9" value="10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="ListGrpLabel1">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="text" type="java.lang.String" value="Liste des groupes : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB13">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB14">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB15">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB16">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB17">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB18">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB19">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB20">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB21">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB22">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="9">
+                                        <StringItem index="0" value="TD1"/>
+                                        <StringItem index="1" value="TD2"/>
+                                        <StringItem index="2" value="TD3"/>
+                                        <StringItem index="3" value="TD4"/>
+                                        <StringItem index="4" value="TD5"/>
+                                        <StringItem index="5" value="TD6"/>
+                                        <StringItem index="6" value="TD7"/>
+                                        <StringItem index="7" value="TD8"/>
+                                        <StringItem index="8" value="TD10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="nbrGroupeMagistralLabel4">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Site : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB23">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="5">
+                                        <StringItem index="0" value="E1"/>
+                                        <StringItem index="1" value="E2"/>
+                                        <StringItem index="2" value="E3"/>
+                                        <StringItem index="3" value="E4"/>
+                                        <StringItem index="4" value="E5"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                                <Component class="javax.swing.JLabel" name="nbrGroupeMagistralLabel5">
+                                  <Properties>
+                                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                      <Font name="Cambria" size="14" style="1"/>
+                                    </Property>
+                                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                    </Property>
+                                    <Property name="horizontalAlignment" type="int" value="2"/>
+                                    <Property name="text" type="java.lang.String" value="Salle : "/>
+                                  </Properties>
+                                </Component>
+                                <Component class="javax.swing.JComboBox" name="grpCB24">
+                                  <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="99" green="99" red="0" type="rgb"/>
+                                    </Property>
+                                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                                      <StringArray count="10">
+                                        <StringItem index="0" value="P1"/>
+                                        <StringItem index="1" value="P2"/>
+                                        <StringItem index="2" value="P3"/>
+                                        <StringItem index="3" value="P4"/>
+                                        <StringItem index="4" value="P5"/>
+                                        <StringItem index="5" value="P6"/>
+                                        <StringItem index="6" value="P7"/>
+                                        <StringItem index="7" value="P8"/>
+                                        <StringItem index="8" value="P9"/>
+                                        <StringItem index="9" value="P10"/>
+                                      </StringArray>
+                                    </Property>
+                                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                                      <Color id="Curseur en forme de main"/>
+                                    </Property>
+                                  </Properties>
+                                  <AuxValues>
+                                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                                  </AuxValues>
+                                </Component>
+                              </SubComponents>
+                            </Container>
+                            <Container class="javax.swing.JPanel" name="conferencePanel">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                                  <CardConstraints cardName="card5"/>
+                                </Constraint>
+                              </Constraints>
+
+                              <Layout>
+                                <DimensionLayout dim="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="1086" max="32767" attributes="0"/>
+                                  </Group>
+                                </DimensionLayout>
+                                <DimensionLayout dim="1">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="556" max="32767" attributes="0"/>
+                                  </Group>
+                                </DimensionLayout>
+                              </Layout>
+                            </Container>
+                            <Container class="javax.swing.JPanel" name="videPanel1">
+                              <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                </Property>
+                              </Properties>
+                              <Constraints>
+                                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+                                  <CardConstraints cardName="card6"/>
+                                </Constraint>
+                              </Constraints>
+
+                              <Layout>
+                                <DimensionLayout dim="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="1086" max="32767" attributes="0"/>
+                                  </Group>
+                                </DimensionLayout>
+                                <DimensionLayout dim="1">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <EmptySpace min="0" pref="556" max="32767" attributes="0"/>
+                                  </Group>
+                                </DimensionLayout>
+                              </Layout>
+                            </Container>
+                          </SubComponents>
+                        </Container>
                       </SubComponents>
                     </Container>
                     <Container class="javax.swing.JPanel" name="supprimerPanel">
@@ -3217,7 +5033,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="670" max="32767" attributes="0"/>
+                                  <EmptySpace pref="675" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3260,7 +5076,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="607" max="32767" attributes="0"/>
+                                  <EmptySpace pref="612" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>

@@ -198,6 +198,68 @@ public class EDT_Window extends javax.swing.JFrame {
         anneeCB = new javax.swing.JComboBox<>();
         heureDebutlabel = new javax.swing.JLabel();
         heureDebutCB = new javax.swing.JComboBox<>();
+        heureFinlabel = new javax.swing.JLabel();
+        heureFinCB = new javax.swing.JComboBox<>();
+        typeCoursLabel = new javax.swing.JLabel();
+        typeCoursCB = new javax.swing.JComboBox<>();
+        containerTypeCours = new javax.swing.JPanel();
+        magistralSoutienPanel = new javax.swing.JPanel();
+        enseignantMagistralLabel = new javax.swing.JLabel();
+        enseignantMagistralCB = new javax.swing.JComboBox<>();
+        promtionMagistralLabel = new javax.swing.JLabel();
+        promotionMagistralCB = new javax.swing.JComboBox<>();
+        nbrGroupeMagistralLabel = new javax.swing.JLabel();
+        nbrGroupeMagistralCB = new javax.swing.JComboBox<>();
+        ListGrpLabel = new javax.swing.JLabel();
+        grpCB1 = new javax.swing.JComboBox<>();
+        grpCB2 = new javax.swing.JComboBox<>();
+        grpCB3 = new javax.swing.JComboBox<>();
+        grpCB4 = new javax.swing.JComboBox<>();
+        grpCB5 = new javax.swing.JComboBox<>();
+        grpCB6 = new javax.swing.JComboBox<>();
+        grpCB7 = new javax.swing.JComboBox<>();
+        grpCB8 = new javax.swing.JComboBox<>();
+        grpCB9 = new javax.swing.JComboBox<>();
+        grpCB10 = new javax.swing.JComboBox<>();
+        nbrGroupeMagistralLabel1 = new javax.swing.JLabel();
+        grpCB11 = new javax.swing.JComboBox<>();
+        nbrGroupeMagistralLabel2 = new javax.swing.JLabel();
+        grpCB12 = new javax.swing.JComboBox<>();
+        TPTDPanel = new javax.swing.JPanel();
+        enseignantTPTDLabel = new javax.swing.JLabel();
+        enseignantTPTDCB = new javax.swing.JComboBox<>();
+        promtionTPTDLabel = new javax.swing.JLabel();
+        promotionTPTDCB = new javax.swing.JComboBox<>();
+        groupeTPTDLabel = new javax.swing.JLabel();
+        groupeTPTDCB = new javax.swing.JComboBox<>();
+        siteTPTDLabel = new javax.swing.JLabel();
+        siteTPTDCB = new javax.swing.JComboBox<>();
+        salleTPTDLabel = new javax.swing.JLabel();
+        salleTPTDCB = new javax.swing.JComboBox<>();
+        magistralSoutienPanel1 = new javax.swing.JPanel();
+        enseignantMagistralLabel1 = new javax.swing.JLabel();
+        enseignantMagistralCB1 = new javax.swing.JComboBox<>();
+        promtionMagistralLabel1 = new javax.swing.JLabel();
+        promotionMagistralCB1 = new javax.swing.JComboBox<>();
+        nbrGroupeMagistralLabel3 = new javax.swing.JLabel();
+        nbrGroupeMagistralCB1 = new javax.swing.JComboBox<>();
+        ListGrpLabel1 = new javax.swing.JLabel();
+        grpCB13 = new javax.swing.JComboBox<>();
+        grpCB14 = new javax.swing.JComboBox<>();
+        grpCB15 = new javax.swing.JComboBox<>();
+        grpCB16 = new javax.swing.JComboBox<>();
+        grpCB17 = new javax.swing.JComboBox<>();
+        grpCB18 = new javax.swing.JComboBox<>();
+        grpCB19 = new javax.swing.JComboBox<>();
+        grpCB20 = new javax.swing.JComboBox<>();
+        grpCB21 = new javax.swing.JComboBox<>();
+        grpCB22 = new javax.swing.JComboBox<>();
+        nbrGroupeMagistralLabel4 = new javax.swing.JLabel();
+        grpCB23 = new javax.swing.JComboBox<>();
+        nbrGroupeMagistralLabel5 = new javax.swing.JLabel();
+        grpCB24 = new javax.swing.JComboBox<>();
+        conferencePanel = new javax.swing.JPanel();
+        videPanel1 = new javax.swing.JPanel();
         supprimerPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         modifierPanel = new javax.swing.JPanel();
@@ -1429,7 +1491,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(topRecapPanelLayout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                    .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
                     .addContainerGap())
             );
 
@@ -1680,12 +1742,12 @@ public class EDT_Window extends javax.swing.JFrame {
                 reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(reportingPanelLayout.createSequentialGroup()
                     .addComponent(topReportingPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 768, Short.MAX_VALUE))
+                    .addGap(0, 773, Short.MAX_VALUE))
                 .addGroup(reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(reportingPanelLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(reportingPeriodeTriPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(691, Short.MAX_VALUE)))
+                        .addContainerGap(696, Short.MAX_VALUE)))
             );
 
             rightCardPanel.add(reportingPanel, "card4");
@@ -1792,6 +1854,7 @@ public class EDT_Window extends javax.swing.JFrame {
 
             jourCB.setBackground(new java.awt.Color(0, 153, 153));
             jourCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+            jourCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             moisLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
             moisLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -1799,6 +1862,7 @@ public class EDT_Window extends javax.swing.JFrame {
 
             moisCB.setBackground(new java.awt.Color(0, 153, 153));
             moisCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre" }));
+            moisCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             anneeLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
             anneeLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -1806,13 +1870,518 @@ public class EDT_Window extends javax.swing.JFrame {
 
             anneeCB.setBackground(new java.awt.Color(0, 153, 153));
             anneeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2021" }));
+            anneeCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             heureDebutlabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
             heureDebutlabel.setForeground(new java.awt.Color(255, 255, 255));
             heureDebutlabel.setText("Heure de début : ");
 
             heureDebutCB.setBackground(new java.awt.Color(0, 153, 153));
-            heureDebutCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:30", "8:35", "8:40", "8:45", "8:50", "8:55", "9:00", "9:05", "9:10", "9:15", "9:20", "9:25", "9:30", "9:35", "9:40", "9:45", "9:50", "9:55", "10:00", "10:05", "10:10", "10:15", "10:20", "10:25", "10:30", "10:35", "10:40", "10:45", "10:50", "10:55", "11:00", "11:05", "11:10", "11:15", "11:20", "11:25", "11:30", "11:35", "11:40", "11:45", "11:50", "11:55", "12:00", " " }));
+            heureDebutCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:30", "8:35", "8:40", "8:45", "8:50", "8:55", "9:00", "9:05", "9:10", "9:15", "9:20", "9:25", "9:30", "9:35", "9:40", "9:45", "9:50", "9:55", "10:00", "10:05", "10:10", "10:15", "10:20", "10:25", "10:30", "10:35", "10:40", "10:45", "10:50", "10:55", "11:00", "11:05", "11:10", "11:15", "11:20", "11:25", "11:30", "11:35", "11:40", "11:45", "11:50", "11:55", "12:00", "12:05", "12:10", "12:15", "12:20", "12:25", "12:30", "12:35", "12:40", "12:45", "12:50", "12:55", "13:00", "13:05", "13:10", "13:15", "13:20", "13:25", "13:30", "13:35", "13:40", "13:45", "13:50", "13:55", "14:00", "14:05", "14:10", "14:15", "14:20", "14:25", "14:30", "14:35", "14:40", "14:45", "14:50", "14:55", "15:00", "15:05", "15:10", "15:15", "15:20", "15:25", "15:30", "15:35", "15:40", "15:45", "15:50", "15:55", "16:00", "16:05", "16:10", "16:15", "16:20", "16:25", "16:30", "16:35", "16:40", "16:45", "16:50", "16:55", "17:00", "17:05", "17:10", "17:15", "17:20", "17:25", "17:30", "17:35", "17:40", "17:45", "17:50", "17:55", "18:00", "18:05", "18:10", "18:15", "18:20", "18:25", "18:30", "18:35", "18:40", "18:45", "18:50", "18:55", "19:00", "19:05", "19:10", "19:15", "19:20", "19:25", "19:30", "19:35", "19:40", "19:45", "19:50", "19:55", "20:00", "20:05", "20:10", "20:15", "20:20", "20:25", "20:30", "20:35", "20:40", "20:45", "20:50", "20:55", "21:00" }));
+            heureDebutCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            heureFinlabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            heureFinlabel.setForeground(new java.awt.Color(255, 255, 255));
+            heureFinlabel.setText("Heure de fin : ");
+
+            heureFinCB.setBackground(new java.awt.Color(0, 153, 153));
+            heureFinCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "9:00", "9:05", "9:10", "9:15", "9:20", "9:25", "9:30", "9:35", "9:40", "9:45", "9:50", "9:55", "10:00", "10:05", "10:10", "10:15", "10:20", "10:25", "10:30", "10:35", "10:40", "10:45", "10:50", "10:55", "11:00", "11:05", "11:10", "11:15", "11:20", "11:25", "11:30", "11:35", "11:40", "11:45", "11:50", "11:55", "12:00", "12:05", "12:10", "12:15", "12:20", "12:25", "12:30", "12:35", "12:40", "12:45", "12:50", "12:55", "13:00", "13:05", "13:10", "13:15", "13:20", "13:25", "13:30", "13:35", "13:40", "13:45", "13:50", "13:55", "14:00", "14:05", "14:10", "14:15", "14:20", "14:25", "14:30", "14:35", "14:40", "14:45", "14:50", "14:55", "15:00", "15:05", "15:10", "15:15", "15:20", "15:25", "15:30", "15:35", "15:40", "15:45", "15:50", "15:55", "16:00", "16:05", "16:10", "16:15", "16:20", "16:25", "16:30", "16:35", "16:40", "16:45", "16:50", "16:55", "17:00", "17:05", "17:10", "17:15", "17:20", "17:25", "17:30", "17:35", "17:40", "17:45", "17:50", "17:55", "18:00", "18:05", "18:10", "18:15", "18:20", "18:25", "18:30", "18:35", "18:40", "18:45", "18:50", "18:55", "19:00", "19:05", "19:10", "19:15", "19:20", "19:25", "19:30", "19:35", "19:40", "19:45", "19:50", "19:55", "20:00", "20:05", "20:10", "20:15", "20:20", "20:25", "20:30", "20:35", "20:40", "20:45", "20:50", "20:55", "21:00", "21:05", "21:10", "21:15", "21:20", "21:25", "21:30" }));
+            heureFinCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            typeCoursLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            typeCoursLabel.setForeground(new java.awt.Color(255, 255, 255));
+            typeCoursLabel.setText("Type de cours : ");
+
+            typeCoursCB.setBackground(new java.awt.Color(0, 153, 153));
+            typeCoursCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CM", "TD", "TP", "Soutien", "Reunion", "Conférence" }));
+            typeCoursCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            containerTypeCours.setBackground(new java.awt.Color(153, 153, 153));
+            containerTypeCours.setForeground(new java.awt.Color(153, 153, 153));
+            containerTypeCours.setLayout(new java.awt.CardLayout());
+
+            magistralSoutienPanel.setBackground(new java.awt.Color(153, 153, 153));
+            magistralSoutienPanel.setForeground(new java.awt.Color(153, 153, 153));
+
+            enseignantMagistralLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            enseignantMagistralLabel.setForeground(new java.awt.Color(255, 255, 255));
+            enseignantMagistralLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            enseignantMagistralLabel.setText("Enseignant : ");
+
+            enseignantMagistralCB.setBackground(new java.awt.Color(0, 153, 153));
+            enseignantMagistralCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M.SEGADO", "M.RAVAUD", "M.HINA", "M.BOUBEZOUL" }));
+            enseignantMagistralCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            promtionMagistralLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            promtionMagistralLabel.setForeground(new java.awt.Color(255, 255, 255));
+            promtionMagistralLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            promtionMagistralLabel.setText("Promotion :");
+
+            promotionMagistralCB.setBackground(new java.awt.Color(0, 153, 153));
+            promotionMagistralCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ING1", "ING2", "ING3", "ING4", "ING5" }));
+            promotionMagistralCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            nbrGroupeMagistralLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            nbrGroupeMagistralLabel.setForeground(new java.awt.Color(255, 255, 255));
+            nbrGroupeMagistralLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            nbrGroupeMagistralLabel.setText("Nombre de Groupe : ");
+
+            nbrGroupeMagistralCB.setBackground(new java.awt.Color(0, 153, 153));
+            nbrGroupeMagistralCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+            nbrGroupeMagistralCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            ListGrpLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            ListGrpLabel.setForeground(new java.awt.Color(255, 255, 255));
+            ListGrpLabel.setText("Liste des groupes : ");
+
+            grpCB1.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB2.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB3.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB4.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB5.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB6.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB7.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB8.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB9.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB10.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            nbrGroupeMagistralLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            nbrGroupeMagistralLabel1.setForeground(new java.awt.Color(255, 255, 255));
+            nbrGroupeMagistralLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            nbrGroupeMagistralLabel1.setText("Site : ");
+
+            grpCB11.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "E1", "E2", "E3", "E4", "E5" }));
+            grpCB11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            nbrGroupeMagistralLabel2.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            nbrGroupeMagistralLabel2.setForeground(new java.awt.Color(255, 255, 255));
+            nbrGroupeMagistralLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            nbrGroupeMagistralLabel2.setText("Salle : ");
+
+            grpCB12.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10" }));
+            grpCB12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            javax.swing.GroupLayout magistralSoutienPanelLayout = new javax.swing.GroupLayout(magistralSoutienPanel);
+            magistralSoutienPanel.setLayout(magistralSoutienPanelLayout);
+            magistralSoutienPanelLayout.setHorizontalGroup(
+                magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, magistralSoutienPanelLayout.createSequentialGroup()
+                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(nbrGroupeMagistralLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ListGrpLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                        .addComponent(nbrGroupeMagistralLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(magistralSoutienPanelLayout.createSequentialGroup()
+                            .addComponent(grpCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB5, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB7, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(27, 27, 27)
+                            .addComponent(grpCB8, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB9, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB10, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(grpCB11, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB12, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(magistralSoutienPanelLayout.createSequentialGroup()
+                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(promtionMagistralLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nbrGroupeMagistralLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                        .addComponent(enseignantMagistralLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(promotionMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nbrGroupeMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enseignantMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
+            magistralSoutienPanelLayout.setVerticalGroup(
+                magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(magistralSoutienPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(enseignantMagistralLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enseignantMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(promtionMagistralLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(promotionMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nbrGroupeMagistralLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nbrGroupeMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(grpCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ListGrpLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nbrGroupeMagistralLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nbrGroupeMagistralLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(334, 334, 334))
+            );
+
+            containerTypeCours.add(magistralSoutienPanel, "card2");
+
+            TPTDPanel.setBackground(new java.awt.Color(153, 153, 153));
+            TPTDPanel.setForeground(new java.awt.Color(153, 153, 153));
+
+            enseignantTPTDLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            enseignantTPTDLabel.setForeground(new java.awt.Color(255, 255, 255));
+            enseignantTPTDLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            enseignantTPTDLabel.setText("Enseignant : ");
+
+            enseignantTPTDCB.setBackground(new java.awt.Color(0, 153, 153));
+            enseignantTPTDCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M.SEGADO", "M.RAVAUD", "M.HINA", "M.BOUBEZOUL" }));
+            enseignantTPTDCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            promtionTPTDLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            promtionTPTDLabel.setForeground(new java.awt.Color(255, 255, 255));
+            promtionTPTDLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            promtionTPTDLabel.setText("Promotion :");
+
+            promotionTPTDCB.setBackground(new java.awt.Color(0, 153, 153));
+            promotionTPTDCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ING1", "ING2", "ING3", "ING4", "ING5" }));
+            promotionTPTDCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            groupeTPTDLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            groupeTPTDLabel.setForeground(new java.awt.Color(255, 255, 255));
+            groupeTPTDLabel.setText("Groupe : ");
+
+            groupeTPTDCB.setBackground(new java.awt.Color(0, 153, 153));
+            groupeTPTDCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            groupeTPTDCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            siteTPTDLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            siteTPTDLabel.setForeground(new java.awt.Color(255, 255, 255));
+            siteTPTDLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            siteTPTDLabel.setText("Site : ");
+
+            siteTPTDCB.setBackground(new java.awt.Color(0, 153, 153));
+            siteTPTDCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "E1", "E2", "E3", "E4", "E5" }));
+            siteTPTDCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            salleTPTDLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            salleTPTDLabel.setForeground(new java.awt.Color(255, 255, 255));
+            salleTPTDLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            salleTPTDLabel.setText("Salle : ");
+
+            salleTPTDCB.setBackground(new java.awt.Color(0, 153, 153));
+            salleTPTDCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10" }));
+            salleTPTDCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            javax.swing.GroupLayout TPTDPanelLayout = new javax.swing.GroupLayout(TPTDPanel);
+            TPTDPanel.setLayout(TPTDPanelLayout);
+            TPTDPanelLayout.setHorizontalGroup(
+                TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TPTDPanelLayout.createSequentialGroup()
+                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(salleTPTDLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(promtionTPTDLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(enseignantTPTDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                        .addComponent(groupeTPTDLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                        .addComponent(siteTPTDLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(promotionTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enseignantTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(groupeTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(siteTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(salleTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(824, Short.MAX_VALUE))
+            );
+            TPTDPanelLayout.setVerticalGroup(
+                TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TPTDPanelLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(enseignantTPTDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enseignantTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(promtionTPTDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(promotionTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(groupeTPTDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(groupeTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(siteTPTDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(siteTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(salleTPTDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(salleTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(376, 376, 376))
+            );
+
+            containerTypeCours.add(TPTDPanel, "card2");
+
+            magistralSoutienPanel1.setBackground(new java.awt.Color(153, 153, 153));
+            magistralSoutienPanel1.setForeground(new java.awt.Color(153, 153, 153));
+
+            enseignantMagistralLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            enseignantMagistralLabel1.setForeground(new java.awt.Color(255, 255, 255));
+            enseignantMagistralLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            enseignantMagistralLabel1.setText("Enseignant : ");
+
+            enseignantMagistralCB1.setBackground(new java.awt.Color(0, 153, 153));
+            enseignantMagistralCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M.SEGADO", "M.RAVAUD", "M.HINA", "M.BOUBEZOUL" }));
+            enseignantMagistralCB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            promtionMagistralLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            promtionMagistralLabel1.setForeground(new java.awt.Color(255, 255, 255));
+            promtionMagistralLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            promtionMagistralLabel1.setText("Promotion :");
+
+            promotionMagistralCB1.setBackground(new java.awt.Color(0, 153, 153));
+            promotionMagistralCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ING1", "ING2", "ING3", "ING4", "ING5" }));
+            promotionMagistralCB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            nbrGroupeMagistralLabel3.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            nbrGroupeMagistralLabel3.setForeground(new java.awt.Color(255, 255, 255));
+            nbrGroupeMagistralLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            nbrGroupeMagistralLabel3.setText("Nombre de Groupe : ");
+
+            nbrGroupeMagistralCB1.setBackground(new java.awt.Color(0, 153, 153));
+            nbrGroupeMagistralCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+            nbrGroupeMagistralCB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            ListGrpLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            ListGrpLabel1.setForeground(new java.awt.Color(255, 255, 255));
+            ListGrpLabel1.setText("Liste des groupes : ");
+
+            grpCB13.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB14.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB15.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB16.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB16.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB17.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB17.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB18.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB18.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB19.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB19.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB20.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB20.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB21.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB21.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            grpCB22.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB22.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
+            grpCB22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            nbrGroupeMagistralLabel4.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            nbrGroupeMagistralLabel4.setForeground(new java.awt.Color(255, 255, 255));
+            nbrGroupeMagistralLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            nbrGroupeMagistralLabel4.setText("Site : ");
+
+            grpCB23.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB23.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "E1", "E2", "E3", "E4", "E5" }));
+            grpCB23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            nbrGroupeMagistralLabel5.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            nbrGroupeMagistralLabel5.setForeground(new java.awt.Color(255, 255, 255));
+            nbrGroupeMagistralLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+            nbrGroupeMagistralLabel5.setText("Salle : ");
+
+            grpCB24.setBackground(new java.awt.Color(0, 153, 153));
+            grpCB24.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10" }));
+            grpCB24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            javax.swing.GroupLayout magistralSoutienPanel1Layout = new javax.swing.GroupLayout(magistralSoutienPanel1);
+            magistralSoutienPanel1.setLayout(magistralSoutienPanel1Layout);
+            magistralSoutienPanel1Layout.setHorizontalGroup(
+                magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, magistralSoutienPanel1Layout.createSequentialGroup()
+                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(nbrGroupeMagistralLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ListGrpLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                        .addComponent(nbrGroupeMagistralLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(magistralSoutienPanel1Layout.createSequentialGroup()
+                            .addComponent(grpCB13, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB14, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB15, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB16, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB17, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB18, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB19, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(27, 27, 27)
+                            .addComponent(grpCB20, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB21, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(grpCB22, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(grpCB23, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB24, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(magistralSoutienPanel1Layout.createSequentialGroup()
+                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(promtionMagistralLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nbrGroupeMagistralLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
+                        .addComponent(enseignantMagistralLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(promotionMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nbrGroupeMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enseignantMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
+            magistralSoutienPanel1Layout.setVerticalGroup(
+                magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(magistralSoutienPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(enseignantMagistralLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enseignantMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(promtionMagistralLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(promotionMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nbrGroupeMagistralLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nbrGroupeMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(grpCB13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ListGrpLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nbrGroupeMagistralLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nbrGroupeMagistralLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grpCB24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(334, 334, 334))
+            );
+
+            containerTypeCours.add(magistralSoutienPanel1, "card2");
+
+            conferencePanel.setBackground(new java.awt.Color(153, 153, 153));
+            conferencePanel.setForeground(new java.awt.Color(153, 153, 153));
+
+            javax.swing.GroupLayout conferencePanelLayout = new javax.swing.GroupLayout(conferencePanel);
+            conferencePanel.setLayout(conferencePanelLayout);
+            conferencePanelLayout.setHorizontalGroup(
+                conferencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 1086, Short.MAX_VALUE)
+            );
+            conferencePanelLayout.setVerticalGroup(
+                conferencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 556, Short.MAX_VALUE)
+            );
+
+            containerTypeCours.add(conferencePanel, "card5");
+
+            videPanel1.setBackground(new java.awt.Color(153, 153, 153));
+            videPanel1.setForeground(new java.awt.Color(153, 153, 153));
+
+            javax.swing.GroupLayout videPanel1Layout = new javax.swing.GroupLayout(videPanel1);
+            videPanel1.setLayout(videPanel1Layout);
+            videPanel1Layout.setHorizontalGroup(
+                videPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 1086, Short.MAX_VALUE)
+            );
+            videPanel1Layout.setVerticalGroup(
+                videPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 556, Short.MAX_VALUE)
+            );
+
+            containerTypeCours.add(videPanel1, "card6");
 
             javax.swing.GroupLayout insererPanelLayout = new javax.swing.GroupLayout(insererPanel);
             insererPanel.setLayout(insererPanelLayout);
@@ -1821,23 +2390,35 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(insererPanelLayout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(containerTypeCours, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(insererPanelLayout.createSequentialGroup()
-                            .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(moisLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jourLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jourCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(moisCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(insererPanelLayout.createSequentialGroup()
-                            .addComponent(anneeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(anneeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(insererPanelLayout.createSequentialGroup()
-                            .addComponent(heureDebutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(heureDebutCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap(830, Short.MAX_VALUE))
+                                .addGroup(insererPanelLayout.createSequentialGroup()
+                                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(moisLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jourLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jourCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(moisCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(insererPanelLayout.createSequentialGroup()
+                                    .addComponent(anneeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(anneeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(insererPanelLayout.createSequentialGroup()
+                                    .addComponent(heureDebutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(heureDebutCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(insererPanelLayout.createSequentialGroup()
+                                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(typeCoursLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(heureFinlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(heureFinCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(typeCoursCB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap())
             );
             insererPanelLayout.setVerticalGroup(
                 insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1858,7 +2439,17 @@ public class EDT_Window extends javax.swing.JFrame {
                     .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(heureDebutlabel)
                         .addComponent(heureDebutCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(627, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(heureFinlabel)
+                        .addComponent(heureFinCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(typeCoursLabel)
+                        .addComponent(typeCoursCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(containerTypeCours, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
             );
 
             gestionnaireContainerPanel.add(insererPanel, "card2");
@@ -1882,7 +2473,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(supprimerPanelLayout.createSequentialGroup()
                     .addGap(74, 74, 74)
                     .addComponent(jLabel2)
-                    .addContainerGap(670, Short.MAX_VALUE))
+                    .addContainerGap(675, Short.MAX_VALUE))
             );
 
             gestionnaireContainerPanel.add(supprimerPanel, "card3");
@@ -1906,7 +2497,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(modifierPanelLayout.createSequentialGroup()
                     .addGap(137, 137, 137)
                     .addComponent(jLabel3)
-                    .addContainerGap(607, Short.MAX_VALUE))
+                    .addContainerGap(612, Short.MAX_VALUE))
             );
 
             gestionnaireContainerPanel.add(modifierPanel, "card4");
@@ -2531,10 +3122,15 @@ public class EDT_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ListGrpLabel;
+    private javax.swing.JLabel ListGrpLabel1;
     private javax.swing.JLabel ReportingLabelTop;
+    private javax.swing.JPanel TPTDPanel;
     private javax.swing.JComboBox<String> anneeCB;
     private javax.swing.JLabel anneeLabel;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JPanel conferencePanel;
+    private javax.swing.JPanel containerTypeCours;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel deconnexionLabel;
     private javax.swing.JLabel dixLabel;
@@ -2547,12 +3143,46 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel edtPanel;
     private javax.swing.JPanel edtPanelBotRight;
     private javax.swing.JLabel emploidutempsLabel;
+    private javax.swing.JComboBox<String> enseignantMagistralCB;
+    private javax.swing.JComboBox<String> enseignantMagistralCB1;
+    private javax.swing.JLabel enseignantMagistralLabel;
+    private javax.swing.JLabel enseignantMagistralLabel1;
+    private javax.swing.JComboBox<String> enseignantTPTDCB;
+    private javax.swing.JLabel enseignantTPTDLabel;
     private javax.swing.JPanel firstBackgroundPanel;
     private javax.swing.JPanel gestionnaireContainerPanel;
     private javax.swing.JLabel gestionnaireLabel;
     private javax.swing.JPanel gestionnairePanel;
+    private javax.swing.JComboBox<String> groupeTPTDCB;
+    private javax.swing.JLabel groupeTPTDLabel;
+    private javax.swing.JComboBox<String> grpCB1;
+    private javax.swing.JComboBox<String> grpCB10;
+    private javax.swing.JComboBox<String> grpCB11;
+    private javax.swing.JComboBox<String> grpCB12;
+    private javax.swing.JComboBox<String> grpCB13;
+    private javax.swing.JComboBox<String> grpCB14;
+    private javax.swing.JComboBox<String> grpCB15;
+    private javax.swing.JComboBox<String> grpCB16;
+    private javax.swing.JComboBox<String> grpCB17;
+    private javax.swing.JComboBox<String> grpCB18;
+    private javax.swing.JComboBox<String> grpCB19;
+    private javax.swing.JComboBox<String> grpCB2;
+    private javax.swing.JComboBox<String> grpCB20;
+    private javax.swing.JComboBox<String> grpCB21;
+    private javax.swing.JComboBox<String> grpCB22;
+    private javax.swing.JComboBox<String> grpCB23;
+    private javax.swing.JComboBox<String> grpCB24;
+    private javax.swing.JComboBox<String> grpCB3;
+    private javax.swing.JComboBox<String> grpCB4;
+    private javax.swing.JComboBox<String> grpCB5;
+    private javax.swing.JComboBox<String> grpCB6;
+    private javax.swing.JComboBox<String> grpCB7;
+    private javax.swing.JComboBox<String> grpCB8;
+    private javax.swing.JComboBox<String> grpCB9;
     private javax.swing.JComboBox<String> heureDebutCB;
     private javax.swing.JLabel heureDebutlabel;
+    private javax.swing.JComboBox<String> heureFinCB;
+    private javax.swing.JLabel heureFinlabel;
     private javax.swing.JLabel heureLabel;
     private javax.swing.JLabel huitLabel;
     private javax.swing.JLabel iconEce;
@@ -2571,6 +3201,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel leftGreenPanel;
     private javax.swing.JPanel lundiDisplayPanel;
     private javax.swing.JLabel lundiLabel;
+    private javax.swing.JPanel magistralSoutienPanel;
+    private javax.swing.JPanel magistralSoutienPanel1;
     private javax.swing.JPanel mardiDisplayPanel;
     private javax.swing.JLabel mardiLabel;
     private javax.swing.JPanel mercrediDisplayPanel;
@@ -2580,9 +3212,23 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> moisCB;
     private javax.swing.JLabel moisLabel;
     private javax.swing.JLabel nameUserLabel;
+    private javax.swing.JComboBox<String> nbrGroupeMagistralCB;
+    private javax.swing.JComboBox<String> nbrGroupeMagistralCB1;
+    private javax.swing.JLabel nbrGroupeMagistralLabel;
+    private javax.swing.JLabel nbrGroupeMagistralLabel1;
+    private javax.swing.JLabel nbrGroupeMagistralLabel2;
+    private javax.swing.JLabel nbrGroupeMagistralLabel3;
+    private javax.swing.JLabel nbrGroupeMagistralLabel4;
+    private javax.swing.JLabel nbrGroupeMagistralLabel5;
     private javax.swing.JLabel neufLabel;
     private javax.swing.JLabel onzeLabel;
     private javax.swing.JLabel promotionLabel;
+    private javax.swing.JComboBox<String> promotionMagistralCB;
+    private javax.swing.JComboBox<String> promotionMagistralCB1;
+    private javax.swing.JComboBox<String> promotionTPTDCB;
+    private javax.swing.JLabel promtionMagistralLabel;
+    private javax.swing.JLabel promtionMagistralLabel1;
+    private javax.swing.JLabel promtionTPTDLabel;
     private javax.swing.JLabel quatorzeLabel;
     private javax.swing.JLabel quinzeLabel;
     private javax.swing.JLabel recapMessageErreur;
@@ -2609,6 +3255,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> reportingSearch2;
     private javax.swing.JComboBox<String> reportingSearch3;
     private javax.swing.JPanel rightCardPanel;
+    private javax.swing.JComboBox<String> salleTPTDCB;
+    private javax.swing.JLabel salleTPTDLabel;
     private javax.swing.JLabel seizeLabel;
     private javax.swing.JToggleButton semaine1;
     private javax.swing.JToggleButton semaine10;
@@ -2665,6 +3313,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel semainePickerPanel;
     private javax.swing.JSeparator separatorGEDT1;
     private javax.swing.JSeparator separatorGEDT2;
+    private javax.swing.JComboBox<String> siteTPTDCB;
+    private javax.swing.JLabel siteTPTDLabel;
     private javax.swing.JLabel supprimerLabel;
     private javax.swing.JPanel supprimerPanel;
     private javax.swing.JLabel tdLabel;
@@ -2675,7 +3325,10 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel treizeLabel;
     private javax.swing.JLabel trierparRecapLabel;
     private javax.swing.JLabel trierparReportingLabel;
+    private javax.swing.JComboBox<String> typeCoursCB;
+    private javax.swing.JLabel typeCoursLabel;
     private javax.swing.JLabel vendrediLabel;
+    private javax.swing.JPanel videPanel1;
     private javax.swing.JLabel vingtLabel;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
