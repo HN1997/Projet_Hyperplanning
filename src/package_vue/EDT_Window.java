@@ -202,64 +202,35 @@ public class EDT_Window extends javax.swing.JFrame {
         heureFinCB = new javax.swing.JComboBox<>();
         typeCoursLabel = new javax.swing.JLabel();
         typeCoursCB = new javax.swing.JComboBox<>();
-        containerTypeCours = new javax.swing.JPanel();
-        magistralSoutienPanel = new javax.swing.JPanel();
-        enseignantMagistralLabel = new javax.swing.JLabel();
-        enseignantMagistralCB = new javax.swing.JComboBox<>();
-        promtionMagistralLabel = new javax.swing.JLabel();
-        promotionMagistralCB = new javax.swing.JComboBox<>();
-        nbrGroupeMagistralLabel = new javax.swing.JLabel();
-        nbrGroupeMagistralCB = new javax.swing.JComboBox<>();
-        ListGrpLabel = new javax.swing.JLabel();
-        grpCB1 = new javax.swing.JComboBox<>();
-        grpCB2 = new javax.swing.JComboBox<>();
-        grpCB3 = new javax.swing.JComboBox<>();
-        grpCB4 = new javax.swing.JComboBox<>();
-        grpCB5 = new javax.swing.JComboBox<>();
-        grpCB6 = new javax.swing.JComboBox<>();
-        grpCB7 = new javax.swing.JComboBox<>();
-        grpCB8 = new javax.swing.JComboBox<>();
-        grpCB9 = new javax.swing.JComboBox<>();
-        grpCB10 = new javax.swing.JComboBox<>();
-        nbrGroupeMagistralLabel1 = new javax.swing.JLabel();
-        grpCB11 = new javax.swing.JComboBox<>();
-        nbrGroupeMagistralLabel2 = new javax.swing.JLabel();
-        grpCB12 = new javax.swing.JComboBox<>();
-        TPTDPanel = new javax.swing.JPanel();
-        enseignantTPTDLabel = new javax.swing.JLabel();
-        enseignantTPTDCB = new javax.swing.JComboBox<>();
-        promtionTPTDLabel = new javax.swing.JLabel();
-        promotionTPTDCB = new javax.swing.JComboBox<>();
-        groupeTPTDLabel = new javax.swing.JLabel();
-        groupeTPTDCB = new javax.swing.JComboBox<>();
-        siteTPTDLabel = new javax.swing.JLabel();
-        siteTPTDCB = new javax.swing.JComboBox<>();
-        salleTPTDLabel = new javax.swing.JLabel();
-        salleTPTDCB = new javax.swing.JComboBox<>();
-        magistralSoutienPanel1 = new javax.swing.JPanel();
-        enseignantMagistralLabel1 = new javax.swing.JLabel();
-        enseignantMagistralCB1 = new javax.swing.JComboBox<>();
-        promtionMagistralLabel1 = new javax.swing.JLabel();
-        promotionMagistralCB1 = new javax.swing.JComboBox<>();
-        nbrGroupeMagistralLabel3 = new javax.swing.JLabel();
-        nbrGroupeMagistralCB1 = new javax.swing.JComboBox<>();
-        ListGrpLabel1 = new javax.swing.JLabel();
-        grpCB13 = new javax.swing.JComboBox<>();
-        grpCB14 = new javax.swing.JComboBox<>();
-        grpCB15 = new javax.swing.JComboBox<>();
-        grpCB16 = new javax.swing.JComboBox<>();
-        grpCB17 = new javax.swing.JComboBox<>();
-        grpCB18 = new javax.swing.JComboBox<>();
-        grpCB19 = new javax.swing.JComboBox<>();
-        grpCB20 = new javax.swing.JComboBox<>();
-        grpCB21 = new javax.swing.JComboBox<>();
-        grpCB22 = new javax.swing.JComboBox<>();
-        nbrGroupeMagistralLabel4 = new javax.swing.JLabel();
-        grpCB23 = new javax.swing.JComboBox<>();
-        nbrGroupeMagistralLabel5 = new javax.swing.JLabel();
-        grpCB24 = new javax.swing.JComboBox<>();
-        conferencePanel = new javax.swing.JPanel();
-        videPanel1 = new javax.swing.JPanel();
+        nbrEnseignantLabel = new javax.swing.JLabel();
+        nbrEnseignantCB = new javax.swing.JComboBox<>();
+        virguleEnseignantLabel = new javax.swing.JLabel();
+        enseignantCB1 = new javax.swing.JComboBox<>();
+        enseignantCB2 = new javax.swing.JComboBox<>();
+        enseignantCB3 = new javax.swing.JComboBox<>();
+        enseignantCB4 = new javax.swing.JComboBox<>();
+        enseignantCB5 = new javax.swing.JComboBox<>();
+        promotionInsererLabel = new javax.swing.JLabel();
+        promotionInsererCB = new javax.swing.JComboBox<>();
+        nbrGroupeLabel = new javax.swing.JLabel();
+        nbrGroupeCB = new javax.swing.JComboBox<>();
+        virguleEnseignantLabel1 = new javax.swing.JLabel();
+        tdCB1 = new javax.swing.JComboBox<>();
+        tdCB2 = new javax.swing.JComboBox<>();
+        tdCB3 = new javax.swing.JComboBox<>();
+        tdCB4 = new javax.swing.JComboBox<>();
+        tdCB5 = new javax.swing.JComboBox<>();
+        tdCB6 = new javax.swing.JComboBox<>();
+        tdCB7 = new javax.swing.JComboBox<>();
+        tdCB8 = new javax.swing.JComboBox<>();
+        tdCB9 = new javax.swing.JComboBox<>();
+        tdCB10 = new javax.swing.JComboBox<>();
+        siteLabel = new javax.swing.JLabel();
+        siteCB = new javax.swing.JComboBox<>();
+        salleLabel = new javax.swing.JLabel();
+        salleCB = new javax.swing.JComboBox<>();
+        insererButton = new javax.swing.JButton();
+        resumeInsertionLabel = new javax.swing.JLabel();
         supprimerPanel = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         modifierPanel = new javax.swing.JPanel();
@@ -1896,492 +1867,129 @@ public class EDT_Window extends javax.swing.JFrame {
             typeCoursCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CM", "TD", "TP", "Soutien", "Reunion", "Conférence" }));
             typeCoursCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-            containerTypeCours.setBackground(new java.awt.Color(153, 153, 153));
-            containerTypeCours.setForeground(new java.awt.Color(153, 153, 153));
-            containerTypeCours.setLayout(new java.awt.CardLayout());
-
-            magistralSoutienPanel.setBackground(new java.awt.Color(153, 153, 153));
-            magistralSoutienPanel.setForeground(new java.awt.Color(153, 153, 153));
-
-            enseignantMagistralLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            enseignantMagistralLabel.setForeground(new java.awt.Color(255, 255, 255));
-            enseignantMagistralLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            enseignantMagistralLabel.setText("Enseignant : ");
-
-            enseignantMagistralCB.setBackground(new java.awt.Color(0, 153, 153));
-            enseignantMagistralCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M.SEGADO", "M.RAVAUD", "M.HINA", "M.BOUBEZOUL" }));
-            enseignantMagistralCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            promtionMagistralLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            promtionMagistralLabel.setForeground(new java.awt.Color(255, 255, 255));
-            promtionMagistralLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            promtionMagistralLabel.setText("Promotion :");
-
-            promotionMagistralCB.setBackground(new java.awt.Color(0, 153, 153));
-            promotionMagistralCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ING1", "ING2", "ING3", "ING4", "ING5" }));
-            promotionMagistralCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            nbrGroupeMagistralLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            nbrGroupeMagistralLabel.setForeground(new java.awt.Color(255, 255, 255));
-            nbrGroupeMagistralLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            nbrGroupeMagistralLabel.setText("Nombre de Groupe : ");
-
-            nbrGroupeMagistralCB.setBackground(new java.awt.Color(0, 153, 153));
-            nbrGroupeMagistralCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-            nbrGroupeMagistralCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            ListGrpLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            ListGrpLabel.setForeground(new java.awt.Color(255, 255, 255));
-            ListGrpLabel.setText("Liste des groupes : ");
-
-            grpCB1.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB2.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB3.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB4.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB5.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB6.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB7.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB8.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB9.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB10.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            nbrGroupeMagistralLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            nbrGroupeMagistralLabel1.setForeground(new java.awt.Color(255, 255, 255));
-            nbrGroupeMagistralLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            nbrGroupeMagistralLabel1.setText("Site : ");
-
-            grpCB11.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "E1", "E2", "E3", "E4", "E5" }));
-            grpCB11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            nbrGroupeMagistralLabel2.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            nbrGroupeMagistralLabel2.setForeground(new java.awt.Color(255, 255, 255));
-            nbrGroupeMagistralLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            nbrGroupeMagistralLabel2.setText("Salle : ");
-
-            grpCB12.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10" }));
-            grpCB12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            javax.swing.GroupLayout magistralSoutienPanelLayout = new javax.swing.GroupLayout(magistralSoutienPanel);
-            magistralSoutienPanel.setLayout(magistralSoutienPanelLayout);
-            magistralSoutienPanelLayout.setHorizontalGroup(
-                magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, magistralSoutienPanelLayout.createSequentialGroup()
-                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(nbrGroupeMagistralLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ListGrpLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                        .addComponent(nbrGroupeMagistralLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(magistralSoutienPanelLayout.createSequentialGroup()
-                            .addComponent(grpCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB3, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB5, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB7, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(27, 27, 27)
-                            .addComponent(grpCB8, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB9, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB10, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(grpCB11, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB12, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(magistralSoutienPanelLayout.createSequentialGroup()
-                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(promtionMagistralLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(nbrGroupeMagistralLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                        .addComponent(enseignantMagistralLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(promotionMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nbrGroupeMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(enseignantMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            );
-            magistralSoutienPanelLayout.setVerticalGroup(
-                magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(magistralSoutienPanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(enseignantMagistralLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(enseignantMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(promtionMagistralLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(promotionMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nbrGroupeMagistralLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nbrGroupeMagistralCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(grpCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ListGrpLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nbrGroupeMagistralLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nbrGroupeMagistralLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(334, 334, 334))
-            );
-
-            containerTypeCours.add(magistralSoutienPanel, "card2");
-
-            TPTDPanel.setBackground(new java.awt.Color(153, 153, 153));
-            TPTDPanel.setForeground(new java.awt.Color(153, 153, 153));
-
-            enseignantTPTDLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            enseignantTPTDLabel.setForeground(new java.awt.Color(255, 255, 255));
-            enseignantTPTDLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            enseignantTPTDLabel.setText("Enseignant : ");
-
-            enseignantTPTDCB.setBackground(new java.awt.Color(0, 153, 153));
-            enseignantTPTDCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M.SEGADO", "M.RAVAUD", "M.HINA", "M.BOUBEZOUL" }));
-            enseignantTPTDCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            promtionTPTDLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            promtionTPTDLabel.setForeground(new java.awt.Color(255, 255, 255));
-            promtionTPTDLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            promtionTPTDLabel.setText("Promotion :");
-
-            promotionTPTDCB.setBackground(new java.awt.Color(0, 153, 153));
-            promotionTPTDCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ING1", "ING2", "ING3", "ING4", "ING5" }));
-            promotionTPTDCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            groupeTPTDLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            groupeTPTDLabel.setForeground(new java.awt.Color(255, 255, 255));
-            groupeTPTDLabel.setText("Groupe : ");
-
-            groupeTPTDCB.setBackground(new java.awt.Color(0, 153, 153));
-            groupeTPTDCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            groupeTPTDCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            siteTPTDLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            siteTPTDLabel.setForeground(new java.awt.Color(255, 255, 255));
-            siteTPTDLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            siteTPTDLabel.setText("Site : ");
-
-            siteTPTDCB.setBackground(new java.awt.Color(0, 153, 153));
-            siteTPTDCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "E1", "E2", "E3", "E4", "E5" }));
-            siteTPTDCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            salleTPTDLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            salleTPTDLabel.setForeground(new java.awt.Color(255, 255, 255));
-            salleTPTDLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            salleTPTDLabel.setText("Salle : ");
-
-            salleTPTDCB.setBackground(new java.awt.Color(0, 153, 153));
-            salleTPTDCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10" }));
-            salleTPTDCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            javax.swing.GroupLayout TPTDPanelLayout = new javax.swing.GroupLayout(TPTDPanel);
-            TPTDPanel.setLayout(TPTDPanelLayout);
-            TPTDPanelLayout.setHorizontalGroup(
-                TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(TPTDPanelLayout.createSequentialGroup()
-                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(salleTPTDLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(promtionTPTDLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(enseignantTPTDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                        .addComponent(groupeTPTDLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                        .addComponent(siteTPTDLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(promotionTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(enseignantTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(groupeTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(siteTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(salleTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(824, Short.MAX_VALUE))
-            );
-            TPTDPanelLayout.setVerticalGroup(
-                TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(TPTDPanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(enseignantTPTDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(enseignantTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(promtionTPTDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(promotionTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(groupeTPTDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(groupeTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(siteTPTDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(siteTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(TPTDPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(salleTPTDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(salleTPTDCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(376, 376, 376))
-            );
-
-            containerTypeCours.add(TPTDPanel, "card2");
-
-            magistralSoutienPanel1.setBackground(new java.awt.Color(153, 153, 153));
-            magistralSoutienPanel1.setForeground(new java.awt.Color(153, 153, 153));
-
-            enseignantMagistralLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            enseignantMagistralLabel1.setForeground(new java.awt.Color(255, 255, 255));
-            enseignantMagistralLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            enseignantMagistralLabel1.setText("Enseignant : ");
-
-            enseignantMagistralCB1.setBackground(new java.awt.Color(0, 153, 153));
-            enseignantMagistralCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M.SEGADO", "M.RAVAUD", "M.HINA", "M.BOUBEZOUL" }));
-            enseignantMagistralCB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            promtionMagistralLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            promtionMagistralLabel1.setForeground(new java.awt.Color(255, 255, 255));
-            promtionMagistralLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            promtionMagistralLabel1.setText("Promotion :");
-
-            promotionMagistralCB1.setBackground(new java.awt.Color(0, 153, 153));
-            promotionMagistralCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ING1", "ING2", "ING3", "ING4", "ING5" }));
-            promotionMagistralCB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            nbrGroupeMagistralLabel3.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            nbrGroupeMagistralLabel3.setForeground(new java.awt.Color(255, 255, 255));
-            nbrGroupeMagistralLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            nbrGroupeMagistralLabel3.setText("Nombre de Groupe : ");
-
-            nbrGroupeMagistralCB1.setBackground(new java.awt.Color(0, 153, 153));
-            nbrGroupeMagistralCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
-            nbrGroupeMagistralCB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            ListGrpLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            ListGrpLabel1.setForeground(new java.awt.Color(255, 255, 255));
-            ListGrpLabel1.setText("Liste des groupes : ");
-
-            grpCB13.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB14.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB15.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB15.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB16.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB16.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB17.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB17.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB18.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB18.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB19.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB19.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB20.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB20.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB21.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB21.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            grpCB22.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB22.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD1", "TD2", "TD3", "TD4", "TD5", "TD6", "TD7", "TD8", "TD10" }));
-            grpCB22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            nbrGroupeMagistralLabel4.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            nbrGroupeMagistralLabel4.setForeground(new java.awt.Color(255, 255, 255));
-            nbrGroupeMagistralLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            nbrGroupeMagistralLabel4.setText("Site : ");
-
-            grpCB23.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB23.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "E1", "E2", "E3", "E4", "E5" }));
-            grpCB23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            nbrGroupeMagistralLabel5.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-            nbrGroupeMagistralLabel5.setForeground(new java.awt.Color(255, 255, 255));
-            nbrGroupeMagistralLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-            nbrGroupeMagistralLabel5.setText("Salle : ");
-
-            grpCB24.setBackground(new java.awt.Color(0, 153, 153));
-            grpCB24.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10" }));
-            grpCB24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            javax.swing.GroupLayout magistralSoutienPanel1Layout = new javax.swing.GroupLayout(magistralSoutienPanel1);
-            magistralSoutienPanel1.setLayout(magistralSoutienPanel1Layout);
-            magistralSoutienPanel1Layout.setHorizontalGroup(
-                magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, magistralSoutienPanel1Layout.createSequentialGroup()
-                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(nbrGroupeMagistralLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(ListGrpLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                        .addComponent(nbrGroupeMagistralLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(magistralSoutienPanel1Layout.createSequentialGroup()
-                            .addComponent(grpCB13, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB14, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB15, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB16, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB17, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB18, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB19, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(27, 27, 27)
-                            .addComponent(grpCB20, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB21, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(grpCB22, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(grpCB23, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB24, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(magistralSoutienPanel1Layout.createSequentialGroup()
-                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(promtionMagistralLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(nbrGroupeMagistralLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE)
-                        .addComponent(enseignantMagistralLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(promotionMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nbrGroupeMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(enseignantMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            );
-            magistralSoutienPanel1Layout.setVerticalGroup(
-                magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(magistralSoutienPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(enseignantMagistralLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(enseignantMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(promtionMagistralLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(promotionMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nbrGroupeMagistralLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(nbrGroupeMagistralCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(grpCB13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ListGrpLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nbrGroupeMagistralLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(magistralSoutienPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nbrGroupeMagistralLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(grpCB24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(334, 334, 334))
-            );
-
-            containerTypeCours.add(magistralSoutienPanel1, "card2");
-
-            conferencePanel.setBackground(new java.awt.Color(153, 153, 153));
-            conferencePanel.setForeground(new java.awt.Color(153, 153, 153));
-
-            javax.swing.GroupLayout conferencePanelLayout = new javax.swing.GroupLayout(conferencePanel);
-            conferencePanel.setLayout(conferencePanelLayout);
-            conferencePanelLayout.setHorizontalGroup(
-                conferencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 1086, Short.MAX_VALUE)
-            );
-            conferencePanelLayout.setVerticalGroup(
-                conferencePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 556, Short.MAX_VALUE)
-            );
-
-            containerTypeCours.add(conferencePanel, "card5");
-
-            videPanel1.setBackground(new java.awt.Color(153, 153, 153));
-            videPanel1.setForeground(new java.awt.Color(153, 153, 153));
-
-            javax.swing.GroupLayout videPanel1Layout = new javax.swing.GroupLayout(videPanel1);
-            videPanel1.setLayout(videPanel1Layout);
-            videPanel1Layout.setHorizontalGroup(
-                videPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 1086, Short.MAX_VALUE)
-            );
-            videPanel1Layout.setVerticalGroup(
-                videPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 556, Short.MAX_VALUE)
-            );
-
-            containerTypeCours.add(videPanel1, "card6");
+            nbrEnseignantLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            nbrEnseignantLabel.setForeground(new java.awt.Color(255, 255, 255));
+            nbrEnseignantLabel.setText("Nombre d'Enseignant : ");
+
+            nbrEnseignantCB.setBackground(new java.awt.Color(0, 153, 153));
+            nbrEnseignantCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+            nbrEnseignantCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            virguleEnseignantLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            virguleEnseignantLabel.setForeground(new java.awt.Color(255, 255, 255));
+            virguleEnseignantLabel.setText(":");
+
+            enseignantCB1.setBackground(new java.awt.Color(0, 153, 153));
+            enseignantCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M.SEGADO", "M.RAVAUD", "M.HINA" }));
+            enseignantCB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            enseignantCB2.setBackground(new java.awt.Color(0, 153, 153));
+            enseignantCB2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M.SEGADO", "M.RAVAUD", "M.HINA" }));
+            enseignantCB2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            enseignantCB3.setBackground(new java.awt.Color(0, 153, 153));
+            enseignantCB3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M.SEGADO", "M.RAVAUD", "M.HINA" }));
+            enseignantCB3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            enseignantCB4.setBackground(new java.awt.Color(0, 153, 153));
+            enseignantCB4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M.SEGADO", "M.RAVAUD", "M.HINA" }));
+            enseignantCB4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            enseignantCB5.setBackground(new java.awt.Color(0, 153, 153));
+            enseignantCB5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "M.SEGADO", "M.RAVAUD", "M.HINA" }));
+            enseignantCB5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            promotionInsererLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            promotionInsererLabel.setForeground(new java.awt.Color(255, 255, 255));
+            promotionInsererLabel.setText("Promotion :");
+
+            promotionInsererCB.setBackground(new java.awt.Color(0, 153, 153));
+            promotionInsererCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ING1", "ING2", "ING3", "ING4", "ING5" }));
+            promotionInsererCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            nbrGroupeLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            nbrGroupeLabel.setForeground(new java.awt.Color(255, 255, 255));
+            nbrGroupeLabel.setText("Nombre de Groupe :");
+
+            nbrGroupeCB.setBackground(new java.awt.Color(0, 153, 153));
+            nbrGroupeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+            nbrGroupeCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            virguleEnseignantLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            virguleEnseignantLabel1.setForeground(new java.awt.Color(255, 255, 255));
+            virguleEnseignantLabel1.setText(":");
+
+            tdCB1.setBackground(new java.awt.Color(0, 153, 153));
+            tdCB1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD01", "TD02", "TD03", "TD04", "TD05", "TD06", "TD07", "TD08", "TD09", "TD10" }));
+            tdCB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            tdCB2.setBackground(new java.awt.Color(0, 153, 153));
+            tdCB2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD01", "TD02", "TD03", "TD04", "TD05", "TD06", "TD07", "TD08", "TD09", "TD10" }));
+            tdCB2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            tdCB3.setBackground(new java.awt.Color(0, 153, 153));
+            tdCB3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD01", "TD02", "TD03", "TD04", "TD05", "TD06", "TD07", "TD08", "TD09", "TD10" }));
+            tdCB3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            tdCB4.setBackground(new java.awt.Color(0, 153, 153));
+            tdCB4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD01", "TD02", "TD03", "TD04", "TD05", "TD06", "TD07", "TD08", "TD09", "TD10" }));
+            tdCB4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            tdCB5.setBackground(new java.awt.Color(0, 153, 153));
+            tdCB5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD01", "TD02", "TD03", "TD04", "TD05", "TD06", "TD07", "TD08", "TD09", "TD10" }));
+            tdCB5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            tdCB6.setBackground(new java.awt.Color(0, 153, 153));
+            tdCB6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD01", "TD02", "TD03", "TD04", "TD05", "TD06", "TD07", "TD08", "TD09", "TD10" }));
+            tdCB6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            tdCB7.setBackground(new java.awt.Color(0, 153, 153));
+            tdCB7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD01", "TD02", "TD03", "TD04", "TD05", "TD06", "TD07", "TD08", "TD09", "TD10" }));
+            tdCB7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            tdCB8.setBackground(new java.awt.Color(0, 153, 153));
+            tdCB8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD01", "TD02", "TD03", "TD04", "TD05", "TD06", "TD07", "TD08", "TD09", "TD10" }));
+            tdCB8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            tdCB9.setBackground(new java.awt.Color(0, 153, 153));
+            tdCB9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD01", "TD02", "TD03", "TD04", "TD05", "TD06", "TD07", "TD08", "TD09", "TD10" }));
+            tdCB9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            tdCB10.setBackground(new java.awt.Color(0, 153, 153));
+            tdCB10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TD01", "TD02", "TD03", "TD04", "TD05", "TD06", "TD07", "TD08", "TD09", "TD10" }));
+            tdCB10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            siteLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            siteLabel.setForeground(new java.awt.Color(255, 255, 255));
+            siteLabel.setText("Site :");
+
+            siteCB.setBackground(new java.awt.Color(0, 153, 153));
+            siteCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "E1", "E2", "E3", "E4", "E5" }));
+            siteCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            salleLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            salleLabel.setForeground(new java.awt.Color(255, 255, 255));
+            salleLabel.setText("Salle :");
+
+            salleCB.setBackground(new java.awt.Color(0, 153, 153));
+            salleCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "E1", "E2", "E3", "E4", "E5" }));
+            salleCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+            insererButton.setBackground(new java.awt.Color(0, 153, 153));
+            insererButton.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+            insererButton.setForeground(new java.awt.Color(57, 17, 45));
+            insererButton.setText("Valider");
+            insererButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            insererButton.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    insererButtonActionPerformed(evt);
+                }
+            });
+
+            resumeInsertionLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            resumeInsertionLabel.setForeground(new java.awt.Color(57, 17, 45));
+            resumeInsertionLabel.setText("Vous venez d'ajouter le cours suivant :");
+            resumeInsertionLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
             javax.swing.GroupLayout insererPanelLayout = new javax.swing.GroupLayout(insererPanel);
             insererPanel.setLayout(insererPanelLayout);
@@ -2390,35 +1998,99 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(insererPanelLayout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(containerTypeCours, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(insererPanelLayout.createSequentialGroup()
+                            .addComponent(promotionInsererLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(promotionInsererCB, 0, 100, Short.MAX_VALUE)
+                            .addGap(814, 814, 814))
+                        .addGroup(insererPanelLayout.createSequentialGroup()
+                            .addComponent(nbrGroupeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(nbrGroupeCB, 0, 100, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(virguleEnseignantLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(34, 34, 34))
                         .addGroup(insererPanelLayout.createSequentialGroup()
                             .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(insererPanelLayout.createSequentialGroup()
-                                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(moisLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jourLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                                    .addComponent(siteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(siteCB, 0, 100, Short.MAX_VALUE))
+                                .addGroup(insererPanelLayout.createSequentialGroup()
+                                    .addComponent(salleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(salleCB, 0, 100, Short.MAX_VALUE)))
+                            .addGap(814, 814, 814))
+                        .addGroup(insererPanelLayout.createSequentialGroup()
+                            .addComponent(insererButton)
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, insererPanelLayout.createSequentialGroup()
+                            .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(resumeInsertionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, insererPanelLayout.createSequentialGroup()
                                     .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jourCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(moisCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(insererPanelLayout.createSequentialGroup()
-                                    .addComponent(anneeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(insererPanelLayout.createSequentialGroup()
+                                            .addComponent(nbrEnseignantLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(nbrEnseignantCB, 0, 100, Short.MAX_VALUE))
+                                        .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addGroup(insererPanelLayout.createSequentialGroup()
+                                                .addComponent(anneeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(anneeCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGroup(insererPanelLayout.createSequentialGroup()
+                                                .addComponent(heureDebutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(heureDebutCB, 0, 100, Short.MAX_VALUE))
+                                            .addGroup(insererPanelLayout.createSequentialGroup()
+                                                .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(typeCoursLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(heureFinlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(heureFinCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(typeCoursCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                            .addGroup(insererPanelLayout.createSequentialGroup()
+                                                .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(moisLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(jourLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jourCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(moisCB, 0, 100, Short.MAX_VALUE)))))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(anneeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(insererPanelLayout.createSequentialGroup()
-                                    .addComponent(heureDebutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(virguleEnseignantLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(heureDebutCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(insererPanelLayout.createSequentialGroup()
-                                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(typeCoursLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(heureFinlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                                    .addComponent(enseignantCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(heureFinCB, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(typeCoursCB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGap(0, 0, Short.MAX_VALUE)))
-                    .addContainerGap())
+                                    .addComponent(enseignantCB2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(enseignantCB3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(enseignantCB4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(enseignantCB5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(14, 14, 14))))
             );
             insererPanelLayout.setVerticalGroup(
                 insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2448,8 +2120,47 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addComponent(typeCoursLabel)
                         .addComponent(typeCoursCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(containerTypeCours, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap())
+                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nbrEnseignantLabel)
+                        .addComponent(nbrEnseignantCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(virguleEnseignantLabel)
+                        .addComponent(enseignantCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enseignantCB2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enseignantCB3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enseignantCB4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(enseignantCB5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(promotionInsererLabel)
+                        .addComponent(promotionInsererCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nbrGroupeLabel)
+                        .addComponent(nbrGroupeCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(virguleEnseignantLabel1)
+                        .addComponent(tdCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tdCB2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tdCB3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tdCB4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tdCB5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tdCB6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tdCB7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tdCB8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tdCB9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tdCB10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(siteLabel)
+                        .addComponent(siteCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(salleLabel)
+                        .addComponent(salleCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(18, 18, 18)
+                    .addComponent(insererButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(18, 18, 18)
+                    .addComponent(resumeInsertionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(216, 216, 216))
             );
 
             gestionnaireContainerPanel.add(insererPanel, "card2");
@@ -3080,6 +2791,10 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_reportingRechercherButtonActionPerformed
 
+    private void insererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insererButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insererButtonActionPerformed
+
 
     //////////////////////////////////// FIN - LES 3 BOUTONS INSERER SUPPRIMER MODIFIER ////////////////////////
     
@@ -3122,15 +2837,10 @@ public class EDT_Window extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ListGrpLabel;
-    private javax.swing.JLabel ListGrpLabel1;
     private javax.swing.JLabel ReportingLabelTop;
-    private javax.swing.JPanel TPTDPanel;
     private javax.swing.JComboBox<String> anneeCB;
     private javax.swing.JLabel anneeLabel;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JPanel conferencePanel;
-    private javax.swing.JPanel containerTypeCours;
     private javax.swing.JLabel dateLabel;
     private javax.swing.JLabel deconnexionLabel;
     private javax.swing.JLabel dixLabel;
@@ -3143,42 +2853,15 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel edtPanel;
     private javax.swing.JPanel edtPanelBotRight;
     private javax.swing.JLabel emploidutempsLabel;
-    private javax.swing.JComboBox<String> enseignantMagistralCB;
-    private javax.swing.JComboBox<String> enseignantMagistralCB1;
-    private javax.swing.JLabel enseignantMagistralLabel;
-    private javax.swing.JLabel enseignantMagistralLabel1;
-    private javax.swing.JComboBox<String> enseignantTPTDCB;
-    private javax.swing.JLabel enseignantTPTDLabel;
+    private javax.swing.JComboBox<String> enseignantCB1;
+    private javax.swing.JComboBox<String> enseignantCB2;
+    private javax.swing.JComboBox<String> enseignantCB3;
+    private javax.swing.JComboBox<String> enseignantCB4;
+    private javax.swing.JComboBox<String> enseignantCB5;
     private javax.swing.JPanel firstBackgroundPanel;
     private javax.swing.JPanel gestionnaireContainerPanel;
     private javax.swing.JLabel gestionnaireLabel;
     private javax.swing.JPanel gestionnairePanel;
-    private javax.swing.JComboBox<String> groupeTPTDCB;
-    private javax.swing.JLabel groupeTPTDLabel;
-    private javax.swing.JComboBox<String> grpCB1;
-    private javax.swing.JComboBox<String> grpCB10;
-    private javax.swing.JComboBox<String> grpCB11;
-    private javax.swing.JComboBox<String> grpCB12;
-    private javax.swing.JComboBox<String> grpCB13;
-    private javax.swing.JComboBox<String> grpCB14;
-    private javax.swing.JComboBox<String> grpCB15;
-    private javax.swing.JComboBox<String> grpCB16;
-    private javax.swing.JComboBox<String> grpCB17;
-    private javax.swing.JComboBox<String> grpCB18;
-    private javax.swing.JComboBox<String> grpCB19;
-    private javax.swing.JComboBox<String> grpCB2;
-    private javax.swing.JComboBox<String> grpCB20;
-    private javax.swing.JComboBox<String> grpCB21;
-    private javax.swing.JComboBox<String> grpCB22;
-    private javax.swing.JComboBox<String> grpCB23;
-    private javax.swing.JComboBox<String> grpCB24;
-    private javax.swing.JComboBox<String> grpCB3;
-    private javax.swing.JComboBox<String> grpCB4;
-    private javax.swing.JComboBox<String> grpCB5;
-    private javax.swing.JComboBox<String> grpCB6;
-    private javax.swing.JComboBox<String> grpCB7;
-    private javax.swing.JComboBox<String> grpCB8;
-    private javax.swing.JComboBox<String> grpCB9;
     private javax.swing.JComboBox<String> heureDebutCB;
     private javax.swing.JLabel heureDebutlabel;
     private javax.swing.JComboBox<String> heureFinCB;
@@ -3186,6 +2869,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel heureLabel;
     private javax.swing.JLabel huitLabel;
     private javax.swing.JLabel iconEce;
+    private javax.swing.JButton insererButton;
     private javax.swing.JLabel insererLabel;
     private javax.swing.JPanel insererPanel;
     private javax.swing.JLabel jLabel2;
@@ -3201,8 +2885,6 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel leftGreenPanel;
     private javax.swing.JPanel lundiDisplayPanel;
     private javax.swing.JLabel lundiLabel;
-    private javax.swing.JPanel magistralSoutienPanel;
-    private javax.swing.JPanel magistralSoutienPanel1;
     private javax.swing.JPanel mardiDisplayPanel;
     private javax.swing.JLabel mardiLabel;
     private javax.swing.JPanel mercrediDisplayPanel;
@@ -3212,23 +2894,15 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> moisCB;
     private javax.swing.JLabel moisLabel;
     private javax.swing.JLabel nameUserLabel;
-    private javax.swing.JComboBox<String> nbrGroupeMagistralCB;
-    private javax.swing.JComboBox<String> nbrGroupeMagistralCB1;
-    private javax.swing.JLabel nbrGroupeMagistralLabel;
-    private javax.swing.JLabel nbrGroupeMagistralLabel1;
-    private javax.swing.JLabel nbrGroupeMagistralLabel2;
-    private javax.swing.JLabel nbrGroupeMagistralLabel3;
-    private javax.swing.JLabel nbrGroupeMagistralLabel4;
-    private javax.swing.JLabel nbrGroupeMagistralLabel5;
+    private javax.swing.JComboBox<String> nbrEnseignantCB;
+    private javax.swing.JLabel nbrEnseignantLabel;
+    private javax.swing.JComboBox<String> nbrGroupeCB;
+    private javax.swing.JLabel nbrGroupeLabel;
     private javax.swing.JLabel neufLabel;
     private javax.swing.JLabel onzeLabel;
+    private javax.swing.JComboBox<String> promotionInsererCB;
+    private javax.swing.JLabel promotionInsererLabel;
     private javax.swing.JLabel promotionLabel;
-    private javax.swing.JComboBox<String> promotionMagistralCB;
-    private javax.swing.JComboBox<String> promotionMagistralCB1;
-    private javax.swing.JComboBox<String> promotionTPTDCB;
-    private javax.swing.JLabel promtionMagistralLabel;
-    private javax.swing.JLabel promtionMagistralLabel1;
-    private javax.swing.JLabel promtionTPTDLabel;
     private javax.swing.JLabel quatorzeLabel;
     private javax.swing.JLabel quinzeLabel;
     private javax.swing.JLabel recapMessageErreur;
@@ -3254,9 +2928,10 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> reportingSearch1;
     private javax.swing.JComboBox<String> reportingSearch2;
     private javax.swing.JComboBox<String> reportingSearch3;
+    private javax.swing.JLabel resumeInsertionLabel;
     private javax.swing.JPanel rightCardPanel;
-    private javax.swing.JComboBox<String> salleTPTDCB;
-    private javax.swing.JLabel salleTPTDLabel;
+    private javax.swing.JComboBox<String> salleCB;
+    private javax.swing.JLabel salleLabel;
     private javax.swing.JLabel seizeLabel;
     private javax.swing.JToggleButton semaine1;
     private javax.swing.JToggleButton semaine10;
@@ -3313,10 +2988,20 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel semainePickerPanel;
     private javax.swing.JSeparator separatorGEDT1;
     private javax.swing.JSeparator separatorGEDT2;
-    private javax.swing.JComboBox<String> siteTPTDCB;
-    private javax.swing.JLabel siteTPTDLabel;
+    private javax.swing.JComboBox<String> siteCB;
+    private javax.swing.JLabel siteLabel;
     private javax.swing.JLabel supprimerLabel;
     private javax.swing.JPanel supprimerPanel;
+    private javax.swing.JComboBox<String> tdCB1;
+    private javax.swing.JComboBox<String> tdCB10;
+    private javax.swing.JComboBox<String> tdCB2;
+    private javax.swing.JComboBox<String> tdCB3;
+    private javax.swing.JComboBox<String> tdCB4;
+    private javax.swing.JComboBox<String> tdCB5;
+    private javax.swing.JComboBox<String> tdCB6;
+    private javax.swing.JComboBox<String> tdCB7;
+    private javax.swing.JComboBox<String> tdCB8;
+    private javax.swing.JComboBox<String> tdCB9;
     private javax.swing.JLabel tdLabel;
     private javax.swing.JLabel topGestionnaireLabel;
     private javax.swing.JPanel topRecapPanel;
@@ -3328,8 +3013,9 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> typeCoursCB;
     private javax.swing.JLabel typeCoursLabel;
     private javax.swing.JLabel vendrediLabel;
-    private javax.swing.JPanel videPanel1;
     private javax.swing.JLabel vingtLabel;
+    private javax.swing.JLabel virguleEnseignantLabel;
+    private javax.swing.JLabel virguleEnseignantLabel1;
     private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
 }
