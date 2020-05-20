@@ -1978,7 +1978,7 @@ public class EDT_Window extends javax.swing.JFrame {
             salleLabel.setText("Salle :");
 
             salleCB.setBackground(new java.awt.Color(0, 153, 153));
-            salleCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "E1", "E2", "E3", "E4", "E5" }));
+            salleCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
             salleCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             insererButton.setBackground(new java.awt.Color(0, 153, 153));
