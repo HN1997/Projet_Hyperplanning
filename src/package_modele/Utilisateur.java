@@ -1,107 +1,84 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package package_modele;
+
+/**
+ *
+ * @author ShadowZeus
+ */
 public class Utilisateur {
     
-    protected int id; 
-    protected String email;
-    protected String password;
-    protected String Nom;
-    protected String Prenom;
-    protected int droit;
-    
-//Création du constructeur 
-    
-    public Utilisateur(){
-        
-    }
-    
-    public Utilisateur(int id, String email, String password, String Nom, String Prenom, int droit)
-    {
-        this.id=id;
-        this.email=email;
-        this.password=password;
-        this.Nom=Nom;
-        this.Prenom=Prenom;
-        this.droit=droit;
-        
-    }
-    
-    public Utilisateur(Utilisateur utilisateur)
-    {
-        this.id=utilisateur.id;
-        this.email=utilisateur.email;
-        this.password=utilisateur.password;
-        this.Nom=utilisateur.Nom;
-        this.Prenom=utilisateur.Prenom;
-        this.droit=utilisateur.droit;
-        
-    }
 
-    Utilisateur(String Email, String Password, int aInt, String string, String string0, int aInt0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  //ID
+  protected int id = 0;
+  //Nom de l'élève
+  protected String nom = "";
+  protected String prenom = "";
+  protected String email = "";
+  protected String passwd = "";
+  protected int droit = 0;
 
-    // Création des getteurs et setteurs pour chaque attributs 
-    
-    public int getId()
-    {
-        return id;
-    }
-    
-    public void setId(int id)
-    {
-        this.id = id;
-    }
-    
-    public String getEmail()
-    {
-        return email;
-    }
-    
-    public void setEmail(String email)
-    {
-        this.email = email;
-    }
-    
-    public String getNom()
-    {
-        return Nom;
-    }
-    
-    public void setNom(String Nom)
-    {
-        this.Nom = Nom;
-    }
-    
-    public String getPrenom()
-    {
-        return Prenom;
-    }
-    
-    public void setPrenom(String Prenom)
-    {
-        this.Prenom = Prenom;
-    }
-    
-    public int getDroit()
-    {
-        return droit;
-    }
-    
-    public void setDroit(int droit)
-    {
-        this.droit = droit;
-    }
-    
-    public String getPasswd()
-    {
-        return password;
-    }
-    
-    public void setPasswd(String password)
-    {
-        this.password = password;
-    }
-    
-    
+  public Utilisateur(int id, String nom, String prenom,String email,String passwd,int droit ) {
+    this.id = id;
+    this.nom = nom;
+    this.prenom = prenom;
+    this.email=email;
+    this.passwd=passwd;
+    this.droit=droit;
+  }
+  public Utilisateur(){};
+
+
+     
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getNom() {
+    return nom;
+  }
+
+  public void setNom(String nom) {
+    this.nom = nom;
+  }
+  
+  public String getPrenom() {
+    return prenom;
+  }
+
+  public void setPrenom(String prenom) {
+    this.prenom = prenom;
+  }
+  
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+  
+  public String getPasswd() {
+    return passwd;
+  }
+
+  public void setPasswd(String passwd) {
+    this.passwd = passwd;
+  }
+  
+  public int getDroit() {
+    return droit;
+  }
+
+  public void setDroit(int droit) {
+    this.droit = droit;
+  }
     
 }
