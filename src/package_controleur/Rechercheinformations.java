@@ -54,7 +54,7 @@ public class Rechercheinformations {
         DAO<Utilisateur> Utilisateurd= new UtilisateurDAO(ConnexionSQL.getInstance()); 
         Utilisateur user= Utilisateurd.find(Email,Passwd);
         
-        return("user.getNom()" + "user.getPrenom()");
+        return(user.getNom());
         
     }
     
