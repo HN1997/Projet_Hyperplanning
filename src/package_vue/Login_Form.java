@@ -1,15 +1,14 @@
 package package_vue;
 import javax.swing.*;
-import package_controleur.Login_Utilities;
+import package_controleur.Rechercheinformations;
 
 
 public class Login_Form extends javax.swing.JFrame {
     
-    // Recup du controleur
-    Login_Utilities lu;
-    //Fin recup controleur
+    Rechercheinformations ri;
     
     public Login_Form() {
+        ri = new Rechercheinformations();
         initComponents();
     }
 
@@ -168,8 +167,7 @@ public class Login_Form extends javax.swing.JFrame {
 
     // Appuie sur le bouton "connexion"
     private void connexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connexionButtonActionPerformed
-        lu = new Login_Utilities();
-        Object[] res = lu.Connexion(emailInput.getText(), passwordInput.getText());
+        Object[] res = ri.Connexion(emailInput.getText(), passwordInput.getText());
         if((boolean)res[0])
         {
             JOptionPane.showMessageDialog(null, "L'utilisateur s'est bien connetecte! Son droit est = " + (Integer)res[1]);

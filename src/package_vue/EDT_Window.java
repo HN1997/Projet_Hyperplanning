@@ -14,8 +14,6 @@ import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
-import package_controleur.DateTimeManager;
 import package_controleur.Rechercheinformations;
 
 /**
@@ -47,9 +45,8 @@ public class EDT_Window extends javax.swing.JFrame {
      */
     public EDT_Window() {
         initComponents();
-        DateTimeManager.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
+        Rechercheinformations.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
         //InitialiseSemaine(Rechercheinformations.GetSemaine());
-        
     }
 
     /**
