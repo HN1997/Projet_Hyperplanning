@@ -88,6 +88,29 @@ public class ConnexionSQL
     }
     
    ////////////////////////////////////////////////////////////// PARTIE EDT ////////////////////////////////////////////////
+    
+    
+    public int CheckPromotion(String email, String password)
+    {
+        int droit = CheckDroit(email, password);
+        
+        if(droit == 4) //Si c'est un etudiant, on peut regarder sa promotion
+        {
+            String sql = "SELECT * FROM utilisateur WHERE Email='" + email + "' and Passwd='" + password + "'";
+            try 
+            {
+                pst = conn.prepareStatement(sql);
+                rs = pst.executeQuery();
+                rs.next(); // se place a la premiere ligne
+
+            } catch (SQLException ex) 
+            {
+                Logger.getLogger(ConnexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return droit;
+    }
 }
 
 
