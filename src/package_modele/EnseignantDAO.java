@@ -22,8 +22,8 @@ public class EnseignantDAO extends DAO<Enseignant> {
         return false;
     }
    
-    @Override
-  public Enseignant find(int id) {
+   @Override
+   public Enseignant find(int id) {
     Enseignant enseignant = new Enseignant();            
     try {
       ResultSet result = this.connect.createStatement(

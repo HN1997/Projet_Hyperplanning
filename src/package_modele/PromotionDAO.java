@@ -23,7 +23,7 @@ public class PromotionDAO extends DAO<Promotion> {
     return false;
   }
    
-    @Override
+   @Override
   public Promotion find(int id) {
     Promotion promotion = new Promotion();      
       

@@ -48,17 +48,16 @@ public class Rechercheinformations {
         }
     
     
-    public String GetPrenomNom(String Email, String Passwd) throws SQLException
+    public static String GetPrenomNom(String Email, String Passwd) throws SQLException
     {
-        
-        DAO<Utilisateur> Utilisateurd= new UtilisateurDAO(ConnexionSQL.getInstance()); 
-        Utilisateur user= Utilisateurd.find(Email,Passwd);
-        
-        return(user.getNom());
-        
+            DAO<Utilisateur> Utilisateurd ;
+            Utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            Utilisateur user = Utilisateurd.find(Email,Passwd);
+            return (user.getNom()+" "+user.getPrenom());
+
     }
     
-    public String GetPromotion(String Email, String Passwd) throws SQLException
+   /* public String GetPromotion(String Email, String Passwd) throws SQLException
     {
     
         DAO<Promotion> Promotiond= new PromotionDAO(ConnexionSQL.getInstance()); 
@@ -66,7 +65,7 @@ public class Rechercheinformations {
         
         return("user.getNom()");//la promo s'appelle "nom" dans PromotionDAO
         
-    }
+    }*/
     
     //Fonction qui permet de modifier le label date à la date actuelle, et le label heure à l'heure actuelle
     public static void Clock(JLabel date, JLabel heure) //Modifie le label date et heure en continu
