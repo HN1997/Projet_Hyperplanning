@@ -14,6 +14,7 @@ import javax.swing.JTable;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import package_controleur.RechercheInformationsHugo;
 import package_controleur.Rechercheinformations;
 
 /**
@@ -37,15 +38,28 @@ public class EDT_Window extends javax.swing.JFrame {
     
     // Variable Rechercheinformations
     Rechercheinformations ri;
+    RechercheInformationsHugo rih;
+    String email = "anand_maisuria@yahoo.fr"; //Pour nos tests
+    String password = "159"; //pour nos tests
     //Fin variable Rechercheinformations
     
+    
+    //Initialisation du User
+    private void InitilisationUser()
+    {
+        rih = new RechercheInformationsHugo();
+        RechercheInformationsHugo.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
+        InitialiseSemaine(rih.GetSemaine());
+        nameUserLabel.setText(rih.GetPrenomNom(email, password));
+    }
+    //Fin initialisation du User
     
     /**
      * Creates new form EDT_Window
      */
     public EDT_Window() {
         initComponents();
-        Rechercheinformations.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
+        InitilisationUser();
         //InitialiseSemaine(Rechercheinformations.GetSemaine());
     }
 
@@ -1237,7 +1251,7 @@ public class EDT_Window extends javax.swing.JFrame {
         edtPanelBotRightLayout.setVerticalGroup(
             edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edtPanelBotRightLayout.createSequentialGroup()
-                .addGap(0, 38, Short.MAX_VALUE)
+                .addGap(0, 41, Short.MAX_VALUE)
                 .addGroup(edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jeudiLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(mercrediLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1489,7 +1503,7 @@ public class EDT_Window extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(recapPeriodeTriPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(recapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE))
+                    .addComponent(recapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE))
             );
 
             rightCardPanel.add(recapPanel, "card3");
@@ -1626,12 +1640,12 @@ public class EDT_Window extends javax.swing.JFrame {
                 reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(reportingPanelLayout.createSequentialGroup()
                     .addComponent(topReportingPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 807, Short.MAX_VALUE))
+                    .addGap(0, 810, Short.MAX_VALUE))
                 .addGroup(reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(reportingPanelLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(reportingPeriodeTriPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(730, Short.MAX_VALUE)))
+                        .addContainerGap(733, Short.MAX_VALUE)))
             );
 
             rightCardPanel.add(reportingPanel, "card4");
@@ -2072,7 +2086,7 @@ public class EDT_Window extends javax.swing.JFrame {
                     .addGap(18, 18, 18)
                     .addComponent(insererButton)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(resumeInsertionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                    .addComponent(resumeInsertionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
                     .addGap(216, 216, 216))
             );
 
@@ -2097,7 +2111,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(supprimerPanelLayout.createSequentialGroup()
                     .addGap(74, 74, 74)
                     .addComponent(jLabel2)
-                    .addContainerGap(709, Short.MAX_VALUE))
+                    .addContainerGap(712, Short.MAX_VALUE))
             );
 
             gestionnaireContainerPanel.add(supprimerPanel, "card3");
@@ -2121,7 +2135,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(modifierPanelLayout.createSequentialGroup()
                     .addGap(137, 137, 137)
                     .addComponent(jLabel3)
-                    .addContainerGap(646, Short.MAX_VALUE))
+                    .addContainerGap(649, Short.MAX_VALUE))
             );
 
             gestionnaireContainerPanel.add(modifierPanel, "card4");

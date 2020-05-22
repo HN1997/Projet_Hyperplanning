@@ -1981,7 +1981,7 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="38" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="41" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jeudiLabel" alignment="1" max="32767" attributes="0"/>
                                   <Component id="mercrediLabel" alignment="1" max="32767" attributes="0"/>
@@ -2453,7 +2453,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="recapPeriodeTriPanel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="recapScrollPane" pref="726" max="32767" attributes="0"/>
+                          <Component id="recapScrollPane" pref="729" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -2800,13 +2800,13 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="topReportingPanel1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="807" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="810" max="32767" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
                               <Component id="reportingPeriodeTriPanel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="730" max="32767" attributes="0"/>
+                              <EmptySpace pref="733" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -3476,7 +3476,7 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="insererButton" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="resumeInsertionLabel" pref="171" max="32767" attributes="0"/>
+                                  <Component id="resumeInsertionLabel" pref="174" max="32767" attributes="0"/>
                                   <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -4636,7 +4636,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="709" max="32767" attributes="0"/>
+                                  <EmptySpace pref="712" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -4679,7 +4679,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
                                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="646" max="32767" attributes="0"/>
+                                  <EmptySpace pref="649" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
