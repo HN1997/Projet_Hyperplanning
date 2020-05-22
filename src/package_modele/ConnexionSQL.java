@@ -36,6 +36,7 @@ public class ConnexionSQL
         }
     }
     
+    
     private static Connection connc;
     
     public static Connection getInstance() throws SQLException {
@@ -86,7 +87,7 @@ public class ConnexionSQL
         return 0; // le try n'a pas fonctionne
     }
     
-    
+   ////////////////////////////////////////////////////////////// PARTIE EDT ////////////////////////////////////////////////
 }
 
 

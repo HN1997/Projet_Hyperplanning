@@ -39,8 +39,8 @@ public class EDT_Window extends javax.swing.JFrame {
     // Variable Rechercheinformations
     Rechercheinformations ri;
     RechercheInformationsHugo rih;
-    String email = "anand_maisuria@yahoo.fr"; //Pour nos tests
-    String password = "159"; //pour nos tests
+    String email = "anand.maisuria@edu.ece.fr"; //Pour nos tests
+    String password = "753"; //pour nos tests
     //Fin variable Rechercheinformations
     
     
@@ -51,6 +51,7 @@ public class EDT_Window extends javax.swing.JFrame {
         RechercheInformationsHugo.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
         InitialiseSemaine(rih.GetSemaine());
         nameUserLabel.setText(rih.GetPrenomNom(email, password));
+        droitLabel.setText(rih.GetDroit(email, password));
     }
     //Fin initialisation du User
     

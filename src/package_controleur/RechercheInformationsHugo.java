@@ -131,7 +131,28 @@ public class RechercheInformationsHugo
             Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
             return "";
         }
-
+    }
+    
+    public String GetDroit(String Email, String Passwd) 
+    {
+        String droit = "";
+        int droitint = connSQL.CheckDroit(Email, Passwd);
+        switch(droitint)
+        {
+            case 1:
+                droit = "Administrateur";
+                break;
+            case 2:
+                droit = "Référent Pédagogique";
+                break;
+            case 3:
+                droit = "Enseignant";
+                break;
+            case 4:
+                droit = "Etudiant";
+                break;
+        }
+        return droit;
     }
     
     //Cette méthode renvoie la semaine actuelle à laquelle on est
