@@ -79,6 +79,7 @@ public class EDT_Window extends javax.swing.JFrame {
         deconnexionLabel = new javax.swing.JLabel();
         rightCardPanel = new javax.swing.JPanel();
         edtPanel = new javax.swing.JPanel();
+        topEdtPanel = new javax.swing.JPanel();
         semainePickerPanel = new javax.swing.JPanel();
         semaine31 = new javax.swing.JToggleButton();
         semaine32 = new javax.swing.JToggleButton();
@@ -132,6 +133,15 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine28 = new javax.swing.JToggleButton();
         semaine29 = new javax.swing.JToggleButton();
         semaine30 = new javax.swing.JToggleButton();
+        adminRespoEdtPanel = new javax.swing.JPanel();
+        trierparEdtLabel = new javax.swing.JLabel();
+        recapEdtSearch = new javax.swing.JComboBox<>();
+        recapEdtSearch2 = new javax.swing.JComboBox<>();
+        recapOptionnelLabel1 = new javax.swing.JLabel();
+        recapEdtSearch3 = new javax.swing.JComboBox<>();
+        recapOptionnel2Label1 = new javax.swing.JLabel();
+        recapEdtRechercherButton = new javax.swing.JButton();
+        recapMessageErreurEdt = new javax.swing.JLabel();
         edtPanelBotRight = new javax.swing.JPanel();
         edtDisplayPanel = new javax.swing.JPanel();
         lundiDisplayPanel = new javax.swing.JPanel();
@@ -158,8 +168,6 @@ public class EDT_Window extends javax.swing.JFrame {
         dixneufLabel = new javax.swing.JLabel();
         vingtLabel = new javax.swing.JLabel();
         recapPanel = new javax.swing.JPanel();
-        recapScrollPane = new javax.swing.JScrollPane();
-        recapTable = new javax.swing.JTable();
         topRecapPanel = new javax.swing.JPanel();
         recapPeriodeLabelTop = new javax.swing.JLabel();
         recapPeriodeTriPanel = new javax.swing.JPanel();
@@ -171,6 +179,8 @@ public class EDT_Window extends javax.swing.JFrame {
         recapOptionnel2Label = new javax.swing.JLabel();
         recapRechercherButton = new javax.swing.JButton();
         recapMessageErreur = new javax.swing.JLabel();
+        recapScrollPane = new javax.swing.JScrollPane();
+        recapTable = new javax.swing.JTable();
         reportingPanel = new javax.swing.JPanel();
         topReportingPanel1 = new javax.swing.JPanel();
         ReportingLabelTop = new javax.swing.JLabel();
@@ -415,53 +425,47 @@ public class EDT_Window extends javax.swing.JFrame {
 
         rightCardPanel.setLayout(new java.awt.CardLayout());
 
-        semainePickerPanel.setBackground(new java.awt.Color(0, 113, 121));
-        semainePickerPanel.setLayout(new java.awt.GridLayout(3, 53));
+        topEdtPanel.setBackground(new java.awt.Color(0, 113, 121));
+        topEdtPanel.setForeground(new java.awt.Color(0, 113, 121));
+        topEdtPanel.setLayout(new java.awt.CardLayout());
 
-        semaine31.setBackground(new java.awt.Color(57, 14, 35));
+        semainePickerPanel.setBackground(new java.awt.Color(0, 113, 121));
+        semainePickerPanel.setForeground(new java.awt.Color(0, 113, 121));
+        semainePickerPanel.setLayout(new java.awt.GridLayout(3, 10, 5, 5));
+
+        semaine31.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine31);
         semaine31.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine31.setForeground(new java.awt.Color(255, 255, 255));
         semaine31.setText("31");
+        semaine31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine31.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine31ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine31);
 
-        semaine32.setBackground(new java.awt.Color(57, 14, 35));
+        semaine32.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine32);
         semaine32.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine32.setForeground(new java.awt.Color(255, 255, 255));
         semaine32.setText("32");
+        semaine32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine32.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine32ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine32);
 
-        semaine33.setBackground(new java.awt.Color(57, 14, 35));
+        semaine33.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine33);
         semaine33.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine33.setForeground(new java.awt.Color(255, 255, 255));
         semaine33.setText("33");
+        semaine33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine33.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine33.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine33ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine33);
 
-        semaine34.setBackground(new java.awt.Color(57, 14, 35));
+        semaine34.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine34);
         semaine34.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine34.setForeground(new java.awt.Color(255, 255, 255));
         semaine34.setText("34");
+        semaine34.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine34.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         semaine34.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -470,629 +474,535 @@ public class EDT_Window extends javax.swing.JFrame {
         });
         semainePickerPanel.add(semaine34);
 
-        semaine35.setBackground(new java.awt.Color(57, 14, 35));
+        semaine35.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine35);
         semaine35.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine35.setForeground(new java.awt.Color(255, 255, 255));
         semaine35.setText("35");
+        semaine35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine35.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine35.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine35ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine35);
 
-        semaine36.setBackground(new java.awt.Color(57, 14, 35));
+        semaine36.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine36);
         semaine36.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine36.setForeground(new java.awt.Color(255, 255, 255));
         semaine36.setText("36");
+        semaine36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine36.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine36.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine36ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine36);
 
-        semaine37.setBackground(new java.awt.Color(57, 14, 35));
+        semaine37.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine37);
         semaine37.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine37.setForeground(new java.awt.Color(255, 255, 255));
         semaine37.setText("37");
+        semaine37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine37.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine37.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine37ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine37);
 
-        semaine38.setBackground(new java.awt.Color(57, 14, 35));
+        semaine38.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine38);
         semaine38.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine38.setForeground(new java.awt.Color(255, 255, 255));
         semaine38.setText("38");
+        semaine38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine38.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine38.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine38ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine38);
 
-        semaine39.setBackground(new java.awt.Color(57, 14, 35));
+        semaine39.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine39);
         semaine39.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine39.setForeground(new java.awt.Color(255, 255, 255));
         semaine39.setText("39");
+        semaine39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine39.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine39.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine39ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine39);
 
-        semaine40.setBackground(new java.awt.Color(57, 14, 35));
+        semaine40.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine40);
         semaine40.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine40.setForeground(new java.awt.Color(255, 255, 255));
         semaine40.setText("40");
+        semaine40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine40.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine40.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine40ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine40);
 
-        semaine41.setBackground(new java.awt.Color(57, 14, 35));
+        semaine41.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine41);
         semaine41.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine41.setForeground(new java.awt.Color(255, 255, 255));
         semaine41.setText("41");
+        semaine41.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine41.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine41.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine41ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine41);
 
-        semaine42.setBackground(new java.awt.Color(57, 14, 35));
+        semaine42.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine42);
         semaine42.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine42.setForeground(new java.awt.Color(255, 255, 255));
         semaine42.setText("42");
+        semaine42.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine42.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine42.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine42ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine42);
 
-        semaine43.setBackground(new java.awt.Color(57, 14, 35));
+        semaine43.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine43);
         semaine43.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine43.setForeground(new java.awt.Color(255, 255, 255));
         semaine43.setText("43");
+        semaine43.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine43.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine43.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine43ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine43);
 
-        semaine44.setBackground(new java.awt.Color(57, 14, 35));
+        semaine44.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine44);
         semaine44.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine44.setForeground(new java.awt.Color(255, 255, 255));
         semaine44.setText("44");
+        semaine44.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine44.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine44.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine44ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine44);
 
-        semaine45.setBackground(new java.awt.Color(57, 14, 35));
+        semaine45.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine45);
         semaine45.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine45.setForeground(new java.awt.Color(255, 255, 255));
         semaine45.setText("45");
+        semaine45.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine45.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine45.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine45ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine45);
 
-        semaine46.setBackground(new java.awt.Color(57, 14, 35));
+        semaine46.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine46);
         semaine46.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine46.setForeground(new java.awt.Color(255, 255, 255));
         semaine46.setText("46");
+        semaine46.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine46.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine46.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine46ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine46);
 
-        semaine47.setBackground(new java.awt.Color(57, 14, 35));
+        semaine47.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine47);
         semaine47.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine47.setForeground(new java.awt.Color(255, 255, 255));
         semaine47.setText("47");
+        semaine47.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine47.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine47.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine47ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine47);
 
-        semaine48.setBackground(new java.awt.Color(57, 14, 35));
+        semaine48.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine48);
         semaine48.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine48.setForeground(new java.awt.Color(255, 255, 255));
         semaine48.setText("48");
+        semaine48.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine48.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine48.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine48ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine48);
 
-        semaine49.setBackground(new java.awt.Color(57, 14, 35));
+        semaine49.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine49);
         semaine49.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine49.setForeground(new java.awt.Color(255, 255, 255));
         semaine49.setText("49");
+        semaine49.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine49.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine49.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine49ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine49);
 
-        semaine50.setBackground(new java.awt.Color(57, 14, 35));
+        semaine50.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine50);
         semaine50.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine50.setForeground(new java.awt.Color(255, 255, 255));
         semaine50.setText("50");
+        semaine50.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine50.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine50.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine50ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine50);
 
-        semaine51.setBackground(new java.awt.Color(57, 14, 35));
+        semaine51.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine51);
         semaine51.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine51.setForeground(new java.awt.Color(255, 255, 255));
         semaine51.setText("51");
+        semaine51.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine51.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine51.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine51ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine51);
 
-        semaine52.setBackground(new java.awt.Color(57, 14, 35));
+        semaine52.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine52);
         semaine52.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine52.setForeground(new java.awt.Color(255, 255, 255));
         semaine52.setText("52");
+        semaine52.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine52.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine52.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine52ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine52);
 
-        semaine1.setBackground(new java.awt.Color(57, 14, 35));
+        semaine1.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine1);
         semaine1.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine1.setForeground(new java.awt.Color(255, 255, 255));
         semaine1.setText("1");
+        semaine1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine1ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine1);
 
-        semaine2.setBackground(new java.awt.Color(57, 14, 35));
+        semaine2.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine2);
         semaine2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine2.setForeground(new java.awt.Color(255, 255, 255));
         semaine2.setText("2");
+        semaine2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine2ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine2);
 
-        semaine3.setBackground(new java.awt.Color(57, 14, 35));
+        semaine3.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine3);
         semaine3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine3.setForeground(new java.awt.Color(255, 255, 255));
         semaine3.setText("3");
+        semaine3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine3ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine3);
 
-        semaine4.setBackground(new java.awt.Color(57, 14, 35));
+        semaine4.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine4);
         semaine4.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine4.setForeground(new java.awt.Color(255, 255, 255));
         semaine4.setText("4");
+        semaine4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine4ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine4);
 
-        semaine5.setBackground(new java.awt.Color(57, 14, 35));
+        semaine5.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine5);
         semaine5.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine5.setForeground(new java.awt.Color(255, 255, 255));
         semaine5.setText("5");
+        semaine5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine5ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine5);
 
-        semaine6.setBackground(new java.awt.Color(57, 14, 35));
+        semaine6.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine6);
         semaine6.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine6.setForeground(new java.awt.Color(255, 255, 255));
         semaine6.setText("6");
+        semaine6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine6ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine6);
 
-        semaine7.setBackground(new java.awt.Color(57, 14, 35));
+        semaine7.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine7);
         semaine7.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine7.setForeground(new java.awt.Color(255, 255, 255));
         semaine7.setText("7");
+        semaine7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine7ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine7);
 
-        semaine8.setBackground(new java.awt.Color(57, 14, 35));
+        semaine8.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine8);
         semaine8.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine8.setForeground(new java.awt.Color(255, 255, 255));
         semaine8.setText("8");
+        semaine8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine8ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine8);
 
-        semaine9.setBackground(new java.awt.Color(57, 14, 35));
+        semaine9.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine9);
         semaine9.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine9.setForeground(new java.awt.Color(255, 255, 255));
         semaine9.setText("9");
+        semaine9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine9.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine9ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine9);
 
-        semaine10.setBackground(new java.awt.Color(57, 14, 35));
+        semaine10.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine10);
         semaine10.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine10.setForeground(new java.awt.Color(255, 255, 255));
         semaine10.setText("10");
+        semaine10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine10ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine10);
 
-        semaine11.setBackground(new java.awt.Color(57, 14, 35));
+        semaine11.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine11);
         semaine11.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine11.setForeground(new java.awt.Color(255, 255, 255));
         semaine11.setText("11");
+        semaine11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine11ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine11);
 
-        semaine12.setBackground(new java.awt.Color(57, 14, 35));
+        semaine12.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine12);
         semaine12.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine12.setForeground(new java.awt.Color(255, 255, 255));
         semaine12.setText("12");
+        semaine12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine12ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine12);
 
-        semaine13.setBackground(new java.awt.Color(57, 14, 35));
+        semaine13.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine13);
         semaine13.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine13.setForeground(new java.awt.Color(255, 255, 255));
         semaine13.setText("13");
+        semaine13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine13ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine13);
 
-        semaine14.setBackground(new java.awt.Color(57, 14, 35));
+        semaine14.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine14);
         semaine14.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine14.setForeground(new java.awt.Color(255, 255, 255));
         semaine14.setText("14");
+        semaine14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine14.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine14ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine14);
 
-        semaine15.setBackground(new java.awt.Color(57, 14, 35));
+        semaine15.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine15);
         semaine15.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine15.setForeground(new java.awt.Color(255, 255, 255));
         semaine15.setText("15");
+        semaine15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine15ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine15);
 
-        semaine16.setBackground(new java.awt.Color(57, 14, 35));
+        semaine16.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine16);
         semaine16.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine16.setForeground(new java.awt.Color(255, 255, 255));
         semaine16.setText("16");
+        semaine16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine16ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine16);
 
-        semaine17.setBackground(new java.awt.Color(57, 14, 35));
+        semaine17.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine17);
         semaine17.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine17.setForeground(new java.awt.Color(255, 255, 255));
         semaine17.setText("17");
+        semaine17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine17.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine17ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine17);
 
-        semaine18.setBackground(new java.awt.Color(57, 14, 35));
+        semaine18.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine18);
         semaine18.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine18.setForeground(new java.awt.Color(255, 255, 255));
         semaine18.setText("18");
+        semaine18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine18.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine18ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine18);
 
-        semaine19.setBackground(new java.awt.Color(57, 14, 35));
+        semaine19.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine19);
         semaine19.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine19.setForeground(new java.awt.Color(255, 255, 255));
         semaine19.setText("19");
+        semaine19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine19ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine19);
 
-        semaine20.setBackground(new java.awt.Color(57, 14, 35));
+        semaine20.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine20);
         semaine20.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine20.setForeground(new java.awt.Color(255, 255, 255));
         semaine20.setText("20");
+        semaine20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine20ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine20);
 
-        semaine21.setBackground(new java.awt.Color(57, 14, 35));
+        semaine21.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine21);
         semaine21.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine21.setForeground(new java.awt.Color(255, 255, 255));
         semaine21.setText("21");
+        semaine21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine21ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine21);
 
-        semaine22.setBackground(new java.awt.Color(57, 14, 35));
+        semaine22.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine22);
         semaine22.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine22.setForeground(new java.awt.Color(255, 255, 255));
         semaine22.setText("22");
+        semaine22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine22ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine22);
 
-        semaine23.setBackground(new java.awt.Color(57, 14, 35));
+        semaine23.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine23);
         semaine23.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine23.setForeground(new java.awt.Color(255, 255, 255));
         semaine23.setText("23");
+        semaine23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine23ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine23);
 
-        semaine24.setBackground(new java.awt.Color(57, 14, 35));
+        semaine24.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine24);
         semaine24.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine24.setForeground(new java.awt.Color(255, 255, 255));
         semaine24.setText("24");
+        semaine24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine24ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine24);
 
-        semaine25.setBackground(new java.awt.Color(57, 14, 35));
+        semaine25.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine25);
         semaine25.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine25.setForeground(new java.awt.Color(255, 255, 255));
         semaine25.setText("25");
+        semaine25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine25.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine25ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine25);
 
-        semaine26.setBackground(new java.awt.Color(57, 14, 35));
+        semaine26.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine26);
         semaine26.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine26.setForeground(new java.awt.Color(255, 255, 255));
         semaine26.setText("26");
+        semaine26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine26.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine26ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine26);
 
-        semaine27.setBackground(new java.awt.Color(57, 14, 35));
+        semaine27.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine27);
         semaine27.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine27.setForeground(new java.awt.Color(255, 255, 255));
         semaine27.setText("27");
+        semaine27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine27.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine27ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine27);
 
-        semaine28.setBackground(new java.awt.Color(57, 14, 35));
+        semaine28.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine28);
         semaine28.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine28.setForeground(new java.awt.Color(255, 255, 255));
         semaine28.setText("28");
+        semaine28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine28.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine28ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine28);
 
-        semaine29.setBackground(new java.awt.Color(57, 14, 35));
+        semaine29.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine29);
         semaine29.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine29.setForeground(new java.awt.Color(255, 255, 255));
         semaine29.setText("29");
+        semaine29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine29.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine29ActionPerformed(evt);
-            }
-        });
         semainePickerPanel.add(semaine29);
 
-        semaine30.setBackground(new java.awt.Color(57, 14, 35));
+        semaine30.setBackground(new java.awt.Color(102, 0, 102));
         buttonGroup1.add(semaine30);
         semaine30.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         semaine30.setForeground(new java.awt.Color(255, 255, 255));
         semaine30.setText("30");
+        semaine30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        semaine30.addActionListener(new java.awt.event.ActionListener() {
+        semainePickerPanel.add(semaine30);
+
+        topEdtPanel.add(semainePickerPanel, "card2");
+
+        adminRespoEdtPanel.setBackground(new java.awt.Color(0, 113, 121));
+        adminRespoEdtPanel.setForeground(new java.awt.Color(110, 35, 72));
+
+        trierparEdtLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+        trierparEdtLabel.setForeground(new java.awt.Color(255, 255, 255));
+        trierparEdtLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        trierparEdtLabel.setText("Trier par : ");
+
+        recapEdtSearch.setBackground(new java.awt.Color(0, 153, 153));
+        recapEdtSearch.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapEdtSearch.setForeground(new java.awt.Color(255, 255, 255));
+        recapEdtSearch.setMaximumRowCount(50);
+        recapEdtSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enseignant", "Etudiant", "Promotion", "Site" }));
+        recapEdtSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        recapEdtSearch2.setBackground(new java.awt.Color(0, 153, 153));
+        recapEdtSearch2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapEdtSearch2.setForeground(new java.awt.Color(255, 255, 255));
+        recapEdtSearch2.setMaximumRowCount(50);
+        recapEdtSearch2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        recapOptionnelLabel1.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapOptionnelLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        recapOptionnelLabel1.setText("(Optionnel : ");
+
+        recapEdtSearch3.setBackground(new java.awt.Color(0, 153, 153));
+        recapEdtSearch3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapEdtSearch3.setForeground(new java.awt.Color(255, 255, 255));
+        recapEdtSearch3.setMaximumRowCount(50);
+        recapEdtSearch3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        recapOptionnel2Label1.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapOptionnel2Label1.setForeground(new java.awt.Color(255, 255, 255));
+        recapOptionnel2Label1.setText(")");
+
+        recapEdtRechercherButton.setBackground(new java.awt.Color(0, 153, 153));
+        recapEdtRechercherButton.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapEdtRechercherButton.setForeground(new java.awt.Color(57, 17, 45));
+        recapEdtRechercherButton.setText("Rechercher");
+        recapEdtRechercherButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recapEdtRechercherButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                semaine30ActionPerformed(evt);
+                recapEdtRechercherButtonActionPerformed(evt);
             }
         });
-        semainePickerPanel.add(semaine30);
+
+        recapMessageErreurEdt.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+        recapMessageErreurEdt.setForeground(new java.awt.Color(110, 35, 72));
+        recapMessageErreurEdt.setText("ERREUR : Nom de l'enseignant manquant");
+
+        javax.swing.GroupLayout adminRespoEdtPanelLayout = new javax.swing.GroupLayout(adminRespoEdtPanel);
+        adminRespoEdtPanel.setLayout(adminRespoEdtPanelLayout);
+        adminRespoEdtPanelLayout.setHorizontalGroup(
+            adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminRespoEdtPanelLayout.createSequentialGroup()
+                .addGroup(adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(trierparEdtLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(adminRespoEdtPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(recapEdtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(recapEdtSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(recapOptionnelLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(recapEdtSearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(recapOptionnel2Label1)
+                        .addGap(18, 18, 18)
+                        .addComponent(recapEdtRechercherButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(recapMessageErreurEdt, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        adminRespoEdtPanelLayout.setVerticalGroup(
+            adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adminRespoEdtPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(trierparEdtLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(adminRespoEdtPanelLayout.createSequentialGroup()
+                        .addGroup(adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(recapEdtSearch)
+                            .addComponent(recapEdtSearch2)
+                            .addComponent(recapOptionnelLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(recapEdtSearch3)
+                            .addComponent(recapOptionnel2Label1)
+                            .addComponent(recapEdtRechercherButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(1, 1, 1))
+                    .addComponent(recapMessageErreurEdt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28))
+        );
+
+        topEdtPanel.add(adminRespoEdtPanel, "card3");
 
         edtPanelBotRight.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -1321,13 +1231,13 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jeudiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(vendrediLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)))
+                        .addComponent(vendrediLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         edtPanelBotRightLayout.setVerticalGroup(
             edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edtPanelBotRightLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 38, Short.MAX_VALUE)
                 .addGroup(edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jeudiLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(mercrediLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1363,7 +1273,7 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addComponent(dixhuitLabel)
                         .addGap(47, 47, 47)
                         .addComponent(dixneufLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
                         .addComponent(vingtLabel))))
         );
 
@@ -1371,24 +1281,142 @@ public class EDT_Window extends javax.swing.JFrame {
         edtPanel.setLayout(edtPanelLayout);
         edtPanelLayout.setHorizontalGroup(
             edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(edtPanelLayout.createSequentialGroup()
-                .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(semainePickerPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1092, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edtPanelLayout.createSequentialGroup()
+                .addGroup(edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(topEdtPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(edtPanelBotRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         edtPanelLayout.setVerticalGroup(
             edtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(edtPanelLayout.createSequentialGroup()
-                .addComponent(semainePickerPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, edtPanelLayout.createSequentialGroup()
+                .addComponent(topEdtPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(edtPanelBotRight, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(edtPanelBotRight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         rightCardPanel.add(edtPanel, "card2");
 
         recapPanel.setBackground(new java.awt.Color(204, 204, 204));
+
+        topRecapPanel.setBackground(new java.awt.Color(57, 17, 45));
+        topRecapPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        recapPeriodeLabelTop.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
+        recapPeriodeLabelTop.setForeground(new java.awt.Color(255, 255, 255));
+        recapPeriodeLabelTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        recapPeriodeLabelTop.setText("Récapitulatif de la période");
+
+        javax.swing.GroupLayout topRecapPanelLayout = new javax.swing.GroupLayout(topRecapPanel);
+        topRecapPanel.setLayout(topRecapPanelLayout);
+        topRecapPanelLayout.setHorizontalGroup(
+            topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topRecapPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        topRecapPanelLayout.setVerticalGroup(
+            topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(topRecapPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        recapPeriodeTriPanel.setBackground(new java.awt.Color(153, 153, 153));
+        recapPeriodeTriPanel.setForeground(new java.awt.Color(153, 153, 153));
+
+        trierparRecapLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+        trierparRecapLabel.setForeground(new java.awt.Color(255, 255, 255));
+        trierparRecapLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        trierparRecapLabel.setText("Trier par : ");
+
+        recapSearch1.setBackground(new java.awt.Color(0, 153, 153));
+        recapSearch1.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapSearch1.setForeground(new java.awt.Color(255, 255, 255));
+        recapSearch1.setMaximumRowCount(50);
+        recapSearch1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enseignant", "Etudiant", "Promotion", "Site" }));
+        recapSearch1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        recapSearch2.setBackground(new java.awt.Color(0, 153, 153));
+        recapSearch2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapSearch2.setForeground(new java.awt.Color(255, 255, 255));
+        recapSearch2.setMaximumRowCount(50);
+        recapSearch2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        recapOptionnelLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapOptionnelLabel.setForeground(new java.awt.Color(255, 255, 255));
+        recapOptionnelLabel.setText("(Optionnel : ");
+
+        recapSearch3.setBackground(new java.awt.Color(0, 153, 153));
+        recapSearch3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapSearch3.setForeground(new java.awt.Color(255, 255, 255));
+        recapSearch3.setMaximumRowCount(50);
+        recapSearch3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+        recapOptionnel2Label.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapOptionnel2Label.setForeground(new java.awt.Color(255, 255, 255));
+        recapOptionnel2Label.setText(")");
+
+        recapRechercherButton.setBackground(new java.awt.Color(0, 153, 153));
+        recapRechercherButton.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapRechercherButton.setForeground(new java.awt.Color(57, 17, 45));
+        recapRechercherButton.setText("Rechercher");
+        recapRechercherButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recapRechercherButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recapRechercherButtonActionPerformed(evt);
+            }
+        });
+
+        recapMessageErreur.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+        recapMessageErreur.setForeground(new java.awt.Color(110, 35, 72));
+        recapMessageErreur.setText("ERREUR : Nom de l'enseignant manquant");
+
+        javax.swing.GroupLayout recapPeriodeTriPanelLayout = new javax.swing.GroupLayout(recapPeriodeTriPanel);
+        recapPeriodeTriPanel.setLayout(recapPeriodeTriPanelLayout);
+        recapPeriodeTriPanelLayout.setHorizontalGroup(
+            recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
+                .addGroup(recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(trierparRecapLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(recapSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(recapSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(recapOptionnelLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(recapSearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(recapOptionnel2Label)
+                        .addGap(18, 18, 18)
+                        .addComponent(recapRechercherButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(recapMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        recapPeriodeTriPanelLayout.setVerticalGroup(
+            recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(trierparRecapLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
+                        .addGroup(recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(recapSearch1)
+                            .addComponent(recapSearch2)
+                            .addComponent(recapOptionnelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(recapSearch3)
+                            .addComponent(recapOptionnel2Label)
+                            .addComponent(recapRechercherButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addComponent(recapMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
         recapTable.setAutoCreateRowSorter(true);
         recapTable.setBackground(new java.awt.Color(0, 188, 197));
@@ -1444,124 +1472,6 @@ public class EDT_Window extends javax.swing.JFrame {
             });
             recapScrollPane.setViewportView(recapTable);
 
-            topRecapPanel.setBackground(new java.awt.Color(57, 17, 45));
-            topRecapPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-
-            recapPeriodeLabelTop.setFont(new java.awt.Font("Cambria", 1, 36)); // NOI18N
-            recapPeriodeLabelTop.setForeground(new java.awt.Color(255, 255, 255));
-            recapPeriodeLabelTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            recapPeriodeLabelTop.setText("Récapitulatif de la période");
-
-            javax.swing.GroupLayout topRecapPanelLayout = new javax.swing.GroupLayout(topRecapPanel);
-            topRecapPanel.setLayout(topRecapPanelLayout);
-            topRecapPanelLayout.setHorizontalGroup(
-                topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(topRecapPanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap())
-            );
-            topRecapPanelLayout.setVerticalGroup(
-                topRecapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(topRecapPanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(recapPeriodeLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                    .addContainerGap())
-            );
-
-            recapPeriodeTriPanel.setBackground(new java.awt.Color(153, 153, 153));
-            recapPeriodeTriPanel.setForeground(new java.awt.Color(153, 153, 153));
-
-            trierparRecapLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-            trierparRecapLabel.setForeground(new java.awt.Color(255, 255, 255));
-            trierparRecapLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            trierparRecapLabel.setText("Trier par : ");
-
-            recapSearch1.setBackground(new java.awt.Color(0, 153, 153));
-            recapSearch1.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-            recapSearch1.setForeground(new java.awt.Color(255, 255, 255));
-            recapSearch1.setMaximumRowCount(50);
-            recapSearch1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enseignant", "Etudiant", "Promotion", "Site" }));
-            recapSearch1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            recapSearch2.setBackground(new java.awt.Color(0, 153, 153));
-            recapSearch2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-            recapSearch2.setForeground(new java.awt.Color(255, 255, 255));
-            recapSearch2.setMaximumRowCount(50);
-            recapSearch2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            recapOptionnelLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-            recapOptionnelLabel.setForeground(new java.awt.Color(255, 255, 255));
-            recapOptionnelLabel.setText("(Optionnel : ");
-
-            recapSearch3.setBackground(new java.awt.Color(0, 153, 153));
-            recapSearch3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-            recapSearch3.setForeground(new java.awt.Color(255, 255, 255));
-            recapSearch3.setMaximumRowCount(50);
-            recapSearch3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            recapOptionnel2Label.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-            recapOptionnel2Label.setForeground(new java.awt.Color(255, 255, 255));
-            recapOptionnel2Label.setText(")");
-
-            recapRechercherButton.setBackground(new java.awt.Color(0, 153, 153));
-            recapRechercherButton.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-            recapRechercherButton.setForeground(new java.awt.Color(57, 17, 45));
-            recapRechercherButton.setText("Rechercher");
-            recapRechercherButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-            recapRechercherButton.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    recapRechercherButtonActionPerformed(evt);
-                }
-            });
-
-            recapMessageErreur.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-            recapMessageErreur.setForeground(new java.awt.Color(110, 35, 72));
-            recapMessageErreur.setText("ERREUR : Nom de l'enseignant manquant");
-
-            javax.swing.GroupLayout recapPeriodeTriPanelLayout = new javax.swing.GroupLayout(recapPeriodeTriPanel);
-            recapPeriodeTriPanel.setLayout(recapPeriodeTriPanelLayout);
-            recapPeriodeTriPanelLayout.setHorizontalGroup(
-                recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
-                    .addGroup(recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(trierparRecapLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(recapSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(recapSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(recapOptionnelLabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(recapSearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(recapOptionnel2Label)
-                            .addGap(18, 18, 18)
-                            .addComponent(recapRechercherButton)
-                            .addGap(18, 18, 18)
-                            .addComponent(recapMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addContainerGap())
-            );
-            recapPeriodeTriPanelLayout.setVerticalGroup(
-                recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(trierparRecapLabel)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
-                            .addGroup(recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(recapSearch1)
-                                .addComponent(recapSearch2)
-                                .addComponent(recapOptionnelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(recapSearch3)
-                                .addComponent(recapOptionnel2Label)
-                                .addComponent(recapRechercherButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                            .addContainerGap())
-                        .addComponent(recapMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            );
-
             javax.swing.GroupLayout recapPanelLayout = new javax.swing.GroupLayout(recapPanel);
             recapPanel.setLayout(recapPanelLayout);
             recapPanelLayout.setHorizontalGroup(
@@ -1575,11 +1485,11 @@ public class EDT_Window extends javax.swing.JFrame {
             recapPanelLayout.setVerticalGroup(
                 recapPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, recapPanelLayout.createSequentialGroup()
-                    .addComponent(topRecapPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(topRecapPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(recapPeriodeTriPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(recapScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 691, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(recapScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE))
             );
 
             rightCardPanel.add(recapPanel, "card3");
@@ -1716,12 +1626,12 @@ public class EDT_Window extends javax.swing.JFrame {
                 reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(reportingPanelLayout.createSequentialGroup()
                     .addComponent(topReportingPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 773, Short.MAX_VALUE))
+                    .addGap(0, 807, Short.MAX_VALUE))
                 .addGroup(reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(reportingPanelLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(reportingPeriodeTriPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(696, Short.MAX_VALUE)))
+                        .addContainerGap(730, Short.MAX_VALUE)))
             );
 
             rightCardPanel.add(reportingPanel, "card4");
@@ -2160,9 +2070,9 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addComponent(salleLabel)
                         .addComponent(salleCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
-                    .addComponent(insererButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(18, 18, 18)
-                    .addComponent(resumeInsertionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(insererButton)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(resumeInsertionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                     .addGap(216, 216, 216))
             );
 
@@ -2187,7 +2097,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(supprimerPanelLayout.createSequentialGroup()
                     .addGap(74, 74, 74)
                     .addComponent(jLabel2)
-                    .addContainerGap(675, Short.MAX_VALUE))
+                    .addContainerGap(709, Short.MAX_VALUE))
             );
 
             gestionnaireContainerPanel.add(supprimerPanel, "card3");
@@ -2211,7 +2121,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(modifierPanelLayout.createSequentialGroup()
                     .addGap(137, 137, 137)
                     .addComponent(jLabel3)
-                    .addContainerGap(612, Short.MAX_VALUE))
+                    .addContainerGap(646, Short.MAX_VALUE))
             );
 
             gestionnaireContainerPanel.add(modifierPanel, "card4");
@@ -2496,218 +2406,6 @@ public class EDT_Window extends javax.swing.JFrame {
         }
     }
     
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////// CLIQUE SUR LES JOURS DE LA SEMAINE ///////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
-    
-    private void semaine30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine30ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine30ActionPerformed
-
-    private void semaine29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine29ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine29ActionPerformed
-
-    private void semaine28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine28ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine28ActionPerformed
-
-    private void semaine27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine27ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine27ActionPerformed
-
-    private void semaine26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine26ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine26ActionPerformed
-
-    private void semaine25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine25ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine25ActionPerformed
-
-    private void semaine24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine24ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine24ActionPerformed
-
-    private void semaine23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine23ActionPerformed
-
-    private void semaine22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine22ActionPerformed
-
-    private void semaine21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine21ActionPerformed
-
-    private void semaine20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine20ActionPerformed
-
-    private void semaine19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine19ActionPerformed
-
-    private void semaine18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine18ActionPerformed
-
-    private void semaine17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine17ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine17ActionPerformed
-
-    private void semaine16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine16ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine16ActionPerformed
-
-    private void semaine15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine15ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine15ActionPerformed
-
-    private void semaine14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine14ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine14ActionPerformed
-
-    private void semaine13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine13ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine13ActionPerformed
-
-    private void semaine12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine12ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine12ActionPerformed
-
-    private void semaine11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine11ActionPerformed
-
-    private void semaine10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine10ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine10ActionPerformed
-
-    private void semaine9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine9ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine9ActionPerformed
-
-    private void semaine8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine8ActionPerformed
-
-    private void semaine7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine7ActionPerformed
-
-    private void semaine6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine6ActionPerformed
-
-    private void semaine5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine5ActionPerformed
-
-    private void semaine4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine4ActionPerformed
-
-    private void semaine3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine3ActionPerformed
-
-    private void semaine2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine2ActionPerformed
-
-    private void semaine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine1ActionPerformed
-
-    private void semaine52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine52ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine52ActionPerformed
-
-    private void semaine51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine51ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine51ActionPerformed
-
-    private void semaine50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine50ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine50ActionPerformed
-
-    private void semaine49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine49ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine49ActionPerformed
-
-    private void semaine48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine48ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine48ActionPerformed
-
-    private void semaine47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine47ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine47ActionPerformed
-
-    private void semaine46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine46ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine46ActionPerformed
-
-    private void semaine45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine45ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine45ActionPerformed
-
-    private void semaine44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine44ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine44ActionPerformed
-
-    private void semaine43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine43ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine43ActionPerformed
-
-    private void semaine42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine42ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine42ActionPerformed
-
-    private void semaine41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine41ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine41ActionPerformed
-
-    private void semaine40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine40ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine40ActionPerformed
-
-    private void semaine39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine39ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine39ActionPerformed
-
-    private void semaine38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine38ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine38ActionPerformed
-
-    private void semaine37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine37ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine37ActionPerformed
-
-    private void semaine36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine36ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine36ActionPerformed
-
-    private void semaine35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine35ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine35ActionPerformed
-
-    private void semaine34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine34ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine34ActionPerformed
-
-    private void semaine33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine33ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine33ActionPerformed
-
-    private void semaine32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine32ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine32ActionPerformed
-
-    private void semaine31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine31ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine31ActionPerformed
-
     //////////////////////////////////// CLIQUE SUR LES JOURS DE LA SEMAINE ///////////////////////////////////
     
     // Si on appuie sur le bouton deconnexion
@@ -2799,6 +2497,14 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_insererButtonActionPerformed
 
+    private void semaine34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine34ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_semaine34ActionPerformed
+
+    private void recapEdtRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapEdtRechercherButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recapEdtRechercherButtonActionPerformed
+
 
     //////////////////////////////////// FIN - LES 3 BOUTONS INSERER SUPPRIMER MODIFIER ////////////////////////
     
@@ -2842,6 +2548,7 @@ public class EDT_Window extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ReportingLabelTop;
+    private javax.swing.JPanel adminRespoEdtPanel;
     private javax.swing.JComboBox<String> anneeCB;
     private javax.swing.JLabel anneeLabel;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -2909,9 +2616,16 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel promotionLabel;
     private javax.swing.JLabel quatorzeLabel;
     private javax.swing.JLabel quinzeLabel;
+    private javax.swing.JButton recapEdtRechercherButton;
+    private javax.swing.JComboBox<String> recapEdtSearch;
+    private javax.swing.JComboBox<String> recapEdtSearch2;
+    private javax.swing.JComboBox<String> recapEdtSearch3;
     private javax.swing.JLabel recapMessageErreur;
+    private javax.swing.JLabel recapMessageErreurEdt;
     private javax.swing.JLabel recapOptionnel2Label;
+    private javax.swing.JLabel recapOptionnel2Label1;
     private javax.swing.JLabel recapOptionnelLabel;
+    private javax.swing.JLabel recapOptionnelLabel1;
     private javax.swing.JPanel recapPanel;
     private javax.swing.JLabel recapPeriodeLabelTop;
     private javax.swing.JPanel recapPeriodeTriPanel;
@@ -3007,11 +2721,13 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> tdCB8;
     private javax.swing.JComboBox<String> tdCB9;
     private javax.swing.JLabel tdLabel;
+    private javax.swing.JPanel topEdtPanel;
     private javax.swing.JLabel topGestionnaireLabel;
     private javax.swing.JPanel topRecapPanel;
     private javax.swing.JPanel topReportingPanel1;
     private javax.swing.JPanel topgestionnairePanel;
     private javax.swing.JLabel treizeLabel;
+    private javax.swing.JLabel trierparEdtLabel;
     private javax.swing.JLabel trierparRecapLabel;
     private javax.swing.JLabel trierparReportingLabel;
     private javax.swing.JComboBox<String> typeCoursCB;
