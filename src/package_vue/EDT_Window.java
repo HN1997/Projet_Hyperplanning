@@ -49,7 +49,6 @@ public class EDT_Window extends javax.swing.JFrame {
         initComponents();
         DateTimeManager.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
         //InitialiseSemaine(Rechercheinformations.GetSemaine());
-        
     }
 
     /**
