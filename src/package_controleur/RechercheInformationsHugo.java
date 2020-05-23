@@ -5,6 +5,7 @@ import java.sql.Date;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
@@ -129,10 +130,14 @@ public class RechercheInformationsHugo
     public static int[] getSemaineNumbers(int numeroSemaine) //En fonction du numero de semaine, renvoie le numero du lundi mardi mercredi jeudi vendredi
     {
         int[] semNumb = new int[5];
-        Calendar calendar = Calendar.getInstance();
+        Calendar cal = Calendar.getInstance( new Locale("fr","FR") );
+        cal.setFirstDayOfWeek(Calendar.MONDAY);
+        
+        //cal.setWeekDate(2020, 50, Calendar.WEDNESDAY);
         
         
         int annee = Calendar.getInstance().get(Calendar.YEAR); //L'année actuelle a laquelle on est
+        int mois = Calendar.getInstance().get(Calendar.MONTH); //Le mois actuelle, commence a 0 pour janvier
         
         semNumb[0] = annee;
         semNumb[1] = annee;

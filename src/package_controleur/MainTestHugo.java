@@ -13,9 +13,11 @@ public class MainTestHugo
         String password = "753"; //pour nos tests
     
     
-        Calendar cal = Calendar.getInstance();
-        System.out.println(cal.getTime());
-        cal.setWeekDate(2020, 20, Calendar.DAY_OF_WEEK);
-        System.out.println(cal.getTime());
+        Calendar cal = Calendar.getInstance( new Locale("fr","FR") );
+        cal.setFirstDayOfWeek(Calendar.MONDAY);
+        System.out.println("SEMAINE ACTUELLE : " + cal.getTime());
+        
+        cal.setWeekDate(2020, 50, Calendar.WEDNESDAY);
+        System.out.println("SEMAINE 20 : " +cal.getTime());
     }
 }
