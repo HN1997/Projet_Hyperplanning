@@ -179,11 +179,27 @@ public class RechercheInformationsHugo
         return semNumb;
     }
     
+    
     public String[] getMoisString(int numeroSemaine) //en fonction du numero de semaine, envoie le mois associé au lundi mardi mercredi jeudi vendredi
     {
         String[] mois = new String[5];
-        
+        mois[0] = "test";
+        mois[1] = "test";
+        mois[2] = "test";
+        mois[3] = "test";
+        mois[4] = "test";
         return mois;
+    }
+    
+    public void ChangeLabelJours(JLabel lundi, JLabel mardi, JLabel mercredi, JLabel jeudi, JLabel vendredi, int numeroSemaine)
+    {
+        int[] sem = getSemaineNumbers(numeroSemaine);
+        String[] mois = getMoisString(numeroSemaine);
+        lundi.setText("Lundi " + sem[0] + " " + mois[0]);
+        mardi.setText("Mardi " + sem[1] + " " + mois[1]);
+        mercredi.setText("Mercredi " + sem[2] + " " + mois[2]);
+        jeudi.setText("Jeudi " + sem[3] + " " + mois[3]);
+        vendredi.setText("Vendredi " + sem[4] + " " + mois[4]);
     }
     
     ////////////////////////////////////////////////// PARTIE LIEE A L USER ///////////////////////////////////////
