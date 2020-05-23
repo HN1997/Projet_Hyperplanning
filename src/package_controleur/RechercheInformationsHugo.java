@@ -191,7 +191,7 @@ public class RechercheInformationsHugo
         
         if(mois < 6) //Si on est dans la période début d'année (avant juillet)
         {
-            if(numeroSemaine>=31 || numeroSemaine<=52)
+            if(numeroSemaine>=31 && numeroSemaine<=52)
             {
                 annee = Calendar.getInstance().get(Calendar.YEAR);
                 annee--; //si on est en janvier 2020, cela correspond a l'annee 2019
