@@ -4,16 +4,19 @@ public class Seance_Enseignant {
 
     protected int id_seance;
     protected int id_enseignant;
+    protected int id_cours;
     
      /**
      *
      * @param id_seance
      * @param id_enseignant
+     * @param id_cours
      */
-    public Seance_Enseignant(int id_seance, int id_enseignant)
+    public Seance_Enseignant(int id_seance, int id_enseignant,int id_cours)
     {
         this.id_enseignant=id_enseignant;
         this.id_seance=id_seance;
+        this.id_cours=id_cours;
     }
     
     /**
@@ -24,6 +27,7 @@ public class Seance_Enseignant {
     {
         this.id_enseignant=enseignant.id_enseignant;
         this.id_seance=enseignant.id_seance;
+        this.id_cours=enseignant.id_cours;
     }
 
     Seance_Enseignant() {
@@ -64,5 +68,18 @@ public class Seance_Enseignant {
     public void setId_seance(int id_seance)
     {
         this.id_seance = id_seance;
+    }
+    
+    public int getId_cours()
+    {
+        return id_cours;
+    }
+    
+    /**
+     * @param id_cours
+     */
+    public void setId_cours(int id_cours)
+    {
+        this.id_cours = id_cours;
     }
 }
