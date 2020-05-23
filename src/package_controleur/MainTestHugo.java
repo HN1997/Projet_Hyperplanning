@@ -1,6 +1,7 @@
 package package_controleur;
 
 import java.util.Calendar;
+import java.util.Locale;
 import package_modele.ConnexionSQL;
 
 public class MainTestHugo 
@@ -14,6 +15,7 @@ public class MainTestHugo
     
         Calendar cal = Calendar.getInstance();
         System.out.println(cal.getTime());
-        
+        cal.setWeekDate(2020, 20, Calendar.DAY_OF_WEEK);
+        System.out.println(cal.getTime());
     }
 }
