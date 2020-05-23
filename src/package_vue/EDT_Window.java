@@ -66,7 +66,8 @@ public class EDT_Window extends javax.swing.JFrame {
         rih = new RechercheInformationsHugo();
         RechercheInformationsHugo.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
         InitialiseSemaine(rih.GetSemaine()); //Selectionne la semaine actuelle
-        anneeEdtLabel.setText("Année " + Calendar.getInstance().get(Calendar.YEAR));
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, RechercheInformationsHugo.GetSemaine()); //maj des labels semaines 
+        rih.ChangeAnneeProgramme(anneeEdtLabel, RechercheInformationsHugo.GetSemaine()); //maj de l'annee 
         
         nameUserLabel.setText(rih.GetPrenomNom(email, password)); //Change le prenom nom de l'utilsateur
         droitLabel.setText(rih.GetDroit(email, password)); //Change le droit pas ex "etudiant"
@@ -533,6 +534,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine33.setText("33");
         semaine33.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine33.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine33.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine33ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine33);
 
         semaine34.setBackground(new java.awt.Color(102, 0, 102));
@@ -556,6 +562,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine35.setText("35");
         semaine35.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine35.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine35.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine35ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine35);
 
         semaine36.setBackground(new java.awt.Color(102, 0, 102));
@@ -565,6 +576,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine36.setText("36");
         semaine36.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine36.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine36.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine36ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine36);
 
         semaine37.setBackground(new java.awt.Color(102, 0, 102));
@@ -574,6 +590,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine37.setText("37");
         semaine37.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine37.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine37.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine37ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine37);
 
         semaine38.setBackground(new java.awt.Color(102, 0, 102));
@@ -583,6 +604,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine38.setText("38");
         semaine38.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine38.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine38.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine38ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine38);
 
         semaine39.setBackground(new java.awt.Color(102, 0, 102));
@@ -592,6 +618,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine39.setText("39");
         semaine39.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine39.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine39.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine39ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine39);
 
         semaine40.setBackground(new java.awt.Color(102, 0, 102));
@@ -601,6 +632,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine40.setText("40");
         semaine40.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine40.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine40.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine40ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine40);
 
         semaine41.setBackground(new java.awt.Color(102, 0, 102));
@@ -610,6 +646,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine41.setText("41");
         semaine41.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine41.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine41.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine41ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine41);
 
         semaine42.setBackground(new java.awt.Color(102, 0, 102));
@@ -619,6 +660,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine42.setText("42");
         semaine42.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine42.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine42.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine42ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine42);
 
         semaine43.setBackground(new java.awt.Color(102, 0, 102));
@@ -628,6 +674,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine43.setText("43");
         semaine43.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine43.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine43.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine43ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine43);
 
         semaine44.setBackground(new java.awt.Color(102, 0, 102));
@@ -637,6 +688,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine44.setText("44");
         semaine44.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine44.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine44.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine44ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine44);
 
         semaine45.setBackground(new java.awt.Color(102, 0, 102));
@@ -646,6 +702,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine45.setText("45");
         semaine45.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine45.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine45.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine45ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine45);
 
         semaine46.setBackground(new java.awt.Color(102, 0, 102));
@@ -655,6 +716,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine46.setText("46");
         semaine46.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine46.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine46.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine46ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine46);
 
         semaine47.setBackground(new java.awt.Color(102, 0, 102));
@@ -664,6 +730,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine47.setText("47");
         semaine47.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine47.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine47.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine47ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine47);
 
         semaine48.setBackground(new java.awt.Color(102, 0, 102));
@@ -673,6 +744,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine48.setText("48");
         semaine48.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine48.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine48.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine48ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine48);
 
         semaine49.setBackground(new java.awt.Color(102, 0, 102));
@@ -682,6 +758,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine49.setText("49");
         semaine49.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine49.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine49.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine49ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine49);
 
         semaine50.setBackground(new java.awt.Color(102, 0, 102));
@@ -691,6 +772,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine50.setText("50");
         semaine50.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine50.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine50.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine50ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine50);
 
         semaine51.setBackground(new java.awt.Color(102, 0, 102));
@@ -700,6 +786,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine51.setText("51");
         semaine51.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine51.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine51.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine51ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine51);
 
         semaine52.setBackground(new java.awt.Color(102, 0, 102));
@@ -709,6 +800,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine52.setText("52");
         semaine52.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine52.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine52.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine52ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine52);
 
         semaine1.setBackground(new java.awt.Color(102, 0, 102));
@@ -718,6 +814,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine1.setText("1");
         semaine1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine1ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine1);
 
         semaine2.setBackground(new java.awt.Color(102, 0, 102));
@@ -727,6 +828,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine2.setText("2");
         semaine2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine2ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine2);
 
         semaine3.setBackground(new java.awt.Color(102, 0, 102));
@@ -736,6 +842,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine3.setText("3");
         semaine3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine3ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine3);
 
         semaine4.setBackground(new java.awt.Color(102, 0, 102));
@@ -745,6 +856,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine4.setText("4");
         semaine4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine4ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine4);
 
         semaine5.setBackground(new java.awt.Color(102, 0, 102));
@@ -754,6 +870,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine5.setText("5");
         semaine5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine5ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine5);
 
         semaine6.setBackground(new java.awt.Color(102, 0, 102));
@@ -763,6 +884,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine6.setText("6");
         semaine6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine6ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine6);
 
         semaine7.setBackground(new java.awt.Color(102, 0, 102));
@@ -772,6 +898,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine7.setText("7");
         semaine7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine7ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine7);
 
         semaine8.setBackground(new java.awt.Color(102, 0, 102));
@@ -781,6 +912,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine8.setText("8");
         semaine8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine8ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine8);
 
         semaine9.setBackground(new java.awt.Color(102, 0, 102));
@@ -790,6 +926,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine9.setText("9");
         semaine9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine9ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine9);
 
         semaine10.setBackground(new java.awt.Color(102, 0, 102));
@@ -799,6 +940,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine10.setText("10");
         semaine10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine10ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine10);
 
         semaine11.setBackground(new java.awt.Color(102, 0, 102));
@@ -808,6 +954,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine11.setText("11");
         semaine11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine11ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine11);
 
         semaine12.setBackground(new java.awt.Color(102, 0, 102));
@@ -817,6 +968,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine12.setText("12");
         semaine12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine12ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine12);
 
         semaine13.setBackground(new java.awt.Color(102, 0, 102));
@@ -826,6 +982,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine13.setText("13");
         semaine13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine13.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine13ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine13);
 
         semaine14.setBackground(new java.awt.Color(102, 0, 102));
@@ -835,6 +996,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine14.setText("14");
         semaine14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine14ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine14);
 
         semaine15.setBackground(new java.awt.Color(102, 0, 102));
@@ -844,6 +1010,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine15.setText("15");
         semaine15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine15.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine15ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine15);
 
         semaine16.setBackground(new java.awt.Color(102, 0, 102));
@@ -853,6 +1024,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine16.setText("16");
         semaine16.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine16ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine16);
 
         semaine17.setBackground(new java.awt.Color(102, 0, 102));
@@ -862,6 +1038,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine17.setText("17");
         semaine17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine17ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine17);
 
         semaine18.setBackground(new java.awt.Color(102, 0, 102));
@@ -871,6 +1052,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine18.setText("18");
         semaine18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine18ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine18);
 
         semaine19.setBackground(new java.awt.Color(102, 0, 102));
@@ -880,6 +1066,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine19.setText("19");
         semaine19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine19ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine19);
 
         semaine20.setBackground(new java.awt.Color(102, 0, 102));
@@ -889,6 +1080,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine20.setText("20");
         semaine20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine20.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine20.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine20ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine20);
 
         semaine21.setBackground(new java.awt.Color(102, 0, 102));
@@ -898,6 +1094,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine21.setText("21");
         semaine21.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine21.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine21ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine21);
 
         semaine22.setBackground(new java.awt.Color(102, 0, 102));
@@ -907,6 +1108,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine22.setText("22");
         semaine22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine22.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine22ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine22);
 
         semaine23.setBackground(new java.awt.Color(102, 0, 102));
@@ -916,6 +1122,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine23.setText("23");
         semaine23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine23.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine23.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine23ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine23);
 
         semaine24.setBackground(new java.awt.Color(102, 0, 102));
@@ -925,6 +1136,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine24.setText("24");
         semaine24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine24.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine24ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine24);
 
         semaine25.setBackground(new java.awt.Color(102, 0, 102));
@@ -934,6 +1150,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine25.setText("25");
         semaine25.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine25.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine25.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine25ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine25);
 
         semaine26.setBackground(new java.awt.Color(102, 0, 102));
@@ -943,6 +1164,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine26.setText("26");
         semaine26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine26.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine26ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine26);
 
         semaine27.setBackground(new java.awt.Color(102, 0, 102));
@@ -952,6 +1178,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine27.setText("27");
         semaine27.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine27.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine27ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine27);
 
         semaine28.setBackground(new java.awt.Color(102, 0, 102));
@@ -961,6 +1192,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine28.setText("28");
         semaine28.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine28.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine28ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine28);
 
         semaine29.setBackground(new java.awt.Color(102, 0, 102));
@@ -970,6 +1206,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine29.setText("29");
         semaine29.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine29.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine29.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine29ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine29);
 
         semaine30.setBackground(new java.awt.Color(102, 0, 102));
@@ -979,6 +1220,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine30.setText("30");
         semaine30.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine30.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine30.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine30ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine30);
 
         topEdtPanel.add(semainePickerPanel, "card2");
@@ -2612,10 +2858,6 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_insererButtonActionPerformed
 
-    private void semaine34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine34ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_semaine34ActionPerformed
-
     private void recapEdtRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapEdtRechercherButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_recapEdtRechercherButtonActionPerformed
@@ -2633,6 +2875,306 @@ public class EDT_Window extends javax.swing.JFrame {
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 32);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 32);
     }//GEN-LAST:event_semaine32ActionPerformed
+
+    private void semaine33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine33ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 33);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 33);
+    }//GEN-LAST:event_semaine33ActionPerformed
+
+    private void semaine34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine34ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 34);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 34);
+    }//GEN-LAST:event_semaine34ActionPerformed
+
+    private void semaine35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine35ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 35);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 35);
+    }//GEN-LAST:event_semaine35ActionPerformed
+
+    private void semaine36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine36ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 36);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 36);
+    }//GEN-LAST:event_semaine36ActionPerformed
+
+    private void semaine37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine37ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 37);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 37);
+    }//GEN-LAST:event_semaine37ActionPerformed
+
+    private void semaine38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine38ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 38);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 38);
+    }//GEN-LAST:event_semaine38ActionPerformed
+
+    private void semaine39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine39ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 39);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 39);
+    }//GEN-LAST:event_semaine39ActionPerformed
+
+    private void semaine40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine40ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 40);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 40);
+    }//GEN-LAST:event_semaine40ActionPerformed
+
+    private void semaine41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine41ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 41);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 41);
+    }//GEN-LAST:event_semaine41ActionPerformed
+
+    private void semaine42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine42ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 42);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 42);
+    }//GEN-LAST:event_semaine42ActionPerformed
+
+    private void semaine43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine43ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 43);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 43);
+    }//GEN-LAST:event_semaine43ActionPerformed
+
+    private void semaine44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine44ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 44);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 44);
+    }//GEN-LAST:event_semaine44ActionPerformed
+
+    private void semaine45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine45ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 45);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 45);
+    }//GEN-LAST:event_semaine45ActionPerformed
+
+    private void semaine46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine46ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 46);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 46);
+    }//GEN-LAST:event_semaine46ActionPerformed
+
+    private void semaine47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine47ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 47);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 47);
+    }//GEN-LAST:event_semaine47ActionPerformed
+
+    private void semaine48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine48ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 48);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 48);
+    }//GEN-LAST:event_semaine48ActionPerformed
+
+    private void semaine49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine49ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 49);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 49);
+    }//GEN-LAST:event_semaine49ActionPerformed
+
+    private void semaine50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine50ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 50);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 50);
+    }//GEN-LAST:event_semaine50ActionPerformed
+
+    private void semaine51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine51ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 51);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 51);
+    }//GEN-LAST:event_semaine51ActionPerformed
+
+    private void semaine52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine52ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 52);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 52);
+    }//GEN-LAST:event_semaine52ActionPerformed
+
+    private void semaine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine1ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 1);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 1);
+    }//GEN-LAST:event_semaine1ActionPerformed
+
+    private void semaine2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine2ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 2);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 2);
+    }//GEN-LAST:event_semaine2ActionPerformed
+
+    private void semaine3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine3ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 3);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 3);
+    }//GEN-LAST:event_semaine3ActionPerformed
+
+    private void semaine4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine4ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 4);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 4);
+    }//GEN-LAST:event_semaine4ActionPerformed
+
+    private void semaine5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine5ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 5);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 5);
+    }//GEN-LAST:event_semaine5ActionPerformed
+
+    private void semaine6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine6ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 6);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 6);
+    }//GEN-LAST:event_semaine6ActionPerformed
+
+    private void semaine7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine7ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 7);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 7);
+    }//GEN-LAST:event_semaine7ActionPerformed
+
+    private void semaine8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine8ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 8);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 8);
+    }//GEN-LAST:event_semaine8ActionPerformed
+
+    private void semaine9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine9ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 9);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 9);
+    }//GEN-LAST:event_semaine9ActionPerformed
+
+    private void semaine10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine10ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 10);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 10);
+    }//GEN-LAST:event_semaine10ActionPerformed
+
+    private void semaine11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine11ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 11);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 11);
+    }//GEN-LAST:event_semaine11ActionPerformed
+
+    private void semaine12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine12ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 12);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 12);
+    }//GEN-LAST:event_semaine12ActionPerformed
+
+    private void semaine13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine13ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 13);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 13);
+    }//GEN-LAST:event_semaine13ActionPerformed
+
+    private void semaine14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine14ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 14);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 14);
+    }//GEN-LAST:event_semaine14ActionPerformed
+
+    private void semaine15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine15ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 15);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 15);
+    }//GEN-LAST:event_semaine15ActionPerformed
+
+    private void semaine16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine16ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 16);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 16);
+    }//GEN-LAST:event_semaine16ActionPerformed
+
+    private void semaine17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine17ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 17);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 17);
+    }//GEN-LAST:event_semaine17ActionPerformed
+
+    private void semaine18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine18ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 18);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 18);
+    }//GEN-LAST:event_semaine18ActionPerformed
+
+    private void semaine19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine19ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 19);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 19);
+    }//GEN-LAST:event_semaine19ActionPerformed
+
+    private void semaine20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine20ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 20);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 20);
+    }//GEN-LAST:event_semaine20ActionPerformed
+
+    private void semaine21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine21ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 21);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 21);
+    }//GEN-LAST:event_semaine21ActionPerformed
+
+    private void semaine22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine22ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 22);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 22);
+    }//GEN-LAST:event_semaine22ActionPerformed
+
+    private void semaine23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine23ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 23);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 23);
+    }//GEN-LAST:event_semaine23ActionPerformed
+
+    private void semaine24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine24ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 24);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 24);
+    }//GEN-LAST:event_semaine24ActionPerformed
+
+    private void semaine25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine25ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 25);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 25);
+    }//GEN-LAST:event_semaine25ActionPerformed
+
+    private void semaine26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine26ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 26);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 26);
+    }//GEN-LAST:event_semaine26ActionPerformed
+
+    private void semaine27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine27ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 27);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 27);
+    }//GEN-LAST:event_semaine27ActionPerformed
+
+    private void semaine28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine28ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 28);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 28);
+    }//GEN-LAST:event_semaine28ActionPerformed
+
+    private void semaine29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine29ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 29);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 29);
+    }//GEN-LAST:event_semaine29ActionPerformed
+
+    private void semaine30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine30ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 30);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 30);
+    }//GEN-LAST:event_semaine30ActionPerformed
 
    
     
