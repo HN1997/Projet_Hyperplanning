@@ -130,20 +130,54 @@ public class RechercheInformationsHugo
     public static int[] getSemaineNumbers(int numeroSemaine) //En fonction du numero de semaine, renvoie le numero du lundi mardi mercredi jeudi vendredi
     {
         int[] semNumb = new int[5];
-        Calendar cal = Calendar.getInstance( new Locale("fr","FR") );
-        cal.setFirstDayOfWeek(Calendar.MONDAY);
+        Calendar cal = Calendar.getInstance( new Locale("fr","FR") ); //On instancie un calendrier francais
+        cal.setFirstDayOfWeek(Calendar.MONDAY); //On dit que le premier mois d'une semaine est le lundi (aux US, le premier jour est un dimanche)
         
         //cal.setWeekDate(2020, 50, Calendar.WEDNESDAY);
         
         
-        int annee = Calendar.getInstance().get(Calendar.YEAR); //L'année actuelle a laquelle on est
+        int annee; //L'année actuelle a laquelle on est
         int mois = Calendar.getInstance().get(Calendar.MONTH); //Le mois actuelle, commence a 0 pour janvier
         
-        semNumb[0] = annee;
-        semNumb[1] = annee;
-        semNumb[2] = annee;
-        semNumb[3] = annee;
-        semNumb[4] = annee;
+        if(mois < 6) //Si on est dans la période début d'année (avant juillet)
+        {
+            if(numeroSemaine>=31 || numeroSemaine<=52)
+            {
+                annee = Calendar.getInstance().get(Calendar.YEAR);
+                annee--; //si on est en janvier 2020, cela correspond a l'annee 2019
+            }
+            else
+            {
+                annee = Calendar.getInstance().get(Calendar.YEAR);
+            }
+        }
+        else //Si on est dans la période fin d'année
+        {
+            if(numeroSemaine >=1 && numeroSemaine <=30)
+            {
+                annee = Calendar.getInstance().get(Calendar.YEAR);
+                annee++; //Si on est en decembre 2020, l'année d'apres affichera les cours de 2021
+            }
+            else
+            {
+                annee = Calendar.getInstance().get(Calendar.YEAR);
+            }
+        }
+        
+        cal.setWeekDate(annee, numeroSemaine, Calendar.MONDAY);
+        semNumb[0] = cal.get(Calendar.DAY_OF_MONTH);
+                
+        cal.setWeekDate(annee, numeroSemaine, Calendar.TUESDAY);
+        semNumb[1] = cal.get(Calendar.DAY_OF_MONTH);
+                
+        cal.setWeekDate(annee, numeroSemaine, Calendar.WEDNESDAY);
+        semNumb[2] = cal.get(Calendar.DAY_OF_MONTH);
+                
+        cal.setWeekDate(annee, numeroSemaine, Calendar.THURSDAY);
+        semNumb[3] = cal.get(Calendar.DAY_OF_MONTH);
+                
+        cal.setWeekDate(annee, numeroSemaine, Calendar.FRIDAY);
+        semNumb[4] = cal.get(Calendar.DAY_OF_MONTH);
         
         return semNumb;
     }

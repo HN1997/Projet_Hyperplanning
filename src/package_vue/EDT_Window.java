@@ -97,6 +97,7 @@ public class EDT_Window extends javax.swing.JFrame {
             adminRespoEdtPanel.setEnabled(true);
         }
     }
+    
     //Fin initialisation du User
     
     /**

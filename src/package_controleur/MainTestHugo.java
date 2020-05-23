@@ -17,7 +17,8 @@ public class MainTestHugo
         cal.setFirstDayOfWeek(Calendar.MONDAY);
         System.out.println("SEMAINE ACTUELLE : " + cal.getTime());
         
-        cal.setWeekDate(2020, 50, Calendar.WEDNESDAY);
-        System.out.println("SEMAINE 20 : " +cal.getTime());
+        cal.setWeekDate(2020, 21, Calendar.MONDAY);
+        System.out.println("JOUR : " + cal.get(Calendar.DAY_OF_MONTH));
+        System.out.println("MOIS : " + cal.get(Calendar.MONTH));
     }
 }
