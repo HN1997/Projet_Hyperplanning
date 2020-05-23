@@ -1,62 +1,42 @@
 package package_modele;
-import java.util.*;
 
 public class Enseignant {
     
-    //Liste des Utilisateur
-    private Set<Utilisateur> listUtilisateur = new HashSet<Utilisateur>();
-
-    //Liste des Courss
-    private Set<Cours> listCours = new HashSet<Cours>();
-
-    Enseignant(int id, String string, String string0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    protected int id;
+    protected int ID_cours;
+    
+    public Enseignant(int id, int ID_cours)
+    {
+        this.id=id;
+        this.ID_cours=ID_cours;
+    }
+    
+    public Enseignant(Enseignant enseignant)
+    {
+        this.id=enseignant.id;
+        this.ID_cours=enseignant.ID_cours;
     }
 
     Enseignant() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    Enseignant(int id, String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Set<Utilisateur> getListUtilisateur() {
-        return listUtilisateur;
-    }
-
-    public void setListUtilisateur(Set<Utilisateur> listUtilisateur) {
-        this.listUtilisateur = listUtilisateur;
-    }
-
-    public void addUtilisateur(Utilisateur utilisateur) {
-        if (!listUtilisateur.contains(utilisateur)) {
-            listUtilisateur.add(utilisateur);
-        }
-    }
-
-    public void removeUtilisateur(Utilisateur utilisateur) {
-        this.listUtilisateur.remove(utilisateur);
-    }
-
-    public Set<Cours> getListCours() {
-        return listCours;
-    }
-
-    public void setListCours(Set<Cours> listCours) {
-        this.listCours = listCours;
-    }
-
-    //Ajoute un élève à la classe
-    public void addCours(Cours cours) {
-        if (!this.listCours.contains(cours)) {
-            this.listCours.add(cours);
-        }
-    }
-
-    //Retire un élève de la classe
-    public void removeCours(Cours cours) {
-        this.listCours.remove(cours);
     }
     
+    public int getId()
+    {
+        return id;
+    }
+    
+    public void setId(int id)
+    {
+        this.id = id;
+    }
+    
+    public int getID_cours()
+    {
+        return ID_cours;
+    }
+    
+    public void setID_cours(int ID_cours)
+    {
+        this.ID_cours = ID_cours;
+    }
 }

@@ -42,5 +42,10 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
         return cours;
     }
 
+    @Override
+    public Utilisateur find(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }

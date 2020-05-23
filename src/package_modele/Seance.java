@@ -1,36 +1,39 @@
 package package_modele;
-import java.util.*;
+
+import java.sql.Date;
+import java.sql.Time;
 
 
 public class Seance {
     
-    private int id;
-    private int semaine;
-    private int date;
-    private int Heure_Debut;
-    private int Heure_Fin;
-    private String Etat;
-    private String Status ;
-    private int R;
-    private int V;
-    private int B;
+    protected int id;
+    protected int semaine;
+    protected Date date;
+    protected Time Heure_Debut;
+    protected Time Heure_Fin;
+    protected String Etat;
+    protected String Status ;
+    protected int R;
+    protected int V;
+    protected int B;
+    protected int id_cours;
+    protected int id_type;
     
-    private Set<Cours> ListCours = new HashSet<>();
-    private Set<Type_Cours> ListType_Cours = new HashSet<>();
     
     
-    public Seance(int id, int semaine,int date,int Heure_Debut,int Heure_Fin,String Etat,String Status, int R, int V, int B)
+    public Seance(int semaine, int id,Date date,Time Heure_Debut,Time Heure_Fin,String Status, int R, int V, int B,int id_cours,int id_type)
     {
         this.id=id;
         this.semaine=semaine;
         this.date=date;
         this.Heure_Debut=Heure_Debut;
         this.Heure_Fin= Heure_Fin;
-        this.Etat=Etat;
         this.Status=Status;
         this.R=R;
         this.V=V;
         this.B=B;
+        this.id_cours=id_cours;
+        this.id_type=id_type;
     }
     
     public Seance(Seance seance)
@@ -38,7 +41,6 @@ public class Seance {
         this.id=seance.id;
         this.semaine=seance.semaine;
         this.date=seance.date;
-        this.Etat=seance.Etat;
         this.Heure_Debut=seance.Heure_Debut;
         this.Heure_Fin=seance.Heure_Fin;
         this.Status=seance.Status;
@@ -47,12 +49,7 @@ public class Seance {
         this.B=seance.B;
     }
 
-    Seance(int id, int aInt, int aInt0, int aInt1, int aInt2, String string, int aInt3, int aInt4, int aInt5) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     Seance() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public int getId()
@@ -75,44 +72,34 @@ public class Seance {
         this.semaine = semaine;
     }
     
-    public int getdate()
+    public Date getdate()
     {
         return date;
     }
     
-    public void setdate(int date)
+    public void setdate(Date date)
     {
         this.date = date;
     }
     
-    public int getHeure_Debut()
+    public Time getHeure_Debut()
     {
         return Heure_Debut;
     }
     
-    public void setHeure_Debut(int Heure_Debut)
+    public void setHeure_Debut(Time Heure_Debut)
     {
         this.Heure_Debut = Heure_Debut;
     }
     
-    public int getHeure_Fin()
+    public Time getHeure_Fin()
     {
         return Heure_Fin;
     }
     
-    public void setHeure_Fin(int Heure_Fin)
+    public void setHeure_Fin(Time Heure_Fin)
     {
         this.Heure_Fin = Heure_Fin;
-    }
-    
-    public String getEtat()
-    {
-        return Etat;
-    }
-    
-    public void setEtat(String Etat)
-    {
-        this.Etat = Etat;
     }
     
     public String getStatus()
@@ -154,43 +141,24 @@ public class Seance {
         this.B = B;
     }
     
-    public Set<Cours> getListCours() {
-        return ListCours;
-    }
-
-    public void setListCours(Set<Cours> ListCours) {
-        this.ListCours = ListCours;
-    }
-
-    //Ajoute une salle à un cours
-    public void addCours(Cours cours) {
-        this.ListCours.add(cours);
-    }
-
-    //Retire une salle à un cours
-    public void removeCours(Cours cours) {
-        this.ListCours.remove(cours);
+    public int getId_cours()
+    {
+        return id_cours;
     }
     
-            public Set<Type_Cours> getListType_Cours() 
+    public void setId_cours(int id_cours)
     {
-        return ListType_Cours;
+        this.id_cours = id_cours;
     }
-
-    public void setListType_Cours(Set<Type_Cours> ListType_Cours) 
+    
+    public int getId_type()
     {
-        this.ListType_Cours = ListType_Cours;
+        return id_type;
     }
-
-  //Ajoute une salle à un type_cours
-    public void addType_Cours(Type_Cours type_cours)
+    
+    public void setId_type(int id_type)
     {
-        this.ListType_Cours.add(type_cours);
+        this.id_type = id_type;
     }
-
-  //Retire une salle à un type_cours
-    public void removeType_Cours(Type_Cours type_cours)
-    {
-        this.ListType_Cours.remove(type_cours);
-    }
+    
 }
