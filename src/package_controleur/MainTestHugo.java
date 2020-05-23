@@ -1,5 +1,7 @@
 package package_controleur;
 
+import java.util.Calendar;
+import java.util.Locale;
 import package_modele.ConnexionSQL;
 
 public class MainTestHugo 
@@ -11,8 +13,12 @@ public class MainTestHugo
         String password = "753"; //pour nos tests
     
     
-        System.out.println(connsql.CheckTD(email, password));
+        Calendar cal = Calendar.getInstance( new Locale("fr","FR") );
+        cal.setFirstDayOfWeek(Calendar.MONDAY);
+        System.out.println("SEMAINE ACTUELLE : " + cal.getTime());
         
-        
+        cal.setWeekDate(2020, 21, Calendar.MONDAY);
+        System.out.println("JOUR : " + cal.get(Calendar.DAY_OF_MONTH));
+        System.out.println("MOIS : " + cal.get(Calendar.MONTH));
     }
 }

@@ -44,11 +44,11 @@ public class EDT_Window extends javax.swing.JFrame {
     String email = "anand.maisuria@edu.ece.fr"; 
     String password = "753";
     
-    //Un enseignant
+    //Un ref pegagogique
     String email2 = "arthur.jaillard@edu.ece.fr"; 
     String password2 = "456"; 
     
-    //Un ref ped
+    //Un enseignant
     String email3 = "hugo.navillod@edu.ece.fr"; 
     String password3 = "123"; 
     
@@ -97,6 +97,7 @@ public class EDT_Window extends javax.swing.JFrame {
             adminRespoEdtPanel.setEnabled(true);
         }
     }
+    
     //Fin initialisation du User
     
     /**
@@ -340,7 +341,7 @@ public class EDT_Window extends javax.swing.JFrame {
         promotionLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         promotionLabel.setForeground(new java.awt.Color(204, 204, 204));
         promotionLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        promotionLabel.setText("ING3");
+        promotionLabel.setText("ING1");
 
         tdLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         tdLabel.setForeground(new java.awt.Color(204, 204, 204));
