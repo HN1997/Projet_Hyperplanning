@@ -1,51 +1,68 @@
 package package_modele;
-import java.util.*;
 
 public class Seance_Enseignant {
+
+    protected int id_seance;
+    protected int id_enseignant;
     
-    //Liste des Seance
-    private Set<Seance> listSeance = new HashSet<Seance>();
-
-    //Liste des Enseignants
-    private Set<Enseignant> listEnseignant = new HashSet<Enseignant>();
-
-    public Set<Seance> getListSeance() {
-        return listSeance;
-    }
-
-    public void setListSeance(Set<Seance> listSeance) {
-        this.listSeance = listSeance;
-    }
-
-    public void addSeance(Seance seance) {
-        if (!listSeance.contains(seance)) {
-            listSeance.add(seance);
-        }
-    }
-
-    public void removeSeance(Seance seance) {
-        this.listSeance.remove(seance);
-    }
-
-    public Set<Enseignant> getListEnseignant() {
-        return listEnseignant;
-    }
-
-    public void setListEnseignant(Set<Enseignant> listEnseignant) {
-        this.listEnseignant = listEnseignant;
-    }
-
-    //Ajoute un élève à la classe
-    public void addEnseignant(Enseignant enseignant) {
-        if (!this.listEnseignant.contains(enseignant)) {
-            this.listEnseignant.add(enseignant);
-        }
-    }
-
-    //Retire un élève de la classe
-    public void removeEnseignant(Enseignant enseignant) {
-        this.listEnseignant.remove(enseignant);
+     /**
+     *
+     * @param id_seance
+     * @param id_enseignant
+     */
+    public Seance_Enseignant(int id_seance, int id_enseignant)
+    {
+        this.id_enseignant=id_enseignant;
+        this.id_seance=id_seance;
     }
     
+    /**
+     *
+     * @param enseignant
+     */
+    public Seance_Enseignant(Seance_Enseignant enseignant)
+    {
+        this.id_enseignant=enseignant.id_enseignant;
+        this.id_seance=enseignant.id_seance;
+    }
+
+    Seance_Enseignant() {
+    }
+
+/********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
     
+    /**
+     *
+     * @return
+     */
+    public int getId_enseignant()
+    {
+        return id_enseignant;
+    }
+    
+    /**
+     *
+     * @param id_enseignant
+     */
+    public void setId_enseignant(int id_enseignant)
+    {
+        this.id_enseignant = id_enseignant;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public int getId_seance()
+    {
+        return id_seance;
+    }
+    
+    /**
+     * @param id_seance
+     */
+    public void setId_seance(int id_seance)
+    {
+        this.id_seance = id_seance;
+    }
 }
