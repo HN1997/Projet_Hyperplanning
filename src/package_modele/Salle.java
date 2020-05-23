@@ -1,80 +1,118 @@
 package package_modele;
-import java.util.*;
 
+public class Salle 
+{
 
-public class Salle {
+/************************************************************* Attributs *****************************************************************************************************/
+    
     protected int id;
     protected String Nom;
     protected int Capacite;
-    private Set<Site> ListSite = new HashSet<>();
+    protected int id_site;
+
+/********************************************************** Mise en place des constructeurs***********************************************************************************/
     
-    public Salle(int id, String Nom,int Capacite)
+    /**
+     *
+     * @param id
+     * @param Nom
+     * @param Capacite
+     * @param id_site
+     */
+    public Salle(int id, String Nom,int Capacite,int id_site)
     {
         this.id=id;
         this.Nom=Nom;
         this.Capacite=Capacite;
+        this.id_site=id_site;
     }
     
+    /**
+     *
+     * @param salle
+     */
     public Salle(Salle salle)
     {
         this.id=salle.id;
         this.Nom=salle.Nom;
         this.Capacite=salle.Capacite;
+        this.id=salle.id_site;
     }
 
     Salle() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+/********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
     
+    /**
+     *
+     * @return
+     */
     public int getId()
     {
         return id;
     }
     
+    /**
+     *
+     * @param id
+     */
     public void setId(int id)
     {
         this.id = id;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getNom()
     {
         return Nom;
     }
     
+    /**
+     *
+     * @param Nom
+     */
     public void setNom(String Nom)
     {
         this.Nom = Nom;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getCapacite()
     {
         return Capacite;
     }
     
+    /**
+     *
+     * @param Capacite
+     */
     public void setCapacite(int Capacite)
     {
         this.Capacite = Capacite;
     }
     
-        public Set<Site> getListSite() 
+    /**
+     *
+     * @return
+     */
+    public int getId_site()
     {
-        return ListSite;
+        return id_site;
     }
-
-    public void setListSite(Set<Site> ListSite) 
+    
+    /**
+     *
+     * @param id_site
+     */
+    public void setId_site(int id_site)
     {
-        this.ListSite = ListSite;
-    }
-
-  //Ajoute une salle à un site
-    public void addSite(Site site)
-    {
-        this.ListSite.add(site);
-    }
-
-  //Retire une salle à un site
-    public void removeSite(Site site)
-    {
-        this.ListSite.remove(site);
+        this.id_site = id_site;
     }
 }

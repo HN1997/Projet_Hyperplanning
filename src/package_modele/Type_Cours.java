@@ -1,42 +1,79 @@
+/************************************************** Définiton du package *******************************************************************************************************/
 package package_modele;
 
-public class Type_Cours {
-        protected int id;
+public class Type_Cours 
+
+{
+
+/************************************************************* Attributs *****************************************************************************************************/    
+    
+    protected int id;
     protected String Nom;
+
+/********************************************************** Mise en place des constructeurs***********************************************************************************/    
+
+//Création d'un constructeur surchargé
     
-    public Type_Cours(int id, String Nom)
-    {
-        this.id=id;
-        this.Nom=Nom;
-    }
-    
-    public Type_Cours(Type_Cours type_cours)
-    {
-        this.id=type_cours.id;
-        this.Nom=type_cours.Nom;
+    /**
+     *
+     * @param id
+     * @param Nom
+     */
+    public Type_Cours(int id, String Nom) {
+        this.id = id;
+        this.Nom = Nom;
     }
 
-    Type_Cours() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//Création d'un constructeur surchargé    
     
-    public int getId()
-    {
+    /**
+     *
+     * @param type_cours
+     */
+    public Type_Cours(Type_Cours type_cours) {
+        this.id = type_cours.id;
+        this.Nom = type_cours.Nom;
+    }
+
+//Création d'un constructeur par défault     
+    
+    Type_Cours() {}
+    
+/********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
+    
+//Getter et Setter pour l'ID    
+    
+    /**
+     *
+     * @return
+     */
+    public int getId() {
         return id;
     }
-    
-    public void setId(int id)
-    {
+
+    /**
+     *
+     * @param id
+     */
+    public void setId(int id) {
         this.id = id;
     }
+
+//Getter et Setter pour le Nom    
     
-    public String getNom()
-    {
+    /**
+     *
+     * @return
+     */
+    public String getNom() {
         return Nom;
     }
-    
-    public void setNom(String Nom)
-    {
+
+    /**
+     *
+     * @param Nom
+     */
+    public void setNom(String Nom) {
         this.Nom = Nom;
     }
 }

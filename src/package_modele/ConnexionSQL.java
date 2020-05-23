@@ -1,7 +1,5 @@
 package package_modele;
 import java.sql.*;
-import java.lang.*;
-import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -13,9 +11,11 @@ public class ConnexionSQL
     private PreparedStatement pst = null; //executer les requetes (=query)
     private ResultSet rs = null;
 
-    
-
     //Constructeur qui nous connecte a la BDD
+
+    /**
+     *
+     */
     public ConnexionSQL() 
     {
         
@@ -39,6 +39,11 @@ public class ConnexionSQL
     
     private static Connection connc;
     
+    /**
+     *
+     * @return
+     * @throws SQLException
+     */
     public static Connection getInstance() throws SQLException {
         if (connc == null) {
             connc = DriverManager.getConnection("jdbc:mysql://localhost/planning", "root", "");

@@ -1,9 +1,11 @@
 package package_modele;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class SalleDAO extends DAO<Salle>{
+public class SalleDAO extends DAO<Salle> {
     
-        public SalleDAO(Connection conn) {
+    public SalleDAO(Connection conn) {
         super(conn);
     }
 
@@ -21,35 +23,28 @@ public class SalleDAO extends DAO<Salle>{
     public boolean update(Salle obj) {
         return false;
     }
-   
-    @Override
-  public Salle find(int id) {
-    Salle salle = new Salle();            
-    try {
-      ResultSet result = this.connect.createStatement(
-        ResultSet.TYPE_SCROLL_INSENSITIVE, 
-        ResultSet.CONCUR_READ_ONLY
-      ).executeQuery(
-        "SELECT * FROM salle "+
-        "LEFT JOIN site ON ID_Site = salle.ID_Site " + 
-        "AND ID_Site = "+ id 
-      );
-      if(result.first()){
-        salle = new Salle(id, result.getString("Nom"), result.getInt("Capacite"));
-        result.beforeFirst();
-        SiteDAO matDao = new SiteDAO(this.connect);
-            
-        while(result.next())
-          salle.addSite(matDao.find(result.getInt("ID_Site")));
-      }
-    } catch (SQLException e) {
-    }
-    return salle;
-  }
 
     @Override
-    public Salle find(String Email, String Password) {
+    public Salle find(int id) {
+        Salle cours = new Salle();
+
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM salle WHERE ID_Salle= " + id);
+            if (result.first()) {
+                cours = new Salle(
+                        id,
+                        result.getString("Nom"),result.getInt("Capacite"),result.getInt("ID_Site"));
+            }
+        } catch (SQLException e) {
+        }
+        return cours;
+    }
+
+    @Override
+    public Salle find(String Email, String Passwd) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
- 
+    
 }

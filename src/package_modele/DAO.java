@@ -1,11 +1,20 @@
 package package_modele;
 import java.sql.Connection;
 
+/**
+ *
+ * @author ShadowZeus
+ * @param <T>
+ */
 public abstract class DAO<T> {
     
   protected Connection connect = null;
    
-  public DAO(Connection conn){
+    /**
+     *
+     * @param conn
+     */
+    public DAO(Connection conn){
     this.connect = conn;
   }
    
