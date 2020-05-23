@@ -9,10 +9,7 @@ import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
-import package_modele.ConnexionSQL;
-import package_modele.DAO;
-import package_modele.Utilisateur;
-import package_modele.UtilisateurDAO;
+import package_modele.*;
 
 public class RechercheInformationsHugo 
 {
@@ -207,36 +204,89 @@ public class RechercheInformationsHugo
     
     public String GetDroit(String Email, String Passwd) 
     {
-        String droit = "";
-        int droitint = connSQL.CheckDroit(Email, Passwd);
-        switch(droitint)
+        String droitstring = "";
+        
+        try
         {
-            case 1:
-                droit = "Administrateur";
-                break;
-            case 2:
-                droit = "Référent Pédagogique";
-                break;
-            case 3:
-                droit = "Enseignant";
-                break;
-            case 4:
-                droit = "Etudiant";
-                break;
+            DAO<Utilisateur> Utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            Utilisateur user = Utilisateurd.find(Email,Passwd);
+            
+            int droit = user.getDroit();
+            switch(droit)
+            {
+                case 1:
+                    droitstring = "Administrateur";
+                    break;
+                case 2:
+                    droitstring = "Référent Pédagogique";
+                    break;
+                case 3:
+                    droitstring = "Enseignant";
+                    break;
+                case 4:
+                    droitstring = "Etudiant";
+                    break;
+                default:
+                    break;
+            }
+        }catch (SQLException ex) {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return droit;
+        
+        return droitstring;
     }
     
     //A CHANGER
     public String getPromotion(String email, String pass)
     {
-        return connSQL.CheckPromotion(email, pass);
+        String prom = "";
+        try {
+            
+            DAO<Utilisateur> Utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            Utilisateur user = Utilisateurd.find(email,pass);
+            
+            if(user.getDroit() == 4) //Si c'est un etudiant
+            {
+                DAO<Etudiant> etudiantd = new EtudiantDAO(ConnexionSQL.getInstance());
+                Etudiant etu = etudiantd.find(user.getId());
+                
+                DAO<Promotion> promod = new PromotionDAO(ConnexionSQL.getInstance());
+                Promotion promo = promod.find(etu.getId_promotion());
+                
+                prom = promo.getNom();
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return prom;
     }
     
     //A CHANGER
     public String getTD(String email, String pass)
     {
-        return connSQL.CheckTD(email, pass);
+        String groupenom = "";
+        try
+        {
+            DAO<Utilisateur> Utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            Utilisateur user = Utilisateurd.find(email,pass);
+            
+            if(user.getDroit() == 4) //Si c'est un etudiant
+            {
+                DAO<Etudiant> etudiantd = new EtudiantDAO(ConnexionSQL.getInstance());
+                Etudiant etu = etudiantd.find(user.getId());
+                
+                DAO<Groupe> grouped = new GroupeDAO(ConnexionSQL.getInstance());
+                Groupe groupe = grouped.find(etu.getId_groupe());
+                
+                groupenom = groupe.getNom();
+            }
+            
+        }catch (SQLException ex) {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return groupenom;
     }
     
 }
