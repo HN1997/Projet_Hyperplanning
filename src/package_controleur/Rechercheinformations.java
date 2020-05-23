@@ -25,6 +25,7 @@ public class Rechercheinformations {
     
     
     //Fonction pour se connecter, renvoie un tableau de 2 case, indice 0 = true si la connexion a ete etablie, indice 1 = un int pour le type de droit (de 1 a 4, 0 par defaut)
+    /*
     public Object[] GetDroit(String email, String password)
     {
         Object[] result = {false,0};
@@ -40,7 +41,7 @@ public class Rechercheinformations {
         
         return (Object[]) result[1];
     }
-    
+    */
     
     //Cette méthode renvoie la semaine actuelle à laquelle on est
     public int GetSemaine(){
@@ -144,7 +145,8 @@ public class Rechercheinformations {
         clock.start();
     }
     
-        //Fonction pour se connecter, renvoie un tableau de 2 case, indice 0 = true si la connexion a ete etablie, indice 1 = un int pour le type de droit (de 1 a 4, 0 par defaut)
+    //Fonction pour se connecter, renvoie un tableau de 2 case, indice 0 = true si la connexion a ete etablie, indice 1 = un int pour le type de droit (de 1 a 4, 0 par defaut)
+    /*
     public Object[] Connexion(String email, String password)
     {
         Object[] result = {false,0};
@@ -160,6 +162,7 @@ public class Rechercheinformations {
         
         return result;
     }
+    */
 }
 
 

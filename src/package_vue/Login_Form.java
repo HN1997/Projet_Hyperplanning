@@ -1,14 +1,15 @@
 package package_vue;
 import javax.swing.*;
+import package_controleur.RechercheInformationsHugo;
 import package_controleur.Rechercheinformations;
 
 
 public class Login_Form extends javax.swing.JFrame {
     
-    Rechercheinformations ri;
+    RechercheInformationsHugo ri;
     
     public Login_Form() {
-        ri = new Rechercheinformations();
+        ri = new RechercheInformationsHugo();
         initComponents();
     }
 

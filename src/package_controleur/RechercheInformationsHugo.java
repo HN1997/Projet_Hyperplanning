@@ -105,16 +105,19 @@ public class RechercheInformationsHugo
     public Object[] Connexion(String email, String password)
     {
         Object[] result = {false,0};
-        
-        if(this.connSQL != null) //Si la connecion a la BDD a bien ete initialise
+        try 
         {
-            result[0] = connSQL.CheckConnection(email, password); //Regarde si on s'est bien connecté (email/password OK)
-            if((boolean)result[0])
+            DAO<Utilisateur> Utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            Utilisateur user = Utilisateurd.find(email,password);
+            if(user.getDroit() != 0)
             {
-                result[1] = connSQL.CheckDroit(email, password); //On recuperer le droit de l'utilisateur
+                result[0] = true;
+                result[1] = user.getDroit();
             }
+        } catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         return result;
     }
     
