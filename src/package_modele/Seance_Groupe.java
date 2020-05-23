@@ -1,50 +1,68 @@
 package package_modele;
-import java.util.*;
 
 public class Seance_Groupe {
+
+    protected int id_seance;
+    protected int id_groupe;
     
-    //Liste des Seance
-    private Set<Seance> listSeance = new HashSet<>();
-
-    //Liste des Groupes
-    private Set<Groupe> listGroupe = new HashSet<>();
-
-    public Set<Seance> getListSeance() {
-        return listSeance;
-    }
-
-    public void setListSeance(Set<Seance> listSeance) {
-        this.listSeance = listSeance;
-    }
-
-    public void addSeance(Seance seance) {
-        if (!listSeance.contains(seance)) {
-            listSeance.add(seance);
-        }
-    }
-
-    public void removeSeance(Seance seance) {
-        this.listSeance.remove(seance);
-    }
-
-    public Set<Groupe> getListGroupe() {
-        return listGroupe;
-    }
-
-    public void setListGroupe(Set<Groupe> listGroupe) {
-        this.listGroupe = listGroupe;
-    }
-
-    //Ajoute un élève à la classe
-    public void addGroupe(Groupe groupe) {
-        if (!this.listGroupe.contains(groupe)) {
-            this.listGroupe.add(groupe);
-        }
-    }
-
-    //Retire un élève de la classe
-    public void removeGroupe(Groupe groupe) {
-        this.listGroupe.remove(groupe);
+     /**
+     *
+     * @param id_seance
+     * @param id_groupe
+     */
+    public Seance_Groupe(int id_groupe,int id_seance)
+    {
+        this.id_groupe=id_groupe;
+        this.id_seance=id_seance;
     }
     
+    /**
+     *
+     * @param groupe
+     */
+    public Seance_Groupe(Seance_Groupe groupe)
+    {
+        this.id_groupe=groupe.id_groupe;
+        this.id_seance=groupe.id_seance;
+    }
+
+    Seance_Groupe() {
+    }
+
+/********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
+    
+    /**
+     *
+     * @return
+     */
+    public int getId_groupe()
+    {
+        return id_groupe;
+    }
+    
+    /**
+     *
+     * @param id_groupe
+     */
+    public void setId_groupe(int id_groupe)
+    {
+        this.id_groupe = id_groupe;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public int getId_seance()
+    {
+        return id_seance;
+    }
+    
+    /**
+     * @param id_seance
+     */
+    public void setId_seance(int id_seance)
+    {
+        this.id_seance = id_seance;
+    }
 }
