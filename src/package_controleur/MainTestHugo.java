@@ -1,5 +1,6 @@
 package package_controleur;
 
+import java.util.Calendar;
 import package_modele.ConnexionSQL;
 
 public class MainTestHugo 
@@ -11,8 +12,8 @@ public class MainTestHugo
         String password = "753"; //pour nos tests
     
     
-        System.out.println(connsql.CheckTD(email, password));
-        
+        Calendar cal = Calendar.getInstance();
+        System.out.println(cal.getTime());
         
     }
 }

@@ -1,6 +1,7 @@
 package package_controleur;
 
 import static java.lang.Thread.sleep;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -18,13 +19,13 @@ public class RechercheInformationsHugo
     ConnexionSQL connSQL;
     // Fin des variables
     
-    //Constructeur
+    ////////////////////////////////////////////////// CONSTRUCTEUR ///////////////////////////////////////
     public RechercheInformationsHugo() 
     {
         this.connSQL = new ConnexionSQL();
     }
     
-    
+    ////////////////////////////////////////////////// PARTIE LIEE AU TEMPS ///////////////////////////////////////
     
     //Fonction qui permet de modifier le label date à la date actuelle, et le label heure à l'heure actuelle
     public static void Clock(JLabel date, JLabel heure) //Modifie le label date et heure en continu
@@ -125,6 +126,31 @@ public class RechercheInformationsHugo
         return Calendar.getInstance().get(Calendar.WEEK_OF_YEAR);
     }
     
+    public static int[] getSemaineNumbers(int numeroSemaine) //En fonction du numero de semaine, renvoie le numero du lundi mardi mercredi jeudi vendredi
+    {
+        int[] semNumb = new int[5];
+        Calendar calendar = Calendar.getInstance();
+        
+        
+        int annee = Calendar.getInstance().get(Calendar.YEAR); //L'année actuelle a laquelle on est
+        
+        semNumb[0] = annee;
+        semNumb[1] = annee;
+        semNumb[2] = annee;
+        semNumb[3] = annee;
+        semNumb[4] = annee;
+        
+        return semNumb;
+    }
+    
+    public String[] getMoisString(int numeroSemaine) //en fonction du numero de semaine, envoie le mois associé au lundi mardi mercredi jeudi vendredi
+    {
+        String[] mois = new String[5];
+        
+        return mois;
+    }
+    
+    ////////////////////////////////////////////////// PARTIE LIEE A L USER ///////////////////////////////////////
     
     //Fonction pour récupérer le nom et prenom de l'utilisateur
     public String GetPrenomNom(String Email, String Passwd) 
@@ -173,8 +199,5 @@ public class RechercheInformationsHugo
     {
         return connSQL.CheckTD(email, pass);
     }
-    
-    
-    
     
 }
