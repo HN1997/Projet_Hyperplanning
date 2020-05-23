@@ -6,22 +6,23 @@ public class Groupe {
     protected int id;
     protected String Nom;
     
-    private Set<Promotion> ListPromotion = new HashSet<>();
+   protected int id_promotion;
     
-    public Groupe(int id, String Nom)
+    public Groupe(int id, String Nom,int id_promotion)
     {
         this.id=id;
         this.Nom=Nom;
+        this.id_promotion=id_promotion;
     }
     
     public Groupe(Groupe groupe)
     {
         this.id=groupe.id;
         this.Nom=groupe.Nom;
+        this.id_promotion=groupe.id_promotion;
     }
 
     Groupe() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     public int getId()
@@ -44,21 +45,15 @@ public class Groupe {
         this.Nom = Nom;
     }
     
-    public Set<Promotion> getListPromotion() {
-        return ListPromotion;
+    public int getId_promotion()
+    {
+        return id_promotion;
     }
+    
+    public void setId_promotion(int id_promotion)
+    {
+        this.id_promotion = id_promotion;
+    }
+    
 
-    public void setListPromotion(Set<Promotion> ListPromotion) {
-        this.ListPromotion = ListPromotion;
-    }
-
-    //Ajoute une salle à un promotion
-    public void addPromotion(Promotion promotion) {
-        this.ListPromotion.add(promotion);
-    }
-
-    //Retire une salle à un promotion
-    public void removePromotion(Promotion promotion) {
-        this.ListPromotion.remove(promotion);
-    }
 }

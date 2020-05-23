@@ -1,26 +1,34 @@
 package package_modele;
-import java.util.*;
 
+/**
+ *
+ * @author ShadowZeus
+ */
 public class Etudiant {
     
-    private int Numero;
+    protected int Numero;
     
-    //Liste des Utilisateur
-    private Set<Utilisateur> listUtilisateur = new HashSet<Utilisateur>();
-    //Liste des Groupes
-    private Set<Groupe> listGroupe = new HashSet<Groupe>();
+    protected int id_promotion;
     
-    public Etudiant(int Numero) {
+    protected int id_user;
+    protected int id_groupe;
+    
+    /**
+     *
+     * @param id_user
+     * @param id_promotion
+     * @param Numero
+     * @param id_groupe
+     */
+    public Etudiant(int id_user, int id_promotion,int Numero, int id_groupe) {
         this.Numero = Numero;
+        this.id_promotion = id_promotion;
+        this.id_user = id_user;
+        this.id_groupe = id_groupe;
     }
 
     Etudiant() {
     }
-
-    Etudiant(int id, String string, String string0) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 
     public int getNumero() {
         return Numero;
@@ -30,46 +38,29 @@ public class Etudiant {
         this.Numero = Numero;
     }
 
-    public Set<Utilisateur> getListUtilisateur() {
-        return listUtilisateur;
+    public int getId_promotion() {
+        return id_promotion;
     }
 
-    public void setListUtilisateur(Set<Utilisateur> listUtilisateur) {
-        this.listUtilisateur = listUtilisateur;
-    }
-
-    public void addUtilisateur(Utilisateur utilisateur) {
-        if (!listUtilisateur.contains(utilisateur)) {
-            listUtilisateur.add(utilisateur);
-        }
-    }
-
-    public void removeUtilisateur(Utilisateur utilisateur) {
-        this.listUtilisateur.remove(utilisateur);
-    }
-
-    public Set<Groupe> getListGroupe() {
-        return listGroupe;
-    }
-
-    public void setListGroupe(Set<Groupe> listGroupe) {
-        this.listGroupe = listGroupe;
-    }
-
-    //Ajoute un élève à la classe
-    public void addGroupe(Groupe groupe) {
-        if (!this.listGroupe.contains(groupe)) {
-            this.listGroupe.add(groupe);
-        }
-    }
-
-    //Retire un élève de la classe
-    public void removeGroupe(Groupe groupe) {
-        this.listGroupe.remove(groupe);
+    public void setId_promotion(int id_promotion) {
+        this.id_promotion = id_promotion;
     }
     
-    public boolean equals(Etudiant etudiant) {
-        return this.getNumero() == etudiant.getNumero();
+    public int getId_user() {
+        return id_user;
     }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+    
+    public int getId_groupe() {
+        return id_groupe;
+    }
+
+    public void setId_groupe(int id_groupe) {
+        this.id_groupe = id_groupe;
+    }
+   
     
 }

@@ -21,37 +21,30 @@ public class GroupeDAO extends DAO<Groupe> {
     public boolean update(Groupe obj) {
         return false;
     }
-
+   
     @Override
     public Groupe find(int id) {
-        Groupe groupe = new Groupe();
+        Groupe cours = new Groupe();
+
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY
-            ).executeQuery(
-                    "SELECT * FROM groupe "
-                    + "LEFT JOIN promotion ON ID_Promotion = groupe.ID_Promotion "
-                    + "AND ID_Promotion = " + id
-            );
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM groupe WHERE ID_Groupe= "+id);
             if (result.first()) {
-                groupe = new Groupe(id, result.getString("Nom"));
-                result.beforeFirst();
-                PromotionDAO matDao = new PromotionDAO(this.connect);
-
-                while (result.next()) {
-                    groupe.addPromotion(matDao.find(result.getInt("ID_Promotion")));
-                }
+                cours = new Groupe(
+                        id,
+                        result.getString("Nom"),result.getInt("ID_Promotion"));
             }
         } catch (SQLException e) {
         }
-        return groupe;
+        return cours;
     }
 
     @Override
-    public Groupe find(String Email, String Password) {
+    public Groupe find(String Email, String Passwd) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
 }
+  
