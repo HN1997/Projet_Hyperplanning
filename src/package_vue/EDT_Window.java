@@ -8,6 +8,7 @@ package package_vue;
 import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
+import java.util.Calendar;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -65,6 +66,7 @@ public class EDT_Window extends javax.swing.JFrame {
         rih = new RechercheInformationsHugo();
         RechercheInformationsHugo.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
         InitialiseSemaine(rih.GetSemaine()); //Selectionne la semaine actuelle
+        anneeEdtLabel.setText("Année " + Calendar.getInstance().get(Calendar.YEAR));
         
         nameUserLabel.setText(rih.GetPrenomNom(email, password)); //Change le prenom nom de l'utilsateur
         droitLabel.setText(rih.GetDroit(email, password)); //Change le droit pas ex "etudiant"
@@ -228,6 +230,7 @@ public class EDT_Window extends javax.swing.JFrame {
         dixhuitLabel = new javax.swing.JLabel();
         dixneufLabel = new javax.swing.JLabel();
         vingtLabel = new javax.swing.JLabel();
+        anneeEdtLabel = new javax.swing.JLabel();
         recapPanel = new javax.swing.JPanel();
         topRecapPanel = new javax.swing.JPanel();
         recapPeriodeLabelTop = new javax.swing.JLabel();
@@ -502,6 +505,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine31.setText("31");
         semaine31.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine31.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine31.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine31ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine31);
 
         semaine32.setBackground(new java.awt.Color(102, 0, 102));
@@ -511,6 +519,11 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine32.setText("32");
         semaine32.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         semaine32.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        semaine32.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                semaine32ActionPerformed(evt);
+            }
+        });
         semainePickerPanel.add(semaine32);
 
         semaine33.setBackground(new java.awt.Color(102, 0, 102));
@@ -1090,7 +1103,7 @@ public class EDT_Window extends javax.swing.JFrame {
         );
         lundiDisplayPanelLayout.setVerticalGroup(
             lundiDisplayPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 745, Short.MAX_VALUE)
         );
 
         mardiDisplayPanel.setBackground(new java.awt.Color(51, 51, 51));
@@ -1272,44 +1285,56 @@ public class EDT_Window extends javax.swing.JFrame {
         vingtLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         vingtLabel.setText("20:30");
 
+        anneeEdtLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
+        anneeEdtLabel.setForeground(new java.awt.Color(110, 35, 72));
+        anneeEdtLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        anneeEdtLabel.setText("Année 2030-2031");
+
         javax.swing.GroupLayout edtPanelBotRightLayout = new javax.swing.GroupLayout(edtPanelBotRight);
         edtPanelBotRight.setLayout(edtPanelBotRightLayout);
         edtPanelBotRightLayout.setHorizontalGroup(
             edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edtPanelBotRightLayout.createSequentialGroup()
-                .addGroup(edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(huitLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(neufLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(dixLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(onzeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(douzeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(treizeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(quatorzeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(quinzeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(seizeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(dixseptLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(dixhuitLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(dixneufLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                    .addComponent(vingtLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(edtDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(edtPanelBotRightLayout.createSequentialGroup()
-                        .addComponent(lundiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(huitLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(neufLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dixLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(onzeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(douzeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(treizeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(quatorzeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(quinzeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(seizeLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(dixseptLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(dixhuitLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(dixneufLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                            .addComponent(vingtLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mardiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(mercrediLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jeudiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(vendrediLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(edtDisplayPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(edtPanelBotRightLayout.createSequentialGroup()
+                                .addComponent(lundiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mardiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(mercrediLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jeudiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(vendrediLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(edtPanelBotRightLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(anneeEdtLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         edtPanelBotRightLayout.setVerticalGroup(
             edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(edtPanelBotRightLayout.createSequentialGroup()
-                .addGap(0, 41, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(anneeEdtLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(edtPanelBotRightLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jeudiLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(mercrediLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2573,6 +2598,8 @@ public class EDT_Window extends javax.swing.JFrame {
         clickItemGestionnaire(modifierPanel, modifierBool, modifierLabel);
     }//GEN-LAST:event_modifierLabelMouseClicked
 
+    //////////////////////////////////// FIN - LES 3 BOUTONS INSERER SUPPRIMER MODIFIER ////////////////////////
+    
     private void recapRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapRechercherButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_recapRechercherButtonActionPerformed
@@ -2593,8 +2620,26 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_recapEdtRechercherButtonActionPerformed
 
+    /////////////////////////// QUAND ON APPUIE SUR LES BOUTONS DES SEMAINES ///////////////////////////
+    
+    private void semaine31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine31ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 31);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 31);
+    }//GEN-LAST:event_semaine31ActionPerformed
 
-    //////////////////////////////////// FIN - LES 3 BOUTONS INSERER SUPPRIMER MODIFIER ////////////////////////
+    private void semaine32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine32ActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 32);
+        rih.ChangeAnneeProgramme(anneeEdtLabel, 32);
+    }//GEN-LAST:event_semaine32ActionPerformed
+
+   
+    
+    
+    /////////////////////////// FIN QUAND ON APPUIE SUR LES BOUTONS DES SEMAINES ///////////////////////////
+
+    
     
     
     /**
@@ -2638,6 +2683,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel ReportingLabelTop;
     private javax.swing.JPanel adminRespoEdtPanel;
     private javax.swing.JComboBox<String> anneeCB;
+    private javax.swing.JLabel anneeEdtLabel;
     private javax.swing.JLabel anneeLabel;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel dateLabel;

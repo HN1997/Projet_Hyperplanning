@@ -129,10 +129,7 @@ public class RechercheInformationsHugo
         int[] semNumb = new int[5];
         Calendar cal = Calendar.getInstance( new Locale("fr","FR") ); //On instancie un calendrier francais
         cal.setFirstDayOfWeek(Calendar.MONDAY); //On dit que le premier mois d'une semaine est le lundi (aux US, le premier jour est un dimanche)
-        
-        //cal.setWeekDate(2020, 50, Calendar.WEDNESDAY);
-        
-        
+         
         int annee; //L'année actuelle a laquelle on est
         int mois = Calendar.getInstance().get(Calendar.MONTH); //Le mois actuelle, commence a 0 pour janvier
         
@@ -182,15 +179,90 @@ public class RechercheInformationsHugo
     
     public String[] getMoisString(int numeroSemaine) //en fonction du numero de semaine, envoie le mois associé au lundi mardi mercredi jeudi vendredi
     {
-        String[] mois = new String[5];
-        mois[0] = "test";
-        mois[1] = "test";
-        mois[2] = "test";
-        mois[3] = "test";
-        mois[4] = "test";
-        return mois;
+        String[] moisString = new String[5];
+        Calendar cal = Calendar.getInstance( new Locale("fr","FR") ); //On instancie un calendrier francais
+        cal.setFirstDayOfWeek(Calendar.MONDAY); //On dit que le premier mois d'une semaine est le lundi (aux US, le premier jour est un dimanche)
+        
+        int annee; //L'année actuelle a laquelle on est
+        int mois = Calendar.getInstance().get(Calendar.MONTH); //Le mois actuelle, commence a 0 pour janvier
+        
+        if(mois < 6) //Si on est dans la période début d'année (avant juillet)
+        {
+            if(numeroSemaine>=31 || numeroSemaine<=52)
+            {
+                annee = Calendar.getInstance().get(Calendar.YEAR);
+                annee--; //si on est en janvier 2020, cela correspond a l'annee 2019
+            }
+            else
+            {
+                annee = Calendar.getInstance().get(Calendar.YEAR);
+            }
+        }
+        else //Si on est dans la période fin d'année
+        {
+            if(numeroSemaine >=1 && numeroSemaine <=30)
+            {
+                annee = Calendar.getInstance().get(Calendar.YEAR);
+                annee++; //Si on est en decembre 2020, l'année d'apres affichera les cours de 2021
+            }
+            else
+            {
+                annee = Calendar.getInstance().get(Calendar.YEAR);
+            }
+        }
+        
+        cal.setWeekDate(annee, numeroSemaine, Calendar.MONDAY);
+        moisString[0] = monthIntToString(cal.get(Calendar.MONTH));
+        
+        cal.setWeekDate(annee, numeroSemaine, Calendar.TUESDAY);
+        moisString[1] = monthIntToString(cal.get(Calendar.MONTH));
+        
+        cal.setWeekDate(annee, numeroSemaine, Calendar.WEDNESDAY);
+        moisString[2] = monthIntToString(cal.get(Calendar.MONTH));
+        
+        cal.setWeekDate(annee, numeroSemaine, Calendar.THURSDAY);
+        moisString[3] = monthIntToString(cal.get(Calendar.MONTH));
+        
+        cal.setWeekDate(annee, numeroSemaine, Calendar.FRIDAY);
+        moisString[4] = monthIntToString(cal.get(Calendar.MONTH));
+        return moisString;
     }
     
+    //Fonction pour transformer un entier representant le mois en string ( 0 = janvier)
+    public String monthIntToString(int month)
+    {
+        switch(month)
+        {
+            case 0:
+                return "Janvier";
+            case 1:
+                return "Février";
+            case 2:
+                return "Mars";
+            case 3:
+                return "Avril";
+            case 4:
+                return "Mai";
+            case 5:
+                return "Juin";
+            case 6:
+                return "Juillet";
+            case 7:
+                return "Août";
+            case 8:
+                return "Septembre";
+            case 9:
+                return "Octobre";
+            case 10:
+                return "Novembre";
+            case 11:
+                return "Décembre";
+            default:
+                return "";
+        }
+    }
+    
+    //Fonction pour changer le label des 5 jours quand on clique sur l'un des 52 boutons en haut
     public void ChangeLabelJours(JLabel lundi, JLabel mardi, JLabel mercredi, JLabel jeudi, JLabel vendredi, int numeroSemaine)
     {
         int[] sem = getSemaineNumbers(numeroSemaine);
@@ -200,6 +272,24 @@ public class RechercheInformationsHugo
         mercredi.setText("Mercredi " + sem[2] + " " + mois[2]);
         jeudi.setText("Jeudi " + sem[3] + " " + mois[3]);
         vendredi.setText("Vendredi " + sem[4] + " " + mois[4]);
+    }
+    
+
+    //Fonction pour changer le numéro de l'année
+    public void ChangeAnneeProgramme(JLabel anneeLabel, int numeroSemaine)
+    {
+        int annee = Calendar.getInstance().get(Calendar.YEAR); //L'année actuelle a laquelle on est
+        
+        if(numeroSemaine >= 31 && numeroSemaine <= 52 )
+        {
+            annee-=1;
+            anneeLabel.setText("Année " + annee);
+        }
+        else
+        {
+            anneeLabel.setText("Année " + annee);
+        }
+        
     }
     
     ////////////////////////////////////////////////// PARTIE LIEE A L USER ///////////////////////////////////////
@@ -218,6 +308,7 @@ public class RechercheInformationsHugo
         }
     }
     
+    //Fonction pour récupérer le droit de l'utilisateur
     public String GetDroit(String Email, String Passwd) 
     {
         String droitstring = "";
@@ -252,7 +343,7 @@ public class RechercheInformationsHugo
         return droitstring;
     }
     
-    //A CHANGER
+    //Fonction pour récupérer la promotion de l'utilisateur, chaine vide si admin ou ref
     public String getPromotion(String email, String pass)
     {
         String prom = "";
@@ -278,7 +369,7 @@ public class RechercheInformationsHugo
         return prom;
     }
     
-    //A CHANGER
+    //Fonction pour récupérer le td de l'utilisateur, chaine vide si admin ou ref ou enseignant
     public String getTD(String email, String pass)
     {
         String groupenom = "";

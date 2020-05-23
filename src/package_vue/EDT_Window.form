@@ -441,6 +441,9 @@
                               <Color id="Curseur en forme de main"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="semaine31ActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JToggleButton" name="semaine32">
                           <Properties>
@@ -466,6 +469,9 @@
                               <Color id="Curseur en forme de main"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="semaine32ActionPerformed"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JToggleButton" name="semaine33">
                           <Properties>
@@ -2022,35 +2028,43 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="huitLabel" max="32767" attributes="0"/>
-                                  <Component id="neufLabel" max="32767" attributes="0"/>
-                                  <Component id="dixLabel" alignment="1" pref="51" max="32767" attributes="0"/>
-                                  <Component id="onzeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
-                                  <Component id="douzeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
-                                  <Component id="treizeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
-                                  <Component id="quatorzeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
-                                  <Component id="quinzeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
-                                  <Component id="seizeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
-                                  <Component id="dixseptLabel" alignment="1" pref="51" max="32767" attributes="0"/>
-                                  <Component id="dixhuitLabel" alignment="1" pref="51" max="32767" attributes="0"/>
-                                  <Component id="dixneufLabel" alignment="1" pref="51" max="32767" attributes="0"/>
-                                  <Component id="vingtLabel" alignment="1" pref="51" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="edtDisplayPanel" max="32767" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <Component id="lundiLabel" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="huitLabel" max="32767" attributes="0"/>
+                                          <Component id="neufLabel" max="32767" attributes="0"/>
+                                          <Component id="dixLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                                          <Component id="onzeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                                          <Component id="douzeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                                          <Component id="treizeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                                          <Component id="quatorzeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                                          <Component id="quinzeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                                          <Component id="seizeLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                                          <Component id="dixseptLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                                          <Component id="dixhuitLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                                          <Component id="dixneufLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                                          <Component id="vingtLabel" alignment="1" pref="51" max="32767" attributes="0"/>
+                                      </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="mardiLabel" min="-2" pref="199" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="edtDisplayPanel" max="32767" attributes="0"/>
+                                          <Group type="102" attributes="0">
+                                              <Component id="lundiLabel" min="-2" pref="200" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="mardiLabel" min="-2" pref="199" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="mercrediLabel" min="-2" pref="200" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="jeudiLabel" min="-2" pref="200" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="vendrediLabel" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="mercrediLabel" min="-2" pref="200" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jeudiLabel" min="-2" pref="200" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="vendrediLabel" max="32767" attributes="0"/>
+                                      <Component id="anneeEdtLabel" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2060,7 +2074,9 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="41" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="anneeEdtLabel" min="-2" pref="29" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jeudiLabel" alignment="1" max="32767" attributes="0"/>
                                   <Component id="mercrediLabel" alignment="1" max="32767" attributes="0"/>
@@ -2156,7 +2172,7 @@
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="745" max="32767" attributes="0"/>
                               </Group>
                             </DimensionLayout>
                           </Layout>
@@ -2496,6 +2512,18 @@
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="text" type="java.lang.String" value="20:30"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="anneeEdtLabel">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Cambria" size="18" style="1"/>
+                        </Property>
+                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                          <Color blue="48" green="23" red="6e" type="rgb"/>
+                        </Property>
+                        <Property name="horizontalAlignment" type="int" value="0"/>
+                        <Property name="text" type="java.lang.String" value="Ann&#xe9;e 2030-2031"/>
                       </Properties>
                     </Component>
                   </SubComponents>
