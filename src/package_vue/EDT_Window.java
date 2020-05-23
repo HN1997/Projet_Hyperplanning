@@ -36,12 +36,27 @@ public class EDT_Window extends javax.swing.JFrame {
     private boolean modifierBool = false;
     // Fin
     
-    // Variable Rechercheinformations
+    //////////// Variable Rechercheinformations ////////////
     Rechercheinformations ri;
     RechercheInformationsHugo rih;
-    String email = "anand.maisuria@edu.ece.fr"; //Pour nos tests
-    String password = "753"; //pour nos tests
-    //Fin variable Rechercheinformations
+    
+    //Un etudiant
+    String email = "anand.maisuria@edu.ece.fr"; 
+    String password = "753";
+    
+    //Un enseignant
+    String email2 = "arthur.jaillard@edu.ece.fr"; 
+    String password2 = "456"; 
+    
+    //Un ref ped
+    String email3 = "hugo.navillod@edu.ece.fr"; 
+    String password3 = "123"; 
+    
+    //Un admin
+    String email4 = "anand_maisuria@yahoo.fr"; 
+    String password4 = "159"; 
+    
+    //Fin variable Rechercheinformations ///////////////////
     
     
     //Initialisation du User
@@ -50,11 +65,37 @@ public class EDT_Window extends javax.swing.JFrame {
         rih = new RechercheInformationsHugo();
         RechercheInformationsHugo.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
         InitialiseSemaine(rih.GetSemaine()); //Selectionne la semaine actuelle
+        
         nameUserLabel.setText(rih.GetPrenomNom(email, password)); //Change le prenom nom de l'utilsateur
         droitLabel.setText(rih.GetDroit(email, password)); //Change le droit pas ex "etudiant"
-        
         promotionLabel.setText(rih.getPromotion(email, password)); //Change la promotion
         tdLabel.setText(rih.getTD(email, password)); //Change le groupe
+        
+        if(droitLabel.getText()!="Administrateur") //Si c'est un etudiant ou un prof ou un ref pedg on desactive le panel gestionnaire edt 
+        {
+            gestionnaireLabel.setVisible(false);
+            gestionnaireLabel.setEnabled(false);
+            gestionnairePanel.setVisible(false);
+            gestionnairePanel.setEnabled(false);
+        }
+        
+        if(droitLabel.getText()=="Etudiant" || droitLabel.getText()=="Enseignant") //Si c'est un etudiant ou un enseignant on desactive la recherche dans reporting et recap période
+        {
+            recapPeriodeTriPanel.setVisible(false);
+            recapPeriodeTriPanel.setEnabled(false);
+            
+            reportingPeriodeTriPanel.setVisible(false);
+            reportingPeriodeTriPanel.setEnabled(false);
+        }
+        
+        if(droitLabel.getText()=="Administrateur" || droitLabel.getText()=="Référent Pédagogique") //si c'est un admin ou ref ped, on change la fenetre de la semaine 
+        {
+            semainePickerPanel.setVisible(false);
+            semainePickerPanel.setEnabled(false);
+            
+            adminRespoEdtPanel.setVisible(true);
+            adminRespoEdtPanel.setEnabled(true);
+        }
     }
     //Fin initialisation du User
     
@@ -153,6 +194,7 @@ public class EDT_Window extends javax.swing.JFrame {
         semaine30 = new javax.swing.JToggleButton();
         adminRespoEdtPanel = new javax.swing.JPanel();
         trierparEdtLabel = new javax.swing.JLabel();
+        semainePickerCB = new javax.swing.JComboBox<>();
         recapEdtSearch = new javax.swing.JComboBox<>();
         recapEdtSearch2 = new javax.swing.JComboBox<>();
         recapOptionnelLabel1 = new javax.swing.JLabel();
@@ -211,6 +253,7 @@ public class EDT_Window extends javax.swing.JFrame {
         reportingOptionnel2Label = new javax.swing.JLabel();
         reportingRechercherButton = new javax.swing.JButton();
         reportingMessageErreur = new javax.swing.JLabel();
+        reportingResumePanel = new javax.swing.JPanel();
         gestionnairePanel = new javax.swing.JPanel();
         topgestionnairePanel = new javax.swing.JPanel();
         topGestionnaireLabel = new javax.swing.JLabel();
@@ -934,6 +977,13 @@ public class EDT_Window extends javax.swing.JFrame {
         trierparEdtLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         trierparEdtLabel.setText("Trier par : ");
 
+        semainePickerCB.setBackground(new java.awt.Color(0, 153, 153));
+        semainePickerCB.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        semainePickerCB.setForeground(new java.awt.Color(255, 255, 255));
+        semainePickerCB.setMaximumRowCount(5);
+        semainePickerCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52" }));
+        semainePickerCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         recapEdtSearch.setBackground(new java.awt.Color(0, 153, 153));
         recapEdtSearch.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         recapEdtSearch.setForeground(new java.awt.Color(255, 255, 255));
@@ -981,10 +1031,12 @@ public class EDT_Window extends javax.swing.JFrame {
         adminRespoEdtPanelLayout.setHorizontalGroup(
             adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminRespoEdtPanelLayout.createSequentialGroup()
-                .addGroup(adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(trierparEdtLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(adminRespoEdtPanelLayout.createSequentialGroup()
-                        .addContainerGap()
+                .addGroup(adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(trierparEdtLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminRespoEdtPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(semainePickerCB, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recapEdtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recapEdtSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -997,7 +1049,7 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(recapEdtRechercherButton)
                         .addGap(18, 18, 18)
-                        .addComponent(recapMessageErreurEdt, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(recapMessageErreurEdt)))
                 .addContainerGap())
         );
         adminRespoEdtPanelLayout.setVerticalGroup(
@@ -1014,7 +1066,8 @@ public class EDT_Window extends javax.swing.JFrame {
                             .addComponent(recapOptionnelLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(recapEdtSearch3)
                             .addComponent(recapOptionnel2Label1)
-                            .addComponent(recapEdtRechercherButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(recapEdtRechercherButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(semainePickerCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(1, 1, 1))
                     .addComponent(recapMessageErreurEdt, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28))
@@ -1528,7 +1581,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 topReportingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(topReportingPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(ReportingLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 1084, Short.MAX_VALUE)
+                    .addComponent(ReportingLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 1086, Short.MAX_VALUE)
                     .addContainerGap())
             );
             topReportingPanel1Layout.setVerticalGroup(
@@ -1595,7 +1648,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 reportingPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(reportingPeriodeTriPanelLayout.createSequentialGroup()
                     .addGroup(reportingPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(trierparReportingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1092, Short.MAX_VALUE)
+                        .addComponent(trierparReportingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1094, Short.MAX_VALUE)
                         .addGroup(reportingPeriodeTriPanelLayout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(reportingSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1632,11 +1685,26 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addComponent(reportingMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
             );
 
+            reportingResumePanel.setBackground(new java.awt.Color(153, 153, 153));
+            reportingResumePanel.setForeground(new java.awt.Color(153, 153, 153));
+
+            javax.swing.GroupLayout reportingResumePanelLayout = new javax.swing.GroupLayout(reportingResumePanel);
+            reportingResumePanel.setLayout(reportingResumePanelLayout);
+            reportingResumePanelLayout.setHorizontalGroup(
+                reportingResumePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 0, Short.MAX_VALUE)
+            );
+            reportingResumePanelLayout.setVerticalGroup(
+                reportingResumePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 729, Short.MAX_VALUE)
+            );
+
             javax.swing.GroupLayout reportingPanelLayout = new javax.swing.GroupLayout(reportingPanel);
             reportingPanel.setLayout(reportingPanelLayout);
             reportingPanelLayout.setHorizontalGroup(
                 reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(topReportingPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(reportingResumePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(reportingPeriodeTriPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
@@ -1644,7 +1712,8 @@ public class EDT_Window extends javax.swing.JFrame {
                 reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(reportingPanelLayout.createSequentialGroup()
                     .addComponent(topReportingPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 810, Short.MAX_VALUE))
+                    .addGap(81, 81, 81)
+                    .addComponent(reportingResumePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGroup(reportingPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(reportingPanelLayout.createSequentialGroup()
                         .addGap(128, 128, 128)
@@ -2108,7 +2177,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(supprimerPanelLayout.createSequentialGroup()
                     .addGap(401, 401, 401)
                     .addComponent(jLabel2)
-                    .addContainerGap(612, Short.MAX_VALUE))
+                    .addContainerGap(614, Short.MAX_VALUE))
             );
             supprimerPanelLayout.setVerticalGroup(
                 supprimerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2132,7 +2201,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(modifierPanelLayout.createSequentialGroup()
                     .addGap(379, 379, 379)
                     .addComponent(jLabel3)
-                    .addContainerGap(648, Short.MAX_VALUE))
+                    .addContainerGap(650, Short.MAX_VALUE))
             );
             modifierPanelLayout.setVerticalGroup(
                 modifierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2661,6 +2730,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel reportingPanel;
     private javax.swing.JPanel reportingPeriodeTriPanel;
     private javax.swing.JButton reportingRechercherButton;
+    private javax.swing.JPanel reportingResumePanel;
     private javax.swing.JComboBox<String> reportingSearch1;
     private javax.swing.JComboBox<String> reportingSearch2;
     private javax.swing.JComboBox<String> reportingSearch3;
@@ -2721,6 +2791,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JToggleButton semaine7;
     private javax.swing.JToggleButton semaine8;
     private javax.swing.JToggleButton semaine9;
+    private javax.swing.JComboBox<String> semainePickerCB;
     private javax.swing.JPanel semainePickerPanel;
     private javax.swing.JSeparator separatorGEDT1;
     private javax.swing.JSeparator separatorGEDT2;
