@@ -1,27 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package package_modele;
 
 /**
  *
- * @author ShadowZeus
+ * @author ShadowZeus and OpenclassRoom("https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/26830-liez-vos-tables-avec-des-objets-java-le-pattern-dao") 
  */
+
+
 public class Utilisateur {
     
 
-  //ID
+  //ID de l'utilisateur
   protected int id = 0;
-  //Nom de l'élève
+  //Nom de l'utilisateur
   protected String nom = "";
+  //Prenom de l'utilisateur
   protected String prenom = "";
+  //Email de l'utilisateur
   protected String email = "";
+  //Mot de Passe de l'utilisateur
   protected String passwd = "";
+  //Droit de l'utilisateur
   protected int droit = 0;
 
-  public Utilisateur(int id, String nom, String prenom,String email,String passwd,int droit ) {
+/********************************************************** Mise en place des constructeurs***********************************************************************************/  
+   
+  //Constructeur par défaut surchargé
+  
+    /**
+     *
+     * @param id
+     * @param nom
+     * @param prenom
+     * @param email
+     * @param passwd
+     * @param droit
+     */
+    public Utilisateur(int id, String nom, String prenom,String email,String passwd,int droit ) {
     this.id = id;
     this.nom = nom;
     this.prenom = prenom;
@@ -29,55 +43,125 @@ public class Utilisateur {
     this.passwd=passwd;
     this.droit=droit;
   }
+  
+  //Constructeur par défaut 
+
+    /**
+     *
+     */
   public Utilisateur(){};
+  
+/********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
+    
 
-
-     
+// Getter et Setter pour l'ID  
+  /**
+     *
+     * @return
+     */
   public int getId() {
     return id;
   }
 
-  public void setId(int id) {
+    /**
+     *
+     * @param id
+     */
+    public void setId(int id) {
     this.id = id;
   }
+
+  
+// Getter et Setter pour le Nom  
+
+    /**
+     *
+     * @return
+     */
 
   public String getNom() {
     return nom;
   }
 
-  public void setNom(String nom) {
+    /**
+     *
+     * @param nom
+     */
+    public void setNom(String nom) {
     this.nom = nom;
   }
+
+// Getter et Setter pour le Prenom
+
+    /**
+     *
+     * @return
+     */
   
   public String getPrenom() {
     return prenom;
   }
 
-  public void setPrenom(String prenom) {
+    /**
+     *
+     * @param prenom
+     */
+    public void setPrenom(String prenom) {
     this.prenom = prenom;
   }
-  
-  public String getEmail() {
+
+    
+// Getter et Setter pour l'Email      
+    
+    /**
+     *
+     * @return
+     */
+    public String getEmail() {
     return email;
   }
 
-  public void setEmail(String email) {
+    /**
+     *
+     * @param email
+     */
+    public void setEmail(String email) {
     this.email = email;
   }
+    
+// Getter et Setter pour le Mot de passe    
   
-  public String getPasswd() {
+    /**
+     *
+     * @return
+     */
+    public String getPasswd() {
     return passwd;
   }
 
-  public void setPasswd(String passwd) {
+    /**
+     *
+     * @param passwd
+     */
+    public void setPasswd(String passwd) {
     this.passwd = passwd;
   }
+    
+// Getter et Setter pour le droit    
   
-  public int getDroit() {
+    /**
+     *
+     * @return
+     */
+    public int getDroit() {
     return droit;
   }
 
-  public void setDroit(int droit) {
+    /**
+     *
+     * @param droit
+     */
+    public void setDroit(int droit) {
     this.droit = droit;
   }
     

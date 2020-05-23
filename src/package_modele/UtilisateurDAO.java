@@ -3,8 +3,16 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ *
+ * @author ShadowZeus
+ */
 public class UtilisateurDAO extends DAO<Utilisateur> {
     
+    /**
+     *
+     * @param conn
+     */
     public UtilisateurDAO(Connection conn) {
         super(conn);
     }

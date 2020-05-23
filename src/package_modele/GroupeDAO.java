@@ -1,6 +1,10 @@
 package package_modele;
 import java.sql.*;
 
+/**
+ *
+ * @author ShadowZeus
+ */
 public class GroupeDAO extends DAO<Groupe> {
 
     public GroupeDAO(Connection conn) {
