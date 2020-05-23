@@ -119,6 +119,13 @@ public class RechercheInformationsHugo
         return result;
     }
     
+    //Cette méthode renvoie la semaine actuelle à laquelle on est
+    public static int GetSemaine()
+    {
+        return Calendar.getInstance().get(Calendar.WEEK_OF_YEAR);
+    }
+    
+    
     //Fonction pour récupérer le nom et prenom de l'utilisateur
     public String GetPrenomNom(String Email, String Passwd) 
     {
@@ -155,9 +162,19 @@ public class RechercheInformationsHugo
         return droit;
     }
     
-    //Cette méthode renvoie la semaine actuelle à laquelle on est
-    public int GetSemaine()
+    //A CHANGER
+    public String getPromotion(String email, String pass)
     {
-        return Calendar.getInstance().get(Calendar.WEEK_OF_YEAR);
+        return connSQL.CheckPromotion(email, pass);
     }
+    
+    //A CHANGER
+    public String getTD(String email, String pass)
+    {
+        return connSQL.CheckTD(email, pass);
+    }
+    
+    
+    
+    
 }

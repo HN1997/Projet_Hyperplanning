@@ -90,9 +90,11 @@ public class ConnexionSQL
    ////////////////////////////////////////////////////////////// PARTIE EDT ////////////////////////////////////////////////
     
     
-    public int CheckPromotion(String email, String password)
+    public String CheckPromotion(String email, String password)
     {
         int droit = CheckDroit(email, password);
+        int promId;
+        String promotion = "";
         
         if(droit == 4) //Si c'est un etudiant, on peut regarder sa promotion
         {
@@ -102,14 +104,62 @@ public class ConnexionSQL
                 pst = conn.prepareStatement(sql);
                 rs = pst.executeQuery();
                 rs.next(); // se place a la premiere ligne
-
+                int idUser = rs.getInt("ID_Utilisateur"); //On recupere l'id de l'utilisateur
+                
+                String sql2 = "SELECT * FROM etudiant WHERE ID_Utilisateur ='"+idUser+"'";
+                pst = conn.prepareStatement(sql2);
+                rs = pst.executeQuery();
+                rs.next();
+                promId = rs.getInt("ID_Promotion");
+                
+                String sql3 = "SELECT * FROM promotion WHERE ID_Promotion ='"+promId+"'";
+                pst = conn.prepareStatement(sql3);
+                rs = pst.executeQuery();
+                rs.next();
+                promotion = rs.getString("Nom");
             } catch (SQLException ex) 
             {
                 Logger.getLogger(ConnexionSQL.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         
-        return droit;
+        return promotion;
+    }
+    
+    public String CheckTD(String email, String password)
+    {
+        int droit = CheckDroit(email, password);
+        int tdId;
+        String td = "";
+        
+        if(droit == 4) //Si c'est un etudiant, on peut regarder sa promotion
+        {
+            String sql = "SELECT * FROM utilisateur WHERE Email='" + email + "' and Passwd='" + password + "'";
+            try 
+            {
+                pst = conn.prepareStatement(sql);
+                rs = pst.executeQuery();
+                rs.next(); // se place a la premiere ligne
+                int idUser = rs.getInt("ID_Utilisateur"); //On recupere l'id de l'utilisateur
+                
+                String sql2 = "SELECT * FROM etudiant WHERE ID_Utilisateur ='"+idUser+"'";
+                pst = conn.prepareStatement(sql2);
+                rs = pst.executeQuery();
+                rs.next();
+                tdId = rs.getInt("ID_Groupe");
+                
+                String sql3 = "SELECT * FROM groupe WHERE ID_Groupe ='"+tdId+"'";
+                pst = conn.prepareStatement(sql3);
+                rs = pst.executeQuery();
+                rs.next();
+                td = rs.getString(("Nom"));
+            } catch (SQLException ex) 
+            {
+                Logger.getLogger(ConnexionSQL.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        return td;
     }
 }
 

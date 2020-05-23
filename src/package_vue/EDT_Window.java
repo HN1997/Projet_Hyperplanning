@@ -49,9 +49,12 @@ public class EDT_Window extends javax.swing.JFrame {
     {
         rih = new RechercheInformationsHugo();
         RechercheInformationsHugo.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
-        InitialiseSemaine(rih.GetSemaine());
-        nameUserLabel.setText(rih.GetPrenomNom(email, password));
-        droitLabel.setText(rih.GetDroit(email, password));
+        InitialiseSemaine(rih.GetSemaine()); //Selectionne la semaine actuelle
+        nameUserLabel.setText(rih.GetPrenomNom(email, password)); //Change le prenom nom de l'utilsateur
+        droitLabel.setText(rih.GetDroit(email, password)); //Change le droit pas ex "etudiant"
+        
+        promotionLabel.setText(rih.getPromotion(email, password)); //Change la promotion
+        tdLabel.setText(rih.getTD(email, password)); //Change le groupe
     }
     //Fin initialisation du User
     
@@ -2324,7 +2327,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 semaine20.setSelected(true);
                 break;
             case 21:
-                semaine20.setSelected(true);
+                semaine21.setSelected(true);
                 break;
             case 22:
                 semaine22.setSelected(true);

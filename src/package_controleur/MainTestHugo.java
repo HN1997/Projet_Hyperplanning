@@ -11,6 +11,8 @@ public class MainTestHugo
         String password = "753"; //pour nos tests
     
     
-        System.out.println(connsql.CheckPromotion(email, password));
+        System.out.println(connsql.CheckTD(email, password));
+        
+        
     }
 }
