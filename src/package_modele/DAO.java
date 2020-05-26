@@ -1,5 +1,6 @@
 package package_modele;
 import java.sql.Connection;
+import java.util.ArrayList;
 
 /**
  *
@@ -53,6 +54,28 @@ public abstract class DAO<T> {
      * @return
      */
     public abstract T find(int id);
+    
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public abstract ArrayList<Integer> ComposerFindSeance (int id);
+    
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public abstract ArrayList<Integer> ComposerFindEnseignant(int id);
+
+    
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public abstract ArrayList<Integer> ComposerFindGroupe(int id);
     
 }
     

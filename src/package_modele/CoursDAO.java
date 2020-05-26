@@ -1,5 +1,6 @@
 package package_modele;
 import java.sql.*;
+import java.util.ArrayList;
 
 
 public class CoursDAO extends DAO<Cours> {
@@ -44,6 +45,21 @@ public class CoursDAO extends DAO<Cours> {
 
     @Override
     public Cours find(String Email, String Password) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Integer> ComposerFindSeance(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Integer> ComposerFindEnseignant(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Integer> ComposerFindGroupe(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

@@ -2,6 +2,7 @@ package package_modele;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
@@ -33,21 +34,33 @@ public class Seance_EnseignantDAO extends DAO<Seance_Enseignant> {
     }
 
     @Override
-    public Seance_Enseignant find(int id) {
-        Seance_Enseignant cours = new Seance_Enseignant();
-
+    public ArrayList<Integer> ComposerFindSeance(int id) {
+        ArrayList<Integer> Array = new ArrayList<>();
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `seance_enseignants` WHERE `ID_Utilisateur`=" + id );
-            if (result.first()) {
-                cours = new Seance_Enseignant(
-                        result.getInt("ID_Utilisateur"),
-                        result.getInt("ID_Seance"),result.getInt("ID_Cours"));
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `seance_enseignant` WHERE `ID_Utilisateur`=" + id );
+            while (result.next()) {
+                Array.add(result.getInt("ID_Seance"));
             }
         } catch (SQLException e) {
         }
-        return cours;
+        return Array;
+    }
+    
+    @Override
+    public ArrayList<Integer> ComposerFindEnseignant(int id) {
+        ArrayList<Integer> Array = new ArrayList<>();
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `seance_enseignant` WHERE `ID_Seance`=" + id );
+            while (result.next()) {
+                Array.add(result.getInt("ID_Enseignant"));
+            }
+        } catch (SQLException e) {
+        }
+        return Array;
     }
 
     @Override
@@ -55,6 +68,14 @@ public class Seance_EnseignantDAO extends DAO<Seance_Enseignant> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public Seance_Enseignant find(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
+    @Override
+    public ArrayList<Integer> ComposerFindGroupe(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

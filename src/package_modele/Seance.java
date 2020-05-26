@@ -28,7 +28,7 @@ public class Seance {
     protected int id_cours;
     //ID du Type de cours en question cad si c'est un cours magistral , un TD...
     protected int id_type;
-
+    //
 /********************************************************** Mise en place des constructeurs***********************************************************************************/
     
     /**

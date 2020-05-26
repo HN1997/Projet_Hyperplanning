@@ -2,6 +2,7 @@ package package_modele;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class SeanceDAO extends DAO<Seance> {
     
@@ -25,13 +26,13 @@ public class SeanceDAO extends DAO<Seance> {
     }
 
     @Override
-    public Seance find(int semaine) {
+    public Seance find(int id) {
         Seance cours = new Seance();
 
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `seance` WHERE `Semaine`= "+semaine);
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `seance` WHERE `ID_Seance`= "+id);
             if (result.first()) {
                 cours = new Seance(
                         result.getInt("Semaine"),
@@ -44,6 +45,21 @@ public class SeanceDAO extends DAO<Seance> {
 
     @Override
     public Seance find(String Email, String Passwd) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public ArrayList<Integer> ComposerFindSeance(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Integer> ComposerFindEnseignant(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Integer> ComposerFindGroupe(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

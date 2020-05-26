@@ -1,10 +1,14 @@
 package package_modele;
 
+import java.util.ArrayList;
+
 public class Seance_Enseignant {
 
     protected int id_seance;
     protected int id_enseignant;
     protected int id_cours;
+    protected ArrayList<Object> liste1;
+    int element; 
     
      /**
      *
@@ -31,7 +35,9 @@ public class Seance_Enseignant {
     }
 
     Seance_Enseignant() {
+        
     }
+    
 
 /********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
     
@@ -81,5 +87,9 @@ public class Seance_Enseignant {
     public void setId_cours(int id_cours)
     {
         this.id_cours = id_cours;
+    }
+    
+    public Object retourne_object(){
+        return liste1.get(element);
     }
 }
