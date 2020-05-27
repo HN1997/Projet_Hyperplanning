@@ -2821,252 +2821,294 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 31);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 31);
+        rih.Draw(31, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine31ActionPerformed
 
     private void semaine32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine32ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 32);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 32);
+        rih.Draw(32, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine32ActionPerformed
 
     private void semaine33ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine33ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 33);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 33);
+        rih.Draw(33, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine33ActionPerformed
 
     private void semaine34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine34ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 34);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 34);
+        rih.Draw(34, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine34ActionPerformed
 
     private void semaine35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine35ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 35);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 35);
+        rih.Draw(35, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine35ActionPerformed
 
     private void semaine36ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine36ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 36);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 36);
+        rih.Draw(36, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine36ActionPerformed
 
     private void semaine37ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine37ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 37);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 37);
+        rih.Draw(37, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine37ActionPerformed
 
     private void semaine38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine38ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 38);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 38);
+        rih.Draw(38, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine38ActionPerformed
 
     private void semaine39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine39ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 39);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 39);
+        rih.Draw(39, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine39ActionPerformed
 
     private void semaine40ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine40ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 40);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 40);
+        rih.Draw(40, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine40ActionPerformed
 
     private void semaine41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine41ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 41);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 41);
+        rih.Draw(41, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine41ActionPerformed
 
     private void semaine42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine42ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 42);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 42);
+        rih.Draw(42, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine42ActionPerformed
 
     private void semaine43ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine43ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 43);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 43);
+        rih.Draw(43, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine43ActionPerformed
 
     private void semaine44ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine44ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 44);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 44);
+        rih.Draw(44, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine44ActionPerformed
 
     private void semaine45ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine45ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 45);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 45);
+        rih.Draw(45, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine45ActionPerformed
 
     private void semaine46ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine46ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 46);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 46);
+        rih.Draw(46, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine46ActionPerformed
 
     private void semaine47ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine47ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 47);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 47);
+        rih.Draw(47, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine47ActionPerformed
 
     private void semaine48ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine48ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 48);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 48);
+        rih.Draw(48, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine48ActionPerformed
 
     private void semaine49ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine49ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 49);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 49);
+        rih.Draw(49, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine49ActionPerformed
 
     private void semaine50ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine50ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 50);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 50);
+        rih.Draw(50, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine50ActionPerformed
 
     private void semaine51ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine51ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 51);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 51);
+        rih.Draw(51, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine51ActionPerformed
 
     private void semaine52ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine52ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 52);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 52);
+        rih.Draw(52, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine52ActionPerformed
 
     private void semaine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine1ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 1);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 1);
+        rih.Draw(1, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine1ActionPerformed
 
     private void semaine2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine2ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 2);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 2);
+        rih.Draw(2, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine2ActionPerformed
 
     private void semaine3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine3ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 3);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 3);
+        rih.Draw(3, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine3ActionPerformed
 
     private void semaine4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine4ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 4);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 4);
+        rih.Draw(4, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine4ActionPerformed
 
     private void semaine5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine5ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 5);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 5);
+        rih.Draw(5, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine5ActionPerformed
 
     private void semaine6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine6ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 6);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 6);
+        rih.Draw(6, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine6ActionPerformed
 
     private void semaine7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine7ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 7);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 7);
+        rih.Draw(7, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine7ActionPerformed
 
     private void semaine8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine8ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 8);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 8);
+        rih.Draw(8, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine8ActionPerformed
 
     private void semaine9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine9ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 9);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 9);
+        rih.Draw(9, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine9ActionPerformed
 
     private void semaine10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine10ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 10);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 10);
+        rih.Draw(10, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine10ActionPerformed
 
     private void semaine11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine11ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 11);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 11);
+        rih.Draw(11, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine11ActionPerformed
 
     private void semaine12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine12ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 12);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 12);
+        rih.Draw(12, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine12ActionPerformed
 
     private void semaine13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine13ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 13);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 13);
+        rih.Draw(13, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine13ActionPerformed
 
     private void semaine14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine14ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 14);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 14);
+        rih.Draw(14, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine14ActionPerformed
 
     private void semaine15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine15ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 15);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 15);
+        rih.Draw(15, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine15ActionPerformed
 
     private void semaine16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine16ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 16);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 16);
+        rih.Draw(16, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine16ActionPerformed
 
     private void semaine17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine17ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 17);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 17);
+        rih.Draw(17, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine17ActionPerformed
 
     private void semaine18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine18ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 18);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 18);
+        rih.Draw(18, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine18ActionPerformed
 
     private void semaine19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine19ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 19);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 19);
+        rih.Draw(19, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine19ActionPerformed
 
     private void semaine20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine20ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 20);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 20);
+        rih.Draw(20, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine20ActionPerformed
 
     private void semaine21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine21ActionPerformed
@@ -3101,36 +3143,42 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 25);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 25);
+        rih.Draw(25, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine25ActionPerformed
 
     private void semaine26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine26ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 26);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 26);
+        rih.Draw(26, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine26ActionPerformed
 
     private void semaine27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine27ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 27);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 27);
+        rih.Draw(27, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine27ActionPerformed
 
     private void semaine28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine28ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 28);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 28);
+        rih.Draw(28, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine28ActionPerformed
 
     private void semaine29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine29ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 29);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 29);
+        rih.Draw(29, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine29ActionPerformed
 
     private void semaine30ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine30ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 30);
         rih.ChangeAnneeProgramme(anneeEdtLabel, 30);
+        rih.Draw(30, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine30ActionPerformed
 
    

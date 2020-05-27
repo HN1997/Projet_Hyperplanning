@@ -498,22 +498,37 @@ public class RechercheInformationsHugo
                    cours.setBackground(new Color(seance.getR(),seance.getV(), seance.getB()));
                    
                    //Font et couleur des textes
-                   Font font = new Font("Cambria", Font.PLAIN, 10);
-                   Font font2 = new Font("Cambria", Font.BOLD, 10);
-                   Color c = new Color(0,0,0);
+                   Font font = new Font("Cambria", Font.PLAIN, 12);
+                   Font font2 = new Font("Cambria", Font.BOLD, 12);
+                   Color c = new Color(0,0,0); //noir
                    
                    //On ajoute le label de l'etat
                    JLabel status = new JLabel();
-                   status.setText(seance.getStatus());
-                   status.setFont(font);
-                   status.setForeground(c);
+                   String statusString = seance.getStatus();
+                   if(statusString == "ANNULE")
+                   {
+                       status.setText(statusString);
+                       status.setFont(font);
+                       status.setForeground(Color.RED);
+                   }
+                   else
+                   {
+                       statusString = "";
+                   }
+                   
                    
                    //On ajoute le nom du cours
                    JLabel nomcours = new JLabel();
+                   String nomTypeCours = "";
                    int idcours = seance.getId_cours();
                    DAO<Cours> coursd = new CoursDAO(ConnexionSQL.getInstance());
                    Cours coursName = coursd.find(idcours);
-                   nomcours.setText(coursName.getNom());
+                   nomTypeCours += coursName.getNom();
+                   nomTypeCours += " - ";
+                   DAO<Type_Cours> type_coursd = new Type_CoursDAO(ConnexionSQL.getInstance());
+                   Type_Cours type_cours = type_coursd.find(seance.getId());
+                   nomTypeCours += type_cours.getNom();
+                   nomcours.setText(nomTypeCours);
                    nomcours.setFont(font2);
                    nomcours.setForeground(c);
                    
@@ -545,13 +560,35 @@ public class RechercheInformationsHugo
                    String nomPromotion = prom.getNom(); //Le nom de la promotion
                    promotionEtGroupeString += nomPromotion;
                    promotionEtGroupeString += ", ";
-                   
+                   DAO<Groupe> grouped = new GroupeDAO(ConnexionSQL.getInstance());
+                   Groupe g = grouped.find(idgroupe);
+                   promotionEtGroupeString += g.getNom();
                    promotionEtGroupe.setText(promotionEtGroupeString);
                    promotionEtGroupe.setFont(font);
                    promotionEtGroupe.setForeground(c);
                    
                    //On ajoute la salle et le site
                    JLabel salleSiteCapacite = new JLabel();
+                   String salleSiteCapaciteString = "";
+                   String nomSalle = "";
+                   String capaciteSalle = "";
+                   String nomSite = "";
+                   DAO<Seance_Salle> seance_salled = new Seance_SalleDAO(ConnexionSQL.getInstance());
+                   Seance_Salle seance_salle = seance_salled.find(seance_groupe.get(i));
+                   int id_salle = seance_salle.getId_salle();
+                   DAO<Salle> salled = new SalleDAO(ConnexionSQL.getInstance());
+                   Salle salle = salled.find(id_salle);
+                   nomSalle = salle.getNom();
+                   capaciteSalle = salle.getCapacite() + "";
+                   int id_site = salle.getId_site();
+                   DAO<Site> sited = new SiteDAO(ConnexionSQL.getInstance());
+                   Site s = sited.find(id_site);
+                   nomSite = s.getNom();
+                   salleSiteCapaciteString = nomSalle + " - " + nomSite + " (" + capaciteSalle + ")"; 
+                   salleSiteCapacite.setText(salleSiteCapaciteString);
+                   salleSiteCapacite.setFont(font);
+                   salleSiteCapacite.setForeground(c);
+                   
                    
                    //On recupere le nbr de minutes que dure le cours pour agrandir en height le panel
                    //Changement de la dimension et de la hauteur du rectangle
@@ -564,6 +601,14 @@ public class RechercheInformationsHugo
                    long beginTimeCours = (ti.getTime()/1000)/60;
                    long huitHeureTrente = 510-60;
                    cours.setLocation(0, (int)(1.03472222222*(beginTimeCours-huitHeureTrente)));
+                   
+                   //On ajoute l'heure de début et l'heure de fin
+                   JLabel heureLabel = new JLabel();
+                   String heure = "";
+                   heure += ti + " ~ " + tf;
+                   heureLabel.setText(heure);
+                   heureLabel.setFont(font);
+                   heureLabel.setForeground(c);
                    
                    //On ajoute les textes au panel cours
                    gbc.gridx = 0;
@@ -578,6 +623,12 @@ public class RechercheInformationsHugo
                    gbc.gridx = 0;
                    gbc.gridy = 3;
                    cours.add(promotionEtGroupe, gbc);
+                   gbc.gridx = 0;
+                   gbc.gridy = 4;
+                   cours.add(salleSiteCapacite, gbc);
+                   gbc.gridx = 0;
+                   gbc.gridy = 5;
+                   cours.add(heureLabel, gbc);
                    
                    //On ajoute au jour correspondant ce cours
                    panel.add(cours);
