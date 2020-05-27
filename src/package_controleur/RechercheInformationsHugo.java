@@ -3,7 +3,9 @@ package package_controleur;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import static java.lang.Thread.sleep;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -14,6 +16,7 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -473,7 +476,7 @@ public class RechercheInformationsHugo
             
             //On recupere la seance groupe - on recup un arraylist d'int qui est la liste id_seance
             DAO<Seance_Groupe> seance_grouped = new Seance_GroupeDAO(ConnexionSQL.getInstance());
-            ArrayList<Integer> seance_groupe = seance_grouped.ComposerFindSeance(etudiant.getId_groupe());
+            ArrayList<Integer> seance_groupe = seance_grouped.ComposerFindSeance(etudiant.getId_groupe()); //C'est la liste des id_seance
             
             //Pour chaque id seance qu'on trouve
             for(int i=0; i<seance_groupe.size();i++)
@@ -485,23 +488,88 @@ public class RechercheInformationsHugo
                Date d = seance.getdate();
                if(jour == d.getDay() && numSemaine == seance.getSemaine()) //Si le jour passé en parametre est le meme que celui qu'on recupere
                {
-                   //La panneau du cours
+                   //La panneau du cours et son layout
                    JPanel cours = new JPanel();
+                   cours.setLayout(new GridBagLayout());
+                   GridBagConstraints gbc = new GridBagConstraints();
+                   gbc.weightx = 1;
+                   
                    //On change la couleur
                    cours.setBackground(new Color(seance.getR(),seance.getV(), seance.getB()));
+                   
+                   //Font et couleur des textes
+                   Font font = new Font("Cambria", Font.PLAIN, 10);
+                   Font font2 = new Font("Cambria", Font.BOLD, 10);
+                   Color c = new Color(0,0,0);
+                   
+                   //On ajoute le label de l'etat
+                   JLabel status = new JLabel();
+                   status.setText(seance.getStatus());
+                   status.setFont(font);
+                   status.setForeground(c);
+                   
+                   //On ajoute le nom du cours
+                   JLabel nomcours = new JLabel();
+                   int idcours = seance.getId_cours();
+                   DAO<Cours> coursd = new CoursDAO(ConnexionSQL.getInstance());
+                   Cours coursName = coursd.find(idcours);
+                   nomcours.setText(coursName.getNom());
+                   nomcours.setFont(font2);
+                   nomcours.setForeground(c);
+                   
+                   //On ajoute les noms des profs
+                   JLabel nomProfs = new JLabel();
+                   String nomProfsString = "";
+                   int idseance = seance.getId();
+                   idseance=1;
+                   DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
+                   ArrayList<Integer> id_utilisateurs = seance_enseignantd.ComposerFindEnseignant(idseance); //les ids sont des ids d enseignants
+                   for(int j=0;j<id_utilisateurs.size();j++)
+                   {
+                       System.out.println("OK");
+                       DAO<Utilisateur> Utilisateurdprof = new UtilisateurDAO(ConnexionSQL.getInstance());
+                       Utilisateur userprof = Utilisateurdprof.find(id_utilisateurs.get(i));
+                       nomProfsString += userprof.getNom();
+                   }
+                   nomProfs.setText(nomProfsString);
+                   nomProfs.setFont(font);
+                   nomProfs.setForeground(c);
+                   
+                   
+                   
+                   //On ajoute la promotion + le ou les groupes
+                   JLabel promotion = new JLabel();
+                   JLabel groupeNom = new JLabel();
+                   
+                   
+                   
+                   //On ajoute la salle et le site
+                   
+                   
                    //On recupere le nbr de minutes que dure le cours pour agrandir en height le panel
+                   //Changement de la dimension et de la hauteur du rectangle
                    Time ti = seance.getHeure_Debut();
                    Time tf = seance.getHeure_Fin();
                    long diffInMinutes = ((tf.getTime() - ti.getTime())/1000)/60; //la difference de temps entre cours en minutes, une minute = 1.034 height
-                   
                    Dimension dim = new Dimension();
                    dim.setSize(198,  1.03472222222 * diffInMinutes);
                    cours.setSize(dim);
-                   
                    long beginTimeCours = (ti.getTime()/1000)/60;
                    long huitHeureTrente = 510-60;
                    cours.setLocation(0, (int)(1.03472222222*(beginTimeCours-huitHeureTrente)));
                    
+                   //On ajoute les textes au panel cours
+                   gbc.gridx = 0;
+                   gbc.gridy = 0;
+                   cours.add(status, gbc);
+                   gbc.gridx = 0;
+                   gbc.gridy = 1;
+                   cours.add(nomcours, gbc);
+                   gbc.gridx = 0;
+                   gbc.gridy = 2;
+                   cours.add(nomProfs, gbc);
+                   
+                   //On ajoute au jour correspondant ce cours
                    panel.add(cours);
                    
                }
