@@ -39,7 +39,7 @@ public class Seance_EnseignantDAO extends DAO<Seance_Enseignant> {
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `seance_enseignant` WHERE `ID_Utilisateur`=" + id );
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `seance_enseignants ` WHERE `ID_Utilisateur`=" + id );
             while (result.next()) {
                 Array.add(result.getInt("ID_Seance"));
             }
@@ -54,8 +54,9 @@ public class Seance_EnseignantDAO extends DAO<Seance_Enseignant> {
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `seance_enseignant` WHERE `ID_Seance`=" + id );
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `seance_enseignants` WHERE `ID_Seance`=" + id );
             while (result.next()) {
+//                System.out.println(result.getInt("ID_Utilisateur"));
                 Array.add(result.getInt("ID_Utilisateur"));
             }
         } catch (SQLException e) {
