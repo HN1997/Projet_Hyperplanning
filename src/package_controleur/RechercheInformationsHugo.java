@@ -536,15 +536,22 @@ public class RechercheInformationsHugo
                    
                    
                    //On ajoute la promotion + le ou les groupes
-                   JLabel promotion = new JLabel();
-                   JLabel groupeNom = new JLabel();
+                   JLabel promotionEtGroupe = new JLabel();
+                   String promotionEtGroupeString = "";
+                   int idgroupe = etudiant.getId_groupe(); //l'id du groupe de l'etudiant connecte
+                   int idpromotion = etudiant.getId_promotion(); //l'id de la promotion de l etudiant connecte
+                   DAO<Promotion> promd = new PromotionDAO(ConnexionSQL.getInstance());
+                   Promotion prom = promd.find(idpromotion);
+                   String nomPromotion = prom.getNom(); //Le nom de la promotion
+                   promotionEtGroupeString += nomPromotion;
+                   promotionEtGroupeString += ", ";
                    
-                   
+                   promotionEtGroupe.setText(promotionEtGroupeString);
+                   promotionEtGroupe.setFont(font);
+                   promotionEtGroupe.setForeground(c);
                    
                    //On ajoute la salle et le site
-                   JLabel salle = new JLabel();
-                   JLabel site = new JLabel();
-                   JLabel capacite = new JLabel();
+                   JLabel salleSiteCapacite = new JLabel();
                    
                    //On recupere le nbr de minutes que dure le cours pour agrandir en height le panel
                    //Changement de la dimension et de la hauteur du rectangle
@@ -568,6 +575,9 @@ public class RechercheInformationsHugo
                    gbc.gridx = 0;
                    gbc.gridy = 2;
                    cours.add(nomProfs, gbc);
+                   gbc.gridx = 0;
+                   gbc.gridy = 3;
+                   cours.add(promotionEtGroupe, gbc);
                    
                    //On ajoute au jour correspondant ce cours
                    panel.add(cours);
