@@ -521,9 +521,8 @@ public class RechercheInformationsHugo
                    JLabel nomProfs = new JLabel();
                    String nomProfsString = "";
                    int idseance = seance.getId();
-                   System.out.println(idseance);
+                   idseance=1;
                    DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
-                   /*
                    ArrayList<Integer> id_utilisateurs = seance_enseignantd.ComposerFindEnseignant(idseance); //les ids sont des ids d enseignants
                    for(int j=0;j<id_utilisateurs.size();j++)
                    {
@@ -535,7 +534,7 @@ public class RechercheInformationsHugo
                    nomProfs.setText(nomProfsString);
                    nomProfs.setFont(font);
                    nomProfs.setForeground(c);
-                   */
+                   
                    
                    
                    //On ajoute la promotion + le ou les groupes
