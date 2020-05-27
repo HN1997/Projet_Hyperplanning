@@ -476,7 +476,7 @@ public class RechercheInformationsHugo
             
             //On recupere la seance groupe - on recup un arraylist d'int qui est la liste id_seance
             DAO<Seance_Groupe> seance_grouped = new Seance_GroupeDAO(ConnexionSQL.getInstance());
-            ArrayList<Integer> seance_groupe = seance_grouped.ComposerFindSeance(etudiant.getId_groupe());
+            ArrayList<Integer> seance_groupe = seance_grouped.ComposerFindSeance(etudiant.getId_groupe()); //C'est la liste des id_seance
             
             //Pour chaque id seance qu'on trouve
             for(int i=0; i<seance_groupe.size();i++)
@@ -518,13 +518,30 @@ public class RechercheInformationsHugo
                    nomcours.setForeground(c);
                    
                    //On ajoute les noms des profs
+                   JLabel nomProfs = new JLabel();
+                   String nomProfsString = "";
                    int idseance = seance.getId();
+                   System.out.println(idseance);
                    DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
-                   ArrayList<Integer> id_utilisateurs; //les ids sont des ids d enseignants
-                   
+                   ArrayList<Integer> id_utilisateurs = seance_enseignantd.ComposerFindEnseignant(idseance); //les ids sont des ids d enseignants
+                   for(int j=0;j<id_utilisateurs.size();j++)
+                   {
+                       System.out.println("OK");
+                       DAO<Utilisateur> Utilisateurdprof = new UtilisateurDAO(ConnexionSQL.getInstance());
+                       Utilisateur userprof = Utilisateurdprof.find(id_utilisateurs.get(i));
+                       nomProfsString += userprof.getNom();
+                   }
+                   nomProfs.setText(nomProfsString);
+                   nomProfs.setFont(font);
+                   nomProfs.setForeground(c);
+                  
                    
                    
                    //On ajoute la promotion + le ou les groupes
+                   JLabel promotion = new JLabel();
+                   JLabel groupeNom = new JLabel();
+                   
+                   
                    
                    
                    //On ajoute la salle et le site
@@ -549,6 +566,9 @@ public class RechercheInformationsHugo
                    gbc.gridx = 0;
                    gbc.gridy = 1;
                    cours.add(nomcours, gbc);
+                   gbc.gridx = 0;
+                   gbc.gridy = 2;
+                   cours.add(nomProfs, gbc);
                    
                    //On ajoute au jour correspondant ce cours
                    panel.add(cours);
