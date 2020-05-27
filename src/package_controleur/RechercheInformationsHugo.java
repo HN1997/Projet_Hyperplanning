@@ -1,14 +1,22 @@
 package package_controleur;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
 import static java.lang.Thread.sleep;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import package_modele.*;
 
 public class RechercheInformationsHugo 
@@ -346,6 +354,24 @@ public class RechercheInformationsHugo
         return droitstring;
     }
     
+    //Fonction qui renvoie le droit de l'utilisateur sous forme d'int
+    public int GetDroitInt(String Email, String Passwd)
+    {
+        int droit = 0;
+        
+        try
+        {
+            DAO<Utilisateur> Utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            Utilisateur user = Utilisateurd.find(Email,Passwd);
+            
+            droit = user.getDroit();
+            return droit;
+        }catch (SQLException ex) {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return droit;
+    }
+    
     //Fonction pour récupérer la promotion de l'utilisateur, chaine vide si admin ou ref
     public String getPromotion(String email, String pass)
     {
@@ -399,4 +425,112 @@ public class RechercheInformationsHugo
         return groupenom;
     }
     
+    
+     ////////////////////////////////////////////////// Affichage des cours sur l'edt ///////////////////////////////////////
+    
+    //Dessine sur l'edt les cours
+    public void Draw(int numSemaine, JPanel lundiP, JPanel mardiP, JPanel mercrediP, JPanel jeudiP, JPanel vendrediP, String email, String password)
+    {
+        //On vide tous les panels
+        Empty(lundiP);
+        Empty(mardiP);
+        Empty(mercrediP);
+        Empty(jeudiP);
+        Empty(vendrediP);
+        
+        //On ajoute 
+        int droit = GetDroitInt(email, password);
+        
+        //Si c'est un etudiant
+        if(droit == 4)
+        {
+            DrawPanelEtudiant(numSemaine, 1, lundiP, email, password);
+            DrawPanelEtudiant(numSemaine, 2, mardiP, email, password);
+            DrawPanelEtudiant(numSemaine, 3, mercrediP, email, password);
+            DrawPanelEtudiant(numSemaine, 4, jeudiP, email, password);
+            DrawPanelEtudiant(numSemaine, 5, vendrediP, email, password);
+        }
+        
+        //Si c'est un professeur
+        if(droit == 3)
+        {
+            
+        }
+    }
+    
+    //Dessine sur 1'EDT en fonction du numero de semaine et du jour, celui de l'étudiant
+    public void DrawPanelEtudiant(int numSemaine, int jour, JPanel panel, String email, String password)
+    {
+        try 
+        {
+            //On recup l'utilisateur
+            DAO<Utilisateur> Utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            Utilisateur user = Utilisateurd.find(email,password);
+            
+            //On recup l'etudiant - son id_groupe
+            DAO<Etudiant> Etudiantd = new EtudiantDAO(ConnexionSQL.getInstance());
+            Etudiant etudiant = Etudiantd.find(user.getId());
+            
+            //On recupere la seance groupe - on recup un arraylist d'int qui est la liste id_seance
+            DAO<Seance_Groupe> seance_grouped = new Seance_GroupeDAO(ConnexionSQL.getInstance());
+            ArrayList<Integer> seance_groupe = seance_grouped.ComposerFindSeance(etudiant.getId_groupe());
+            
+            //Pour chaque id seance qu'on trouve
+            for(int i=0; i<seance_groupe.size();i++)
+            {
+                //on va dans seance et on recupere le status
+                DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
+                Seance seance = seanced.find(seance_groupe.get(i));
+                
+               Date d = seance.getdate();
+               if(jour == d.getDay() && numSemaine == seance.getSemaine()) //Si le jour passé en parametre est le meme que celui qu'on recupere
+               {
+                   //La panneau du cours
+                   JPanel cours = new JPanel();
+                   //On change la couleur
+                   cours.setBackground(new Color(seance.getR(),seance.getV(), seance.getB()));
+                   //On recupere le nbr de minutes que dure le cours pour agrandir en height le panel
+                   Time ti = seance.getHeure_Debut();
+                   Time tf = seance.getHeure_Fin();
+                   long diffInMinutes = ((tf.getTime() - ti.getTime())/1000)/60; //la difference de temps entre cours en minutes, une minute = 1.034 height
+                   
+                   Dimension dim = new Dimension();
+                   dim.setSize(198,  1.03472222222 * diffInMinutes);
+                   cours.setSize(dim);
+                   
+                   long beginTimeCours = (ti.getTime()/1000)/60;
+                   long huitHeureTrente = 510-60;
+                   cours.setLocation(0, (int)(1.03472222222*(beginTimeCours-huitHeureTrente)));
+                   
+                   panel.add(cours);
+                   
+               }
+                
+            }
+            
+            
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    
+    //Methode pour vider un JPanel de son contenu
+    public void Empty(JPanel panel)
+    {
+        Component[] componentList = panel.getComponents();
+
+        //Loop through the components
+        for(Component c : componentList){
+
+            panel.remove(c);
+        }
+
+        //IMPORTANT
+        panel.revalidate();
+        panel.repaint();
+    }
 }
