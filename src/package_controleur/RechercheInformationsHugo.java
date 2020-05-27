@@ -521,14 +521,12 @@ public class RechercheInformationsHugo
                    JLabel nomProfs = new JLabel();
                    String nomProfsString = "";
                    int idseance = seance.getId();
-                   idseance=1;
                    DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
-                   ArrayList<Integer> id_utilisateurs = seance_enseignantd.ComposerFindEnseignant(idseance); //les ids sont des ids d enseignants
+                   ArrayList<Integer> id_utilisateurs = seance_enseignantd.ComposerFindEnseignant(idseance); //les ids utilisateurs sont des ids d enseignants
                    for(int j=0;j<id_utilisateurs.size();j++)
                    {
-                       System.out.println("OK");
                        DAO<Utilisateur> Utilisateurdprof = new UtilisateurDAO(ConnexionSQL.getInstance());
-                       Utilisateur userprof = Utilisateurdprof.find(id_utilisateurs.get(i));
+                       Utilisateur userprof = Utilisateurdprof.find(id_utilisateurs.get(j));
                        nomProfsString += userprof.getNom();
                    }
                    nomProfs.setText(nomProfsString);
@@ -544,7 +542,9 @@ public class RechercheInformationsHugo
                    
                    
                    //On ajoute la salle et le site
-                   
+                   JLabel salle = new JLabel();
+                   JLabel site = new JLabel();
+                   JLabel capacite = new JLabel();
                    
                    //On recupere le nbr de minutes que dure le cours pour agrandir en height le panel
                    //Changement de la dimension et de la hauteur du rectangle
