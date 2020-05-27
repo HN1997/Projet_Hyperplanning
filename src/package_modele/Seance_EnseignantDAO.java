@@ -56,7 +56,7 @@ public class Seance_EnseignantDAO extends DAO<Seance_Enseignant> {
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `seance_enseignant` WHERE `ID_Seance`=" + id );
             while (result.next()) {
-                Array.add(result.getInt("ID_Enseignant"));
+                Array.add(result.getInt("ID_Utilisateur"));
             }
         } catch (SQLException e) {
         }
