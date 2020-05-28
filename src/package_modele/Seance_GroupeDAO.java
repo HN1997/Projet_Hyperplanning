@@ -99,4 +99,8 @@ public class Seance_GroupeDAO extends DAO<Seance_Groupe> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+   @Override
+    public ArrayList<String> FindEmailPasswd(String Nom, String Prenom) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

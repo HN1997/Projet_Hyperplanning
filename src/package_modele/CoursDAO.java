@@ -82,5 +82,10 @@ public class CoursDAO extends DAO<Cours> {
     public ArrayList<Integer> FindSite() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public ArrayList<String> FindEmailPasswd(String Nom, String Prenom) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

@@ -70,7 +70,7 @@ public class EtudiantDAO extends DAO<Etudiant> {
                     ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `etudiant` ");
             while (result.next()) {
 //                System.out.println(result.getInt("ID_Seance"));
-                Array.add(result.getInt("ID_Utilisate   ur"));
+                Array.add(result.getInt("ID_Utilisateur"));
             }
         } catch (SQLException e) {
         }
@@ -92,6 +92,9 @@ public class EtudiantDAO extends DAO<Etudiant> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
+    @Override
+    public ArrayList<String> FindEmailPasswd(String Nom, String Prenom) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
   
