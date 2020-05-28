@@ -457,7 +457,39 @@ public class RechercheInformationsHugo
         //Si c'est un professeur
         if(droit == 3)
         {
+            DrawPanelProfesseur(numSemaine, 1, lundiP, email, password);
+            DrawPanelProfesseur(numSemaine, 2, mardiP, email, password);
+            DrawPanelProfesseur(numSemaine, 3, mercrediP, email, password);
+            DrawPanelProfesseur(numSemaine, 4, jeudiP, email, password);
+            DrawPanelProfesseur(numSemaine, 5, vendrediP, email, password);
+        }
+    }
+    
+    public void DrawPanelProfesseur(int numSemaine, int jour, JPanel panel, String email, String password)
+    {
+        try 
+        {
+            //On recup l'utilisateur
+            DAO<Utilisateur> Utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            Utilisateur user = Utilisateurd.find(email,password);
             
+            //On recup l'etudiant - son id_groupe
+            DAO<Enseignant> Enseignantd = new EnseignantDAO(ConnexionSQL.getInstance());
+            Enseignant Enseignant = Enseignantd.find(user.getId());
+            
+            //On recupere la seance groupe - on recup un arraylist d'int qui est la liste id_seance
+            DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
+            ArrayList<Integer> seance_enseignant = seance_enseignantd.ComposerFindSeance(Enseignant.getID_cours()); //C'est la liste des id_seance
+           
+            for(int i=0; i<seance_enseignant.size(); i++)
+            {
+                System.out.println(seance_enseignant.get(i));
+            }
+            
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
