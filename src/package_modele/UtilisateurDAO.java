@@ -104,4 +104,22 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public ArrayList<String> FindEmailPasswd(String Nom, String Prenom) {
+        ArrayList<String> Array = new ArrayList<>();
+        Utilisateur cours = new Utilisateur();
+
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM utilisateur WHERE Nom='" + Nom + "' and Prenom='" + Prenom + "'");
+            if (result.first()) {
+                Array.add(result.getString("Email"));
+                Array.add(result.getString("Passwd"));
+            }
+        } catch (SQLException e) {
+        }
+        return Array;
+    }
+
 }

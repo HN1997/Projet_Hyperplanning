@@ -100,6 +100,13 @@ public abstract class DAO<T> {
      * @return
      */
     public abstract ArrayList<Integer> FindSite();
+    
+    /**
+     *
+     * @return
+     */
+    public abstract ArrayList<String> FindEmailPasswd(String Nom,String Prenom);
+    
 }
     
 

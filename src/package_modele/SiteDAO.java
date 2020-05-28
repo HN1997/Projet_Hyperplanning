@@ -93,5 +93,10 @@ public class SiteDAO extends DAO<Site> {
         }
         return Array;
     }
+
+   @Override
+    public ArrayList<String> FindEmailPasswd(String Nom, String Prenom) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
