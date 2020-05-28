@@ -58,8 +58,8 @@ public class EDT_Window extends javax.swing.JFrame {
     String password4 = "159"; 
     
     //Ce qui est utilise dans le programme
-    String email = email1;
-    String password = password1;
+    String email = email3;
+    String password = password3;
     
     //Fin variable Rechercheinformations ///////////////////
     
