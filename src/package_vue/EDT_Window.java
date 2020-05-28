@@ -2760,6 +2760,7 @@ public class EDT_Window extends javax.swing.JFrame {
         rih.changeMessageErreur(recapMessageErreurEdt, recapEdtSearch2);
         
         //On affiche l'edt recherche
+        rih.dessineEtudiantProfesseur(recapEdtSearch2, semainePickerCB, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, anneeEdtLabel); //cas d'un etudiant ou professeur, se fera automatiquement
     }//GEN-LAST:event_recapEdtRechercherButtonActionPerformed
 
     /////////////////////////// QUAND ON APPUIE SUR LES BOUTONS DES SEMAINES ///////////////////////////

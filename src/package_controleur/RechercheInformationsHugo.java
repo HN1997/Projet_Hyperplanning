@@ -935,4 +935,33 @@ public class RechercheInformationsHugo
         }
         labelErreur.setText(labelErreurString);
     }
+    
+    //Avec le combobox fourni, recul l'email et le password 
+    public void dessineEtudiantProfesseur(JComboBox prenomNom, JComboBox numSemaineCB, JPanel lundi, JPanel mardi, JPanel mercredi, JPanel jeudi, JPanel vendredi, JLabel lundiLabel, JLabel mardiLabel, JLabel mercrediLabel, JLabel jeudiLabel, JLabel vendrediLabel, JLabel anneeEdtLabel)
+    {
+        String prenomNomString = (String)prenomNom.getSelectedItem();
+        String numSemaineString = (String)(numSemaineCB.getSelectedItem());
+        int numSemaine = Integer.parseInt(numSemaineString);
+        if(prenomNomString != null)
+        {
+            String[] splitted = prenomNomString.split("\\s+");
+            String prenom = splitted[0];
+            String nom = splitted[1];
+            try 
+            {
+                DAO<Utilisateur> user = new UtilisateurDAO(ConnexionSQL.getInstance());
+                ArrayList<String> emailPassword = user.FindEmailPasswd(nom,prenom); //premier element email, deuxieme mot de passe
+                
+                ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, numSemaine);
+                ChangeAnneeProgramme(anneeEdtLabel, numSemaine);
+                Draw(numSemaine, lundi, mardi, mercredi, jeudi, vendredi, emailPassword.get(0), emailPassword.get(1));
+                
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+    }
 }
