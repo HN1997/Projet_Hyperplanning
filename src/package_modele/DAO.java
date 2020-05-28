@@ -77,6 +77,12 @@ public abstract class DAO<T> {
      */
     public abstract ArrayList<Integer> ComposerFindGroupe(int id);
     
+    /**
+     *
+     * @return
+     */
+    public abstract ArrayList<Integer> FindEtudiant();
+    
 }
     
 
