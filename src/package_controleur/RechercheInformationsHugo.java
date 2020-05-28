@@ -842,13 +842,7 @@ public class RechercheInformationsHugo
                 DAO<Enseignant> enseignantd = new EnseignantDAO(ConnexionSQL.getInstance());
                 //ArrayList<Integer> id_utilisateurs = enseignantd.find;
                 
-                for(int i=0; i<id_utilisateurs.size();i++)
-                {
-                    DAO<Utilisateur> utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
-                    Utilisateur user = utilisateurd.find(id_utilisateurs.get(i));
-                    nomEnseignant = user.getPrenom() + " " + user.getNom();
-                    jcbAChanger.addItem(nomEnseignant);
-                }
+                
             } 
             catch (SQLException ex) 
             {
