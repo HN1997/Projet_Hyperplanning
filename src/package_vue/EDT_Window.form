@@ -2195,7 +2195,6 @@
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="edtDisplayPanel" max="32767" attributes="0"/>
                                           <Group type="102" attributes="0">
                                               <Component id="lundiLabel" min="-2" pref="200" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
@@ -2206,6 +2205,10 @@
                                               <Component id="jeudiLabel" min="-2" pref="200" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
                                               <Component id="vendrediLabel" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <Component id="edtDisplayPanel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -2287,7 +2290,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jeudiDisplayPanel" min="-2" pref="198" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="vendrediDisplayPanel" max="32767" attributes="0"/>
+                                  <Component id="vendrediDisplayPanel" min="-2" pref="198" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
