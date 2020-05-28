@@ -70,11 +70,26 @@ public class EtudiantDAO extends DAO<Etudiant> {
                     ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `etudiant` ");
             while (result.next()) {
 //                System.out.println(result.getInt("ID_Seance"));
-                Array.add(result.getInt("ID_Utilisateur"));
+                Array.add(result.getInt("ID_Utilisate   ur"));
             }
         } catch (SQLException e) {
         }
         return Array;
+    }
+
+    @Override
+    public ArrayList<Integer> FindEnseignant() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Integer> FindPromotion() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Integer> FindSite() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

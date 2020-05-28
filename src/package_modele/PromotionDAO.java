@@ -66,6 +66,32 @@ public class PromotionDAO extends DAO<Promotion> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public ArrayList<Integer> FindEnseignant() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Integer> FindPromotion() {
+        ArrayList<Integer> Array = new ArrayList<>();
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `promotion`");
+            while (result.next()) {
+//                System.out.println(result.getInt("ID_Utilisateur"));
+                Array.add(result.getInt("ID_Promotion"));
+            }
+        } catch (SQLException e) {
+        }
+        return Array;
+    }
+
+    @Override
+    public ArrayList<Integer> FindSite() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }
   

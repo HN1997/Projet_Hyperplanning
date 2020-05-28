@@ -83,6 +83,23 @@ public abstract class DAO<T> {
      */
     public abstract ArrayList<Integer> FindEtudiant();
     
+    /**
+     *
+     * @return
+     */
+    public abstract ArrayList<Integer> FindEnseignant();
+    
+    /**
+     *
+     * @return
+     */
+    public abstract ArrayList<Integer> FindPromotion();
+    
+    /**
+     *
+     * @return
+     */
+    public abstract ArrayList<Integer> FindSite();
 }
     
 
