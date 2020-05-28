@@ -828,9 +828,10 @@ public class RechercheInformationsHugo
     ////////////////////////////////////////////////// RECHERCHE SUR L'EDT POUR ADMIN ET REF PEDAGOGIQUE ///////////////////////////////////////
     
     /** Permet de changer la 3e compo box en fonction de la 2e*/
-    public void changeRecapEdtSearch2(JComboBox valeurARecup, JComboBox jcbAChanger)
+    public void changeRecapEdtSearch2(JComboBox valeurARecup, JComboBox jcbAChanger, JComboBox jcb3)
     {
         jcbAChanger.removeAllItems(); //Vide tous les elements
+        jcb3.setVisible(false);
         
         String recherche = (String)valeurARecup.getSelectedItem();
         if(recherche == "Enseignant")
@@ -840,9 +841,15 @@ public class RechercheInformationsHugo
             try 
             {
                 DAO<Enseignant> enseignantd = new EnseignantDAO(ConnexionSQL.getInstance());
-                //ArrayList<Integer> id_utilisateurs = enseignantd.find;
+                ArrayList<Integer> id_utilisateurs = enseignantd.FindEnseignant();
                 
-                
+                for(int i=0; i<id_utilisateurs.size();i++)
+                {
+                    DAO<Utilisateur> utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+                    Utilisateur user = utilisateurd.find(id_utilisateurs.get(i));
+                    nomEnseignant = user.getPrenom() + " " + user.getNom();
+                    jcbAChanger.addItem(nomEnseignant);
+                }
             } 
             catch (SQLException ex) 
             {
@@ -852,7 +859,6 @@ public class RechercheInformationsHugo
         else if(recherche == "Etudiant")
         {
             String nomEtudiant = "";
-            
             try 
             {
                 DAO<Etudiant> etudiantd = new EtudiantDAO(ConnexionSQL.getInstance());
@@ -873,11 +879,45 @@ public class RechercheInformationsHugo
         }
         else if(recherche == "Promotion")
         {
-            
+            String nomPromotion = "";
+            try 
+            {
+                DAO<Promotion> promotiond = new PromotionDAO(ConnexionSQL.getInstance());
+                ArrayList<Integer> id_promotion = promotiond.FindPromotion();
+                
+                for(int i=0; i<id_promotion.size();i++)
+                {
+                    Promotion promotion = promotiond.find(id_promotion.get(i));
+                    nomPromotion = promotion.getNom();
+                    jcbAChanger.addItem(nomPromotion);
+                }
+                jcb3.setVisible(true);
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         else if(recherche == "Site")
         {
-            
+            String nomSite = "";
+            try 
+            {
+                DAO<Site> sited = new SiteDAO(ConnexionSQL.getInstance());
+                ArrayList<Integer> id_sites = sited.FindSite();
+                
+                for(int i=0; i<id_sites.size();i++)
+                {
+                    Site site = sited.find(id_sites.get(i));
+                    nomSite = site.getNom();
+                    jcbAChanger.addItem(nomSite);
+                }
+                jcb3.setVisible(true);
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
