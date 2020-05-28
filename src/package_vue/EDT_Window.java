@@ -9,6 +9,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Calendar;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -205,9 +206,6 @@ public class EDT_Window extends javax.swing.JFrame {
         semainePickerCB = new javax.swing.JComboBox<>();
         recapEdtSearch = new javax.swing.JComboBox<>();
         recapEdtSearch2 = new javax.swing.JComboBox<>();
-        recapOptionnelLabel1 = new javax.swing.JLabel();
-        recapEdtSearch3 = new javax.swing.JComboBox<>();
-        recapOptionnel2Label1 = new javax.swing.JLabel();
         recapEdtRechercherButton = new javax.swing.JButton();
         recapMessageErreurEdt = new javax.swing.JLabel();
         edtPanelBotRight = new javax.swing.JPanel();
@@ -243,9 +241,6 @@ public class EDT_Window extends javax.swing.JFrame {
         trierparRecapLabel = new javax.swing.JLabel();
         recapSearch1 = new javax.swing.JComboBox<>();
         recapSearch2 = new javax.swing.JComboBox<>();
-        recapOptionnelLabel = new javax.swing.JLabel();
-        recapSearch3 = new javax.swing.JComboBox<>();
-        recapOptionnel2Label = new javax.swing.JLabel();
         recapRechercherButton = new javax.swing.JButton();
         recapMessageErreur = new javax.swing.JLabel();
         recapScrollPane = new javax.swing.JScrollPane();
@@ -257,9 +252,6 @@ public class EDT_Window extends javax.swing.JFrame {
         trierparReportingLabel = new javax.swing.JLabel();
         reportingSearch1 = new javax.swing.JComboBox<>();
         reportingSearch2 = new javax.swing.JComboBox<>();
-        reportingOptionnelLabel = new javax.swing.JLabel();
-        reportingSearch3 = new javax.swing.JComboBox<>();
-        reportingOptionnel2Label = new javax.swing.JLabel();
         reportingRechercherButton = new javax.swing.JButton();
         reportingMessageErreur = new javax.swing.JLabel();
         reportingResumePanel = new javax.swing.JPanel();
@@ -1254,26 +1246,17 @@ public class EDT_Window extends javax.swing.JFrame {
         recapEdtSearch.setMaximumRowCount(50);
         recapEdtSearch.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enseignant", "Etudiant", "Promotion", "Site" }));
         recapEdtSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recapEdtSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recapEdtSearchActionPerformed(evt);
+            }
+        });
 
         recapEdtSearch2.setBackground(new java.awt.Color(0, 153, 153));
         recapEdtSearch2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         recapEdtSearch2.setForeground(new java.awt.Color(255, 255, 255));
         recapEdtSearch2.setMaximumRowCount(50);
         recapEdtSearch2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        recapOptionnelLabel1.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        recapOptionnelLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        recapOptionnelLabel1.setText("(Optionnel : ");
-
-        recapEdtSearch3.setBackground(new java.awt.Color(0, 153, 153));
-        recapEdtSearch3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        recapEdtSearch3.setForeground(new java.awt.Color(255, 255, 255));
-        recapEdtSearch3.setMaximumRowCount(50);
-        recapEdtSearch3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        recapOptionnel2Label1.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        recapOptionnel2Label1.setForeground(new java.awt.Color(255, 255, 255));
-        recapOptionnel2Label1.setText(")");
 
         recapEdtRechercherButton.setBackground(new java.awt.Color(0, 153, 153));
         recapEdtRechercherButton.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
@@ -1288,7 +1271,6 @@ public class EDT_Window extends javax.swing.JFrame {
 
         recapMessageErreurEdt.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         recapMessageErreurEdt.setForeground(new java.awt.Color(110, 35, 72));
-        recapMessageErreurEdt.setText("ERREUR : Nom de l'enseignant manquant");
 
         javax.swing.GroupLayout adminRespoEdtPanelLayout = new javax.swing.GroupLayout(adminRespoEdtPanel);
         adminRespoEdtPanel.setLayout(adminRespoEdtPanelLayout);
@@ -1297,23 +1279,17 @@ public class EDT_Window extends javax.swing.JFrame {
             .addGroup(adminRespoEdtPanelLayout.createSequentialGroup()
                 .addGroup(adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(trierparEdtLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminRespoEdtPanelLayout.createSequentialGroup()
+                    .addGroup(adminRespoEdtPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(semainePickerCB, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recapEdtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recapEdtSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(recapOptionnelLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(recapEdtSearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(recapOptionnel2Label1)
                         .addGap(18, 18, 18)
                         .addComponent(recapEdtRechercherButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(recapMessageErreurEdt)))
+                        .addGap(38, 38, 38)
+                        .addComponent(recapMessageErreurEdt, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         adminRespoEdtPanelLayout.setVerticalGroup(
@@ -1327,9 +1303,6 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addGroup(adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(recapEdtSearch)
                             .addComponent(recapEdtSearch2)
-                            .addComponent(recapOptionnelLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(recapEdtSearch3)
-                            .addComponent(recapOptionnel2Label1)
                             .addComponent(recapEdtRechercherButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(semainePickerCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(1, 1, 1))
@@ -1644,20 +1617,6 @@ public class EDT_Window extends javax.swing.JFrame {
         recapSearch2.setMaximumRowCount(50);
         recapSearch2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        recapOptionnelLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        recapOptionnelLabel.setForeground(new java.awt.Color(255, 255, 255));
-        recapOptionnelLabel.setText("(Optionnel : ");
-
-        recapSearch3.setBackground(new java.awt.Color(0, 153, 153));
-        recapSearch3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        recapSearch3.setForeground(new java.awt.Color(255, 255, 255));
-        recapSearch3.setMaximumRowCount(50);
-        recapSearch3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        recapOptionnel2Label.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-        recapOptionnel2Label.setForeground(new java.awt.Color(255, 255, 255));
-        recapOptionnel2Label.setText(")");
-
         recapRechercherButton.setBackground(new java.awt.Color(0, 153, 153));
         recapRechercherButton.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         recapRechercherButton.setForeground(new java.awt.Color(57, 17, 45));
@@ -1671,7 +1630,6 @@ public class EDT_Window extends javax.swing.JFrame {
 
         recapMessageErreur.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
         recapMessageErreur.setForeground(new java.awt.Color(110, 35, 72));
-        recapMessageErreur.setText("ERREUR : Nom de l'enseignant manquant");
 
         javax.swing.GroupLayout recapPeriodeTriPanelLayout = new javax.swing.GroupLayout(recapPeriodeTriPanel);
         recapPeriodeTriPanel.setLayout(recapPeriodeTriPanelLayout);
@@ -1679,22 +1637,16 @@ public class EDT_Window extends javax.swing.JFrame {
             recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
                 .addGroup(recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(trierparRecapLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(trierparRecapLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
                     .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(recapSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recapSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(recapOptionnelLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(recapSearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(recapOptionnel2Label)
-                        .addGap(18, 18, 18)
+                        .addGap(32, 32, 32)
                         .addComponent(recapRechercherButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(recapMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(51, 51, 51)
+                        .addComponent(recapMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         recapPeriodeTriPanelLayout.setVerticalGroup(
@@ -1708,9 +1660,6 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addGroup(recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(recapSearch1)
                             .addComponent(recapSearch2)
-                            .addComponent(recapOptionnelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(recapSearch3)
-                            .addComponent(recapOptionnel2Label)
                             .addComponent(recapRechercherButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())
                     .addComponent(recapMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1840,20 +1789,6 @@ public class EDT_Window extends javax.swing.JFrame {
             reportingSearch2.setMaximumRowCount(50);
             reportingSearch2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-            reportingOptionnelLabel.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-            reportingOptionnelLabel.setForeground(new java.awt.Color(255, 255, 255));
-            reportingOptionnelLabel.setText("(Optionnel : ");
-
-            reportingSearch3.setBackground(new java.awt.Color(0, 153, 153));
-            reportingSearch3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-            reportingSearch3.setForeground(new java.awt.Color(255, 255, 255));
-            reportingSearch3.setMaximumRowCount(50);
-            reportingSearch3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-            reportingOptionnel2Label.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
-            reportingOptionnel2Label.setForeground(new java.awt.Color(255, 255, 255));
-            reportingOptionnel2Label.setText(")");
-
             reportingRechercherButton.setBackground(new java.awt.Color(0, 153, 153));
             reportingRechercherButton.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
             reportingRechercherButton.setForeground(new java.awt.Color(57, 17, 45));
@@ -1867,7 +1802,6 @@ public class EDT_Window extends javax.swing.JFrame {
 
             reportingMessageErreur.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
             reportingMessageErreur.setForeground(new java.awt.Color(110, 35, 72));
-            reportingMessageErreur.setText("ERREUR : Nom de l'enseignant manquant");
 
             javax.swing.GroupLayout reportingPeriodeTriPanelLayout = new javax.swing.GroupLayout(reportingPeriodeTriPanel);
             reportingPeriodeTriPanel.setLayout(reportingPeriodeTriPanelLayout);
@@ -1881,16 +1815,10 @@ public class EDT_Window extends javax.swing.JFrame {
                             .addComponent(reportingSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(reportingSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(reportingOptionnelLabel)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(reportingSearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(reportingOptionnel2Label)
-                            .addGap(18, 18, 18)
+                            .addGap(28, 28, 28)
                             .addComponent(reportingRechercherButton)
-                            .addGap(18, 18, 18)
-                            .addComponent(reportingMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(53, 53, 53)
+                            .addComponent(reportingMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addContainerGap())
             );
             reportingPeriodeTriPanelLayout.setVerticalGroup(
@@ -1904,9 +1832,6 @@ public class EDT_Window extends javax.swing.JFrame {
                             .addGroup(reportingPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(reportingSearch1)
                                 .addComponent(reportingSearch2)
-                                .addComponent(reportingOptionnelLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(reportingSearch3)
-                                .addComponent(reportingOptionnel2Label)
                                 .addComponent(reportingRechercherButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addContainerGap())
                         .addComponent(reportingMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -2801,20 +2726,28 @@ public class EDT_Window extends javax.swing.JFrame {
 
     //////////////////////////////////// FIN - LES 3 BOUTONS INSERER SUPPRIMER MODIFIER ////////////////////////
     
+    //Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda dans le recapitulatif de la periode
     private void recapRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapRechercherButtonActionPerformed
-        // TODO add your handling code here:
+        //On update le message d'erreur - recherche reussi ou non
+        rih.changeMessageErreur(recapMessageErreur, recapSearch2);
     }//GEN-LAST:event_recapRechercherButtonActionPerformed
 
+    //Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda dans le reporting
     private void reportingRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportingRechercherButtonActionPerformed
-        // TODO add your handling code here:
+        //On update le message d'erreur - recherche reussi ou non
+        rih.changeMessageErreur(reportingMessageErreur, reportingSearch2);
     }//GEN-LAST:event_reportingRechercherButtonActionPerformed
 
     private void insererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insererButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_insererButtonActionPerformed
 
+    //Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda pour afficher l'edt
     private void recapEdtRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapEdtRechercherButtonActionPerformed
-        // TODO add your handling code here:
+        //On update le message d'erreur - recherche reussi ou non
+        rih.changeMessageErreur(recapMessageErreurEdt, recapEdtSearch2);
+        
+        //On affiche l'edt recherche
     }//GEN-LAST:event_recapEdtRechercherButtonActionPerformed
 
     /////////////////////////// QUAND ON APPUIE SUR LES BOUTONS DES SEMAINES ///////////////////////////
@@ -3183,10 +3116,22 @@ public class EDT_Window extends javax.swing.JFrame {
         rih.Draw(30, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
     }//GEN-LAST:event_semaine30ActionPerformed
 
-   
-    
-    
     /////////////////////////// FIN QUAND ON APPUIE SUR LES BOUTONS DES SEMAINES ///////////////////////////
+    
+    
+    /////////////////////////// QUAND ON FAIT UNE RECHERCHE SUR L'EDT (admin & ref ped) ///////////////////////////
+    
+    
+    //Quand on appuie sur une des options (enseignant etudiant promotion salle)
+    private void recapEdtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapEdtSearchActionPerformed
+        //On change la valeur de recapedtseach2
+        rih.changeRecapEdtSearch2(recapEdtSearch, recapEdtSearch2);
+    }//GEN-LAST:event_recapEdtSearchActionPerformed
+
+   
+    /////////////////////////// FIN QUAND ON FAIT UNE RECHERCHE SUR L'EDT (admin & ref ped) ///////////////////////////
+    
+    
 
     
     
@@ -3301,13 +3246,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JButton recapEdtRechercherButton;
     private javax.swing.JComboBox<String> recapEdtSearch;
     private javax.swing.JComboBox<String> recapEdtSearch2;
-    private javax.swing.JComboBox<String> recapEdtSearch3;
     private javax.swing.JLabel recapMessageErreur;
     private javax.swing.JLabel recapMessageErreurEdt;
-    private javax.swing.JLabel recapOptionnel2Label;
-    private javax.swing.JLabel recapOptionnel2Label1;
-    private javax.swing.JLabel recapOptionnelLabel;
-    private javax.swing.JLabel recapOptionnelLabel1;
     private javax.swing.JPanel recapPanel;
     private javax.swing.JLabel recapPeriodeLabelTop;
     private javax.swing.JPanel recapPeriodeTriPanel;
@@ -3315,20 +3255,16 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JScrollPane recapScrollPane;
     private javax.swing.JComboBox<String> recapSearch1;
     private javax.swing.JComboBox<String> recapSearch2;
-    private javax.swing.JComboBox<String> recapSearch3;
     private javax.swing.JTable recapTable;
     private javax.swing.JLabel recapitulatifLabel;
     private javax.swing.JLabel reportingLabel;
     private javax.swing.JLabel reportingMessageErreur;
-    private javax.swing.JLabel reportingOptionnel2Label;
-    private javax.swing.JLabel reportingOptionnelLabel;
     private javax.swing.JPanel reportingPanel;
     private javax.swing.JPanel reportingPeriodeTriPanel;
     private javax.swing.JButton reportingRechercherButton;
     private javax.swing.JPanel reportingResumePanel;
     private javax.swing.JComboBox<String> reportingSearch1;
     private javax.swing.JComboBox<String> reportingSearch2;
-    private javax.swing.JComboBox<String> reportingSearch3;
     private javax.swing.JLabel resumeInsertionLabel;
     private javax.swing.JPanel rightCardPanel;
     private javax.swing.JComboBox<String> salleCB;

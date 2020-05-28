@@ -18,6 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import package_modele.*;
@@ -808,8 +809,6 @@ public class RechercheInformationsHugo
         }
     }
     
-    
-    
     //Methode pour vider un JPanel de son contenu
     public void Empty(JPanel panel)
     {
@@ -824,5 +823,43 @@ public class RechercheInformationsHugo
         //IMPORTANT
         panel.revalidate();
         panel.repaint();
+    }
+    
+    ////////////////////////////////////////////////// RECHERCHE SUR L'EDT POUR ADMIN ET REF PEDAGOGIQUE ///////////////////////////////////////
+    
+    public void changeRecapEdtSearch2(JComboBox valeurARecup, JComboBox jcbAChanger)
+    {
+        String recherche = (String)valeurARecup.getSelectedItem();
+        if(recherche == "Enseignant")
+        {
+            
+        }
+        else if(recherche == "Etudiant")
+        {
+            
+        }
+        else if(recherche == "Promotion")
+        {
+            
+        }
+        else if(recherche == "Site")
+        {
+            
+        }
+    }
+    
+    public void changeMessageErreur(JLabel labelErreur, JComboBox jcbAChanger)
+    {
+        String labelErreurString = "";
+        String recherche = (String)jcbAChanger.getSelectedItem();
+        if(recherche == null)
+        {
+            labelErreurString = "ERREUR : Un des champs est vide!";
+        }
+        else
+        {
+            labelErreurString = "Voici les résultats de votre recherche.";
+        }
+        labelErreur.setText(labelErreurString);
     }
 }
