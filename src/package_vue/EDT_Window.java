@@ -2776,7 +2776,7 @@ public class EDT_Window extends javax.swing.JFrame {
         
         //On affiche l'edt recherche
         rih.dessineEtudiantProfesseur(recapEdtSearch, recapEdtSearch2, semainePickerCB, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, anneeEdtLabel); //cas d'un etudiant ou professeur, se fera automatiquement
-        rih.dessinePromotionSite(recapEdtSearch, recapEdtSearch2, recapEdtSearch3);
+        rih.dessinePromotionSite(recapEdtSearch, recapEdtSearch2, recapEdtSearch3, semainePickerCB, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, anneeEdtLabel); //cas ou on fait une recherche par promotion ou site
     }//GEN-LAST:event_recapEdtRechercherButtonActionPerformed
 
     /////////////////////////// QUAND ON APPUIE SUR LES BOUTONS DES SEMAINES ///////////////////////////

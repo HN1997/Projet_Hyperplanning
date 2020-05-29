@@ -1032,7 +1032,7 @@ public class RechercheInformationsHugo
     }
         
     /**Dessine pour la promotion et le site */
-    public void dessinePromotionSite(JComboBox recapEdtSearch ,JComboBox promotionSite, JComboBox groupeSalle)
+    public void dessinePromotionSite(JComboBox recapEdtSearch ,JComboBox promotionSite, JComboBox groupeSalle, JComboBox numSemaineCB, JPanel lundi, JPanel mardi, JPanel mercredi, JPanel jeudi, JPanel vendredi, JLabel lundiLabel, JLabel mardiLabel, JLabel mercrediLabel, JLabel jeudiLabel, JLabel vendrediLabel, JLabel anneeEdtLabel)
     {
         String promSite = (String)promotionSite.getSelectedItem(); //on recupere la 1ere combobox
         String grpSalle = (String)groupeSalle.getSelectedItem(); //on recupere la 2eme combobox
@@ -1040,23 +1040,78 @@ public class RechercheInformationsHugo
         
         if(promotionSite != null && grpSalle != null)
         {
+            String numSemaineString = (String)(numSemaineCB.getSelectedItem());
+            int numSemaine = Integer.parseInt(numSemaineString);
+                
             if(typeRecherche == "Promotion") //Ici on est dans le cas ou on recherche une promotion
             {
                 
+                ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, numSemaine);
+                ChangeAnneeProgramme(anneeEdtLabel, numSemaine);
+                Empty(lundi);
+                Empty(mardi);
+                Empty(mercredi);
+                Empty(jeudi);
+                Empty(vendredi);
+                drawPromotionSite(getIdSeancesPromotion(promSite, grpSalle));
             }
             else if(typeRecherche == "Site") //Ici on est dans le cas ou on recherche un site
             {
-                
+                ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, numSemaine);
+                ChangeAnneeProgramme(anneeEdtLabel, numSemaine);
+                Empty(lundi);
+                Empty(mardi);
+                Empty(mercredi);
+                Empty(jeudi);
+                Empty(vendredi);
+                drawPromotionSite(getIdSeancesSite(promSite, grpSalle));
             }
         }
     }
     
-    public ArrayList<Integer> getIdSeancesPromtion(String promotion)
+    //Pour dessiner dans les panels si c'est une recherche via promotion(+groupe) ou via un site(+salle) 
+    public void drawPromotionSite(ArrayList<Integer> id_seancess)
+    {
+        
+    }
+    
+    /**recupere les id_seances avec le nom de la promotion et le nom du groupe*/
+    public ArrayList<Integer> getIdSeancesPromotion(String promotion, String nomGroupe)
     {
         ArrayList<Integer> id_seances = new ArrayList<>();
         try 
         {
             DAO<Promotion> promotiond = new PromotionDAO(ConnexionSQL.getInstance());
+            int id_promotion = promotiond.ID(promotion);
+            
+            DAO<Groupe> grouped = new GroupeDAO(ConnexionSQL.getInstance());
+            int id_groupe = grouped.GetUniqID(id_promotion, nomGroupe);
+            
+            DAO<Seance_Groupe> seance_grouped = new Seance_GroupeDAO(ConnexionSQL.getInstance());
+            id_seances = seance_grouped.ComposerFindSeance(id_groupe);
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return id_seances;
+    }
+    
+    /**recupere les id_seances avec le nom du site et le nom de la salle*/
+    public ArrayList<Integer> getIdSeancesSite(String site, String salle)
+    {
+         ArrayList<Integer> id_seances = new ArrayList<>();
+        try 
+        {
+            DAO<Site> sited = new SiteDAO(ConnexionSQL.getInstance());
+            int id_site = sited.ID(site);
+            
+            DAO<Salle> salled = new SalleDAO(ConnexionSQL.getInstance());
+            int id_salle = salled.GetUniqID(id_site, salle);
+            
+            DAO<Seance_Salle> seance_salled = new Seance_SalleDAO(ConnexionSQL.getInstance());
+            id_seances = seance_salled.ComposerFindSeance(id_salle);
             
         } 
         catch (SQLException ex) 
@@ -1067,13 +1122,5 @@ public class RechercheInformationsHugo
         return id_seances;
     }
     
-    public ArrayList<Integer> getIdSeancesSite(String site)
-    {
-        ArrayList<Integer> id_seances = new ArrayList<>();
-        
-        
-        
-        return id_seances;
-    }
     
 }
