@@ -489,7 +489,7 @@ public class RechercheInformationsHugo
                 Date d = seance.getdate();
                 if(jour == d.getDay() && numSemaine == seance.getSemaine())
                 {
-                    //La panneau du cours et son layout
+                   //La panneau du cours et son layout
                    JPanel cours = new JPanel();
                    cours.setLayout(new GridBagLayout());
                    GridBagConstraints gbc = new GridBagConstraints();
@@ -526,7 +526,7 @@ public class RechercheInformationsHugo
                    nomTypeCours += coursName.getNom();
                    nomTypeCours += " - ";
                    DAO<Type_Cours> type_coursd = new Type_CoursDAO(ConnexionSQL.getInstance());
-                   Type_Cours type_cours = type_coursd.find(seance.getId());
+                   Type_Cours type_cours = type_coursd.find(seance.getId_type());
                    nomTypeCours += type_cours.getNom();
                    nomcours.setText(nomTypeCours);
                    nomcours.setFont(font2);
@@ -634,13 +634,17 @@ public class RechercheInformationsHugo
             DAO<Utilisateur> Utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
             Utilisateur user = Utilisateurd.find(email,password);
             
+            
+            
             //On recup l'etudiant - son id_groupe
             DAO<Etudiant> Etudiantd = new EtudiantDAO(ConnexionSQL.getInstance());
             Etudiant etudiant = Etudiantd.find(user.getId());
             
+            
             //On recupere la seance groupe - on recup un arraylist d'int qui est la liste id_seance
             DAO<Seance_Groupe> seance_grouped = new Seance_GroupeDAO(ConnexionSQL.getInstance());
             ArrayList<Integer> seance_groupe = seance_grouped.ComposerFindSeance(etudiant.getId_groupe()); //C'est la liste des id_seance
+           
             
             //Pour chaque id seance qu'on trouve
             for(int i=0; i<seance_groupe.size();i++)
@@ -649,9 +653,11 @@ public class RechercheInformationsHugo
                 DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
                 Seance seance = seanced.find(seance_groupe.get(i));
                 
+                
                Date d = seance.getdate();
                if(jour == d.getDay() && numSemaine == seance.getSemaine()) //Si le jour passé en parametre est le meme que celui qu'on recupere
                {
+                   
                    //La panneau du cours et son layout
                    JPanel cours = new JPanel();
                    cours.setLayout(new GridBagLayout());
@@ -690,7 +696,7 @@ public class RechercheInformationsHugo
                    nomTypeCours += coursName.getNom();
                    nomTypeCours += " - ";
                    DAO<Type_Cours> type_coursd = new Type_CoursDAO(ConnexionSQL.getInstance());
-                   Type_Cours type_cours = type_coursd.find(seance.getId());
+                   Type_Cours type_cours = type_coursd.find(seance.getId_type());
                    nomTypeCours += type_cours.getNom();
                    nomcours.setText(nomTypeCours);
                    nomcours.setFont(font2);
@@ -752,7 +758,8 @@ public class RechercheInformationsHugo
                    salleSiteCapacite.setText(salleSiteCapaciteString);
                    salleSiteCapacite.setFont(font);
                    salleSiteCapacite.setForeground(c);
-                   
+                   //System.out.println(seance.getId()); -> 2 1 3
+                   System.out.println(id_salle); // 2 4 3
                    
                    //On recupere le nbr de minutes que dure le cours pour agrandir en height le panel
                    //Changement de la dimension et de la hauteur du rectangle
@@ -921,6 +928,63 @@ public class RechercheInformationsHugo
         }
     }
     
+    /** Permet de changer la 4e combo box en fonction de la 3e*/
+    public void changeRecapEdtSearch3(JComboBox recapSearch1, JComboBox recapSearch2, JComboBox aChanger)
+    {
+        aChanger.removeAllItems();
+        String result1 = (String)recapSearch1.getSelectedItem();
+        if(result1=="Promotion" || result1=="Site")
+        {
+            String result2 = (String)recapSearch2.getSelectedItem();
+            if(result2 != null)
+            {
+                if(result1=="Promotion")
+                {
+                    try 
+                    {
+                        DAO<Promotion> promotiond = new PromotionDAO(ConnexionSQL.getInstance());
+                        int id_promotion = promotiond.ID(result2);
+                        
+                        DAO<Groupe> grouped = new GroupeDAO(ConnexionSQL.getInstance());
+                        ArrayList<String> nom_tds = grouped.ListInfo(id_promotion);
+                        
+                        for(int i=0; i<nom_tds.size(); i++)
+                        {
+                            aChanger.addItem(nom_tds.get(i));
+                        }
+                        
+                    } catch (SQLException ex) 
+                    {
+                        Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                else if(result1=="Site")
+                {
+                    try 
+                    {
+                        DAO<Site> sited = new SiteDAO(ConnexionSQL.getInstance());
+                        int id_site = sited.ID(result2);
+                        
+                        DAO<Salle> salled = new SalleDAO(ConnexionSQL.getInstance());
+                        ArrayList<String> nom_salles = salled.ListInfo(id_site);
+                        
+                        for(int i=0; i<nom_salles.size(); i++)
+                        {
+                            aChanger.addItem(nom_salles.get(i));
+                        }
+                        
+                    } catch (SQLException ex) 
+                    {
+                        Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+    /** affiche message erreur */
     public void changeMessageErreur(JLabel labelErreur, JComboBox jcbAChanger, JComboBox edtSearch3)
     {
         String labelErreurString = "";
@@ -974,5 +1038,267 @@ public class RechercheInformationsHugo
         }
     }
         
+    /**Dessine pour la promotion et le site */
+    public void dessinePromotionSite(JComboBox recapEdtSearch ,JComboBox promotionSite, JComboBox groupeSalle, JComboBox numSemaineCB, JPanel lundi, JPanel mardi, JPanel mercredi, JPanel jeudi, JPanel vendredi, JLabel lundiLabel, JLabel mardiLabel, JLabel mercrediLabel, JLabel jeudiLabel, JLabel vendrediLabel, JLabel anneeEdtLabel)
+    {
+        String promSite = (String)promotionSite.getSelectedItem(); //on recupere la 1ere combobox
+        String grpSalle = (String)groupeSalle.getSelectedItem(); //on recupere la 2eme combobox
+        String typeRecherche = (String)recapEdtSearch.getSelectedItem();
         
+        if(promotionSite != null && grpSalle != null)
+        {
+            String numSemaineString = (String)(numSemaineCB.getSelectedItem());
+            int numSemaine = Integer.parseInt(numSemaineString);
+                
+            if(typeRecherche == "Promotion") //Ici on est dans le cas ou on recherche une promotion
+            {
+                
+                ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, numSemaine);
+                ChangeAnneeProgramme(anneeEdtLabel, numSemaine);
+                Empty(lundi);
+                Empty(mardi);
+                Empty(mercredi);
+                Empty(jeudi);
+                Empty(vendredi);
+                drawPromotionSite(getIdSeancesPromotion(promSite, grpSalle), numSemaine, 1, lundi);
+                drawPromotionSite(getIdSeancesPromotion(promSite, grpSalle), numSemaine, 2, mardi);
+                drawPromotionSite(getIdSeancesPromotion(promSite, grpSalle), numSemaine, 3, mercredi);
+                drawPromotionSite(getIdSeancesPromotion(promSite, grpSalle), numSemaine, 4, jeudi);
+                drawPromotionSite(getIdSeancesPromotion(promSite, grpSalle), numSemaine, 5, vendredi);
+            }
+            else if(typeRecherche == "Site") //Ici on est dans le cas ou on recherche un site
+            {
+                ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, numSemaine);
+                ChangeAnneeProgramme(anneeEdtLabel, numSemaine);
+                Empty(lundi);
+                Empty(mardi);
+                Empty(mercredi);
+                Empty(jeudi);
+                Empty(vendredi);
+                drawPromotionSite(getIdSeancesSite(promSite, grpSalle), numSemaine, 1, lundi);
+                drawPromotionSite(getIdSeancesSite(promSite, grpSalle), numSemaine, 2, mardi);
+                drawPromotionSite(getIdSeancesSite(promSite, grpSalle), numSemaine, 3, mercredi);
+                drawPromotionSite(getIdSeancesSite(promSite, grpSalle), numSemaine, 4, jeudi);
+                drawPromotionSite(getIdSeancesSite(promSite, grpSalle), numSemaine, 5, vendredi);
+            }
+        }
+    }
+    
+    //Pour dessiner dans les panels si c'est une recherche via promotion(+groupe) ou via un site(+salle) 
+    public void drawPromotionSite(ArrayList<Integer> id_seances, int numSemaine, int jour, JPanel panel)
+    {
+        try
+        {
+            for(int i=0; i<id_seances.size();i++)
+            {
+                DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
+                Seance seance = seanced.find(id_seances.get(i));
+                
+                Date d = seance.getdate();
+                if(jour == d.getDay() && numSemaine == seance.getSemaine())
+                {
+                    //La panneau du cours et son layout
+                   JPanel cours = new JPanel();
+                   cours.setLayout(new GridBagLayout());
+                   GridBagConstraints gbc = new GridBagConstraints();
+                   gbc.weightx = 1;
+                   
+                   //On change la couleur
+                   cours.setBackground(new Color(seance.getR(),seance.getV(), seance.getB()));
+                   
+                   //Font et couleur des textes
+                   Font font = new Font("Cambria", Font.PLAIN, 12);
+                   Font font2 = new Font("Cambria", Font.BOLD, 12);
+                   Color c = new Color(0,0,0); //noir
+                   
+                   //On affiche le status
+                   JLabel status = new JLabel();
+                   String statusString = seance.getStatus();
+                   if(statusString == "ANNULE")
+                   {
+                       status.setText(statusString);
+                       status.setFont(font);
+                       status.setForeground(Color.RED);
+                   }
+                   else
+                   {
+                       statusString = "";
+                   }
+                   
+                   //On affiche le nom du cours
+                   JLabel nomcours = new JLabel();
+                   String nomTypeCours = "";
+                   int idcours = seance.getId_cours();
+                   DAO<Cours> coursd = new CoursDAO(ConnexionSQL.getInstance());
+                   Cours coursName = coursd.find(idcours);
+                   nomTypeCours += coursName.getNom();
+                   nomTypeCours += " - ";
+                   DAO<Type_Cours> type_coursd = new Type_CoursDAO(ConnexionSQL.getInstance());
+                   Type_Cours type_cours = type_coursd.find(seance.getId_type());
+                   nomTypeCours += type_cours.getNom();
+                   nomcours.setText(nomTypeCours);
+                   nomcours.setFont(font2);
+                   nomcours.setForeground(c);
+                   
+                   //On affiche le nom des profs
+                   JLabel nomProfs = new JLabel();
+                   String nomProfsString = "";
+                   int idseance = seance.getId();
+                   DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
+                   ArrayList<Integer> id_utilisateurs = seance_enseignantd.ComposerFindEnseignant(idseance); //les ids utilisateurs sont des ids d enseignants
+                   for(int j=0;j<id_utilisateurs.size();j++)
+                   {
+                       DAO<Utilisateur> Utilisateurdprof = new UtilisateurDAO(ConnexionSQL.getInstance());
+                       Utilisateur userprof = Utilisateurdprof.find(id_utilisateurs.get(j));
+                       nomProfsString += userprof.getNom();
+                   }
+                   nomProfs.setText(nomProfsString);
+                   nomProfs.setFont(font);
+                   nomProfs.setForeground(c);
+                   
+                   //On affiche promotion, groupes
+                   JLabel promotionEtGroupe = new JLabel();
+                   String promotionEtGroupeString = "";
+                   int id_seance = seance.getId(); //l'id de la seance
+                   int id_promotion = 0; //l'id de la promotion
+                   DAO<Seance_Groupe> sgd = new Seance_GroupeDAO(ConnexionSQL.getInstance());
+                   ArrayList<Integer> list_id_groupes = sgd.ComposerFindGroupe(id_seance); //la liste des id_groupe dans seance_groupe
+                   for(int j=0;j<list_id_groupes.size();j++)
+                   {
+                       DAO<Groupe> grouped = new GroupeDAO(ConnexionSQL.getInstance());
+                       Groupe groupe = grouped.find(list_id_groupes.get(j));
+                       promotionEtGroupeString = promotionEtGroupeString + groupe.getNom() + " ";
+                       id_promotion = groupe.getId_promotion();
+                   }
+                   DAO<Promotion> promotiond = new PromotionDAO(ConnexionSQL.getInstance());
+                   Promotion prom = promotiond.find(id_promotion);
+                   promotionEtGroupeString = promotionEtGroupeString + " - " + prom.getNom();
+                   promotionEtGroupe.setText(promotionEtGroupeString);
+                   promotionEtGroupe.setFont(font);
+                   promotionEtGroupe.setForeground(c);
+                   
+                   //On affiche la salle, le site, le nbr de place
+                   JLabel salleSiteCapacite = new JLabel();
+                   String salleSiteCapaciteString = "";
+                   String nomSalle = "";
+                   String capaciteSalle = "";
+                   String nomSite = "";
+                   int id_seance2 = seance.getId(); //l'id de la seance
+                   DAO<Seance_Salle> ssd = new Seance_SalleDAO(ConnexionSQL.getInstance());
+                   Seance_Salle ss = ssd.find(id_seance2);
+                   int id_salle = ss.getId_salle();
+                   DAO<Salle> sd = new SalleDAO(ConnexionSQL.getInstance());
+                   Salle s = sd.find(id_salle);
+                   nomSalle += s.getNom();
+                   capaciteSalle += s.getCapacite() + "";
+                   int id_site = s.getId_site();
+                   DAO<Site> sited = new SiteDAO(ConnexionSQL.getInstance());
+                   Site site = sited.find(id_site);
+                   nomSite = site.getNom();
+                   salleSiteCapaciteString = nomSalle + " - " + nomSite + " (" + capaciteSalle + ")"; 
+                   salleSiteCapacite.setText(salleSiteCapaciteString);
+                   salleSiteCapacite.setFont(font);
+                   salleSiteCapacite.setForeground(c);
+                   
+                   
+                   
+                   //On recupere le nbr de minutes que dure le cours pour agrandir en height le panel
+                   //Changement de la dimension et de la hauteur du rectangle
+                   Time ti = seance.getHeure_Debut();
+                   Time tf = seance.getHeure_Fin();
+                   long diffInMinutes = ((tf.getTime() - ti.getTime())/1000)/60; //la difference de temps entre cours en minutes, une minute = 1.034 height
+                   Dimension dim = new Dimension();
+                   dim.setSize(198,  1.03472222222 * diffInMinutes);
+                   cours.setSize(dim);
+                   long beginTimeCours = (ti.getTime()/1000)/60;
+                   long huitHeureTrente = 510-60;
+                   cours.setLocation(0, (int)(1.03472222222*(beginTimeCours-huitHeureTrente)));
+                   
+                   //On ajoute l'heure de début et l'heure de fin
+                   JLabel heureLabel = new JLabel();
+                   String heure = "";
+                   heure += ti + " ~ " + tf;
+                   heureLabel.setText(heure);
+                   heureLabel.setFont(font);
+                   heureLabel.setForeground(c);
+                   
+                   //On ajoutes tous les labels
+                   gbc.gridx = 0;
+                   gbc.gridy = 0;
+                   cours.add(status, gbc);
+                   gbc.gridx = 0;
+                   gbc.gridy = 1;
+                   cours.add(nomcours, gbc);
+                   gbc.gridx = 0;
+                   gbc.gridy = 2;
+                   cours.add(nomProfs, gbc);
+                   gbc.gridx = 0;
+                   gbc.gridy = 3;
+                   cours.add(promotionEtGroupe, gbc);
+                   gbc.gridx = 0;
+                   gbc.gridy = 4;
+                   cours.add(salleSiteCapacite, gbc);
+                   gbc.gridx = 0;
+                   gbc.gridy = 5;
+                   cours.add(heureLabel, gbc);
+                   
+                   //On ajoute au jour correspondant ce cours
+                   panel.add(cours);
+                }
+            }
+        }
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    /**recupere les id_seances avec le nom de la promotion et le nom du groupe*/
+    public ArrayList<Integer> getIdSeancesPromotion(String promotion, String nomGroupe)
+    {
+        ArrayList<Integer> id_seances = new ArrayList<>();
+        try 
+        {
+            DAO<Promotion> promotiond = new PromotionDAO(ConnexionSQL.getInstance());
+            int id_promotion = promotiond.ID(promotion);
+            
+            DAO<Groupe> grouped = new GroupeDAO(ConnexionSQL.getInstance());
+            int id_groupe = grouped.GetUniqID(id_promotion, nomGroupe);
+            
+            DAO<Seance_Groupe> seance_grouped = new Seance_GroupeDAO(ConnexionSQL.getInstance());
+            id_seances = seance_grouped.ComposerFindSeance(id_groupe);
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return id_seances;
+    }
+    
+    /**recupere les id_seances avec le nom du site et le nom de la salle*/
+    public ArrayList<Integer> getIdSeancesSite(String site, String salle)
+    {
+         ArrayList<Integer> id_seances = new ArrayList<>();
+        try 
+        {
+            DAO<Site> sited = new SiteDAO(ConnexionSQL.getInstance());
+            int id_site = sited.ID(site);
+            
+            DAO<Salle> salled = new SalleDAO(ConnexionSQL.getInstance());
+            int id_salle = salled.GetUniqID(id_site, salle);
+            
+            DAO<Seance_Salle> seance_salled = new Seance_SalleDAO(ConnexionSQL.getInstance());
+            id_seances = seance_salled.ComposerFindSeance(id_salle);
+            
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return id_seances;
+    }
+    
+    
 }
