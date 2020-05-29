@@ -1261,6 +1261,11 @@ public class EDT_Window extends javax.swing.JFrame {
         recapEdtSearch2.setForeground(new java.awt.Color(255, 255, 255));
         recapEdtSearch2.setMaximumRowCount(50);
         recapEdtSearch2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recapEdtSearch2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recapEdtSearch2ActionPerformed(evt);
+            }
+        });
 
         recapEdtSearch3.setBackground(new java.awt.Color(0, 153, 153));
         recapEdtSearch3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
@@ -2771,6 +2776,7 @@ public class EDT_Window extends javax.swing.JFrame {
         
         //On affiche l'edt recherche
         rih.dessineEtudiantProfesseur(recapEdtSearch, recapEdtSearch2, semainePickerCB, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, anneeEdtLabel); //cas d'un etudiant ou professeur, se fera automatiquement
+        rih.dessinePromotionSite(recapEdtSearch, recapEdtSearch2, recapEdtSearch3);
     }//GEN-LAST:event_recapEdtRechercherButtonActionPerformed
 
     /////////////////////////// QUAND ON APPUIE SUR LES BOUTONS DES SEMAINES ///////////////////////////
@@ -3150,6 +3156,11 @@ public class EDT_Window extends javax.swing.JFrame {
         //On change la valeur de recapedtseach2
         rih.changeRecapEdtSearch2(recapEdtSearch, recapEdtSearch2, recapEdtSearch3);
     }//GEN-LAST:event_recapEdtSearchActionPerformed
+
+    //Quand on appuie sur la 3e recherche
+    private void recapEdtSearch2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapEdtSearch2ActionPerformed
+        rih.changeRecapEdtSearch3(recapEdtSearch, recapEdtSearch2, recapEdtSearch3);
+    }//GEN-LAST:event_recapEdtSearch2ActionPerformed
 
    
     /////////////////////////// FIN QUAND ON FAIT UNE RECHERCHE SUR L'EDT (admin & ref ped) ///////////////////////////

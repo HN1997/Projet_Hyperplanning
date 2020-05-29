@@ -921,6 +921,63 @@ public class RechercheInformationsHugo
         }
     }
     
+    /** Permet de changer la 4e combo box en fonction de la 3e*/
+    public void changeRecapEdtSearch3(JComboBox recapSearch1, JComboBox recapSearch2, JComboBox aChanger)
+    {
+        aChanger.removeAllItems();
+        String result1 = (String)recapSearch1.getSelectedItem();
+        if(result1=="Promotion" || result1=="Site")
+        {
+            String result2 = (String)recapSearch2.getSelectedItem();
+            if(result2 != null)
+            {
+                if(result1=="Promotion")
+                {
+                    try 
+                    {
+                        DAO<Promotion> promotiond = new PromotionDAO(ConnexionSQL.getInstance());
+                        int id_promotion = promotiond.ID(result2);
+                        
+                        DAO<Groupe> grouped = new GroupeDAO(ConnexionSQL.getInstance());
+                        ArrayList<String> nom_tds = grouped.ListInfo(id_promotion);
+                        
+                        for(int i=0; i<nom_tds.size(); i++)
+                        {
+                            aChanger.addItem(nom_tds.get(i));
+                        }
+                        
+                    } catch (SQLException ex) 
+                    {
+                        Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                else if(result1=="Site")
+                {
+                    try 
+                    {
+                        DAO<Site> sited = new SiteDAO(ConnexionSQL.getInstance());
+                        int id_site = sited.ID(result2);
+                        
+                        DAO<Salle> salled = new SalleDAO(ConnexionSQL.getInstance());
+                        ArrayList<String> nom_salles = salled.ListInfo(id_site);
+                        
+                        for(int i=0; i<nom_salles.size(); i++)
+                        {
+                            aChanger.addItem(nom_salles.get(i));
+                        }
+                        
+                    } catch (SQLException ex) 
+                    {
+                        Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+            
+        }
+        
+    }
+    
+    /** affiche message erreur */
     public void changeMessageErreur(JLabel labelErreur, JComboBox jcbAChanger, JComboBox edtSearch3)
     {
         String labelErreurString = "";
@@ -974,5 +1031,49 @@ public class RechercheInformationsHugo
         }
     }
         
+    /**Dessine pour la promotion et le site */
+    public void dessinePromotionSite(JComboBox recapEdtSearch ,JComboBox promotionSite, JComboBox groupeSalle)
+    {
+        String promSite = (String)promotionSite.getSelectedItem(); //on recupere la 1ere combobox
+        String grpSalle = (String)groupeSalle.getSelectedItem(); //on recupere la 2eme combobox
+        String typeRecherche = (String)recapEdtSearch.getSelectedItem();
         
+        if(promotionSite != null && grpSalle != null)
+        {
+            if(typeRecherche == "Promotion") //Ici on est dans le cas ou on recherche une promotion
+            {
+                
+            }
+            else if(typeRecherche == "Site") //Ici on est dans le cas ou on recherche un site
+            {
+                
+            }
+        }
+    }
+    
+    public ArrayList<Integer> getIdSeancesPromtion(String promotion)
+    {
+        ArrayList<Integer> id_seances = new ArrayList<>();
+        try 
+        {
+            DAO<Promotion> promotiond = new PromotionDAO(ConnexionSQL.getInstance());
+            
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return id_seances;
+    }
+    
+    public ArrayList<Integer> getIdSeancesSite(String site)
+    {
+        ArrayList<Integer> id_seances = new ArrayList<>();
+        
+        
+        
+        return id_seances;
+    }
+    
 }
