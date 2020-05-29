@@ -103,9 +103,31 @@ public abstract class DAO<T> {
     
     /**
      *
+     * @param Nom
+     * @param Prenom
      * @return
      */
     public abstract ArrayList<String> FindEmailPasswd(String Nom,String Prenom);
+    
+    /**
+     *
+     * @param nom
+     * @return
+     */
+    public abstract int ID (String nom);
+    
+    /**
+     *
+     * @param id
+     * @return
+     */
+    public abstract ArrayList<String> ListInfo (int id);
+    
+    
+    
+    
+    
+    
     
 }
     

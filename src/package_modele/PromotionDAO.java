@@ -1,13 +1,14 @@
 package package_modele;
+
 import java.sql.*;
 import java.util.ArrayList;
 
 public class PromotionDAO extends DAO<Promotion> {
 
     public PromotionDAO(Connection conn) {
-    super(conn);
+        super(conn);
     }
-    
+
     @Override
     public boolean create(Promotion obj) {
         return false;
@@ -22,7 +23,7 @@ public class PromotionDAO extends DAO<Promotion> {
     public boolean update(Promotion obj) {
         return false;
     }
-   
+
     @Override
     public Promotion find(int id) {
         Promotion cours = new Promotion();
@@ -30,7 +31,7 @@ public class PromotionDAO extends DAO<Promotion> {
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM promotion WHERE ID_Promotion= "+id);
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM promotion WHERE ID_Promotion= " + id);
             if (result.first()) {
                 cours = new Promotion(
                         id,
@@ -96,6 +97,25 @@ public class PromotionDAO extends DAO<Promotion> {
     public ArrayList<String> FindEmailPasswd(String Nom, String Prenom) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public int ID(String nom) {
+        int i = 0;
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `promotion` WHERE `Nom`= " +"'" + nom+ "'");
+            if (result.first()) {
+//                System.out.print(result.getInt("ID_Promotion"));
+                i=result.getInt("ID_Promotion");
+            }
+        } catch (SQLException e) {
+        }
+        return i;
+    }
+
+    @Override
+    public ArrayList<String> ListInfo(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
-  
