@@ -98,5 +98,26 @@ public class SiteDAO extends DAO<Site> {
     public ArrayList<String> FindEmailPasswd(String Nom, String Prenom) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public int ID(String nom) {
+        int i = 0;
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `site` WHERE `Nom`= " +"'" + nom+ "'");
+            if (result.first()) {
+//                System.out.print(result.getInt("ID_Promotion"));
+                i=result.getInt("ID_Site");
+            }
+        } catch (SQLException e) {
+        }
+        return i;
+    }
+
+    @Override
+    public ArrayList<String> ListInfo(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

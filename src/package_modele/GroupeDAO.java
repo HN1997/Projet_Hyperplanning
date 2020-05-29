@@ -89,6 +89,27 @@ public class GroupeDAO extends DAO<Groupe> {
     public ArrayList<String> FindEmailPasswd(String Nom, String Prenom) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public int ID(String nom) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<String> ListInfo(int id) {
+        ArrayList<String> Array = new ArrayList<>();
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `groupe` WHERE `ID_Promotion`=" + id );
+            while (result.next()) {
+//                System.out.println(result.getInt("ID_Seance"));
+                Array.add(result.getString("Nom"));
+            }
+        } catch (SQLException e) {
+        }
+        return Array;
+    }
     
 }
   
