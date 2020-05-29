@@ -10,7 +10,7 @@ public class Seance_Salle {
      * @param id_seance
      * @param id_salle
      */
-    public Seance_Salle(int id_salle,int id_seance)
+    public Seance_Salle(int id_seance,int id_salle)
     {
         this.id_salle=id_salle;
         this.id_seance=id_seance;
