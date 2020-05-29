@@ -109,10 +109,15 @@ public class Seance_SalleDAO extends DAO<Seance_Salle> {
     @Override
     public int ID(String nom) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    }   
 
     @Override
     public ArrayList<String> ListInfo(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int GetUniqID(int id, String Nom) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

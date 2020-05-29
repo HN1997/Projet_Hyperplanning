@@ -108,4 +108,20 @@ public class SalleDAO extends DAO<Salle> {
         }
         return Array;
     }
+
+    @Override
+    public int GetUniqID(int id, String Nom) {
+        int i = 0;
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM salle WHERE Nom='" + Nom + "' and ID_Site='" + id + "'");
+            while (result.next()) {
+//                System.out.println(result.getInt("ID_Seance"));
+                i = result.getInt("ID_Salle");
+            }
+        } catch (SQLException e) {
+        }
+        return i;
+    }
 }
