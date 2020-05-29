@@ -123,12 +123,14 @@ public abstract class DAO<T> {
      */
     public abstract ArrayList<String> ListInfo (int id);
     
-    
-    
-    
-    
-    
-    
+    /**
+     *
+     * @param id
+     * @param Nom
+     * @return
+     */
+    public abstract int GetUniqID (int id, String Nom);
+
 }
     
 
