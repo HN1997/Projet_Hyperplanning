@@ -244,6 +244,7 @@ public class EDT_Window extends javax.swing.JFrame {
         trierparRecapLabel = new javax.swing.JLabel();
         recapSearch1 = new javax.swing.JComboBox<>();
         recapSearch2 = new javax.swing.JComboBox<>();
+        recapSearch3 = new javax.swing.JComboBox<>();
         recapRechercherButton = new javax.swing.JButton();
         recapMessageErreur = new javax.swing.JLabel();
         recapScrollPane = new javax.swing.JScrollPane();
@@ -1629,6 +1630,12 @@ public class EDT_Window extends javax.swing.JFrame {
         recapSearch2.setMaximumRowCount(50);
         recapSearch2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        recapSearch3.setBackground(new java.awt.Color(0, 153, 153));
+        recapSearch3.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
+        recapSearch3.setForeground(new java.awt.Color(255, 255, 255));
+        recapSearch3.setMaximumRowCount(50);
+        recapSearch3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         recapRechercherButton.setBackground(new java.awt.Color(0, 153, 153));
         recapRechercherButton.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
         recapRechercherButton.setForeground(new java.awt.Color(57, 17, 45));
@@ -1655,10 +1662,12 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addComponent(recapSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recapSearch2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(recapSearch3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recapRechercherButton)
-                        .addGap(51, 51, 51)
-                        .addComponent(recapMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(72, 72, 72)
+                        .addComponent(recapMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         recapPeriodeTriPanelLayout.setVerticalGroup(
@@ -1672,7 +1681,8 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addGroup(recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(recapSearch1)
                             .addComponent(recapSearch2)
-                            .addComponent(recapRechercherButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(recapRechercherButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(recapSearch3))
                         .addContainerGap())
                     .addComponent(recapMessageErreur, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
@@ -2741,13 +2751,13 @@ public class EDT_Window extends javax.swing.JFrame {
     //Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda dans le recapitulatif de la periode
     private void recapRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapRechercherButtonActionPerformed
         //On update le message d'erreur - recherche reussi ou non
-        rih.changeMessageErreur(recapMessageErreur, recapSearch2);
+        
     }//GEN-LAST:event_recapRechercherButtonActionPerformed
 
     //Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda dans le reporting
     private void reportingRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportingRechercherButtonActionPerformed
         //On update le message d'erreur - recherche reussi ou non
-        rih.changeMessageErreur(reportingMessageErreur, reportingSearch2);
+        
     }//GEN-LAST:event_reportingRechercherButtonActionPerformed
 
     private void insererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insererButtonActionPerformed
@@ -2757,10 +2767,10 @@ public class EDT_Window extends javax.swing.JFrame {
     //Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda pour afficher l'edt
     private void recapEdtRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapEdtRechercherButtonActionPerformed
         //On update le message d'erreur - recherche reussi ou non
-        rih.changeMessageErreur(recapMessageErreurEdt, recapEdtSearch2);
+        rih.changeMessageErreur(recapMessageErreurEdt, recapEdtSearch2, recapEdtSearch3);
         
         //On affiche l'edt recherche
-        rih.dessineEtudiantProfesseur(recapEdtSearch2, semainePickerCB, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, anneeEdtLabel); //cas d'un etudiant ou professeur, se fera automatiquement
+        rih.dessineEtudiantProfesseur(recapEdtSearch, recapEdtSearch2, semainePickerCB, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, anneeEdtLabel); //cas d'un etudiant ou professeur, se fera automatiquement
     }//GEN-LAST:event_recapEdtRechercherButtonActionPerformed
 
     /////////////////////////// QUAND ON APPUIE SUR LES BOUTONS DES SEMAINES ///////////////////////////
@@ -3269,6 +3279,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JScrollPane recapScrollPane;
     private javax.swing.JComboBox<String> recapSearch1;
     private javax.swing.JComboBox<String> recapSearch2;
+    private javax.swing.JComboBox<String> recapSearch3;
     private javax.swing.JTable recapTable;
     private javax.swing.JLabel recapitulatifLabel;
     private javax.swing.JLabel reportingLabel;
