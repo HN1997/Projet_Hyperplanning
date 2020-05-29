@@ -758,8 +758,6 @@ public class RechercheInformationsHugo
                    salleSiteCapacite.setText(salleSiteCapaciteString);
                    salleSiteCapacite.setFont(font);
                    salleSiteCapacite.setForeground(c);
-                   //System.out.println(seance.getId()); -> 2 1 3
-                   System.out.println(id_salle); // 2 4 3
                    
                    //On recupere le nbr de minutes que dure le cours pour agrandir en height le panel
                    //Changement de la dimension et de la hauteur du rectangle
