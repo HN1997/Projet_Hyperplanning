@@ -1298,5 +1298,12 @@ public class RechercheInformationsHugo
         return id_seances;
     }
     
+    public void MAJEdt(int numSemaine,JLabel anneeEdtLabel, JLabel lundiLabel, JLabel mardiLabel,JLabel mercrediLabel,JLabel jeudiLabel,JLabel vendrediLabel, JPanel lundiDisplayPanel, JPanel mardiDisplayPanel, JPanel mercrediDisplayPanel, JPanel jeudiDisplayPanel, JPanel vendrediDisplayPanel, String email, String password)
+    {
+        ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, numSemaine);
+        ChangeAnneeProgramme(anneeEdtLabel, numSemaine);
+        Draw(numSemaine, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
+    }
+    
     
 }
