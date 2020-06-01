@@ -1,5 +1,6 @@
 package package_modele;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,8 +20,16 @@ public class Seance_EnseignantDAO extends DAO<Seance_Enseignant> {
     }
 
     @Override
-    public boolean create(Seance_Enseignant obj) {
-        return false;
+    public void create(Seance_Enseignant obj) {
+       PreparedStatement st ;
+       try {
+           st = connect.prepareStatement("INSERT INTO `seance_enseignants`(`ID_Seance`, `ID_Utilisateur`, `ID_Cours`) VALUES (?,?,?)");
+           st.setInt(1, obj.getId_seance());
+           st.setInt(2, obj.getId_enseignant());
+           st.setInt(3, obj.getId_cours());
+           st.executeUpdate();
+       } catch (SQLException e) {
+       }
     }
 
     @Override

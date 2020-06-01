@@ -13,10 +13,13 @@ public class Seance {
     //Numéro de la semaine de la Seance
     protected int semaine;
     //Date de la Seance
+    protected String date1;
     protected Date date;
     //Heure de début de la Seance
+    protected String Heure_Debut1;
     protected Time Heure_Debut;
     //Heure de fin de la Seance
+    protected String Heure_Fin1;
     protected Time Heure_Fin;
     //Status de la Seance
     protected String Status ;
@@ -126,14 +129,22 @@ public class Seance {
     {
         return date;
     }
+
+    /**
+     *
+     * @return
+     */
+    public String getdate1() {
+        return date1;
+    }
     
     /**
      *
      * @param date
      */
-    public void setdate(Date date)
+    public void setdate(String date)
     {
-        this.date = date;
+        this.date1 = date;
     }
     
     /**
@@ -145,13 +156,17 @@ public class Seance {
         return Heure_Debut;
     }
     
+    public String getHeure_Debut1() {
+        return Heure_Debut1;
+    }
+    
     /**
      *
      * @param Heure_Debut
      */
-    public void setHeure_Debut(Time Heure_Debut)
+    public void setHeure_Debut(String Heure_Debut)
     {
-        this.Heure_Debut = Heure_Debut;
+        this.Heure_Debut1 = Heure_Debut;
     }
     
     /**
@@ -162,14 +177,18 @@ public class Seance {
     {
         return Heure_Fin;
     }
-    
+
+    public String getHeure_Fin1()
+    {
+        return Heure_Fin1;
+    }    
     /**
      *
      * @param Heure_Fin
      */
-    public void setHeure_Fin(Time Heure_Fin)
+    public void setHeure_Fin(String Heure_Fin)
     {
-        this.Heure_Fin = Heure_Fin;
+        this.Heure_Fin1 = Heure_Fin;
     }
     
     /**

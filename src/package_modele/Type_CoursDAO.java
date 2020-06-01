@@ -14,8 +14,7 @@ public class Type_CoursDAO extends DAO<Type_Cours> {
     }
 
     @Override
-    public boolean create(Type_Cours obj) {
-        return false;
+    public void create(Type_Cours obj) {
     }
 
     @Override

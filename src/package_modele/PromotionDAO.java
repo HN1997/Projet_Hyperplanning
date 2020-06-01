@@ -10,8 +10,7 @@ public class PromotionDAO extends DAO<Promotion> {
     }
 
     @Override
-    public boolean create(Promotion obj) {
-        return false;
+    public void create(Promotion obj) {
     }
 
     @Override

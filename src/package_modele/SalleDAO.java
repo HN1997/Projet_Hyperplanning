@@ -11,8 +11,7 @@ public class SalleDAO extends DAO<Salle> {
     }
 
     @Override
-    public boolean create(Salle obj) {
-        return false;
+    public void create(Salle obj) {
     }
 
     @Override

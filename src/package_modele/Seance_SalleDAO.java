@@ -1,5 +1,6 @@
 package package_modele;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -19,8 +20,17 @@ public class Seance_SalleDAO extends DAO<Seance_Salle> {
     }
 
     @Override
-    public boolean create(Seance_Salle obj) {
-        return false;
+    public void create(Seance_Salle obj) {
+       PreparedStatement st;
+       try {
+           st = connect.prepareStatement("INSERT INTO `seance_salles`(`ID_Seance`, `ID_Salle`) VALUES (?,?)");
+           st.setInt(1, obj.getId_salle());
+           st.setInt(2, obj.getId_seance());
+           
+           System.out.print(obj.getId_salle()+"-"+obj.getId_seance());
+           st.executeUpdate();
+       } catch (SQLException e) {
+       }
     }
 
     @Override

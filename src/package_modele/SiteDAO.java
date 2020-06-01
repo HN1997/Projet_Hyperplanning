@@ -10,8 +10,7 @@ public class SiteDAO extends DAO<Site> {
     }
 
     @Override
-    public boolean create(Site obj) {
-        return false;
+    public void create(Site obj) {
     }
 
     @Override

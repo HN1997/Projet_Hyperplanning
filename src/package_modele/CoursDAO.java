@@ -10,10 +10,10 @@ public class CoursDAO extends DAO<Cours> {
     }
 
     @Override
-    public boolean create(Cours obj) {
-        return false;
-    }
+    public void create(Cours cours) {
 
+}   
+ 
     @Override
     public boolean delete(Cours obj) {
         return false;
