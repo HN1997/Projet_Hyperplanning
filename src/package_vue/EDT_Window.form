@@ -2716,12 +2716,10 @@
                                       <Component id="recapSearch1" min="-2" pref="140" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="recapSearch2" min="-2" pref="140" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="recapSearch3" min="-2" pref="140" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                                       <Component id="recapRechercherButton" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                                      <Component id="recapMessageErreur" min="-2" pref="476" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                      <Component id="recapMessageErreur" min="-2" pref="629" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2740,7 +2738,6 @@
                                           <Component id="recapSearch1" alignment="3" max="32767" attributes="0"/>
                                           <Component id="recapSearch2" alignment="3" max="32767" attributes="0"/>
                                           <Component id="recapRechercherButton" max="32767" attributes="0"/>
-                                          <Component id="recapSearch3" alignment="3" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -2776,45 +2773,23 @@
                         </Property>
                         <Property name="maximumRowCount" type="int" value="50"/>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="4">
+                          <StringArray count="2">
                             <StringItem index="0" value="Enseignant"/>
                             <StringItem index="1" value="Etudiant"/>
-                            <StringItem index="2" value="Promotion"/>
-                            <StringItem index="3" value="Site"/>
                           </StringArray>
                         </Property>
                         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                           <Color id="Curseur en forme de main"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="recapSearch1ActionPerformed"/>
+                      </Events>
                       <AuxValues>
                         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                       </AuxValues>
                     </Component>
                     <Component class="javax.swing.JComboBox" name="recapSearch2">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="99" green="99" red="0" type="rgb"/>
-                        </Property>
-                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                          <Font name="Cambria" size="12" style="1"/>
-                        </Property>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                        </Property>
-                        <Property name="maximumRowCount" type="int" value="50"/>
-                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="0"/>
-                        </Property>
-                        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                          <Color id="Curseur en forme de main"/>
-                        </Property>
-                      </Properties>
-                      <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-                      </AuxValues>
-                    </Component>
-                    <Component class="javax.swing.JComboBox" name="recapSearch3">
                       <Properties>
                         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                           <Color blue="99" green="99" red="0" type="rgb"/>
@@ -2889,22 +2864,11 @@
                           <Color blue="ff" green="ff" red="ff" type="rgb"/>
                         </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="5" rowCount="10">
-                            <Column editable="true" title="Mati&#xe8;res" type="java.lang.Object">
-                              <Data value=""/>
-                              <Data value=""/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                              <Data value="null"/>
-                            </Column>
+                          <Table columnCount="5" rowCount="0">
+                            <Column editable="true" title="Mati&#xe8;res" type="java.lang.Object"/>
                             <Column editable="true" title="Premi&#xe8;re S&#xe9;ance" type="java.lang.Object"/>
                             <Column editable="true" title="Derni&#xe8;re S&#xe9;ance" type="java.lang.Object"/>
-                            <Column editable="true" title="Dur&#xe9;e totale" type="java.lang.Object"/>
+                            <Column editable="true" title="Dur&#xe9;e totale (heure)" type="java.lang.Object"/>
                             <Column editable="true" title="Nombre de Cours" type="java.lang.Object"/>
                           </Table>
                         </Property>

@@ -1,5 +1,6 @@
 package package_controleur;
 
+import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.year;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -16,12 +17,14 @@ import java.util.GregorianCalendar;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.BoxLayout;
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import package_modele.*;
+import java.lang.String;
+import java.text.SimpleDateFormat;
+import javax.swing.table.DefaultTableModel;
 
 public class RechercheInformationsHugo 
 {
@@ -506,7 +509,7 @@ public class RechercheInformationsHugo
                    //On ajoute l'etat
                    JLabel status = new JLabel();
                    String statusString = seance.getStatus();
-                   if(statusString == "ANNULE")
+                   if(statusString.equals("ANNULE"))
                    {
                        status.setText(statusString);
                        status.setFont(font);
@@ -675,7 +678,7 @@ public class RechercheInformationsHugo
                    //On ajoute le label de l'etat
                    JLabel status = new JLabel();
                    String statusString = seance.getStatus();
-                   if(statusString == "ANNULE")
+                   if(statusString.equals("ANNULE"))
                    {
                        status.setText(statusString);
                        status.setFont(font);
@@ -1112,7 +1115,7 @@ public class RechercheInformationsHugo
                    //On affiche le status
                    JLabel status = new JLabel();
                    String statusString = seance.getStatus();
-                   if(statusString == "ANNULE")
+                   if(statusString.equals("ANNULE"))
                    {
                        status.setText(statusString);
                        status.setFont(font);
@@ -1306,4 +1309,237 @@ public class RechercheInformationsHugo
     }
     
     
+    //////////////////////////////////////////////////////// RECAPITULATIF DE LA PERIODE //////////////////////////////////////////////////
+    
+    /** Mise a jour de la JTable du recapitulatif de la période*/
+    public void MAJRecapPeriode(JTable table, String email, String password)
+    {
+        
+        Object[] row = new Object[5];
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        
+        //On recup l'utilisateur
+        DAO<Utilisateur> Utilisateurd;
+        try 
+        {
+            Utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            Utilisateur user = Utilisateurd.find(email,password);
+            int id_utilisateur = user.getId();
+            int droit = user.getDroit();
+            ArrayList<Integer> id_seances = new ArrayList<>();
+            
+            if(droit == 4) //etudiant
+            {
+                DAO<Etudiant> etudiantd = new EtudiantDAO(ConnexionSQL.getInstance());
+                Etudiant etudiant = etudiantd.find(id_utilisateur);
+                int id_groupe = etudiant.getId_groupe();
+                
+               
+                DAO<Seance_Groupe> sgd = new Seance_GroupeDAO(ConnexionSQL.getInstance());
+                id_seances = sgd.ComposerFindSeance(id_groupe);
+                
+                
+                
+            }
+            else if(droit == 3) //enseignant
+            {
+                DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
+                id_seances = seance_enseignantd.ComposerFindSeance(id_utilisateur);
+            }
+            
+            for(int i=0;i<id_seances.size();i++)
+                {
+                    DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
+                    Seance seance = seanced.find(id_seances.get(i)); //chaque seance
+                    int id_cours = seance.getId_cours();
+                    
+                    DAO<Cours> coursd = new CoursDAO(ConnexionSQL.getInstance());
+                    Cours cours = coursd.find(id_cours);
+                    
+                    String nomCours = cours.getNom(); //le nom du cours
+                    
+                    Date date = seance.getdate(); //la date du cours
+                    
+                    Time heureDebut = seance.getHeure_Debut();
+                    Time heureFin = seance.getHeure_Fin();
+                    
+                    long longTimeDif = (heureFin.getTime() - heureDebut.getTime())/1000; //la durée totale de ce cours en secondes
+                    float minutesDif = longTimeDif/60;
+                    float heureDif = minutesDif/60;
+                    
+                    
+                    
+                    int nbrCours = 1; //on rajoute un cours en plus
+                    
+                    if(!existInTable(table, nomCours)) //Si n'existe pas dans la table, on rajoute cette ligne
+                    {
+                        row[0] = nomCours; //Un string
+                        row[1] = date; // Une Date
+                        row[2] = date; //Une date 
+                        row[3] = heureDif; //un float
+                        row[4] = nbrCours; //un int
+                        model.addRow(row);
+                    }
+                    else //Sinon on recherche la ligne où ce cours est présent et on change les informations (le nom reste le meme)
+                    {
+                        int rowCount = table.getRowCount(); //le nbr de colonne
+                        
+                        for(int j=0; j<rowCount; j++)
+                        {
+                            String nomMatiereTable = table.getValueAt(j, 0).toString();
+                            if(nomMatiereTable.equals(nomCours))
+                            {
+                                //On recupere et modifie la derniere seance et/ou/ou aucun la premiere seance 
+                                Date premiereSeance = (Date)table.getValueAt(j, 1);
+                                Date deuxiemeSeance = (Date)table.getValueAt(j, 2);
+                                if(date.before(premiereSeance)) //Si la date du cours est avant celle de la table
+                                {
+                                    Object premSeance = date;
+                                    table.setValueAt(premSeance, j, 1);
+                                }
+                                else if(date.after(deuxiemeSeance)) //Si la date du cours est apres celle de la table
+                                {
+                                    Object derSeance = date;
+                                    table.setValueAt(derSeance, j, 2);
+                                }
+                                
+                                //On recupere le temps total et on l'incremente
+                                float tempsTotal = (Float)table.getValueAt(j, 3);
+                                tempsTotal += heureDif;
+                                Object tempsTotObj = tempsTotal;
+                                table.setValueAt(tempsTotObj, j, 3);
+                                
+                                //On recupere le nbr de cours et on l'incremente
+                                int nbrCoursTable = (Integer)table.getValueAt(j, 4);
+                                nbrCoursTable += nbrCours;
+                                Object nbrCoursTableObj = nbrCoursTable;
+                                table.setValueAt(nbrCoursTableObj, j, 4);
+                            }
+                        }
+                    }
+                }
+            
+            
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        table.setModel(model);
+    }
+    
+    /** Si un string présent dans une jtable*/
+    public boolean existInTable(JTable table, String nomMatiere)
+    {
+        boolean exist = false;
+        
+        // Get row and column count
+        int colCount = table.getRowCount();
+        
+        for(int i=0; i<colCount; i++)
+        {
+            String nomMatiereInTable = table.getValueAt(i, 0).toString();
+            if(nomMatiereInTable.equals(nomMatiere))
+                return true;
+        }
+        
+        return exist;
+    }
+    
+    /** Change le message d'erreur pour la recap periode*/
+    public void changeMessageLabelRecapPeriode(JComboBox etuEns, JLabel messageAChanger, JTable table)
+    {
+        String value = (String)etuEns.getSelectedItem();
+        if(value != null)
+        {
+            messageAChanger.setText("Voici le résultat de votre recherche.");
+            deleteAllRows((DefaultTableModel) table.getModel());
+            MAJRecapPeriodeRefAdmin(table, etuEns);
+        }
+        else
+        {
+            messageAChanger.setText("ERREUR : le deuxième champ est vide");
+        }
+    }
+    
+    /** Recupere la valeur de la 1ere combobox, change la valeur de la 2e selon ce que choisis l'utilisateur*/
+    public void changeRecapPeriodeSearch(JComboBox etuEns, JComboBox etuEnsValue)
+    {   
+        etuEnsValue.removeAllItems(); //Vide tous les elements
+        
+        String recherche = (String)etuEns.getSelectedItem();
+        if(recherche == "Enseignant")
+        {
+            String nomEnseignant = "";
+            
+            try 
+            {
+                DAO<Enseignant> enseignantd = new EnseignantDAO(ConnexionSQL.getInstance());
+                ArrayList<Integer> id_utilisateurs = enseignantd.FindEnseignant();
+                
+                for(int i=0; i<id_utilisateurs.size();i++)
+                {
+                    DAO<Utilisateur> utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+                    Utilisateur user = utilisateurd.find(id_utilisateurs.get(i));
+                    nomEnseignant = user.getPrenom() + " " + user.getNom();
+                    etuEnsValue.addItem(nomEnseignant);
+                }
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else if(recherche == "Etudiant")
+        {
+            String nomEtudiant = "";
+            try 
+            {
+                DAO<Etudiant> etudiantd = new EtudiantDAO(ConnexionSQL.getInstance());
+                ArrayList<Integer> id_utilisateurs = etudiantd.FindEtudiant();
+                
+                for(int i=0; i<id_utilisateurs.size();i++)
+                {
+                    DAO<Utilisateur> utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+                    Utilisateur user = utilisateurd.find(id_utilisateurs.get(i));
+                    nomEtudiant = user.getPrenom() + " " + user.getNom();
+                    etuEnsValue.addItem(nomEtudiant);
+                }
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    public void MAJRecapPeriodeRefAdmin(JTable table, JComboBox prenomNom)
+    {
+        String prenomNomString = (String)prenomNom.getSelectedItem();
+        String[] splitted = prenomNomString.split("\\s+");
+        String prenom = splitted[0];
+        String nom = splitted[1];
+        
+        try 
+        {
+            DAO<Utilisateur> user = new UtilisateurDAO(ConnexionSQL.getInstance());
+            ArrayList<String> emailPassword = user.FindEmailPasswd(nom,prenom); //premier element email, deuxieme mot de passe
+            MAJRecapPeriode(table, emailPassword.get(0), emailPassword.get(1));
+            
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    /** Fonction pour vider une jtable, sauf l'entete */
+    public static void deleteAllRows(final DefaultTableModel model) 
+    {   
+        for( int i = model.getRowCount() - 1; i >= 0; i-- ) {
+            model.removeRow(i);
+    }
+}
 }
