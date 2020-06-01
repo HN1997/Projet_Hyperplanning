@@ -2513,159 +2513,211 @@ public class EDT_Window extends javax.swing.JFrame {
         {
             case 1:
                 semaine1.setSelected(true);
+                rih.MAJEdt(1,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 2:
                 semaine2.setSelected(true);
+                rih.MAJEdt(2,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 3:
                 semaine3.setSelected(true);
+                rih.MAJEdt(3,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 4:
                 semaine4.setSelected(true);
+                rih.MAJEdt(4,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 5:
                 semaine2.setSelected(true);
+                rih.MAJEdt(5,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 52:
                 semaine52.setSelected(true);
+                rih.MAJEdt(52,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 6:
                 semaine6.setSelected(true);
+                rih.MAJEdt(6,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 7:
                 semaine7.setSelected(true);
+                rih.MAJEdt(7,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 8:
                 semaine8.setSelected(true);
+                rih.MAJEdt(8,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 9:
                 semaine9.setSelected(true);
+                rih.MAJEdt(9,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 10:
                 semaine10.setSelected(true);
+                rih.MAJEdt(10,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 11:
                 semaine11.setSelected(true);
+                rih.MAJEdt(11,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 12:
                 semaine12.setSelected(true);
+                rih.MAJEdt(12,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 13:
                 semaine13.setSelected(true);
+                rih.MAJEdt(13,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 14:
                 semaine14.setSelected(true);
+                rih.MAJEdt(14,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 15:
                 semaine15.setSelected(true);
+                rih.MAJEdt(15,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 16:
                 semaine16.setSelected(true);
+                rih.MAJEdt(16,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 17:
                 semaine17.setSelected(true);
+                rih.MAJEdt(17,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 18:
                 semaine18.setSelected(true);
+                rih.MAJEdt(18,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 19:
                 semaine19.setSelected(true);
+                rih.MAJEdt(19,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 20:
                 semaine20.setSelected(true);
+                rih.MAJEdt(20,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 21:
                 semaine21.setSelected(true);
+                rih.MAJEdt(21,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 22:
                 semaine22.setSelected(true);
+                rih.MAJEdt(22,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 23:
                 semaine23.setSelected(true);
+                rih.MAJEdt(23,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 24:
                 semaine24.setSelected(true);
+                rih.MAJEdt(24,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 25:
                 semaine25.setSelected(true);
+                rih.MAJEdt(25,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 26:
                 semaine26.setSelected(true);
+                rih.MAJEdt(26,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 27:
                 semaine27.setSelected(true);
+                rih.MAJEdt(27,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 28:
                 semaine28.setSelected(true);
+                rih.MAJEdt(28,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 29:
                 semaine29.setSelected(true);
+                rih.MAJEdt(29,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 30:
                 semaine30.setSelected(true);
+                rih.MAJEdt(30,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 31:
                 semaine31.setSelected(true);
+                rih.MAJEdt(31,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 32:
                 semaine32.setSelected(true);
+                rih.MAJEdt(32,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 33:
                 semaine33.setSelected(true);
+                rih.MAJEdt(33,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 34:
                 semaine34.setSelected(true);
+                rih.MAJEdt(34,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 35:
                 semaine35.setSelected(true);
+                rih.MAJEdt(35,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 36:
                 semaine36.setSelected(true);
+                rih.MAJEdt(36,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 37:
                 semaine37.setSelected(true);
+                rih.MAJEdt(37,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 38:
                 semaine38.setSelected(true);
+                rih.MAJEdt(38,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 39:
                 semaine39.setSelected(true);
+                rih.MAJEdt(39,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 40:
                 semaine40.setSelected(true);
+                rih.MAJEdt(40,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 41:
                 semaine41.setSelected(true);
+                rih.MAJEdt(41,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 42:
                 semaine42.setSelected(true);
+                rih.MAJEdt(42,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 43:
                 semaine43.setSelected(true);
+                rih.MAJEdt(43,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 44:
                 semaine44.setSelected(true);
+                rih.MAJEdt(44,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 45:
                 semaine45.setSelected(true);
+                rih.MAJEdt(45,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 46:
                 semaine46.setSelected(true);
+                rih.MAJEdt(46,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 47:
                 semaine47.setSelected(true);
+                rih.MAJEdt(47,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 48:
                 semaine48.setSelected(true);
+                rih.MAJEdt(48,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 49:
                 semaine49.setSelected(true);
+                rih.MAJEdt(49,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 50:
                 semaine50.setSelected(true);
+                rih.MAJEdt(50,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             case 51:
                 semaine51.setSelected(true);
+                rih.MAJEdt(51,anneeEdtLabel,lundiLabel,mardiLabel,mercrediLabel,jeudiLabel, vendrediLabel, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, email, password);
                 break;
             default:
                 break;
