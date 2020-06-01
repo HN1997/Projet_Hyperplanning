@@ -1,5 +1,6 @@
 package package_modele;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -11,8 +12,26 @@ public class SeanceDAO extends DAO<Seance> {
     }
 
     @Override
-    public boolean create(Seance obj) {
-        return false;
+    public void create(Seance obj) {
+       PreparedStatement st = null;
+       try {
+           st = connect.prepareStatement("INSERT INTO `seance`(`ID_Seance`, `Semaine`, `Date`, `Heure_Debut`, `Heure_Fin`, `Status`, `R`, `V`, `B`, `ID_Cours`, `ID_Type`) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
+           st.setString(1,null);
+           st.setInt(2, obj.getSemaine());
+           st.setString(3, obj.getdate1());
+           st.setString(4, obj.getHeure_Debut1());
+           st.setString(5, obj.getHeure_Fin1());
+           st.setString(6, obj.getStatus());
+           st.setInt(7, obj.getR());
+           st.setInt(8, obj.getV());
+           st.setInt(9, obj.getB());
+           st.setInt(10, obj.getId_cours());
+           st.setInt(11, obj.getId_type());
+           
+           st.execute();
+       } catch (SQLException e) {
+           System.out.println(e.getMessage());
+       }
     }
 
     @Override

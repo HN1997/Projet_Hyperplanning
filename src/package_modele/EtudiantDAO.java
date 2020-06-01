@@ -9,8 +9,7 @@ public class EtudiantDAO extends DAO<Etudiant> {
     }
 
     @Override
-    public boolean create(Etudiant obj) {
-        return false;
+    public void create(Etudiant obj) {
     }
 
     @Override

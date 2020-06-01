@@ -14,8 +14,7 @@ public class GroupeDAO extends DAO<Groupe> {
     }
 
     @Override
-    public boolean create(Groupe obj) {
-        return false;
+    public void create(Groupe obj) {
     }
 
     @Override

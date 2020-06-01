@@ -19,8 +19,7 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
     }
 
     @Override
-    public boolean create(Utilisateur obj) {
-        return false;
+    public void create(Utilisateur obj) {
     }
 
     @Override
