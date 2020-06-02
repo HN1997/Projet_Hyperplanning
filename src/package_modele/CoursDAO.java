@@ -10,9 +10,7 @@ public class CoursDAO extends DAO<Cours> {
     }
 
     @Override
-    public void create(Cours cours) {
-
-}   
+    public void create(Cours cours) {}   
  
     @Override
     public boolean delete(Cours obj) {
@@ -23,7 +21,8 @@ public class CoursDAO extends DAO<Cours> {
     public boolean update(Cours obj) {
         return false;
     }
-
+    ////////////////////////////////////////////////// METHODE DE RECHERCHE AVEC EN PARAMETRE L'ID DU COURS RECUPERE ///////////////////////////////////////
+    
     @Override
     public Cours find(int id) {
         Cours cours = new Cours();

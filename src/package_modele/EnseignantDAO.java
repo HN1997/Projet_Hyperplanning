@@ -21,11 +21,12 @@ public class EnseignantDAO extends DAO<Enseignant> {
     public boolean update(Enseignant obj) {
         return false;
     }
+
+////////////////////////////////////////////////// METHODE PERMETTANT DE RECHERCHER UN ENSEIGANT EN FONCTION DE SON ID DANS LA TABLE ENSEIGNANT ///////////////////////////////////////
     
     @Override
     public Enseignant find(int id) {
         Enseignant cours = new Enseignant();
-
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -64,7 +65,9 @@ public class EnseignantDAO extends DAO<Enseignant> {
     public ArrayList<Integer> FindEtudiant() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
+////////////////////////////////////////////////// METHODE PERMETTANT DE RECHERCHER TOUS ENSEIGNANT DANS LA TABLE ENSEIGNANT /////////////////////////////////////
+    
     @Override
     public ArrayList<Integer> FindEnseignant() {
         ArrayList<Integer> Array = new ArrayList<>();
