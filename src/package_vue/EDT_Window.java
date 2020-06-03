@@ -2807,6 +2807,7 @@ public class EDT_Window extends javax.swing.JFrame {
 
     private void insererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insererButtonActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_insererButtonActionPerformed
 
     //Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda pour afficher l'edt
