@@ -98,7 +98,20 @@ public class Seance_GroupeDAO extends DAO<Seance_Groupe> {
 
     @Override
     public Seance_Groupe find(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Seance_Groupe cours = new Seance_Groupe();
+
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM seance_groupes WHERE ID_Seance= "+id);
+            if (result.first()) {
+                cours = new Seance_Groupe(
+                        id,
+                        result.getInt("ID_Groupe"));
+            }
+        } catch (SQLException e) {
+        }
+        return cours;
     }
 
     @Override
