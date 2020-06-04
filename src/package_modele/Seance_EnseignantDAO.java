@@ -144,5 +144,21 @@ public class Seance_EnseignantDAO extends DAO<Seance_Enseignant> {
     public int GetUniqID(int id, String Nom) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Seance_Enseignant find(int id, int id2, int id3) {
+        Seance_Enseignant cours = new Seance_Enseignant();
+
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM seance_enseignants WHERE ID_Seance='" + id + "' and ID_Utilisateur='" + id2 + "'");
+            if (result.first()) {
+                cours = new Seance_Enseignant(result.getInt("ID_Seance"), result.getInt("ID_Utilisateur"), result.getInt("ID_Cours"));
+            }
+        } catch (SQLException e) {
+        }
+        return cours;
+    }
     
 }

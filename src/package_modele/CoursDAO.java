@@ -45,7 +45,20 @@ public class CoursDAO extends DAO<Cours> {
 
     @Override
     public ArrayList<Integer> ComposerFindSeance(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList cours = new ArrayList();
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM cours WHERE ID_Cours= " + id);
+            if (result.first()) {
+                cours.add(result.getInt("ID_Cours"));
+                cours.add(result.getInt("R"));
+                cours.add(result.getInt("V"));
+                cours.add(result.getInt("B"));
+            }
+        } catch (SQLException e) {
+        }
+        return cours;
     }
 
     @Override
@@ -106,6 +119,11 @@ public class CoursDAO extends DAO<Cours> {
 
     @Override
     public int GetUniqID(int id, String Nom) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Cours find(int id, int id2, int id3) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
