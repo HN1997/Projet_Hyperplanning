@@ -8,6 +8,10 @@ public class Cours {
     protected int id;
     //Nom du cours
     protected String Nom;
+    
+    protected int R;
+    protected int V;
+    protected int B;
 
 /********************************************************** Mise en place des constructeurs***********************************************************************************/
     
@@ -71,5 +75,59 @@ public class Cours {
     public void setNom(String Nom)
     {
         this.Nom = Nom;
+    }
+    
+        /**
+     *
+     * @return
+     */
+    public int getR()
+    {
+        return R;
+    }
+    
+    /**
+     *
+     * @param R
+     */
+    public void setR(int R)
+    {
+        this.R = R;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public int getV()
+    {
+        return V;
+    }
+    
+    /**
+     *
+     * @param V
+     */
+    public void setV(int V)
+    {
+        this.V = V;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public int getB()
+    {
+        return B;
+    }
+    
+    /**
+     *
+     * @param B
+     */
+    public void setB(int B)
+    {
+        this.B = B;
     }
 }
