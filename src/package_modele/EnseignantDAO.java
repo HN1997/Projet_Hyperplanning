@@ -114,5 +114,10 @@ public class EnseignantDAO extends DAO<Enseignant> {
     public Enseignant find(int id, int id2, int id3) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public Enseignant find(int id, int id2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
   

@@ -160,5 +160,10 @@ public class Seance_EnseignantDAO extends DAO<Seance_Enseignant> {
         }
         return cours;
     }
+
+    @Override
+    public Seance_Enseignant find(int id, int id2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
