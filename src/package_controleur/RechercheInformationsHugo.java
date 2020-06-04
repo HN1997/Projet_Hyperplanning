@@ -1097,7 +1097,7 @@ public class RechercheInformationsHugo
                    //Boutton supprimer
                    JButton bouttonSupprimer = new JButton("Supprimer");
                    bouttonSupprimer.setBackground(ece);
-                   bouttonSupprimer.addActionListener(new SupprimerBoutton(list_id_seance.get(i)));
+                   bouttonSupprimer.addActionListener(new SupprimerBoutton(list_id_seance.get(i), user.getId(), idcours, numSemaine, jour, panel, email, password));
                    gbc.gridx = 0;
                    gbc.gridy = 6;
                    cours.add(bouttonSupprimer, gbc);
@@ -1113,12 +1113,29 @@ public class RechercheInformationsHugo
         }
     }
     
+    /** Listener pour supprimer un cours */
     public class SupprimerBoutton implements ActionListener
     {
         int idseance;
-        public SupprimerBoutton(int idseance)
+        int iduser;
+        int idcours;
+        
+        int numSemaine;
+        int jour;
+        JPanel panel; 
+        String email;
+        String password;
+        
+        public SupprimerBoutton(int idseance, int iduser, int idcours, int numSemaine, int jour, JPanel panel, String email, String password)
         {
             this.idseance = idseance;
+            this.iduser = iduser;
+            this.idcours = idcours;
+            this.numSemaine = numSemaine;
+            this.jour = jour;
+            this.panel = panel;
+            this.email = email;
+            this.password = password;
         }
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -1127,16 +1144,24 @@ public class RechercheInformationsHugo
                 //seance_enseignant, senace_groupe, seance_salle
                 
                 DAO<Seance_Enseignant> sed = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
-                Seance_Enseignant se = sed.find(idseance);
+                Seance_Enseignant se = sed.find(idseance, iduser, idcours);
                 sed.delete(se);
                 
+                DAO<Seance_Salle> ssd = new Seance_SalleDAO(ConnexionSQL.getInstance());
+                Seance_Salle ss = ssd.find(idseance);
+                ssd.delete(ss);
                 
+                /*
                 DAO<Seance> dao = new SeanceDAO(ConnexionSQL.getInstance());
                 Seance t = dao.find(idseance);
                 dao.delete(t);
+                */
             } catch (SQLException ex) {
                 Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            Empty(panel);
+            DrawPanelProfesseurSupprimer(numSemaine, jour, panel, email, password);
         }
         
     }
