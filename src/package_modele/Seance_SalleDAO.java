@@ -34,7 +34,17 @@ public class Seance_SalleDAO extends DAO<Seance_Salle> {
     }
 
     @Override
-    public void delete(Seance_Salle obj) {}
+    public void delete(Seance_Salle obj) {
+           PreparedStatement st = null;
+       try {
+           st = connect.prepareStatement("DELETE FROM `seance_salles` WHERE `ID_Seance`=?");
+           st.setInt(1,obj.getId_seance());
+           
+           st.execute();
+       } catch (SQLException e) {
+           System.out.println(e.getMessage());
+       }        
+    }
 
     @Override
     public void update(Seance_Salle obj) {
