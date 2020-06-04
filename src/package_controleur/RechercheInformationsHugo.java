@@ -141,6 +141,81 @@ public class RechercheInformationsHugo
         return result;
     }
     
+    /** fonction qui prend en argument 3 string dans l'ordre : jour mois annee, retourne un int qui est le num de semaine */
+    public int DateStringToNumSem(String jour, String mois, String annee)
+    {
+        int numSemaine = 0;
+        
+        int jourInt;
+        int moisInt = 0;
+        int anneeInt;
+        
+        try
+        {
+            jourInt = Integer.parseInt(jour);
+            if(mois.equalsIgnoreCase("Janvier"))
+            {
+                moisInt = 0;
+            }
+            else if(mois.equalsIgnoreCase("Février"))
+            {
+                moisInt = 1;
+            }
+            else if(mois.equalsIgnoreCase("Mars"))
+            {
+                moisInt = 2;
+            }
+            else if(mois.equalsIgnoreCase("Avril"))
+            {
+                moisInt = 3;
+            }
+            else if(mois.equalsIgnoreCase("Mai"))
+            {
+                moisInt = 4;
+            }
+            else if(mois.equalsIgnoreCase("Juin"))
+            {
+                moisInt = 5;
+            }
+            else if(mois.equalsIgnoreCase("Juillet"))
+            {
+                moisInt = 6;
+            }
+            else if(mois.equalsIgnoreCase("Août"))
+            {
+                moisInt = 7;
+            }
+            else if(mois.equalsIgnoreCase("Septembre"))
+            {
+                moisInt = 8;
+            }
+            else if(mois.equalsIgnoreCase("Octobre"))
+            {
+                moisInt = 9;
+            }
+            else if(mois.equalsIgnoreCase("Novembre"))
+            {
+                moisInt = 10;
+            }
+            else if(mois.equalsIgnoreCase("Décembre"))
+            {
+                moisInt = 11;
+            }
+            anneeInt = Integer.parseInt(annee);
+            
+            java.util.Date date = new GregorianCalendar(anneeInt, moisInt, jourInt).getTime();
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+            numSemaine = cal.get(Calendar.WEEK_OF_YEAR);
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Probleme conversion string en int : " + e.toString());
+        }
+        
+        return numSemaine;
+    }
+    
     //Cette méthode renvoie la semaine actuelle à laquelle on est
     public static int GetSemaine()
     {

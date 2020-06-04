@@ -39,7 +39,7 @@ public class Reporting
             pieSat.setValue("Four", new Integer(40));
             JFreeChart chart = ChartFactory.createPieChart("Pie chart", pieSat, true, true, true);
             ChartPanel barPanel = new ChartPanel(chart);
-            barPanel.setSize(500, 500);
+            barPanel.setSize(200, 200);
             barPanel.setBackground(new Color(153,153,153));
             barPanel.setLocation(0, 0);
             
