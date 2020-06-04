@@ -37,13 +37,15 @@ public class Reporting
             pieSat.setValue("Two", new Integer(20));
             pieSat.setValue("Three", new Integer(30));
             pieSat.setValue("Four", new Integer(40));
+            
+            RingPlot rp = new RingPlot(pieSat);
             JFreeChart chart = ChartFactory.createPieChart("Pie chart", pieSat, true, true, true);
             ChartPanel barPanel = new ChartPanel(chart);
             barPanel.setSize(200, 200);
             barPanel.setBackground(new Color(153,153,153));
             barPanel.setLocation(0, 0);
             
-            RingPlot rp;
+            
             
             
             panelToAddChart.removeAll();
