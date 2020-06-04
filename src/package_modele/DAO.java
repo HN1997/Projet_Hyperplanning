@@ -61,6 +61,14 @@ public abstract class DAO<T> {
      */
     public abstract T find(int id,int id2, int id3);
     
+     /**
+     *
+     * @param id
+     * @param id2
+     * @return
+     */
+    public abstract T find(int id,int id2);
+    
     /**
      *
      * @param id
