@@ -38,7 +38,7 @@ public class Cours {
 /********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
     
     /**
-     * Getteur pour récupérer l'ID du cours
+     * Récupére l'ID du cours
      * @return
      */
     public int getId()
@@ -47,7 +47,7 @@ public class Cours {
     }
     
     /**
-     * Setter pour affecter un ID au cours 
+     * Affecter une valeur à ID 
      * @param id
      */
     public void setId(int id)
@@ -56,7 +56,7 @@ public class Cours {
     }
     
     /**
-     *
+     *Récupére le nom du cours
      * @return
      */
     public String getNom()
@@ -65,7 +65,7 @@ public class Cours {
     }
     
     /**
-     *
+     *Affecte une valeur à nom 
      * @param Nom
      */
     public void setNom(String Nom)
