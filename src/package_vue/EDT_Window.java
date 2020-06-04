@@ -270,9 +270,7 @@ public class EDT_Window extends javax.swing.JFrame {
         topgestionnairePanel = new javax.swing.JPanel();
         topGestionnaireLabel = new javax.swing.JLabel();
         insererLabel = new javax.swing.JLabel();
-        supprimerLabel = new javax.swing.JLabel();
         modifierLabel = new javax.swing.JLabel();
-        separatorGEDT1 = new javax.swing.JSeparator();
         separatorGEDT2 = new javax.swing.JSeparator();
         gestionnaireContainerPanel = new javax.swing.JPanel();
         insererPanel = new javax.swing.JPanel();
@@ -317,8 +315,6 @@ public class EDT_Window extends javax.swing.JFrame {
         salleCB = new javax.swing.JComboBox<>();
         insererButton = new javax.swing.JButton();
         resumeInsertionLabel = new javax.swing.JLabel();
-        supprimerPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         modifierPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -1286,12 +1282,12 @@ public class EDT_Window extends javax.swing.JFrame {
         recapEdtRechercherButton.setText("Rechercher");
         recapEdtRechercherButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         recapEdtRechercherButton.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 recapEdtRechercherButtonAncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
-            }
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
         recapEdtRechercherButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1309,7 +1305,7 @@ public class EDT_Window extends javax.swing.JFrame {
             adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(adminRespoEdtPanelLayout.createSequentialGroup()
                 .addGroup(adminRespoEdtPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(trierparEdtLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
+                    .addComponent(trierparEdtLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1092, Short.MAX_VALUE)
                     .addGroup(adminRespoEdtPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(semainePickerCB, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1676,7 +1672,7 @@ public class EDT_Window extends javax.swing.JFrame {
             recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
                 .addGroup(recapPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(trierparRecapLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1088, Short.MAX_VALUE)
+                    .addComponent(trierparRecapLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1092, Short.MAX_VALUE)
                     .addGroup(recapPeriodeTriPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(recapSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1787,7 +1783,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 topReportingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(topReportingPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(ReportingLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 1086, Short.MAX_VALUE)
+                    .addComponent(ReportingLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
                     .addContainerGap())
             );
             topReportingPanel1Layout.setVerticalGroup(
@@ -1839,7 +1835,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 reportingPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(reportingPeriodeTriPanelLayout.createSequentialGroup()
                     .addGroup(reportingPeriodeTriPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(trierparReportingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1094, Short.MAX_VALUE)
+                        .addComponent(trierparReportingLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1098, Short.MAX_VALUE)
                         .addGroup(reportingPeriodeTriPanelLayout.createSequentialGroup()
                             .addContainerGap()
                             .addComponent(reportingSearch1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1926,17 +1922,6 @@ public class EDT_Window extends javax.swing.JFrame {
                 }
             });
 
-            supprimerLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
-            supprimerLabel.setForeground(new java.awt.Color(153, 153, 153));
-            supprimerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-            supprimerLabel.setText("Supprimer");
-            supprimerLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-            supprimerLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-                public void mouseClicked(java.awt.event.MouseEvent evt) {
-                    supprimerLabelMouseClicked(evt);
-                }
-            });
-
             modifierLabel.setFont(new java.awt.Font("Cambria", 1, 18)); // NOI18N
             modifierLabel.setForeground(new java.awt.Color(153, 153, 153));
             modifierLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -1948,10 +1933,6 @@ public class EDT_Window extends javax.swing.JFrame {
                 }
             });
 
-            separatorGEDT1.setBackground(new java.awt.Color(255, 255, 255));
-            separatorGEDT1.setForeground(new java.awt.Color(255, 255, 255));
-            separatorGEDT1.setOrientation(javax.swing.SwingConstants.VERTICAL);
-
             separatorGEDT2.setBackground(new java.awt.Color(255, 255, 255));
             separatorGEDT2.setForeground(new java.awt.Color(255, 255, 255));
             separatorGEDT2.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -1962,15 +1943,12 @@ public class EDT_Window extends javax.swing.JFrame {
                 topgestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                 .addComponent(topGestionnaireLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(topgestionnairePanelLayout.createSequentialGroup()
-                    .addComponent(insererLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(separatorGEDT1, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(supprimerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(insererLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(separatorGEDT2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(modifierLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(modifierLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 535, javax.swing.GroupLayout.PREFERRED_SIZE))
             );
             topgestionnairePanelLayout.setVerticalGroup(
                 topgestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1981,14 +1959,9 @@ public class EDT_Window extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(topgestionnairePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(insererLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(supprimerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(modifierLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(topgestionnairePanelLayout.createSequentialGroup()
-                                    .addGap(11, 11, 11)
-                                    .addComponent(separatorGEDT1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap())))
+                                .addComponent(modifierLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topgestionnairePanelLayout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                             .addComponent(separatorGEDT2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addContainerGap())))
             );
@@ -2347,30 +2320,6 @@ public class EDT_Window extends javax.swing.JFrame {
 
             gestionnaireContainerPanel.add(insererPanel, "card2");
 
-            supprimerPanel.setBackground(new java.awt.Color(153, 153, 153));
-            supprimerPanel.setForeground(new java.awt.Color(153, 153, 153));
-
-            jLabel2.setText("Supprimer test");
-
-            javax.swing.GroupLayout supprimerPanelLayout = new javax.swing.GroupLayout(supprimerPanel);
-            supprimerPanel.setLayout(supprimerPanelLayout);
-            supprimerPanelLayout.setHorizontalGroup(
-                supprimerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(supprimerPanelLayout.createSequentialGroup()
-                    .addGap(401, 401, 401)
-                    .addComponent(jLabel2)
-                    .addContainerGap(614, Short.MAX_VALUE))
-            );
-            supprimerPanelLayout.setVerticalGroup(
-                supprimerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(supprimerPanelLayout.createSequentialGroup()
-                    .addGap(74, 74, 74)
-                    .addComponent(jLabel2)
-                    .addContainerGap(712, Short.MAX_VALUE))
-            );
-
-            gestionnaireContainerPanel.add(supprimerPanel, "card3");
-
             modifierPanel.setBackground(new java.awt.Color(153, 153, 153));
             modifierPanel.setForeground(new java.awt.Color(153, 153, 153));
 
@@ -2383,7 +2332,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 .addGroup(modifierPanelLayout.createSequentialGroup()
                     .addGap(379, 379, 379)
                     .addComponent(jLabel3)
-                    .addContainerGap(650, Short.MAX_VALUE))
+                    .addContainerGap(654, Short.MAX_VALUE))
             );
             modifierPanelLayout.setVerticalGroup(
                 modifierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2488,10 +2437,7 @@ public class EDT_Window extends javax.swing.JFrame {
         insererBool = false;
         insererLabel.setForeground(new java.awt.Color(153, 153, 153));
         
-        supprimerPanel.setVisible(false);
-        supprimerPanel.setEnabled(false);
-        supprimerBool = false;
-        supprimerLabel.setForeground(new java.awt.Color(153, 153, 153));
+        
         
         modifierPanel.setVisible(false);
         modifierPanel.setEnabled(false);
@@ -2795,11 +2741,6 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
         clickItemGestionnaire(insererPanel, insererBool, insererLabel);
     }//GEN-LAST:event_insererLabelMouseClicked
-
-    private void supprimerLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_supprimerLabelMouseClicked
-        // TODO add your handling code here:
-        clickItemGestionnaire(supprimerPanel, supprimerBool, supprimerLabel);
-    }//GEN-LAST:event_supprimerLabelMouseClicked
 
     private void modifierLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifierLabelMouseClicked
         // TODO add your handling code here:
@@ -3311,7 +3252,6 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JButton insererButton;
     private javax.swing.JLabel insererLabel;
     private javax.swing.JPanel insererPanel;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
@@ -3425,12 +3365,9 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JToggleButton semaine9;
     private javax.swing.JComboBox<String> semainePickerCB;
     private javax.swing.JPanel semainePickerPanel;
-    private javax.swing.JSeparator separatorGEDT1;
     private javax.swing.JSeparator separatorGEDT2;
     private javax.swing.JComboBox<String> siteCB;
     private javax.swing.JLabel siteLabel;
-    private javax.swing.JLabel supprimerLabel;
-    private javax.swing.JPanel supprimerPanel;
     private javax.swing.JComboBox<String> tdCB1;
     private javax.swing.JComboBox<String> tdCB10;
     private javax.swing.JComboBox<String> tdCB2;
