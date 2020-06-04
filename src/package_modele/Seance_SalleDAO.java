@@ -34,9 +34,7 @@ public class Seance_SalleDAO extends DAO<Seance_Salle> {
     }
 
     @Override
-    public boolean delete(Seance_Salle obj) {
-        return false;
-    }
+    public void delete(Seance_Salle obj) {}
 
     @Override
     public void update(Seance_Salle obj) {

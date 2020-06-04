@@ -13,9 +13,7 @@ public class EnseignantDAO extends DAO<Enseignant> {
     }
 
     @Override
-    public boolean delete(Enseignant obj) {
-        return false;
-    }
+    public void delete(Enseignant obj) {}
 
     @Override
     public void update(Enseignant obj) {}

@@ -35,8 +35,16 @@ public class SeanceDAO extends DAO<Seance> {
     }
 
     @Override
-    public boolean delete(Seance obj) {
-        return false;
+    public void delete(Seance obj) {
+           PreparedStatement st = null;
+       try {
+           st = connect.prepareStatement("DELETE FROM `seance` WHERE `ID_Seance`=?");
+           st.setInt(1,obj.getId());
+           
+           st.execute();
+       } catch (SQLException e) {
+           System.out.println(e.getMessage());
+       }    
     }
 
     @Override

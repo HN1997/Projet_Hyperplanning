@@ -14,9 +14,7 @@ public class PromotionDAO extends DAO<Promotion> {
     }
 
     @Override
-    public boolean delete(Promotion obj) {
-        return false;
-    }
+    public void delete(Promotion obj) {}
 
     @Override
     public void update(Promotion obj) {}

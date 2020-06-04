@@ -34,9 +34,7 @@ public class Seance_GroupeDAO extends DAO<Seance_Groupe> {
     }
 
     @Override
-    public boolean delete(Seance_Groupe obj) {
-        return false;
-    }
+    public void delete(Seance_Groupe obj) {}
 
     @Override
     public void update(Seance_Groupe obj) {

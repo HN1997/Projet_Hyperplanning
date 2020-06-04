@@ -23,9 +23,7 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
     }
 
     @Override
-    public boolean delete(Utilisateur obj) {
-        return false;
-    }
+    public void delete(Utilisateur obj) {}
 
     @Override
     public void update(Utilisateur obj) {}

@@ -15,9 +15,7 @@ public class SalleDAO extends DAO<Salle> {
     }
 
     @Override
-    public boolean delete(Salle obj) {
-        return false;
-    }
+    public void delete(Salle obj) {}
 
     @Override
     public void update(Salle obj) {}

@@ -14,9 +14,7 @@ public class SiteDAO extends DAO<Site> {
     }
 
     @Override
-    public boolean delete(Site obj) {
-        return false;
-    }
+    public void delete(Site obj) {}
 
     @Override
     public void update(Site obj) {}

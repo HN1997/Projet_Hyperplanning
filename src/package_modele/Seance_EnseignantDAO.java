@@ -33,9 +33,7 @@ public class Seance_EnseignantDAO extends DAO<Seance_Enseignant> {
     }
 
     @Override
-    public boolean delete(Seance_Enseignant obj) {
-        return false;
-    }
+    public void delete(Seance_Enseignant obj) {}
 
     @Override
     public void update(Seance_Enseignant obj) {

@@ -18,9 +18,7 @@ public class GroupeDAO extends DAO<Groupe> {
     }
 
     @Override
-    public boolean delete(Groupe obj) {
-        return false;
-    }
+    public void delete(Groupe obj) {}
 
     @Override
     public void update(Groupe obj) {}
