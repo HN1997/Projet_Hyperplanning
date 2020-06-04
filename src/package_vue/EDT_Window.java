@@ -18,6 +18,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import package_controleur.RechercheInformationsHugo;
 import package_controleur.Rechercheinformations;
+import package_controleur.Reporting;
 
 /**
  *
@@ -42,6 +43,9 @@ public class EDT_Window extends javax.swing.JFrame {
     Rechercheinformations ri;
     RechercheInformationsHugo rih;
     
+    //////////// Variable Reporting ////////////
+    Reporting rep;
+    
     //Un etudiant
     String email1 = "anand.maisuria@edu.ece.fr"; 
     String password1 = "753";
@@ -59,8 +63,8 @@ public class EDT_Window extends javax.swing.JFrame {
     String password4 = "159"; 
     
     //Ce qui est utilise dans le programme
-    String email = email4;
-    String password = password4;
+    String email = email1;
+    String password = password1;
     
     //Fin variable Rechercheinformations ///////////////////
     
@@ -69,6 +73,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private void InitilisationUser()
     {
         rih = new RechercheInformationsHugo();
+        rep = new Reporting();
         RechercheInformationsHugo.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
         InitialiseSemaine(rih.GetSemaine()); //Selectionne la semaine actuelle
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, RechercheInformationsHugo.GetSemaine()); //maj des labels semaines 
@@ -98,6 +103,7 @@ public class EDT_Window extends javax.swing.JFrame {
             reportingPeriodeTriPanel.setEnabled(false);
             
             rih.MAJRecapPeriode(recapTable, email, password); //mise à jour de la jtable
+            rep.AfficheCours(email, password);
         }
         
         if(droitLabel.getText()=="Administrateur" || droitLabel.getText()=="Référent Pédagogique") //si c'est un admin ou ref ped, on change la fenetre de la semaine 
