@@ -1151,6 +1151,11 @@ public class RechercheInformationsHugo
                 Seance_Salle ss = ssd.find(idseance);
                 ssd.delete(ss);
                 
+                DAO<Seance_Groupe> sgd = new Seance_GroupeDAO(ConnexionSQL.getInstance());
+                ArrayList<Integer> list_id_groupe = sgd.ComposerFindGroupe(idseance);
+                
+                
+                
                 /*
                 DAO<Seance> dao = new SeanceDAO(ConnexionSQL.getInstance());
                 Seance t = dao.find(idseance);
@@ -1785,6 +1790,7 @@ public class RechercheInformationsHugo
                    //Boutton supprimer
                    JButton bouttonSupprimer = new JButton("Supprimer");
                    bouttonSupprimer.setBackground(ece);
+                   //bouttonSupprimer.addActionListener(new SupprimerBoutton(list_id_seance.get(i), user.getId(), idcours, numSemaine, jour, panel, email, password));
                    gbc.gridx = 0;
                    gbc.gridy = 6;
                    cours.add(bouttonSupprimer, gbc);
