@@ -18,6 +18,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import package_controleur.RechercheInformationsHugo;
 import package_controleur.Rechercheinformations;
+import package_controleur.Reporting;
 
 /**
  *
@@ -42,6 +43,9 @@ public class EDT_Window extends javax.swing.JFrame {
     Rechercheinformations ri;
     RechercheInformationsHugo rih;
     
+    //////////// Variable Reporting ////////////
+    Reporting rep;
+    
     //Un etudiant
     String email1 = "anand.maisuria@edu.ece.fr"; 
     String password1 = "753";
@@ -54,7 +58,7 @@ public class EDT_Window extends javax.swing.JFrame {
     String email3 = "hugo.navillod@edu.ece.fr"; 
     String password3 = "123"; 
     
-    //Un admin
+    //Un admin -- droit 1
     String email4 = "anand_maisuria@yahoo.fr"; 
     String password4 = "159"; 
     
@@ -69,6 +73,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private void InitilisationUser()
     {
         rih = new RechercheInformationsHugo();
+        rep = new Reporting();
         RechercheInformationsHugo.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
         InitialiseSemaine(rih.GetSemaine()); //Selectionne la semaine actuelle
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, RechercheInformationsHugo.GetSemaine()); //maj des labels semaines 
@@ -98,6 +103,7 @@ public class EDT_Window extends javax.swing.JFrame {
             reportingPeriodeTriPanel.setEnabled(false);
             
             rih.MAJRecapPeriode(recapTable, email, password); //mise à jour de la jtable
+            rep.AfficheCours(email, password, reportingResumePanel);
         }
         
         if(droitLabel.getText()=="Administrateur" || droitLabel.getText()=="Référent Pédagogique") //si c'est un admin ou ref ped, on change la fenetre de la semaine 
@@ -1279,6 +1285,15 @@ public class EDT_Window extends javax.swing.JFrame {
         recapEdtRechercherButton.setForeground(new java.awt.Color(57, 17, 45));
         recapEdtRechercherButton.setText("Rechercher");
         recapEdtRechercherButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recapEdtRechercherButton.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                recapEdtRechercherButtonAncestorAdded(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         recapEdtRechercherButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 recapEdtRechercherButtonActionPerformed(evt);
@@ -2816,8 +2831,8 @@ public class EDT_Window extends javax.swing.JFrame {
         rih.changeMessageErreur(recapMessageErreurEdt, recapEdtSearch2, recapEdtSearch3);
         
         //On affiche l'edt recherche
-        rih.dessineEtudiantProfesseur(recapEdtSearch, recapEdtSearch2, semainePickerCB, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, anneeEdtLabel); //cas d'un etudiant ou professeur, se fera automatiquement
-        rih.dessinePromotionSite(recapEdtSearch, recapEdtSearch2, recapEdtSearch3, semainePickerCB, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, anneeEdtLabel); //cas ou on fait une recherche par promotion ou site
+        rih.dessineEtudiantProfesseur(email, password, recapEdtSearch, recapEdtSearch2, semainePickerCB, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, anneeEdtLabel); //cas d'un etudiant ou professeur, se fera automatiquement
+        rih.dessinePromotionSite(email, password, recapEdtSearch, recapEdtSearch2, recapEdtSearch3, semainePickerCB, lundiDisplayPanel, mardiDisplayPanel, mercrediDisplayPanel, jeudiDisplayPanel, vendrediDisplayPanel, lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, anneeEdtLabel); //cas ou on fait une recherche par promotion ou site
     }//GEN-LAST:event_recapEdtRechercherButtonActionPerformed
 
     /////////////////////////// QUAND ON APPUIE SUR LES BOUTONS DES SEMAINES ///////////////////////////
@@ -3208,6 +3223,10 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
         rih.changeRecapPeriodeSearch(recapSearch1, recapSearch2);
     }//GEN-LAST:event_recapSearch1ActionPerformed
+
+    private void recapEdtRechercherButtonAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_recapEdtRechercherButtonAncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_recapEdtRechercherButtonAncestorAdded
 
    
     /////////////////////////// FIN QUAND ON FAIT UNE RECHERCHE SUR L'EDT (admin & ref ped) ///////////////////////////
