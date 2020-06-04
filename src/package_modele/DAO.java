@@ -27,17 +27,15 @@ public abstract class DAO<T> {
 
   /**
   * Méthode pour effacer
-  * @param obj
-  * @return boolean 
+  * @param obj 
   */
-  public abstract boolean delete(T obj);
+  public abstract void delete(T obj);
 
   /**
   * Méthode de mise à jour
   * @param obj
-  * @return boolean
   */
-  public abstract boolean update(T obj);
+  public abstract void update(T obj);
 
   /**
   * Méthode de recherche des informations

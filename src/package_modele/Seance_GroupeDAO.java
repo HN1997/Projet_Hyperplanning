@@ -34,13 +34,30 @@ public class Seance_GroupeDAO extends DAO<Seance_Groupe> {
     }
 
     @Override
-    public boolean delete(Seance_Groupe obj) {
-        return false;
+    public void delete(Seance_Groupe obj) {
+           PreparedStatement st = null;
+       try {
+           st = connect.prepareStatement("DELETE FROM `seance_groupes` WHERE `ID_Seance`=?");
+           st.setInt(1,obj.getId_seance());
+           
+           st.execute();
+       } catch (SQLException e) {
+           System.out.println(e.getMessage());
+       }        
     }
 
     @Override
-    public boolean update(Seance_Groupe obj) {
-        return false;
+    public void update(Seance_Groupe obj) {
+       PreparedStatement st;
+       try {
+           st = connect.prepareStatement("UPDATE `seance_groupes` SET `ID_Groupe`=? WHERE `ID_Seance`=?");
+           st.setInt(1, obj.getId_groupe());
+           st.setInt(2, obj.getId_seance());
+           
+           System.out.print(obj.getId_groupe()+"-"+obj.getId_seance());
+           st.executeUpdate();
+       } catch (SQLException e) {
+       }
     }
 
     @Override

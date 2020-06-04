@@ -12,7 +12,7 @@ public class Cours {
 /********************************************************** Mise en place des constructeurs***********************************************************************************/
     
     /**
-     *
+     *Constructeur de la class cours 
      * @param id
      * @param Nom
      */
@@ -23,7 +23,7 @@ public class Cours {
     }
     
     /**
-     *
+     *Constructeur de la class Cours avec en paramètre une variable de type cours
      * @param cours
      */
     public Cours(Cours cours)
@@ -32,13 +32,13 @@ public class Cours {
         this.Nom=cours.Nom;
     }
 
-    Cours() {
+    public Cours() {
     }
 
 /********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
     
     /**
-     *
+     * Récupére l'ID du cours
      * @return
      */
     public int getId()
@@ -47,7 +47,7 @@ public class Cours {
     }
     
     /**
-     *
+     * Affecter une valeur à ID 
      * @param id
      */
     public void setId(int id)
@@ -56,7 +56,7 @@ public class Cours {
     }
     
     /**
-     *
+     *Récupére le nom du cours
      * @return
      */
     public String getNom()
@@ -65,7 +65,7 @@ public class Cours {
     }
     
     /**
-     *
+     *Affecte une valeur à nom 
      * @param Nom
      */
     public void setNom(String Nom)

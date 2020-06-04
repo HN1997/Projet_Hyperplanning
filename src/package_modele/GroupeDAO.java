@@ -18,14 +18,10 @@ public class GroupeDAO extends DAO<Groupe> {
     }
 
     @Override
-    public boolean delete(Groupe obj) {
-        return false;
-    }
+    public void delete(Groupe obj) {}
 
     @Override
-    public boolean update(Groupe obj) {
-        return false;
-    }
+    public void update(Groupe obj) {}
 
     @Override
     public Groupe find(int id) {

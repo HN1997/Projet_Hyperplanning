@@ -14,14 +14,10 @@ public class PromotionDAO extends DAO<Promotion> {
     }
 
     @Override
-    public boolean delete(Promotion obj) {
-        return false;
-    }
+    public void delete(Promotion obj) {}
 
     @Override
-    public boolean update(Promotion obj) {
-        return false;
-    }
+    public void update(Promotion obj) {}
 
     @Override
     public Promotion find(int id) {

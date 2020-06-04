@@ -18,14 +18,10 @@ public class Type_CoursDAO extends DAO<Type_Cours> {
     }
 
     @Override
-    public boolean delete(Type_Cours obj) {
-        return false;
-    }
+    public void delete(Type_Cours obj) {}
 
     @Override
-    public boolean update(Type_Cours obj) {
-        return false;
-    }
+    public void update(Type_Cours obj) {}
 
     @Override
     public Type_Cours find(int id) {
@@ -93,7 +89,18 @@ public class Type_CoursDAO extends DAO<Type_Cours> {
 
     @Override
     public int ID(String nom) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int i = 0;
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `type_cours` WHERE `Nom`= " +"'" + nom+ "'");
+            if (result.first()) {
+//                System.out.print(result.getInt("ID_Promotion"));
+                i=result.getInt("ID_Type");
+            }
+        } catch (SQLException e) {
+        }
+        return i;
     }
 
     @Override

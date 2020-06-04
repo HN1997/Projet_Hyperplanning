@@ -80,7 +80,7 @@ public class Seance {
         this.B=seance.B;
     }
 
-    Seance() {
+    public Seance() {
     }
 
 /********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/

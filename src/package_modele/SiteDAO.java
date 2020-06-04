@@ -14,14 +14,10 @@ public class SiteDAO extends DAO<Site> {
     }
 
     @Override
-    public boolean delete(Site obj) {
-        return false;
-    }
+    public void delete(Site obj) {}
 
     @Override
-    public boolean update(Site obj) {
-        return false;
-    }
+    public void update(Site obj) {}
 
     @Override
     public Site find(int id) {

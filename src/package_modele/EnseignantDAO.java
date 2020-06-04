@@ -13,14 +13,10 @@ public class EnseignantDAO extends DAO<Enseignant> {
     }
 
     @Override
-    public boolean delete(Enseignant obj) {
-        return false;
-    }
+    public void delete(Enseignant obj) {}
 
     @Override
-    public boolean update(Enseignant obj) {
-        return false;
-    }
+    public void update(Enseignant obj) {}
 
 ////////////////////////////////////////////////// METHODE PERMETTANT DE RECHERCHER UN ENSEIGANT EN FONCTION DE SON ID DANS LA TABLE ENSEIGNANT ///////////////////////////////////////
     

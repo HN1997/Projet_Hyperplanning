@@ -13,14 +13,10 @@ public class CoursDAO extends DAO<Cours> {
     public void create(Cours cours) {}   
  
     @Override
-    public boolean delete(Cours obj) {
-        return false;
-    }
+    public void delete(Cours obj) {}
 
     @Override
-    public boolean update(Cours obj) {
-        return false;
-    }
+    public void update(Cours obj) {}
     ////////////////////////////////////////////////// METHODE DE RECHERCHE AVEC EN PARAMETRE L'ID DU COURS RECUPERE ///////////////////////////////////////
     
     @Override
@@ -89,7 +85,18 @@ public class CoursDAO extends DAO<Cours> {
 
     @Override
     public int ID(String nom) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int i = 0;
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `cours` WHERE `Nom`= " +"'" + nom+ "'");
+            if (result.first()) {
+//                System.out.print(result.getInt("ID_Promotion"));
+                i=result.getInt("ID_Cours");
+            }
+        } catch (SQLException e) {
+        }
+        return i;
     }
 
     @Override
