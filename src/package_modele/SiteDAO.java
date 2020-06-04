@@ -19,9 +19,7 @@ public class SiteDAO extends DAO<Site> {
     }
 
     @Override
-    public boolean update(Site obj) {
-        return false;
-    }
+    public void update(Site obj) {}
 
     @Override
     public Site find(int id) {

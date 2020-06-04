@@ -39,8 +39,17 @@ public class Seance_GroupeDAO extends DAO<Seance_Groupe> {
     }
 
     @Override
-    public boolean update(Seance_Groupe obj) {
-        return false;
+    public void update(Seance_Groupe obj) {
+       PreparedStatement st;
+       try {
+           st = connect.prepareStatement("UPDATE `seance_groupes` SET `ID_Groupe`=? WHERE `ID_Seance`=?");
+           st.setInt(1, obj.getId_groupe());
+           st.setInt(2, obj.getId_seance());
+           
+           System.out.print(obj.getId_groupe()+"-"+obj.getId_seance());
+           st.executeUpdate();
+       } catch (SQLException e) {
+       }
     }
 
     @Override

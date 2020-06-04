@@ -28,9 +28,7 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
     }
 
     @Override
-    public boolean update(Utilisateur obj) {
-        return false;
-    }
+    public void update(Utilisateur obj) {}
 
     @Override
     public Utilisateur find(String Email, String Passwd) {

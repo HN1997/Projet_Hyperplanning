@@ -35,9 +35,8 @@ public abstract class DAO<T> {
   /**
   * Méthode de mise à jour
   * @param obj
-  * @return boolean
   */
-  public abstract boolean update(T obj);
+  public abstract void update(T obj);
 
   /**
   * Méthode de recherche des informations

@@ -20,9 +20,7 @@ public class SalleDAO extends DAO<Salle> {
     }
 
     @Override
-    public boolean update(Salle obj) {
-        return false;
-    }
+    public void update(Salle obj) {}
 
     @Override
     public Salle find(int id) {

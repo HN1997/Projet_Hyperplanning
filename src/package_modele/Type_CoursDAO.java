@@ -23,9 +23,7 @@ public class Type_CoursDAO extends DAO<Type_Cours> {
     }
 
     @Override
-    public boolean update(Type_Cours obj) {
-        return false;
-    }
+    public void update(Type_Cours obj) {}
 
     @Override
     public Type_Cours find(int id) {

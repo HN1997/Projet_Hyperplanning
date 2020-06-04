@@ -18,9 +18,7 @@ public class EtudiantDAO extends DAO<Etudiant> {
     }
 
     @Override
-    public boolean update(Etudiant obj) {
-        return false;
-    }
+    public void update(Etudiant obj) {}
    
     @Override
     public Etudiant find(int id) {

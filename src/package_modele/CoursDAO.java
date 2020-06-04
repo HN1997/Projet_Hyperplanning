@@ -18,9 +18,7 @@ public class CoursDAO extends DAO<Cours> {
     }
 
     @Override
-    public boolean update(Cours obj) {
-        return false;
-    }
+    public void update(Cours obj) {}
     ////////////////////////////////////////////////// METHODE DE RECHERCHE AVEC EN PARAMETRE L'ID DU COURS RECUPERE ///////////////////////////////////////
     
     @Override
