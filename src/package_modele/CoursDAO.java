@@ -51,7 +51,6 @@ public class CoursDAO extends DAO<Cours> {
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
                     ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM cours WHERE ID_Cours= " + id);
             if (result.first()) {
-                cours.add(result.getInt("ID_Cours"));
                 cours.add(result.getInt("R"));
                 cours.add(result.getInt("V"));
                 cours.add(result.getInt("B"));
