@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.util.Locale;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.ChartPanel;
@@ -26,10 +27,11 @@ public class Reporting
     }
     
     /** Pour afficher les cours du reporting */
-    public void AfficheCours(String email, String password, JPanel panelToAddChart)
+    public void AfficheCours(String email, String password, JPanel panelToAddChart, JScrollPane jsp)
     {
-        
         String droit = rih.GetDroit(email, password);
+        int posx = 0;
+        int posy = 0;
         
         if(droit.equals("Etudiant"))
         {
@@ -37,25 +39,34 @@ public class Reporting
             
             for(int i = 0 ; i<10; i++)
             {
+                
                 DefaultPieDataset pieSat = new DefaultPieDataset();
-                pieSat.setValue("er", new Integer(80));
-                pieSat.setValue("re", new Integer(20));
+                pieSat.setValue("80", new Integer(80));
+                pieSat.setValue("20", new Integer(20));
                 JFreeChart chart = ChartFactory.createRingChart("Algo", pieSat, false, false, false);
                 ChartPanel barPanel = new ChartPanel(chart);
                 barPanel.setSize(250, 200);
                 barPanel.setBackground(new Color(153,153,153));
-                barPanel.setLocation(0, 200*i + 10);
+                barPanel.setLocation( posx , posy );
+                posx+=260;
+                if(posx%1040==0)
+                {
+                    posx=0;
+                    posy+=220;
+                }
                 panelToAddChart.add(barPanel);
+                jsp.setBounds(0, 0, 10, 10);
             }
             
             
             
             panelToAddChart.validate();
         }
+        
+        
         else if(droit.equals("Enseignant"))
         {
             
         }
-
     }
 }

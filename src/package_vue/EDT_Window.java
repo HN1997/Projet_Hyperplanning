@@ -103,7 +103,7 @@ public class EDT_Window extends javax.swing.JFrame {
             reportingPeriodeTriPanel.setEnabled(false);
             
             rih.MAJRecapPeriode(recapTable, email, password); //mise à jour de la jtable
-            rep.AfficheCours(email, password, reportingResumePanel);
+            rep.AfficheCours(email, password, reportingResumePanel2, jScrollPane1);
         }
         
         if(droitLabel.getText()=="Administrateur" || droitLabel.getText()=="Référent Pédagogique") //si c'est un admin ou ref ped, on change la fenetre de la semaine 
@@ -266,6 +266,8 @@ public class EDT_Window extends javax.swing.JFrame {
         reportingRechercherButton = new javax.swing.JButton();
         reportingMessageErreur = new javax.swing.JLabel();
         reportingResumePanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        reportingResumePanel2 = new javax.swing.JPanel();
         gestionnairePanel = new javax.swing.JPanel();
         topgestionnairePanel = new javax.swing.JPanel();
         topGestionnaireLabel = new javax.swing.JLabel();
@@ -1783,7 +1785,7 @@ public class EDT_Window extends javax.swing.JFrame {
                 topReportingPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(topReportingPanel1Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addComponent(ReportingLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, 1090, Short.MAX_VALUE)
+                    .addComponent(ReportingLabelTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addContainerGap())
             );
             topReportingPanel1Layout.setVerticalGroup(
@@ -1866,15 +1868,30 @@ public class EDT_Window extends javax.swing.JFrame {
             reportingResumePanel.setBackground(new java.awt.Color(153, 153, 153));
             reportingResumePanel.setForeground(new java.awt.Color(153, 153, 153));
 
+            jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+            javax.swing.GroupLayout reportingResumePanel2Layout = new javax.swing.GroupLayout(reportingResumePanel2);
+            reportingResumePanel2.setLayout(reportingResumePanel2Layout);
+            reportingResumePanel2Layout.setHorizontalGroup(
+                reportingResumePanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 1101, Short.MAX_VALUE)
+            );
+            reportingResumePanel2Layout.setVerticalGroup(
+                reportingResumePanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(0, 1997, Short.MAX_VALUE)
+            );
+
+            jScrollPane1.setViewportView(reportingResumePanel2);
+
             javax.swing.GroupLayout reportingResumePanelLayout = new javax.swing.GroupLayout(reportingResumePanel);
             reportingResumePanel.setLayout(reportingResumePanelLayout);
             reportingResumePanelLayout.setHorizontalGroup(
                 reportingResumePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
             );
             reportingResumePanelLayout.setVerticalGroup(
                 reportingResumePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 729, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
             );
 
             javax.swing.GroupLayout reportingPanelLayout = new javax.swing.GroupLayout(reportingPanel);
@@ -3253,6 +3270,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel insererLabel;
     private javax.swing.JPanel insererPanel;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
@@ -3304,6 +3322,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JPanel reportingPeriodeTriPanel;
     private javax.swing.JButton reportingRechercherButton;
     private javax.swing.JPanel reportingResumePanel;
+    private javax.swing.JPanel reportingResumePanel2;
     private javax.swing.JComboBox<String> reportingSearch1;
     private javax.swing.JComboBox<String> reportingSearch2;
     private javax.swing.JLabel resumeInsertionLabel;
