@@ -1918,6 +1918,267 @@ public class RechercheInformationsHugo
     {   
         for( int i = model.getRowCount() - 1; i >= 0; i-- ) {
             model.removeRow(i);
+        }
     }
-}
+    
+    
+    ///////////: PARTIE ADMIN
+    
+    
+    /** affiche les noms des profs selon le nombre qu on choisit */
+    public void afficheEnseignantCB(JComboBox nbrEns ,JComboBox ens1, JComboBox ens2, JComboBox ens3, JComboBox ens4, JComboBox ens5)
+    {
+       String nbEnsS = nbrEns.getSelectedItem().toString();
+        int nbEns = 1;
+        try
+        {
+            nbEns = Integer.parseInt(nbEnsS);
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Probleme conversion string en int : " + e.toString());
+        }
+        
+        ens2.setVisible(false);
+        ens3.setVisible(false);
+        ens4.setVisible(false);
+        ens5.setVisible(false);
+        
+        switch(nbEns)
+        {
+            case 1:
+                ens1.setVisible(true);
+                break;
+            case 2:
+                ens1.setVisible(true);
+                ens2.setVisible(true);
+                break;
+            case 3:
+                ens1.setVisible(true);
+                ens2.setVisible(true);
+                ens3.setVisible(true);
+                break;
+            case 4:
+                ens1.setVisible(true);
+                ens2.setVisible(true);
+                ens3.setVisible(true);
+                ens4.setVisible(true);
+                break;
+            case 5:
+                ens1.setVisible(true);
+                ens2.setVisible(true);
+                ens3.setVisible(true);
+                ens4.setVisible(true);
+                ens5.setVisible(true);
+                break;
+            
+        }
+    }
+    
+    /** affiche les noms des profs selon le nombre qu on choisit */
+    public void afficheTDCB(JComboBox nbrTd ,JComboBox td1, JComboBox td2, JComboBox td3, JComboBox td4, JComboBox td5, JComboBox td6, JComboBox td7, JComboBox td8, JComboBox td9, JComboBox td10)
+    {
+       String nbrTdS = nbrTd.getSelectedItem().toString();
+        int nbrTdInt = 1;
+        try
+        {
+            nbrTdInt = Integer.parseInt(nbrTdS);
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Probleme conversion string en int : " + e.toString());
+        }
+        
+        td1.setVisible(false);
+        td2.setVisible(false);
+        td3.setVisible(false);
+        td4.setVisible(false);
+        td5.setVisible(false);
+        td6.setVisible(false);
+        td7.setVisible(false);
+        td8.setVisible(false);
+        td9.setVisible(false);
+        td10.setVisible(false);
+        
+        switch(nbrTdInt)
+        {
+            case 1:
+                td1.setVisible(true);
+                break;
+            case 2:
+                td1.setVisible(true);
+                td2.setVisible(true);
+                break;
+            case 3:
+                td1.setVisible(true);
+                td2.setVisible(true);
+                td3.setVisible(true);
+                break;
+            case 4:
+                td1.setVisible(true);
+                td2.setVisible(true);
+                td3.setVisible(true);
+                td4.setVisible(true);
+                break;
+            case 5:
+                td1.setVisible(true);
+                td2.setVisible(true);
+                td3.setVisible(true);
+                td4.setVisible(true);
+                td5.setVisible(true);
+                break;
+            case 6:
+                td1.setVisible(true);
+                td2.setVisible(true);
+                td3.setVisible(true);
+                td4.setVisible(true);
+                td5.setVisible(true);
+                td6.setVisible(true);
+                break;
+            case 7:
+                td1.setVisible(true);
+                td2.setVisible(true);
+                td3.setVisible(true);
+                td4.setVisible(true);
+                td5.setVisible(true);
+                td6.setVisible(true);
+                td7.setVisible(true);
+                break;
+            case 8:
+                td1.setVisible(true);
+                td2.setVisible(true);
+                td3.setVisible(true);
+                td4.setVisible(true);
+                td5.setVisible(true);
+                td6.setVisible(true);
+                td7.setVisible(true);
+                td8.setVisible(true);
+                break;
+            case 9:
+                td1.setVisible(true);
+                td2.setVisible(true);
+                td3.setVisible(true);
+                td4.setVisible(true);
+                td5.setVisible(true);
+                td6.setVisible(true);
+                td7.setVisible(true);
+                td8.setVisible(true);
+                td9.setVisible(true);
+                break;
+            case 10:
+                td1.setVisible(true);
+                td2.setVisible(true);
+                td3.setVisible(true);
+                td4.setVisible(true);
+                td5.setVisible(true);
+                td6.setVisible(true);
+                td7.setVisible(true);
+                td8.setVisible(true);
+                td9.setVisible(true);
+                td10.setVisible(true);
+                break;
+        }
+    }
+    
+    public void UpdateNomsEnseignant(JComboBox ens1, JComboBox ens2, JComboBox ens3, JComboBox ens4, JComboBox ens5)
+    {
+        ens1.removeAllItems();
+        ens2.removeAllItems();
+        ens3.removeAllItems();
+        ens4.removeAllItems();
+        ens5.removeAllItems();
+        
+        try 
+        {
+            DAO<Enseignant> enseignantd = new EnseignantDAO(ConnexionSQL.getInstance());
+            ArrayList<Integer> enseignant = enseignantd.FindEnseignant();
+            for(int i=0; i<enseignant.size();i++)
+            {
+                DAO<Utilisateur> utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+                Utilisateur user = utilisateurd.find(enseignant.get(i));
+                String nomProf = user.getNom();
+                
+                ens1.addItem(nomProf);
+                ens2.addItem(nomProf);
+                ens3.addItem(nomProf);
+                ens4.addItem(nomProf);
+                ens5.addItem(nomProf);
+            }
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
+    
+    public void UpdateNomPromotion(JComboBox promotionInsererCB)
+    {
+        promotionInsererCB.removeAllItems();
+        
+        //Promotion
+        try 
+        {
+            DAO<Promotion> promotiond = new PromotionDAO(ConnexionSQL.getInstance());
+            ArrayList<Integer> id_promotions = promotiond.FindPromotion();
+            for(int i=0;i<id_promotions.size();i++)
+            {
+                Promotion promotion = promotiond.find(id_promotions.get(i));
+                String nomPromo = promotion.getNom();
+                promotionInsererCB.addItem(nomPromo);
+            }
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void ChangeTdNom(JComboBox promotionInserer, JComboBox td1, JComboBox td2, JComboBox td3, JComboBox td4, JComboBox td5, JComboBox td6, JComboBox td7, JComboBox td8, JComboBox td9, JComboBox td10)
+    {
+        td1.removeAllItems();
+        td2.removeAllItems();
+        td3.removeAllItems();
+        td4.removeAllItems();
+        td5.removeAllItems();
+        td6.removeAllItems();
+        td7.removeAllItems();
+        td8.removeAllItems();
+        td9.removeAllItems();
+        td10.removeAllItems();
+        
+        
+        String nomPromotion = promotionInserer.getSelectedItem().toString();
+        
+        
+        /*
+        try 
+        {
+            DAO<Promotion> promotiond = new PromotionDAO(ConnexionSQL.getInstance());
+            int id_promotion = promotiond.ID(nomPromotion);
+            
+            DAO<Groupe> grouped = new GroupeDAO(ConnexionSQL.getInstance());
+            ArrayList<String> nomTdsList = grouped.ListInfo(id_promotion);
+            for(int i=0;i<nomTdsList.size();i++)
+            {
+                
+                td1.addItem(nomTdsList.get(i));
+                td2.addItem(nomTdsList.get(i));
+                td3.addItem(nomTdsList.get(i));
+                td4.addItem(nomTdsList.get(i));
+                td5.addItem(nomTdsList.get(i));
+                td6.addItem(nomTdsList.get(i));
+                td7.addItem(nomTdsList.get(i));
+                td8.addItem(nomTdsList.get(i));
+                td9.addItem(nomTdsList.get(i));
+                td10.addItem(nomTdsList.get(i));
+            }
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        */
+    }
 }

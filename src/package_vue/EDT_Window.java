@@ -13,9 +13,11 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import package_controleur.MiseAJourDonnees;
 import package_controleur.RechercheInformationsHugo;
 import package_controleur.Rechercheinformations;
 import package_controleur.Reporting;
@@ -42,6 +44,7 @@ public class EDT_Window extends javax.swing.JFrame {
     //////////// Variable Rechercheinformations ////////////
     Rechercheinformations ri;
     RechercheInformationsHugo rih;
+    MiseAJourDonnees majDonnees;
     
     //////////// Variable Reporting ////////////
     Reporting rep;
@@ -74,6 +77,7 @@ public class EDT_Window extends javax.swing.JFrame {
     {
         rih = new RechercheInformationsHugo();
         rep = new Reporting();
+        majDonnees = new MiseAJourDonnees();
         RechercheInformationsHugo.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
         InitialiseSemaine(rih.GetSemaine()); //Selectionne la semaine actuelle
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, RechercheInformationsHugo.GetSemaine()); //maj des labels semaines 
@@ -92,6 +96,8 @@ public class EDT_Window extends javax.swing.JFrame {
             gestionnaireLabel.setEnabled(false);
             gestionnairePanel.setVisible(false);
             gestionnairePanel.setEnabled(false);
+            
+            
         }
         
         if(droitLabel.getText()=="Etudiant" || droitLabel.getText()=="Enseignant") //Si c'est un etudiant ou un enseignant on desactive la recherche dans reporting et recap période et on met a jour la jtable du recap periode
@@ -114,6 +120,23 @@ public class EDT_Window extends javax.swing.JFrame {
             adminRespoEdtPanel.setVisible(true);
             adminRespoEdtPanel.setEnabled(true);
         }
+        
+        //Partie admin
+        enseignantCB2.setVisible(false);
+        enseignantCB3.setVisible(false);
+        enseignantCB4.setVisible(false);
+        enseignantCB5.setVisible(false);
+        tdCB2.setVisible(false);
+        tdCB3.setVisible(false);
+        tdCB4.setVisible(false);
+        tdCB5.setVisible(false);
+        tdCB6.setVisible(false);
+        tdCB7.setVisible(false);
+        tdCB8.setVisible(false);
+        tdCB9.setVisible(false);
+        tdCB10.setVisible(false);
+        rih.UpdateNomsEnseignant(enseignantCB1, enseignantCB2, enseignantCB3, enseignantCB4, enseignantCB5);
+        rih.UpdateNomPromotion(promotionInsererCB);
     }
     
     //Fin initialisation du User
@@ -1998,7 +2021,7 @@ public class EDT_Window extends javax.swing.JFrame {
             jourLabel.setText("Jour : ");
 
             jourCB.setBackground(new java.awt.Color(0, 153, 153));
-            jourCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
+            jourCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31" }));
             jourCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             moisLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
@@ -2022,7 +2045,7 @@ public class EDT_Window extends javax.swing.JFrame {
             heureDebutlabel.setText("Heure de début : ");
 
             heureDebutCB.setBackground(new java.awt.Color(0, 153, 153));
-            heureDebutCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8:30", "8:35", "8:40", "8:45", "8:50", "8:55", "9:00", "9:05", "9:10", "9:15", "9:20", "9:25", "9:30", "9:35", "9:40", "9:45", "9:50", "9:55", "10:00", "10:05", "10:10", "10:15", "10:20", "10:25", "10:30", "10:35", "10:40", "10:45", "10:50", "10:55", "11:00", "11:05", "11:10", "11:15", "11:20", "11:25", "11:30", "11:35", "11:40", "11:45", "11:50", "11:55", "12:00", "12:05", "12:10", "12:15", "12:20", "12:25", "12:30", "12:35", "12:40", "12:45", "12:50", "12:55", "13:00", "13:05", "13:10", "13:15", "13:20", "13:25", "13:30", "13:35", "13:40", "13:45", "13:50", "13:55", "14:00", "14:05", "14:10", "14:15", "14:20", "14:25", "14:30", "14:35", "14:40", "14:45", "14:50", "14:55", "15:00", "15:05", "15:10", "15:15", "15:20", "15:25", "15:30", "15:35", "15:40", "15:45", "15:50", "15:55", "16:00", "16:05", "16:10", "16:15", "16:20", "16:25", "16:30", "16:35", "16:40", "16:45", "16:50", "16:55", "17:00", "17:05", "17:10", "17:15", "17:20", "17:25", "17:30", "17:35", "17:40", "17:45", "17:50", "17:55", "18:00", "18:05", "18:10", "18:15", "18:20", "18:25", "18:30", "18:35", "18:40", "18:45", "18:50", "18:55", "19:00" }));
+            heureDebutCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "08:30", "08:35", "08:40", "08:45", "08:50", "08:55", "09:00", "09:05", "09:10", "09:15", "09:20", "09:25", "09:30", "09:35", "09:40", "09:45", "09:50", "09:55", "10:00", "10:05", "10:10", "10:15", "10:20", "10:25", "10:30", "10:35", "10:40", "10:45", "10:50", "10:55", "11:00", "11:05", "11:10", "11:15", "11:20", "11:25", "11:30", "11:35", "11:40", "11:45", "11:50", "11:55", "12:00", "12:05", "12:10", "12:15", "12:20", "12:25", "12:30", "12:35", "12:40", "12:45", "12:50", "12:55", "13:00", "13:05", "13:10", "13:15", "13:20", "13:25", "13:30", "13:35", "13:40", "13:45", "13:50", "13:55", "14:00", "14:05", "14:10", "14:15", "14:20", "14:25", "14:30", "14:35", "14:40", "14:45", "14:50", "14:55", "15:00", "15:05", "15:10", "15:15", "15:20", "15:25", "15:30", "15:35", "15:40", "15:45", "15:50", "15:55", "16:00", "16:05", "16:10", "16:15", "16:20", "16:25", "16:30", "16:35", "16:40", "16:45", "16:50", "16:55", "17:00", "17:05", "17:10", "17:15", "17:20", "17:25", "17:30", "17:35", "17:40", "17:45", "17:50", "17:55", "18:00", "18:05", "18:10", "18:15", "18:20", "18:25", "18:30", "18:35", "18:40", "18:45", "18:50", "18:55", "19:00" }));
             heureDebutCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             heureFinlabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
@@ -2038,7 +2061,7 @@ public class EDT_Window extends javax.swing.JFrame {
             typeCoursLabel.setText("Type de cours : ");
 
             typeCoursCB.setBackground(new java.awt.Color(0, 153, 153));
-            typeCoursCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CM", "TD", "TP", "Soutien", "Reunion", "Conférence" }));
+            typeCoursCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Magistral", "TD", "TP", "Soutien", "Reunion", "Conference" }));
             typeCoursCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             nbrEnseignantLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
@@ -2048,6 +2071,11 @@ public class EDT_Window extends javax.swing.JFrame {
             nbrEnseignantCB.setBackground(new java.awt.Color(0, 153, 153));
             nbrEnseignantCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
             nbrEnseignantCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            nbrEnseignantCB.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    nbrEnseignantCBActionPerformed(evt);
+                }
+            });
 
             virguleEnseignantLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
             virguleEnseignantLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -2078,8 +2106,13 @@ public class EDT_Window extends javax.swing.JFrame {
             promotionInsererLabel.setText("Promotion :");
 
             promotionInsererCB.setBackground(new java.awt.Color(0, 153, 153));
-            promotionInsererCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ING1", "ING2", "ING3", "ING4", "ING5" }));
+            promotionInsererCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ING3" }));
             promotionInsererCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            promotionInsererCB.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    promotionInsererCBActionPerformed(evt);
+                }
+            });
 
             nbrGroupeLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
             nbrGroupeLabel.setForeground(new java.awt.Color(255, 255, 255));
@@ -2088,6 +2121,11 @@ public class EDT_Window extends javax.swing.JFrame {
             nbrGroupeCB.setBackground(new java.awt.Color(0, 153, 153));
             nbrGroupeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
             nbrGroupeCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            nbrGroupeCB.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    nbrGroupeCBActionPerformed(evt);
+                }
+            });
 
             virguleEnseignantLabel1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
             virguleEnseignantLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -2198,36 +2236,36 @@ public class EDT_Window extends javax.swing.JFrame {
                             .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(resumeInsertionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, insererPanelLayout.createSequentialGroup()
-                                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addGroup(insererPanelLayout.createSequentialGroup()
                                             .addComponent(nbrEnseignantLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(nbrEnseignantCB, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(19, 19, 19))
+                                        .addGroup(insererPanelLayout.createSequentialGroup()
+                                            .addComponent(anneeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(nbrEnseignantCB, 0, 100, Short.MAX_VALUE))
-                                        .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addGroup(insererPanelLayout.createSequentialGroup()
-                                                .addComponent(anneeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(anneeCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                            .addGroup(insererPanelLayout.createSequentialGroup()
-                                                .addComponent(heureDebutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(heureDebutCB, 0, 100, Short.MAX_VALUE))
-                                            .addGroup(insererPanelLayout.createSequentialGroup()
-                                                .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(typeCoursLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(heureFinlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(heureFinCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(typeCoursCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                            .addGroup(insererPanelLayout.createSequentialGroup()
-                                                .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(moisLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jourLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jourCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(moisCB, 0, 100, Short.MAX_VALUE)))))
+                                            .addComponent(anneeCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(insererPanelLayout.createSequentialGroup()
+                                            .addComponent(heureDebutlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(heureDebutCB, 0, 100, Short.MAX_VALUE))
+                                        .addGroup(insererPanelLayout.createSequentialGroup()
+                                            .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(typeCoursLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(heureFinlabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(heureFinCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(typeCoursCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addGroup(insererPanelLayout.createSequentialGroup()
+                                            .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(moisLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jourLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jourCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(moisCB, 0, 100, Short.MAX_VALUE))))
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(virguleEnseignantLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2242,42 +2280,40 @@ public class EDT_Window extends javax.swing.JFrame {
                                     .addComponent(enseignantCB5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(14, 14, 14))
                         .addGroup(insererPanelLayout.createSequentialGroup()
-                            .addComponent(insererButton)
-                            .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, insererPanelLayout.createSequentialGroup()
-                            .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(nomDuCoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(nomDuCoursTextField)
+                            .addGap(808, 808, 808))
+                        .addGroup(insererPanelLayout.createSequentialGroup()
+                            .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(insererButton)
                                 .addGroup(insererPanelLayout.createSequentialGroup()
-                                    .addComponent(nomDuCoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(nomDuCoursTextField)
-                                    .addGap(172, 172, 172))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, insererPanelLayout.createSequentialGroup()
                                     .addComponent(nbrGroupeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(nbrGroupeCB, 0, 100, Short.MAX_VALUE)
+                                    .addComponent(nbrGroupeCB, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(virguleEnseignantLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(tdCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(tdCB2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(34, 34, 34))))
+                                    .addComponent(tdCB2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tdCB3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tdCB4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tdCB5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tdCB6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tdCB7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tdCB8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tdCB9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tdCB10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(0, 0, Short.MAX_VALUE))))
             );
             insererPanelLayout.setVerticalGroup(
                 insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2799,6 +2835,7 @@ public class EDT_Window extends javax.swing.JFrame {
 
     private void insererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insererButtonActionPerformed
         // TODO add your handling code here:
+        majDonnees.Insertion(jourCB, moisCB, anneeCB, heureDebutCB, heureFinCB, typeCoursCB, nbrEnseignantCB, enseignantCB1, enseignantCB2, enseignantCB3, enseignantCB4, enseignantCB5, promotionInsererCB, nbrGroupeCB, tdCB1, tdCB2, tdCB3, tdCB4, tdCB5, tdCB6, tdCB7, tdCB8, tdCB8, tdCB10, siteCB, salleCB, nomDuCoursTextField); 
         
     }//GEN-LAST:event_insererButtonActionPerformed
 
@@ -3204,6 +3241,22 @@ public class EDT_Window extends javax.swing.JFrame {
     private void recapEdtRechercherButtonAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_recapEdtRechercherButtonAncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_recapEdtRechercherButtonAncestorAdded
+
+    
+    private void nbrEnseignantCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nbrEnseignantCBActionPerformed
+        // TODO add your handling code here:
+        rih.afficheEnseignantCB(nbrEnseignantCB, enseignantCB1, enseignantCB2, enseignantCB3, enseignantCB4, enseignantCB5);
+    }//GEN-LAST:event_nbrEnseignantCBActionPerformed
+
+    private void nbrGroupeCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nbrGroupeCBActionPerformed
+        // TODO add your handling code here:
+        rih.afficheTDCB(nbrGroupeCB, tdCB1, tdCB2,tdCB3,tdCB4,tdCB5,tdCB6,tdCB7,tdCB8,tdCB9,tdCB10);
+    }//GEN-LAST:event_nbrGroupeCBActionPerformed
+
+    private void promotionInsererCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_promotionInsererCBActionPerformed
+        // TODO add your handling code here:
+        rih.ChangeTdNom(promotionInsererCB, tdCB1, tdCB2, tdCB3, tdCB4, tdCB5, tdCB6, tdCB7, tdCB8, tdCB9, tdCB10);
+    }//GEN-LAST:event_promotionInsererCBActionPerformed
 
    
     /////////////////////////// FIN QUAND ON FAIT UNE RECHERCHE SUR L'EDT (admin & ref ped) ///////////////////////////
