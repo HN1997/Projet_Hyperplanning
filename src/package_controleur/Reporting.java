@@ -28,33 +28,34 @@ public class Reporting
     /** Pour afficher les cours du reporting */
     public void AfficheCours(String email, String password, JPanel panelToAddChart)
     {
+        
         String droit = rih.GetDroit(email, password);
         
         if(droit.equals("Etudiant"))
         {
-            DefaultPieDataset pieSat = new DefaultPieDataset();
-            pieSat.setValue("One", new Integer(10));
-            pieSat.setValue("Two", new Integer(20));
-            pieSat.setValue("Three", new Integer(30));
-            pieSat.setValue("Four", new Integer(40));
-            
-            RingPlot rp = new RingPlot(pieSat);
-            JFreeChart chart = ChartFactory.createPieChart("Pie chart", pieSat, true, true, true);
-            ChartPanel barPanel = new ChartPanel(chart);
-            barPanel.setSize(200, 200);
-            barPanel.setBackground(new Color(153,153,153));
-            barPanel.setLocation(0, 0);
-            
-            
-            
-            
             panelToAddChart.removeAll();
-            panelToAddChart.add(barPanel);
+            
+            for(int i = 0 ; i<10; i++)
+            {
+                DefaultPieDataset pieSat = new DefaultPieDataset();
+                pieSat.setValue("er", new Integer(80));
+                pieSat.setValue("re", new Integer(20));
+                JFreeChart chart = ChartFactory.createRingChart("Algo", pieSat, false, false, false);
+                ChartPanel barPanel = new ChartPanel(chart);
+                barPanel.setSize(250, 200);
+                barPanel.setBackground(new Color(153,153,153));
+                barPanel.setLocation(0, 200*i + 10);
+                panelToAddChart.add(barPanel);
+            }
+            
+            
+            
             panelToAddChart.validate();
         }
         else if(droit.equals("Enseignant"))
         {
             
         }
+
     }
 }
