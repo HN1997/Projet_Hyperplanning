@@ -317,6 +317,8 @@ public class EDT_Window extends javax.swing.JFrame {
         salleCB = new javax.swing.JComboBox<>();
         insererButton = new javax.swing.JButton();
         resumeInsertionLabel = new javax.swing.JLabel();
+        nomDuCoursLabel = new javax.swing.JLabel();
+        nomDuCoursTextField = new javax.swing.JTextField();
         modifierPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -2163,6 +2165,12 @@ public class EDT_Window extends javax.swing.JFrame {
             resumeInsertionLabel.setText("Vous venez d'ajouter le cours suivant :");
             resumeInsertionLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+            nomDuCoursLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+            nomDuCoursLabel.setForeground(new java.awt.Color(255, 255, 255));
+            nomDuCoursLabel.setText("Nom du cours:");
+
+            nomDuCoursTextField.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
+
             javax.swing.GroupLayout insererPanelLayout = new javax.swing.GroupLayout(insererPanel);
             insererPanel.setLayout(insererPanelLayout);
             insererPanelLayout.setHorizontalGroup(
@@ -2176,33 +2184,6 @@ public class EDT_Window extends javax.swing.JFrame {
                             .addComponent(promotionInsererCB, 0, 100, Short.MAX_VALUE)
                             .addGap(814, 814, 814))
                         .addGroup(insererPanelLayout.createSequentialGroup()
-                            .addComponent(nbrGroupeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nbrGroupeCB, 0, 100, Short.MAX_VALUE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(virguleEnseignantLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tdCB10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(34, 34, 34))
-                        .addGroup(insererPanelLayout.createSequentialGroup()
                             .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(insererPanelLayout.createSequentialGroup()
                                     .addComponent(siteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2213,9 +2194,6 @@ public class EDT_Window extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(salleCB, 0, 100, Short.MAX_VALUE)))
                             .addGap(814, 814, 814))
-                        .addGroup(insererPanelLayout.createSequentialGroup()
-                            .addComponent(insererButton)
-                            .addGap(0, 0, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, insererPanelLayout.createSequentialGroup()
                             .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(resumeInsertionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2262,7 +2240,44 @@ public class EDT_Window extends javax.swing.JFrame {
                                     .addComponent(enseignantCB4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(enseignantCB5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGap(14, 14, 14))))
+                            .addGap(14, 14, 14))
+                        .addGroup(insererPanelLayout.createSequentialGroup()
+                            .addComponent(insererButton)
+                            .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, insererPanelLayout.createSequentialGroup()
+                            .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(insererPanelLayout.createSequentialGroup()
+                                    .addComponent(nomDuCoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(nomDuCoursTextField)
+                                    .addGap(172, 172, 172))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, insererPanelLayout.createSequentialGroup()
+                                    .addComponent(nbrGroupeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(nbrGroupeCB, 0, 100, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(virguleEnseignantLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tdCB1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(tdCB2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB5, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB7, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB8, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(tdCB10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(34, 34, 34))))
             );
             insererPanelLayout.setVerticalGroup(
                 insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2328,11 +2343,15 @@ public class EDT_Window extends javax.swing.JFrame {
                     .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(salleLabel)
                         .addComponent(salleCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(nomDuCoursLabel)
+                        .addComponent(nomDuCoursTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(18, 18, 18)
                     .addComponent(insererButton)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(resumeInsertionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)
-                    .addGap(216, 216, 216))
+                    .addGap(30, 30, 30)
+                    .addComponent(resumeInsertionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addGap(162, 162, 162))
             );
 
             gestionnaireContainerPanel.add(insererPanel, "card2");
@@ -3295,6 +3314,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> nbrGroupeCB;
     private javax.swing.JLabel nbrGroupeLabel;
     private javax.swing.JLabel neufLabel;
+    private javax.swing.JLabel nomDuCoursLabel;
+    private javax.swing.JTextField nomDuCoursTextField;
     private javax.swing.JLabel onzeLabel;
     private javax.swing.JComboBox<String> promotionInsererCB;
     private javax.swing.JLabel promotionInsererLabel;
