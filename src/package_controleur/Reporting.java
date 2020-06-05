@@ -28,7 +28,7 @@ public class Reporting
     /** Pour afficher les cours du reporting */
     public void AfficheCours(String email, String password, JPanel panelToAddChart)
     {
-        /*
+        
         String droit = rih.GetDroit(email, password);
         
         if(droit.equals("Etudiant"))
@@ -56,6 +56,6 @@ public class Reporting
         {
             
         }
-*/
+
     }
 }
