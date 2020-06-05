@@ -88,7 +88,18 @@ public class GroupeDAO extends DAO<Groupe> {
 
     @Override
     public int ID(String nom) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int i = 0;
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM groupe WHERE Nom='" + nom );
+            while (result.next()) {
+//                System.out.println(result.getInt("ID_Seance"));
+                i = result.getInt("ID_Groupe");
+            }
+        } catch (SQLException e) {
+        }
+        return i;
     }
 
     @Override
