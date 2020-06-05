@@ -1,20 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package package_controleur;
 
 import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.Locale;
+import package_modele.ConnexionSQL;
 
-/**
- *
- * @author ShadowZeus
- */
-public class MainTest {
-
-    public static void main(String[] args) throws SQLException {
-       System.out.println(Rechercheinformations.GetPrenomNom("anand_maisuria@yahoo.fr", "159"));
+public class MainTest 
+{
+    public static void main(String[] args)
+    {
+       // RechercheInformations ri = new RechercheInformations();
+        
+       // ri.Insertion("POO Java", "18", "05", "2020", " ", String hfin, String type, String nbenseignant, String promo, String nbdegroup, String salle, String site)
+        
     }
-
 }
