@@ -2149,7 +2149,7 @@ public class RechercheInformationsHugo
         td10.removeAllItems();
         
         
-        String nomPromotion = promotionInserer.getSelectedItem().toString();
+        //String nomPromotion = promotionInserer.getSelectedItem().toString();
         
         
         /*
