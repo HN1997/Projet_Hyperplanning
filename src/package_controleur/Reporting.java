@@ -171,7 +171,7 @@ public class Reporting
                     
                     DefaultPieDataset pieSat = new DefaultPieDataset();
                     pieSat.setValue(String.valueOf(nbrMinEffectuePourcentage) + "% Effectuée", new Integer(nbrMinEffectuePourcentage));
-                    pieSat.setValue(String.valueOf(nbrTotalEffectuePourcentage) + "% Total", new Integer(nbrTotalEffectuePourcentage));
+                    pieSat.setValue(String.valueOf(nbrTotalEffectuePourcentage) + "% Restant", new Integer(nbrTotalEffectuePourcentage));
                     JFreeChart chart = ChartFactory.createRingChart(nomCoursJFC, pieSat, false, false, false);
                     ChartPanel barPanel = new ChartPanel(chart);
                     barPanel.setSize(250, 200);

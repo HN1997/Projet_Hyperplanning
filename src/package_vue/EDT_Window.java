@@ -12,6 +12,7 @@ import java.util.Calendar;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.AbstractTableModel;
@@ -66,8 +67,8 @@ public class EDT_Window extends javax.swing.JFrame {
     String password4 = "159"; 
     
     //Ce qui est utilise dans le programme
-    String email = email4;
-    String password = password4;
+    String email = email2;
+    String password = password2;
     
     //Fin variable Rechercheinformations ///////////////////
     
@@ -139,6 +140,8 @@ public class EDT_Window extends javax.swing.JFrame {
         rih.UpdateNomPromotion(promotionInsererCB);
         rih.UpdateSiteCB(siteCB);
         rih.UpdateNomsDesCours(salleCB1);
+        
+        rih.changeRecapPeriodeSearch(reportingSearch1, reportingSearch2);
     }
     
     //Fin initialisation du User
@@ -1835,8 +1838,13 @@ public class EDT_Window extends javax.swing.JFrame {
             reportingSearch1.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
             reportingSearch1.setForeground(new java.awt.Color(255, 255, 255));
             reportingSearch1.setMaximumRowCount(50);
-            reportingSearch1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enseignant", "Etudiant", "Promotion", "Site" }));
+            reportingSearch1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Enseignant", "Etudiant" }));
             reportingSearch1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            reportingSearch1.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    reportingSearch1ActionPerformed(evt);
+                }
+            });
 
             reportingSearch2.setBackground(new java.awt.Color(0, 153, 153));
             reportingSearch2.setFont(new java.awt.Font("Cambria", 1, 12)); // NOI18N
@@ -2831,7 +2839,9 @@ public class EDT_Window extends javax.swing.JFrame {
     //Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda dans le reporting
     private void reportingRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportingRechercherButtonActionPerformed
         //On update le message d'erreur - recherche reussi ou non
-        
+        String emailRep = rih.RecupEmailPassword(reportingSearch2).get(0);
+        String passwordRep = rih.RecupEmailPassword(reportingSearch2).get(1);
+        rep.AfficheCours(emailRep, passwordRep, reportingResumePanel2, jScrollPane1);
     }//GEN-LAST:event_reportingRechercherButtonActionPerformed
 
     private void insererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insererButtonActionPerformed
@@ -3264,6 +3274,11 @@ public class EDT_Window extends javax.swing.JFrame {
         // TODO add your handling code here:
         rih.UpdateNomSalles(siteCB, salleCB);
     }//GEN-LAST:event_siteCBActionPerformed
+
+    private void reportingSearch1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportingSearch1ActionPerformed
+        // TODO add your handling code here:
+        rih.changeRecapPeriodeSearch(reportingSearch1, reportingSearch2);
+    }//GEN-LAST:event_reportingSearch1ActionPerformed
 
    
     /////////////////////////// FIN QUAND ON FAIT UNE RECHERCHE SUR L'EDT (admin & ref ped) ///////////////////////////

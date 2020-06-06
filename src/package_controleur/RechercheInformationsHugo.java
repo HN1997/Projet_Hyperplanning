@@ -1913,6 +1913,30 @@ public class RechercheInformationsHugo
         
     }
     
+    /** a partir d'une jcombobox recup l'email et le password */
+    public ArrayList<String> RecupEmailPassword(JComboBox prenomNom)
+    {
+        ArrayList<String> emailPassword = new ArrayList<>();
+        
+        String prenomNomString = (String)prenomNom.getSelectedItem();
+        String[] splitted = prenomNomString.split("\\s+");
+        String prenom = splitted[0];
+        String nom = splitted[1];
+        
+        try 
+        {
+            DAO<Utilisateur> user = new UtilisateurDAO(ConnexionSQL.getInstance());
+            emailPassword = user.FindEmailPasswd(nom,prenom); //premier element email, deuxieme mot de passe
+            
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return emailPassword;
+    }
+    
     /** Fonction pour vider une jtable, sauf l'entete */
     public static void deleteAllRows(final DefaultTableModel model) 
     {   
