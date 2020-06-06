@@ -148,7 +148,7 @@ public class CoursDAO extends DAO<Cours> {
     }
 
     @Override
-    public Seance GetSeanceInfo(int id, String Nom) {
+    public Seance GetSeanceInfo(int id, Date date) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

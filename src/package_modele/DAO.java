@@ -1,5 +1,6 @@
 package package_modele;
 import java.sql.Connection;
+import java.sql.Date;
 import java.util.ArrayList;
 
 /**
@@ -155,10 +156,10 @@ public abstract class DAO<T> {
     /**
      *
      * @param id
-     * @param Nom
+     * @param date
      * @return
      */
-    public abstract Seance GetSeanceInfo (int id, String Nom);
+    public abstract Seance GetSeanceInfo (int id, Date date);
 
 }
     
