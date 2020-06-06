@@ -642,6 +642,33 @@ public class MiseAJourDonnees
            
            //Creation d'une seance
            Seance seance = new Seance();
+           boolean CheckCreationOk = true;
+           int random = 1;
+           do
+           {
+               random = (int)(Math.random()* 30001); //nbr aleat entre 1 et 30 000
+               try 
+               {
+                   DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
+                   Seance seance2 = seanced.find(random);
+                   if(seance2.getId() != 0) //si il existe deja une seance
+                   {
+                       CheckCreationOk = true;
+                   }
+                   else
+                   {
+                       CheckCreationOk = false;
+                   }
+               } 
+               catch (SQLException ex) 
+               {
+                   Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+               }
+               
+               seance.setId(5000);
+           }while(CheckCreationOk == true);
+           
+           seance.setId(random);
            seance.setSemaine(numSemaine);
            seance.setdate(date);
            seance.setHeure_Debut(hdebutStringBDD);
@@ -652,6 +679,7 @@ public class MiseAJourDonnees
            seance.setB(bleu);
            seance.setId_cours(id_cours);
            seance.setId_type(id_typeBDD);
+           
            try 
            {
                DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
@@ -664,8 +692,8 @@ public class MiseAJourDonnees
                Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
            }
            
-           //Creation d'une seance enseignant
-               
+            //Creation d'une seance enseignant
+            //Seance_Enseignant seance_enseignant = new Seance_Enseignant();
                
            //Creation d'une seance groupe
                
