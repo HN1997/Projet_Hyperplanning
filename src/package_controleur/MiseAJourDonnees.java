@@ -16,6 +16,7 @@ import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 
@@ -35,29 +36,29 @@ public class MiseAJourDonnees
         String mois2 = "";
         
         if (mois.equalsIgnoreCase("Janvier")) {
-            mois = "01";
+            mois2 = "01";
         } else if (mois.equalsIgnoreCase("Février")) {
-            mois = "02";
+            mois2 = "02";
         } else if (mois.equalsIgnoreCase("Mars")) {
-            mois = "03";
+            mois2 = "03";
         } else if (mois.equalsIgnoreCase("Avril")) {
-            mois = "04";
+            mois2 = "04";
         } else if (mois.equalsIgnoreCase("Mai")) {
-            mois = "05";
+            mois2 = "05";
         } else if (mois.equalsIgnoreCase("Juin")) {
-            mois = "06";
+            mois2 = "06";
         } else if (mois.equalsIgnoreCase("Juillet")) {
-            mois = "07";
+            mois2 = "07";
         } else if (mois.equalsIgnoreCase("Août")) {
-            mois = "08";
+            mois2 = "08";
         } else if (mois.equalsIgnoreCase("Septembre")) {
-            mois = "09";
+            mois2 = "09";
         } else if (mois.equalsIgnoreCase("Octobre")) {
-            mois = "10";
+            mois2 = "10";
         } else if (mois.equalsIgnoreCase("Novembre")) {
-            mois = "11";
+            mois2 = "11";
         } else if (mois.equalsIgnoreCase("Décembre")) {
-            mois = "12";
+            mois2 = "12";
         }
         return mois2;
     }
@@ -143,10 +144,18 @@ public class MiseAJourDonnees
             if(mois.equalsIgnoreCase("Janvier"))
             {
                 moisInt = 0;
+                if(jourInt == 1 || jourInt == 6)
+                {
+                    dayok = false;
+                }
             }
             else if(mois.equalsIgnoreCase("Février"))
             {
                 moisInt = 1;
+                if(jourInt == 14 || jourInt == 25 || jourInt == 29 || jourInt == 30 || jourInt == 31)
+                {
+                    dayok = false;
+                }
             }
             else if(mois.equalsIgnoreCase("Mars"))
             {
@@ -155,26 +164,50 @@ public class MiseAJourDonnees
             else if(mois.equalsIgnoreCase("Avril"))
             {
                 moisInt = 3;
+                if(jourInt == 13 || jourInt == 31)
+                {
+                    dayok = false;
+                }
             }
-            else if(mois.equalsIgnoreCase("Mai"))
+            else if(mois.equalsIgnoreCase("Mai") )
             {
                 moisInt = 4;
+                if(jourInt == 1 || jourInt == 8)
+                {
+                    dayok = false;
+                }
             }
             else if(mois.equalsIgnoreCase("Juin"))
             {
                 moisInt = 5;
+                if(jourInt == 31)
+                {
+                    dayok = false;
+                }
             }
             else if(mois.equalsIgnoreCase("Juillet"))
             {
                 moisInt = 6;
+                if(jourInt ==14)
+                {
+                    dayok = false;
+                }
             }
             else if(mois.equalsIgnoreCase("Août"))
             {
                 moisInt = 7;
+                if(jourInt == 15)
+                {
+                    dayok = false;
+                }
             }
             else if(mois.equalsIgnoreCase("Septembre"))
             {
                 moisInt = 8;
+                if(jourInt == 31)
+                {
+                    dayok = false;
+                }
             }
             else if(mois.equalsIgnoreCase("Octobre"))
             {
@@ -183,10 +216,18 @@ public class MiseAJourDonnees
             else if(mois.equalsIgnoreCase("Novembre"))
             {
                 moisInt = 10;
+                if(jourInt == 1 || jourInt == 11 || jourInt == 30)
+                {
+                    dayok = false;
+                }
             }
             else if(mois.equalsIgnoreCase("Décembre"))
             {
                 moisInt = 11;
+                if(jourInt == 25 || jourInt == 31)
+                {
+                    dayok = false;
+                }
             }
             
             anneeInt = Integer.parseInt(annee);
@@ -195,9 +236,9 @@ public class MiseAJourDonnees
             LocalDate date2 = Instant.ofEpochMilli(date.getTime()).atZone(ZoneId.systemDefault()).toLocalDate();
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
+
             
-            
-            if(cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY || cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY || ferie(date2))
+            if(cal.get(Calendar.DAY_OF_WEEK) == Calendar.SATURDAY || cal.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY )
             {
                 dayok = false;
             }
@@ -226,10 +267,10 @@ public class MiseAJourDonnees
     {
         boolean ok = true;
         String prof1String = prof1.getSelectedItem().toString();
-        String prof2String = prof1.getSelectedItem().toString();
-        String prof3String = prof1.getSelectedItem().toString();
-        String prof4String = prof1.getSelectedItem().toString();
-        String prof5String = prof1.getSelectedItem().toString();
+        String prof2String = prof2.getSelectedItem().toString();
+        String prof3String = prof3.getSelectedItem().toString();
+        String prof4String = prof4.getSelectedItem().toString();
+        String prof5String = prof5.getSelectedItem().toString();
         
         if(nbrProf == 2)
         {
@@ -270,15 +311,15 @@ public class MiseAJourDonnees
         
         String nbGroupeString = nbGroupe.getSelectedItem().toString();
         String td1String = td1.getSelectedItem().toString();
-        String td2String = td1.getSelectedItem().toString();
-        String td3String = td1.getSelectedItem().toString();
-        String td4String = td1.getSelectedItem().toString();
-        String td5String = td1.getSelectedItem().toString();
-        String td6String = td1.getSelectedItem().toString();
-        String td7String = td1.getSelectedItem().toString();
-        String td8String = td1.getSelectedItem().toString();
-        String td9String = td1.getSelectedItem().toString();
-        String td10String = td1.getSelectedItem().toString();
+        String td2String = td2.getSelectedItem().toString();
+        String td3String = td3.getSelectedItem().toString();
+        String td4String = td4.getSelectedItem().toString();
+        String td5String = td5.getSelectedItem().toString();
+        String td6String = td6.getSelectedItem().toString();
+        String td7String = td7.getSelectedItem().toString();
+        String td8String = td8.getSelectedItem().toString();
+        String td9String = td9.getSelectedItem().toString();
+        String td10String = td10.getSelectedItem().toString();
         
         int nbrGroupe = 1;
         
@@ -318,20 +359,27 @@ public class MiseAJourDonnees
     
     
     /** Fonction pour inserer un cours dans la bdd*/
-    public void Insertion(JComboBox jour, JComboBox mois, JComboBox annee, JComboBox hdebut, JComboBox hfin, JComboBox typecours, JComboBox nbenseignant, JComboBox prof1, JComboBox prof2, JComboBox prof3, JComboBox prof4, JComboBox prof5, JComboBox nomPromo, JComboBox nbGroupe, JComboBox td1, JComboBox td2, JComboBox td3, JComboBox td4, JComboBox td5, JComboBox td6, JComboBox td7, JComboBox td8, JComboBox td9, JComboBox td10, JComboBox site, JComboBox salle, JComboBox nomCours) 
+    public void Insertion(JComboBox jour, JComboBox mois, JComboBox annee, JComboBox hdebut, JComboBox hfin, JComboBox typecours, JComboBox nbenseignant, JComboBox prof1, JComboBox prof2, JComboBox prof3, JComboBox prof4, JComboBox prof5, JComboBox nomPromo, JComboBox nbGroupe, JComboBox td1, JComboBox td2, JComboBox td3, JComboBox td4, JComboBox td5, JComboBox td6, JComboBox td7, JComboBox td8, JComboBox td9, JComboBox td10, JComboBox site, JComboBox salle, JComboBox nomCours, JLabel resumeInsertionLabel) 
     {
-       String jourStringBDD = jour.getSelectedItem().toString(); //A ENVOYER
+        //JOUR
+       String jourStringBDD = jour.getSelectedItem().toString(); 
        String moisString = mois.getSelectedItem().toString();
-       String moisStrinbBDD = MoisToString(moisString); //A ENVOYER
-       String anneStringBDD = annee.getSelectedItem().toString(); //A ENVOYER
-       int numSemaine = rih.DateStringToNumSem(jourStringBDD, moisString, anneStringBDD);
+       String moisStrinbBDD = MoisToString(moisString);
+       String anneStringBDD = annee.getSelectedItem().toString(); 
+       String date = anneStringBDD + "-" + moisStrinbBDD + "-" + jourStringBDD; // A ENVOYER
+       int numSemaine = rih.DateStringToNumSem(jourStringBDD, moisString, anneStringBDD); //A ENVOYER
        
+       //HEURE DEBUT HEURE FIN
        String hdebutStringBDD = hdebut.getSelectedItem().toString() + ":00"; //A ENVOYER
        Time timeDebut = Time.valueOf(hdebutStringBDD);
        String hfinStringBDD = hfin.getSelectedItem().toString() + ":00"; //A ENVOYER
        Time timeFin = Time.valueOf(hfinStringBDD);
-       long diffInMinutes = ((timeFin.getTime()- timeDebut.getTime())/1000)/60; //difference en minutes entre heure de fin et heure debut
+       long diffInMinutes = ((timeFin.getTime()- timeDebut.getTime())/1000)/60; 
        
+       //STATUT DU COURS
+       String statusCours = "Valide"; // A ENVOYER
+       
+       //TYPE DE COURS
        String typeCours = typecours.getSelectedItem().toString();
        int id_typeBDD = 1; //A ENVOYER
         try 
@@ -344,7 +392,7 @@ public class MiseAJourDonnees
             Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        //Les enseignants
+        //LES ENSEIGNANTS
         String nbEnsS = nbenseignant.getSelectedItem().toString();
         int nbEns = 1;
         try
@@ -355,15 +403,73 @@ public class MiseAJourDonnees
         {
             System.out.println("Probleme conversion string en int : " + e.toString());
         }
+        String ens1 = prof1.getSelectedItem().toString();
+        String ens2 = prof2.getSelectedItem().toString();
+        String ens3 = prof3.getSelectedItem().toString();
+        String ens4 = prof4.getSelectedItem().toString();
+        String ens5 = prof5.getSelectedItem().toString();
         
+        //LES COULEURS
+        ArrayList<Integer> rvb = new ArrayList<>(); 
+        rvb.add(0, 110);
+        rvb.add(0, 35);
+        rvb.add(0, 72);
         
+        // NOM DU COURS
+        String nomDuCours = nomCours.getSelectedItem().toString();
         
-       
+        try 
+        {
+            DAO<Cours> coursd = new CoursDAO(ConnexionSQL.getInstance());
+            int id_cours = coursd.ID(nomDuCours);
+            rvb = coursd.ComposerFindSeance(id_cours);
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        //COULEURS SUITE
+        int rouge = rvb.get(0); //A ENVOYER
+        int vert = rvb.get(1); //A ENVOYER
+        int bleu = rvb.get(2); //A ENVOYER
+        
+        //LES GROUPES
+        int nbrGroupeInt = 1;
+        try
+        {
+            nbrGroupeInt = Integer.parseInt(nbGroupe.getSelectedItem().toString());
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("erreur : " + e.toString());
+        }
+        String groupe1 =  td1.getSelectedItem().toString();
+        String groupe2 =  td2.getSelectedItem().toString();
+        String groupe3 =  td3.getSelectedItem().toString();
+        String groupe4 =  td4.getSelectedItem().toString();
+        String groupe5 =  td5.getSelectedItem().toString();
+        String groupe6 =  td6.getSelectedItem().toString();
+        String groupe7 =  td7.getSelectedItem().toString();
+        String groupe8 =  td8.getSelectedItem().toString();
+        String groupe9 =  td9.getSelectedItem().toString();
+        String groupe10 = td10.getSelectedItem().toString();
+        
+        //SITE
+        String siteS = site.getSelectedItem().toString();
+        
+        //SALLE
+        String salleS = salle.getSelectedItem().toString();
+        
        
        //On verifie : le jour est ok -- le cours est bien >=90minutes -- on ne rentre jamais 2 fois le meme prof
        if(CheckDayOk(jourStringBDD, moisString, anneStringBDD) && CheckTimeOk(diffInMinutes) && CheckDifferentProf(nbEns, prof1, prof2, prof3, prof4, prof5) && CheckTDDifferent(nbGroupe, td1, td2, td3, td4, td5, td6, td7, td8, td9, td10))
        {
-           
+           resumeInsertionLabel.setText("Insertion Effectuée!");
+       }
+       else
+       {
+           resumeInsertionLabel.setText("Problème d'insertion.");
        }
        
     }

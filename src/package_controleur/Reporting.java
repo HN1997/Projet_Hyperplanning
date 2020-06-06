@@ -3,8 +3,11 @@ package package_controleur;
 import com.orsoncharts.plot.PiePlot3D;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -56,7 +59,9 @@ public class Reporting
         String droit = rih.GetDroit(email, password);
         int posx = 0;
         int posy = 0;
-        
+        ArrayList<String> nomCours = new ArrayList<>();
+        ArrayList<Long> dureeTotalCoursMin = new ArrayList<>();
+        ArrayList<Long> dureeEffectueeCoursMin = new ArrayList<>();
         
         try 
         {
@@ -90,7 +95,7 @@ public class Reporting
                 list_id_seances = sed.ComposerFindSeance(Enseignant.getId());
             }
             
-            
+            //Ajoute en premier toutes les infos dans les 3 arraylist
             for(int i = 0 ; i<list_id_seances.size(); i++)
             {
                 DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
@@ -100,29 +105,90 @@ public class Reporting
                 DAO<Cours> coursd = new CoursDAO(ConnexionSQL.getInstance());
                 Cours cours = coursd.find(id_cours);
                 
-                String nomducours = cours.getNom();
+                String nomCoursString = cours.getNom(); //Nom du cours
                 
+                Calendar today = Calendar.getInstance();
+                Date dateCours = seance.getdate(); //La date du cours 
+                Date dateAjd = new Date(today.getTimeInMillis()); //La date d'ajd
+                boolean ajdBeforeCours = dateAjd.before(dateCours); //renvoie true si le cours est dans le futur
                 
-                DefaultPieDataset pieSat = new DefaultPieDataset();
-                pieSat.setValue("80", new Integer(80));
-                pieSat.setValue("20", new Integer(20));
-                JFreeChart chart = ChartFactory.createRingChart(nomducours, pieSat, false, false, false);
-                ChartPanel barPanel = new ChartPanel(chart);
-                barPanel.setSize(250, 200);
-                barPanel.setBackground(new Color(153,153,153));
-
-                //Modification de l'emplacement du jfreechart
-                barPanel.setLocation( posx , posy );
-                posx+=260;
-                if(posx%1040==0)
+                Time heureDebut = seance.getHeure_Debut();
+                long heuredebutMin = ((heureDebut.getTime())/1000)/60;
+                Time heureFin = seance.getHeure_Fin();
+                long heuredefinMin = ((heureFin.getTime())/1000)/60;
+                long dureeTotaleMin = heuredefinMin - heuredebutMin;
+                
+                int index = 0;
+                if(nomCours.contains(nomCoursString)) //Si contient deja le cours
                 {
-                    posx=0;
-                    posy+=220;
+                    //on cherche l'indice a laquelle il est
+                    for(int j=0;j<nomCours.size();j++)
+                    {
+                        if(nomCours.get(j).equalsIgnoreCase(nomCoursString))
+                        {
+                            index = j;
+                            break;
+                        }
+                    }
+                    long dureetotale = dureeTotalCoursMin.get(index);
+                    dureetotale += dureeTotaleMin;
+                    dureeTotalCoursMin.set(index, dureetotale); //on augmente la durée totale du cours
+                    
+                    if(!ajdBeforeCours) //Si le cours est passé
+                    {
+                        long dureeEffectuee = dureeEffectueeCoursMin.get(index);
+                        dureeEffectuee += dureeTotaleMin;
+                        dureeEffectueeCoursMin.set(index, dureeEffectuee);
+                    }
+                    
                 }
+                else //sinon on l'ajoute
+                {
+                    nomCours.add(nomCoursString);
+                    dureeTotalCoursMin.add(dureeTotaleMin);
+                    if(!ajdBeforeCours) //si le cours est passé
+                    {
+                        dureeEffectueeCoursMin.add(dureeTotaleMin);
+                    }
+                    else
+                    {
+                        dureeEffectueeCoursMin.add(0l);
+                    }
+                }
+            }
+            
+            if(nomCours.size() == dureeTotalCoursMin.size() && nomCours.size() == dureeEffectueeCoursMin.size() && dureeTotalCoursMin.size() == dureeEffectueeCoursMin.size()) //verif au cas ou que kes 3 arraylist ont la meme taille
+            {
+                for(int i=0;i<nomCours.size();i++)
+                {
+                    //System.out.println("Nom du cours: " + nomCours.get(i) + ", duree totale du cours : " + dureeTotalCoursMin.get(i) + ", duree totale effectue: " + dureeEffectueeCoursMin.get(i) + ", Rapport : " + dureeEffectueeCoursMin.get(i) + "/" + dureeTotalCoursMin.get(i));
+                    String nomCoursJFC = nomCours.get(i);
+                    long nbrMinEffectue = dureeEffectueeCoursMin.get(i);
+                    long nbrMinTotal = dureeTotalCoursMin.get(i);
+                    
+                    int nbrMinEffectuePourcentage = (int)(nbrMinEffectue * 100 / nbrMinTotal);
+                    int nbrTotalEffectuePourcentage = 100 - nbrMinEffectuePourcentage;
+                    
+                    DefaultPieDataset pieSat = new DefaultPieDataset();
+                    pieSat.setValue(String.valueOf(nbrMinEffectuePourcentage) + "% Effectuée", new Integer(nbrMinEffectuePourcentage));
+                    pieSat.setValue(String.valueOf(nbrTotalEffectuePourcentage) + "% Total", new Integer(nbrTotalEffectuePourcentage));
+                    JFreeChart chart = ChartFactory.createRingChart(nomCoursJFC, pieSat, false, false, false);
+                    ChartPanel barPanel = new ChartPanel(chart);
+                    barPanel.setSize(250, 200);
+                    barPanel.setBackground(new Color(153,153,153));
 
-                //On ajoute le panel contenant le jfreechart
-                panelToAddChart.add(barPanel);
+                    //Modification de l'emplacement du jfreechart
+                    barPanel.setLocation( posx , posy );
+                    posx+=260;
+                    if(posx%1040==0)
+                    {
+                        posx=0;
+                        posy+=220;
+                    }
 
+                    //On ajoute le panel contenant le jfreechart
+                    panelToAddChart.add(barPanel);
+                }
             }
 
             panelToAddChart.validate();

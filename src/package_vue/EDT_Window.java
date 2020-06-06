@@ -138,7 +138,7 @@ public class EDT_Window extends javax.swing.JFrame {
         rih.UpdateNomsEnseignant(enseignantCB1, enseignantCB2, enseignantCB3, enseignantCB4, enseignantCB5);
         rih.UpdateNomPromotion(promotionInsererCB);
         rih.UpdateSiteCB(siteCB);
-        rih.UpdateNomsDesCours(nomCoursCB);
+        rih.UpdateNomsDesCours(salleCB1);
     }
     
     //Fin initialisation du User
@@ -343,7 +343,7 @@ public class EDT_Window extends javax.swing.JFrame {
         insererButton = new javax.swing.JButton();
         resumeInsertionLabel = new javax.swing.JLabel();
         nomDuCoursLabel = new javax.swing.JLabel();
-        nomCoursCB = new javax.swing.JComboBox<>();
+        salleCB1 = new javax.swing.JComboBox<>();
         modifierPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -2204,15 +2204,14 @@ public class EDT_Window extends javax.swing.JFrame {
 
             resumeInsertionLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
             resumeInsertionLabel.setForeground(new java.awt.Color(57, 17, 45));
-            resumeInsertionLabel.setText("Vous venez d'ajouter le cours suivant :");
             resumeInsertionLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
             nomDuCoursLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
             nomDuCoursLabel.setForeground(new java.awt.Color(255, 255, 255));
             nomDuCoursLabel.setText("Nom du cours:");
 
-            nomCoursCB.setBackground(new java.awt.Color(0, 153, 153));
-            nomCoursCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            salleCB1.setBackground(new java.awt.Color(0, 153, 153));
+            salleCB1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             javax.swing.GroupLayout insererPanelLayout = new javax.swing.GroupLayout(insererPanel);
             insererPanel.setLayout(insererPanelLayout);
@@ -2225,17 +2224,6 @@ public class EDT_Window extends javax.swing.JFrame {
                             .addComponent(promotionInsererLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(promotionInsererCB, 0, 100, Short.MAX_VALUE)
-                            .addGap(814, 814, 814))
-                        .addGroup(insererPanelLayout.createSequentialGroup()
-                            .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(insererPanelLayout.createSequentialGroup()
-                                    .addComponent(siteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(siteCB, 0, 100, Short.MAX_VALUE))
-                                .addGroup(insererPanelLayout.createSequentialGroup()
-                                    .addComponent(salleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(salleCB, 0, 100, Short.MAX_VALUE)))
                             .addGap(814, 814, 814))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, insererPanelLayout.createSequentialGroup()
                             .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -2285,11 +2273,6 @@ public class EDT_Window extends javax.swing.JFrame {
                                     .addComponent(enseignantCB5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(14, 14, 14))
                         .addGroup(insererPanelLayout.createSequentialGroup()
-                            .addComponent(nomDuCoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nomCoursCB, 0, 100, Short.MAX_VALUE)
-                            .addGap(814, 814, 814))
-                        .addGroup(insererPanelLayout.createSequentialGroup()
                             .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(insererButton)
                                 .addGroup(insererPanelLayout.createSequentialGroup()
@@ -2317,7 +2300,20 @@ public class EDT_Window extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(tdCB9, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(tdCB10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(tdCB10, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, insererPanelLayout.createSequentialGroup()
+                                        .addComponent(nomDuCoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(salleCB1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, insererPanelLayout.createSequentialGroup()
+                                        .addComponent(salleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(salleCB, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, insererPanelLayout.createSequentialGroup()
+                                        .addComponent(siteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(siteCB, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGap(0, 0, Short.MAX_VALUE))))
             );
             insererPanelLayout.setVerticalGroup(
@@ -2387,7 +2383,7 @@ public class EDT_Window extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(nomDuCoursLabel)
-                        .addComponent(nomCoursCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(salleCB1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGap(15, 15, 15)
                     .addComponent(insererButton)
                     .addGap(30, 30, 30)
@@ -2840,7 +2836,7 @@ public class EDT_Window extends javax.swing.JFrame {
 
     private void insererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insererButtonActionPerformed
         // TODO add your handling code here:
-        majDonnees.Insertion(jourCB, moisCB, anneeCB, heureDebutCB, heureFinCB, typeCoursCB, nbrEnseignantCB, enseignantCB1, enseignantCB2, enseignantCB3, enseignantCB4, enseignantCB5, promotionInsererCB, nbrGroupeCB, tdCB1, tdCB2, tdCB3, tdCB4, tdCB5, tdCB6, tdCB7, tdCB8, tdCB8, tdCB10, siteCB, salleCB, nomCoursCB); 
+        majDonnees.Insertion(jourCB, moisCB, anneeCB, heureDebutCB, heureFinCB, typeCoursCB, nbrEnseignantCB, enseignantCB1, enseignantCB2, enseignantCB3, enseignantCB4, enseignantCB5, promotionInsererCB, nbrGroupeCB, tdCB1, tdCB2, tdCB3, tdCB4, tdCB5, tdCB6, tdCB7, tdCB8, tdCB8, tdCB10, siteCB, salleCB, salleCB1, resumeInsertionLabel); 
         
     }//GEN-LAST:event_insererButtonActionPerformed
 
@@ -3378,7 +3374,6 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> nbrGroupeCB;
     private javax.swing.JLabel nbrGroupeLabel;
     private javax.swing.JLabel neufLabel;
-    private javax.swing.JComboBox<String> nomCoursCB;
     private javax.swing.JLabel nomDuCoursLabel;
     private javax.swing.JLabel onzeLabel;
     private javax.swing.JComboBox<String> promotionInsererCB;
@@ -3413,6 +3408,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JLabel resumeInsertionLabel;
     private javax.swing.JPanel rightCardPanel;
     private javax.swing.JComboBox<String> salleCB;
+    private javax.swing.JComboBox<String> salleCB1;
     private javax.swing.JLabel salleLabel;
     private javax.swing.JLabel seizeLabel;
     private javax.swing.JToggleButton semaine1;

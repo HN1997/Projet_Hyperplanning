@@ -2235,12 +2235,12 @@ public class RechercheInformationsHugo
         try 
         {
             DAO<Cours> coursd = new CoursDAO(ConnexionSQL.getInstance());
-            ArrayList<Integer> list_id_cours = new ArrayList<>();
+            ArrayList<Integer> list_id_cours = coursd.FindPromotion();
             
             for(int i = 0; i<list_id_cours.size(); i++)
             {
                 Cours cours = coursd.find(list_id_cours.get(i));
-                String nomDuCours = "";
+                String nomDuCours = cours.getNom();
                 nomCoursCB.addItem(nomDuCours);
             }
         } 
