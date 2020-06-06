@@ -1,5 +1,6 @@
 package package_modele;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -164,12 +165,12 @@ public class SeanceDAO extends DAO<Seance> {
     }
 
     @Override
-    public Seance GetSeanceInfo(int id, String Nom) {
+    public Seance GetSeanceInfo(int id, Date date) {
         Seance cours = new Seance();
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM utilisateur WHERE ID_Seance='" + id + "' and Date='" + Nom + "'");
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM utilisateur WHERE ID_Seance='" + id + "' and Date='" + date + "'");
             if (result.first()) {
                 cours = new Seance(
                         result.getInt("Semaine"),

@@ -135,7 +135,7 @@ public class PromotionDAO extends DAO<Promotion> {
     }
 
     @Override
-    public Seance GetSeanceInfo(int id, String Nom) {
+    public Seance GetSeanceInfo(int id, Date date) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
