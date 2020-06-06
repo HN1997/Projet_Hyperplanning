@@ -27,8 +27,6 @@ public class Seance_GroupeDAO extends DAO<Seance_Groupe> {
            st = connect.prepareStatement("INSERT INTO `seance_groupes`(`ID_Groupe`, `ID_Seance`) VALUES (?,?)");
            st.setInt(1, obj.getId_groupe());
            st.setInt(2, obj.getId_seance());
-           
-           System.out.print(obj.getId_groupe()+"-"+obj.getId_seance());
            st.executeUpdate();
        } catch (SQLException e) {
        }

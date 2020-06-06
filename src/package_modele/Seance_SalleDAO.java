@@ -22,13 +22,15 @@ public class Seance_SalleDAO extends DAO<Seance_Salle> {
 
     @Override
     public void create(Seance_Salle obj) {
-       PreparedStatement st;
+       PreparedStatement st=null;
        try {
            st = connect.prepareStatement("INSERT INTO `seance_salles`(`ID_Seance`, `ID_Salle`) VALUES (?,?)");
-           st.setInt(1, obj.getId_salle());
-           st.setInt(2, obj.getId_seance());
            
-//           System.out.print(obj.getId_salle()+"-"+obj.getId_seance());
+           st.setInt(1, obj.getId_seance());
+           st.setInt(2, obj.getId_salle());
+           
+           
+           System.out.print(obj.getId_salle()+"-"+obj.getId_seance());
            st.executeUpdate();
        } catch (SQLException e) {
        }
