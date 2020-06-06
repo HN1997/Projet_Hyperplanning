@@ -2078,7 +2078,7 @@ public class EDT_Window extends javax.swing.JFrame {
             nbrEnseignantLabel.setText("Nombre d'Enseignant : ");
 
             nbrEnseignantCB.setBackground(new java.awt.Color(0, 153, 153));
-            nbrEnseignantCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+            nbrEnseignantCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1" }));
             nbrEnseignantCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
             nbrEnseignantCB.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2127,7 +2127,7 @@ public class EDT_Window extends javax.swing.JFrame {
             nbrGroupeLabel.setText("Nombre de Groupe :");
 
             nbrGroupeCB.setBackground(new java.awt.Color(0, 153, 153));
-            nbrGroupeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+            nbrGroupeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1" }));
             nbrGroupeCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
             nbrGroupeCB.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {

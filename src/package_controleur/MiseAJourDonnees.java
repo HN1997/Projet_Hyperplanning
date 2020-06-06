@@ -423,8 +423,6 @@ public class MiseAJourDonnees
         {
             Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
         return dispo;
     }
     
@@ -496,7 +494,6 @@ public class MiseAJourDonnees
         cal.set(anneeInt, moisInt, joursInt);
         Date dateD = new Date(cal.getTimeInMillis());
         java.sql.Date sqlDate = new java.sql.Date(dateD.getTime());
-        System.out.println(sqlDate);
         
         for(int i=0; i<list_id_seance.size(); i++)
         {
@@ -504,17 +501,32 @@ public class MiseAJourDonnees
             {
                 DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
                 Seance seance = seanced.GetSeanceInfo(list_id_seance.get(i), sqlDate);
-                
-                System.out.println(seance.getHeure_Debut());
-                //System.out.println(dateD);
+                if(seance.getHeure_Debut() != null && seance.getHeure_Fin()!= null)
+                {
+                    if(  !(hDebut.before(seance.getHeure_Debut()) && hFin.before(seance.getHeure_Debut()) ||  hDebut.after(seance.getHeure_Fin()) && hFin.after(seance.getHeure_Fin())) ) 
+                    {
+                        ckeckOk = false;
+                    }
+                }
             } 
             catch (SQLException ex) 
             {
                 Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
         return ckeckOk;
+    }
+    
+    public boolean CheckDispoTous( JComboBox prof1, JComboBox etu1, JComboBox salle, String annee, String mois, String jour, Time hDebut, Time hFin)
+    {
+        if(CheckDispo1Prof(prof1, annee, mois, jour, hDebut, hFin) && CheckDispo1Groupe( etu1, annee, mois, jour, hDebut, hFin) && CheckDispoSalle( salle,  annee,  mois,  jour,  hDebut,  hFin))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     
@@ -578,11 +590,11 @@ public class MiseAJourDonnees
         
         // NOM DU COURS
         String nomDuCours = nomCours.getSelectedItem().toString();
-        
+        int id_cours = 1;
         try 
         {
             DAO<Cours> coursd = new CoursDAO(ConnexionSQL.getInstance());
-            int id_cours = coursd.ID(nomDuCours);
+            id_cours = coursd.ID(nomDuCours);
             rvb = coursd.ComposerFindSeance(id_cours);
         } 
         catch (SQLException ex) 
@@ -623,10 +635,42 @@ public class MiseAJourDonnees
         String salleS = salle.getSelectedItem().toString();
         
        
-       //On verifie : le jour est ok -- le cours est bien >=90minutes -- on ne rentre jamais 2 fois le meme prof
-       if(CheckDayOk(jourStringBDD, moisString, anneStringBDD) && CheckTimeOk(diffInMinutes) && CheckDifferentProf(nbEns, prof1, prof2, prof3, prof4, prof5) && CheckTDDifferent(nbGroupe, td1, td2, td3, td4, td5, td6, td7, td8, td9, td10))
+       //On verifie : le créneau horaire est dispo pour prof + etudiant + salle -- le jour est ok -- le cours est bien >=90minutes -- on ne rentre jamais 2 fois le meme prof
+       if(CheckDispoTous(prof1, td1, salle, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin) && CheckDayOk(jourStringBDD, moisString, anneStringBDD) && CheckTimeOk(diffInMinutes) && CheckDifferentProf(nbEns, prof1, prof2, prof3, prof4, prof5) && CheckTDDifferent(nbGroupe, td1, td2, td3, td4, td5, td6, td7, td8, td9, td10))
        {
            resumeInsertionLabel.setText("Insertion Effectuée!");
+           
+           //Creation d'une seance
+           Seance seance = new Seance();
+           seance.setSemaine(numSemaine);
+           seance.setdate(date);
+           seance.setHeure_Debut(hdebutStringBDD);
+           seance.setHeure_Fin(hfinStringBDD);
+           seance.setStatus(statusCours);
+           seance.setR(rouge);
+           seance.setV(vert);
+           seance.setB(bleu);
+           seance.setId_cours(id_cours);
+           seance.setId_type(id_typeBDD);
+           try 
+           {
+               DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
+               seanced.create(seance);
+               int i = seance.getId();
+               System.out.println(i);
+           } 
+           catch (SQLException ex) 
+           {
+               Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           
+           //Creation d'une seance enseignant
+               
+               
+           //Creation d'une seance groupe
+               
+               
+           //Creation d'une seance salle
        }
        else
        {
@@ -635,7 +679,7 @@ public class MiseAJourDonnees
        
        //CheckDispo1Prof(prof1, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
        //CheckDispo1Groupe(td1, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
-       CheckDispoSalle(salle, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
+       //CheckDispoSalle(salle, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
     }
 }
       
