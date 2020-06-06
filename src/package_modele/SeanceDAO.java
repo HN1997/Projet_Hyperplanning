@@ -170,7 +170,7 @@ public class SeanceDAO extends DAO<Seance> {
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM utilisateur WHERE ID_Seance='" + id + "' and Date='" + date + "'");
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM seance WHERE ID_Seance='" + id + "' and Date='" + date + "'");
             if (result.first()) {
                 cours = new Seance(
                         result.getInt("Semaine"),
