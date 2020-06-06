@@ -2106,7 +2106,6 @@ public class EDT_Window extends javax.swing.JFrame {
             promotionInsererLabel.setText("Promotion :");
 
             promotionInsererCB.setBackground(new java.awt.Color(0, 153, 153));
-            promotionInsererCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ING3" }));
             promotionInsererCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
             promotionInsererCB.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {

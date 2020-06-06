@@ -263,6 +263,42 @@ public class MiseAJourDonnees
         return ok;
     }
     
+    /** renvoie true si tous les td sont différents false sinon */
+    public boolean CheckTDDifferent(JComboBox nbGroupe, JComboBox td1, JComboBox td2, JComboBox td3, JComboBox td4, JComboBox td5, JComboBox td6, JComboBox td7, JComboBox td8, JComboBox td9, JComboBox td10)
+    {
+        boolean ok = true;
+        
+        String nbGroupeString = nbGroupe.getSelectedItem().toString();
+        String td1String = td1.getSelectedItem().toString();
+        String td2String = td1.getSelectedItem().toString();
+        String td3String = td1.getSelectedItem().toString();
+        String td4String = td1.getSelectedItem().toString();
+        String td5String = td1.getSelectedItem().toString();
+        String td6String = td1.getSelectedItem().toString();
+        String td7String = td1.getSelectedItem().toString();
+        String td8String = td1.getSelectedItem().toString();
+        String td9String = td1.getSelectedItem().toString();
+        String td10String = td1.getSelectedItem().toString();
+        
+        int nbrGroupe = 1;
+        
+        try
+        {
+            nbrGroupe = Integer.parseInt(nbGroupeString);
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Pb conversion string to int : " + e.toString());
+        }
+        
+        if(nbrGroupe == 1)
+        {
+            
+        }
+        
+        return ok;
+    }
+    
     
     /** Fonction pour inserer un cours dans la bdd*/
     public void Insertion(JComboBox jour, JComboBox mois, JComboBox annee, JComboBox hdebut, JComboBox hfin, JComboBox typecours, JComboBox nbenseignant, JComboBox prof1, JComboBox prof2, JComboBox prof3, JComboBox prof4, JComboBox prof5, JComboBox nomPromo, JComboBox nbGroupe, JComboBox td1, JComboBox td2, JComboBox td3, JComboBox td4, JComboBox td5, JComboBox td6, JComboBox td7, JComboBox td8, JComboBox td9, JComboBox td10, JComboBox site, JComboBox salle, JTextField nomCours) 

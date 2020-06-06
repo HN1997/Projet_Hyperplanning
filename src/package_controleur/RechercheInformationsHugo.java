@@ -2115,7 +2115,6 @@ public class RechercheInformationsHugo
     
     public void UpdateNomPromotion(JComboBox promotionInsererCB)
     {
-        promotionInsererCB.removeAllItems();
         
         //Promotion
         try 
@@ -2149,10 +2148,11 @@ public class RechercheInformationsHugo
         td10.removeAllItems();
         
         
-        //String nomPromotion = promotionInserer.getSelectedItem().toString();
+        
+        String nomPromotion = promotionInserer.getSelectedItem().toString();
         
         
-        /*
+        
         try 
         {
             DAO<Promotion> promotiond = new PromotionDAO(ConnexionSQL.getInstance());
@@ -2179,6 +2179,6 @@ public class RechercheInformationsHugo
         {
             Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
         }
-        */
+        
     }
 }
