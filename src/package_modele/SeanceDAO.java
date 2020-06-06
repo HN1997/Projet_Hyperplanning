@@ -17,7 +17,7 @@ public class SeanceDAO extends DAO<Seance> {
        PreparedStatement st = null;
        try {
            st = connect.prepareStatement("INSERT INTO `seance`(`ID_Seance`, `Semaine`, `Date`, `Heure_Debut`, `Heure_Fin`, `Status`, `R`, `V`, `B`, `ID_Cours`, `ID_Type`) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
-           st.setString(1,null);
+           st.setInt(1,obj.getId());
            st.setInt(2, obj.getSemaine());
            st.setString(3, obj.getdate1());
            st.setString(4, obj.getHeure_Debut1());
