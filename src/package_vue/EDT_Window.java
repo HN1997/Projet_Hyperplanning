@@ -137,6 +137,8 @@ public class EDT_Window extends javax.swing.JFrame {
         tdCB10.setVisible(false);
         rih.UpdateNomsEnseignant(enseignantCB1, enseignantCB2, enseignantCB3, enseignantCB4, enseignantCB5);
         rih.UpdateNomPromotion(promotionInsererCB);
+        rih.UpdateSiteCB(siteCB);
+        rih.UpdateNomsDesCours(nomCoursCB);
     }
     
     //Fin initialisation du User
@@ -341,7 +343,7 @@ public class EDT_Window extends javax.swing.JFrame {
         insererButton = new javax.swing.JButton();
         resumeInsertionLabel = new javax.swing.JLabel();
         nomDuCoursLabel = new javax.swing.JLabel();
-        nomDuCoursTextField = new javax.swing.JTextField();
+        nomCoursCB = new javax.swing.JComboBox<>();
         modifierPanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -2118,7 +2120,7 @@ public class EDT_Window extends javax.swing.JFrame {
             nbrGroupeLabel.setText("Nombre de Groupe :");
 
             nbrGroupeCB.setBackground(new java.awt.Color(0, 153, 153));
-            nbrGroupeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+            nbrGroupeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
             nbrGroupeCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
             nbrGroupeCB.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2175,15 +2177,18 @@ public class EDT_Window extends javax.swing.JFrame {
             siteLabel.setText("Site :");
 
             siteCB.setBackground(new java.awt.Color(0, 153, 153));
-            siteCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "E1", "E2", "E3", "E4", "E5" }));
             siteCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+            siteCB.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    siteCBActionPerformed(evt);
+                }
+            });
 
             salleLabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
             salleLabel.setForeground(new java.awt.Color(255, 255, 255));
             salleLabel.setText("Salle :");
 
             salleCB.setBackground(new java.awt.Color(0, 153, 153));
-            salleCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
             salleCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             insererButton.setBackground(new java.awt.Color(0, 153, 153));
@@ -2206,7 +2211,8 @@ public class EDT_Window extends javax.swing.JFrame {
             nomDuCoursLabel.setForeground(new java.awt.Color(255, 255, 255));
             nomDuCoursLabel.setText("Nom du cours:");
 
-            nomDuCoursTextField.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
+            nomCoursCB.setBackground(new java.awt.Color(0, 153, 153));
+            nomCoursCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             javax.swing.GroupLayout insererPanelLayout = new javax.swing.GroupLayout(insererPanel);
             insererPanel.setLayout(insererPanelLayout);
@@ -2281,8 +2287,8 @@ public class EDT_Window extends javax.swing.JFrame {
                         .addGroup(insererPanelLayout.createSequentialGroup()
                             .addComponent(nomDuCoursLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(nomDuCoursTextField)
-                            .addGap(808, 808, 808))
+                            .addComponent(nomCoursCB, 0, 100, Short.MAX_VALUE)
+                            .addGap(814, 814, 814))
                         .addGroup(insererPanelLayout.createSequentialGroup()
                             .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(insererButton)
@@ -2381,8 +2387,8 @@ public class EDT_Window extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(insererPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(nomDuCoursLabel)
-                        .addComponent(nomDuCoursTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
+                        .addComponent(nomCoursCB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(15, 15, 15)
                     .addComponent(insererButton)
                     .addGap(30, 30, 30)
                     .addComponent(resumeInsertionLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
@@ -2834,7 +2840,7 @@ public class EDT_Window extends javax.swing.JFrame {
 
     private void insererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insererButtonActionPerformed
         // TODO add your handling code here:
-        majDonnees.Insertion(jourCB, moisCB, anneeCB, heureDebutCB, heureFinCB, typeCoursCB, nbrEnseignantCB, enseignantCB1, enseignantCB2, enseignantCB3, enseignantCB4, enseignantCB5, promotionInsererCB, nbrGroupeCB, tdCB1, tdCB2, tdCB3, tdCB4, tdCB5, tdCB6, tdCB7, tdCB8, tdCB8, tdCB10, siteCB, salleCB, nomDuCoursTextField); 
+        majDonnees.Insertion(jourCB, moisCB, anneeCB, heureDebutCB, heureFinCB, typeCoursCB, nbrEnseignantCB, enseignantCB1, enseignantCB2, enseignantCB3, enseignantCB4, enseignantCB5, promotionInsererCB, nbrGroupeCB, tdCB1, tdCB2, tdCB3, tdCB4, tdCB5, tdCB6, tdCB7, tdCB8, tdCB8, tdCB10, siteCB, salleCB, nomCoursCB); 
         
     }//GEN-LAST:event_insererButtonActionPerformed
 
@@ -3257,6 +3263,12 @@ public class EDT_Window extends javax.swing.JFrame {
         rih.ChangeTdNom(promotionInsererCB, tdCB1, tdCB2, tdCB3, tdCB4, tdCB5, tdCB6, tdCB7, tdCB8, tdCB9, tdCB10);
     }//GEN-LAST:event_promotionInsererCBActionPerformed
 
+    //Quand on modifie le nom du site
+    private void siteCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_siteCBActionPerformed
+        // TODO add your handling code here:
+        rih.UpdateNomSalles(siteCB, salleCB);
+    }//GEN-LAST:event_siteCBActionPerformed
+
    
     /////////////////////////// FIN QUAND ON FAIT UNE RECHERCHE SUR L'EDT (admin & ref ped) ///////////////////////////
     
@@ -3366,8 +3378,8 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> nbrGroupeCB;
     private javax.swing.JLabel nbrGroupeLabel;
     private javax.swing.JLabel neufLabel;
+    private javax.swing.JComboBox<String> nomCoursCB;
     private javax.swing.JLabel nomDuCoursLabel;
-    private javax.swing.JTextField nomDuCoursTextField;
     private javax.swing.JLabel onzeLabel;
     private javax.swing.JComboBox<String> promotionInsererCB;
     private javax.swing.JLabel promotionInsererLabel;

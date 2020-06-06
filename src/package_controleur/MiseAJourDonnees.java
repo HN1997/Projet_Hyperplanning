@@ -291,9 +291,26 @@ public class MiseAJourDonnees
             System.out.println("Pb conversion string to int : " + e.toString());
         }
         
-        if(nbrGroupe == 1)
+        if(nbrGroupe == 2)
         {
-            
+            if(td1String.equalsIgnoreCase(td2String))
+            {
+                ok = false;
+            }
+        }
+        if(nbrGroupe == 3)
+        {
+            if(td1String.equalsIgnoreCase(td2String) || td1String.equalsIgnoreCase(td3String) || td2String.equalsIgnoreCase(td3String) )
+            {
+                ok = false;
+            }
+        }
+        if(nbrGroupe == 4)
+        {
+            if(td1String.equalsIgnoreCase(td2String) || td1String.equalsIgnoreCase(td3String) || td1String.equalsIgnoreCase(td4String) || td1String.equalsIgnoreCase(td4String) || td2String.equalsIgnoreCase(td3String) || td2String.equalsIgnoreCase(td4String) || td3String.equalsIgnoreCase(td4String))
+            {
+                ok = false;
+            }
         }
         
         return ok;
@@ -301,7 +318,7 @@ public class MiseAJourDonnees
     
     
     /** Fonction pour inserer un cours dans la bdd*/
-    public void Insertion(JComboBox jour, JComboBox mois, JComboBox annee, JComboBox hdebut, JComboBox hfin, JComboBox typecours, JComboBox nbenseignant, JComboBox prof1, JComboBox prof2, JComboBox prof3, JComboBox prof4, JComboBox prof5, JComboBox nomPromo, JComboBox nbGroupe, JComboBox td1, JComboBox td2, JComboBox td3, JComboBox td4, JComboBox td5, JComboBox td6, JComboBox td7, JComboBox td8, JComboBox td9, JComboBox td10, JComboBox site, JComboBox salle, JTextField nomCours) 
+    public void Insertion(JComboBox jour, JComboBox mois, JComboBox annee, JComboBox hdebut, JComboBox hfin, JComboBox typecours, JComboBox nbenseignant, JComboBox prof1, JComboBox prof2, JComboBox prof3, JComboBox prof4, JComboBox prof5, JComboBox nomPromo, JComboBox nbGroupe, JComboBox td1, JComboBox td2, JComboBox td3, JComboBox td4, JComboBox td5, JComboBox td6, JComboBox td7, JComboBox td8, JComboBox td9, JComboBox td10, JComboBox site, JComboBox salle, JComboBox nomCours) 
     {
        String jourStringBDD = jour.getSelectedItem().toString(); //A ENVOYER
        String moisString = mois.getSelectedItem().toString();
@@ -344,7 +361,7 @@ public class MiseAJourDonnees
        
        
        //On verifie : le jour est ok -- le cours est bien >=90minutes -- on ne rentre jamais 2 fois le meme prof
-       if(CheckDayOk(jourStringBDD, moisString, anneStringBDD) && CheckTimeOk(diffInMinutes) && CheckDifferentProf(nbEns, prof1, prof2, prof3, prof4, prof5))
+       if(CheckDayOk(jourStringBDD, moisString, anneStringBDD) && CheckTimeOk(diffInMinutes) && CheckDifferentProf(nbEns, prof1, prof2, prof3, prof4, prof5) && CheckTDDifferent(nbGroupe, td1, td2, td3, td4, td5, td6, td7, td8, td9, td10))
        {
            
        }

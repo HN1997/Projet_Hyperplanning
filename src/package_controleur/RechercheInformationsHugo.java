@@ -2181,4 +2181,72 @@ public class RechercheInformationsHugo
         }
         
     }
+    
+    public void UpdateSiteCB(JComboBox siteCB)
+    {
+        try 
+        {
+            DAO<Site> sited = new SiteDAO(ConnexionSQL.getInstance());
+            ArrayList<Integer> list_id_sites = sited.FindSite();
+            
+            for(int i=0; i<list_id_sites.size(); i++)
+            {
+                Site site = sited.find(list_id_sites.get(i));
+                String nomSite = site.getNom();
+                
+                siteCB.addItem(nomSite);
+            }
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void UpdateNomSalles(JComboBox siteCB, JComboBox salleCB)
+    {
+        String nomSite = siteCB.getSelectedItem().toString();
+        salleCB.removeAllItems();
+        
+        try 
+        {
+            DAO<Site> sited = new SiteDAO(ConnexionSQL.getInstance());
+            int id_site = sited.ID(nomSite);
+            
+            DAO<Salle> salled = new SalleDAO(ConnexionSQL.getInstance());
+            ArrayList<String> nomDesSalles = salled.ListInfo(id_site);
+            
+            for(int i=0; i<nomDesSalles.size(); i++)
+            {
+                salleCB.addItem(nomDesSalles.get(i));
+            }
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    /** Rajoute les noms des cours dans la CB */
+    public void UpdateNomsDesCours(JComboBox nomCoursCB)
+    {
+        nomCoursCB.removeAllItems();
+        
+        try 
+        {
+            DAO<Cours> coursd = new CoursDAO(ConnexionSQL.getInstance());
+            ArrayList<Integer> list_id_cours = new ArrayList<>();
+            
+            for(int i = 0; i<list_id_cours.size(); i++)
+            {
+                Cours cours = coursd.find(list_id_cours.get(i));
+                String nomDuCours = "";
+                nomCoursCB.addItem(nomDuCours);
+            }
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
