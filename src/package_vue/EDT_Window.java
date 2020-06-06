@@ -110,7 +110,7 @@ public class EDT_Window extends javax.swing.JFrame {
             reportingPeriodeTriPanel.setEnabled(false);
             
             rih.MAJRecapPeriode(recapTable, email, password); //mise à jour de la jtable
-            rep.AfficheCours(email, password, reportingResumePanel2, jScrollPane1);
+            rep.AfficheCours(email, password, reportingResumePanel2);
         }
         
         if(droitLabel.getText()=="Administrateur" || droitLabel.getText()=="Référent Pédagogique") //si c'est un admin ou ref ped, on change la fenetre de la semaine 
@@ -2841,7 +2841,7 @@ public class EDT_Window extends javax.swing.JFrame {
         //On update le message d'erreur - recherche reussi ou non
         String emailRep = rih.RecupEmailPassword(reportingSearch2).get(0);
         String passwordRep = rih.RecupEmailPassword(reportingSearch2).get(1);
-        rep.AfficheCours(emailRep, passwordRep, reportingResumePanel2, jScrollPane1);
+        rep.AfficheCours(emailRep, passwordRep, reportingResumePanel2);
     }//GEN-LAST:event_reportingRechercherButtonActionPerformed
 
     private void insererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insererButtonActionPerformed

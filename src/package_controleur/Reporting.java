@@ -54,7 +54,7 @@ public class Reporting
     }
     
     /** Pour afficher les cours du reporting */
-    public void AfficheCours(String email, String password, JPanel panelToAddChart, JScrollPane jsp)
+    public void AfficheCours(String email, String password, JPanel panelToAddChart)
     {
         String droit = rih.GetDroit(email, password);
         int posx = 0;
