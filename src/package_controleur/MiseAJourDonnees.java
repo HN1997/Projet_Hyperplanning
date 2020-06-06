@@ -709,7 +709,7 @@ public class MiseAJourDonnees
             
            try {
                DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
-               //seance_enseignantd.create(seance_enseignant);
+               seance_enseignantd.create(seance_enseignant);
                
            } catch (SQLException ex) {
                Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
@@ -732,7 +732,7 @@ public class MiseAJourDonnees
            
            try {
                DAO<Seance_Groupe> seance_grouped = new Seance_GroupeDAO(ConnexionSQL.getInstance());
-               //seance_grouped.create(seance_groupe);
+               seance_grouped.create(seance_groupe);
                
            } catch (SQLException ex) {
                Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
