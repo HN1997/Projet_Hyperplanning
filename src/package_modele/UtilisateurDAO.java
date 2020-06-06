@@ -119,7 +119,18 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 
     @Override
     public int ID(String nom) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int i = 0;
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `utilisateur` WHERE `Nom`= " +"'" + nom+ "'");
+            if (result.first()) {
+//                System.out.print(result.getInt("ID_Promotion"));
+                i=result.getInt("ID_Utilisateur");
+            }
+        } catch (SQLException e) {
+        }
+        return i;
     }
 
     @Override
@@ -139,6 +150,16 @@ public class UtilisateurDAO extends DAO<Utilisateur> {
 
     @Override
     public Utilisateur find(int id, int id2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Integer> FindAllSeance(int id, int id2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Seance GetSeanceInfo(int id, String Nom) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

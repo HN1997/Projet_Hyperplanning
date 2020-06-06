@@ -52,6 +52,7 @@ public abstract class DAO<T> {
      */
     public abstract T find(int id);
     
+    
         /**
      *
      * @param id
@@ -117,6 +118,12 @@ public abstract class DAO<T> {
     
     /**
      *
+     * @return
+     */
+    public abstract ArrayList<Integer> FindAllSeance(int id, int id2);
+    
+    /**
+     *
      * @param Nom
      * @param Prenom
      * @return
@@ -144,6 +151,14 @@ public abstract class DAO<T> {
      * @return
      */
     public abstract int GetUniqID (int id, String Nom);
+    
+    /**
+     *
+     * @param id
+     * @param Nom
+     * @return
+     */
+    public abstract Seance GetSeanceInfo (int id, String Nom);
 
 }
     

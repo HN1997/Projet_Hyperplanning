@@ -179,4 +179,14 @@ public class Seance_GroupeDAO extends DAO<Seance_Groupe> {
         }
         return cours;
     }
+
+    @Override
+    public ArrayList<Integer> FindAllSeance(int id, int id2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Seance GetSeanceInfo(int id, String Nom) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
