@@ -34,7 +34,7 @@ public class Seance_Enseignant {
         this.id_cours=enseignant.id_cours;
     }
 
-    Seance_Enseignant() {
+    public Seance_Enseignant() {
         
     }
     

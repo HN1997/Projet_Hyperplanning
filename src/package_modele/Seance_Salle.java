@@ -26,7 +26,7 @@ public class Seance_Salle {
         this.id_seance=salle.id_seance;
     }
 
-    Seance_Salle() {
+    public Seance_Salle() {
     }
 
 /********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
