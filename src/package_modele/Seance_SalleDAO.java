@@ -27,7 +27,7 @@ public class Seance_SalleDAO extends DAO<Seance_Salle> {
            st.setInt(1, obj.getId_salle());
            st.setInt(2, obj.getId_seance());
            
-           System.out.print(obj.getId_salle()+"-"+obj.getId_seance());
+//           System.out.print(obj.getId_salle()+"-"+obj.getId_seance());
            st.executeUpdate();
        } catch (SQLException e) {
        }
@@ -155,6 +155,16 @@ public class Seance_SalleDAO extends DAO<Seance_Salle> {
 
     @Override
     public Seance_Salle find(int id, int id2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public ArrayList<Integer> FindAllSeance(int id, int id2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Seance GetSeanceInfo(int id, String Nom) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

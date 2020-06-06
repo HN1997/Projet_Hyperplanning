@@ -157,5 +157,27 @@ public class SeanceDAO extends DAO<Seance> {
     public Seance find(int id, int id2) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public ArrayList<Integer> FindAllSeance(int id, int id2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Seance GetSeanceInfo(int id, String Nom) {
+        Seance cours = new Seance();
+        try {
+            ResultSet result = this.connect.createStatement(
+                    ResultSet.TYPE_SCROLL_INSENSITIVE,
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM utilisateur WHERE ID_Seance='" + id + "' and Date='" + Nom + "'");
+            if (result.first()) {
+                cours = new Seance(
+                        result.getInt("Semaine"),
+                        result.getInt("ID_Seance"),result.getDate("Date"),result.getTime("Heure_Debut"),result.getTime("Heure_Fin"),result.getString("Status"),result.getInt("R"),result.getInt("V"),result.getInt("B"),result.getInt("ID_Cours"),result.getInt("ID_Type"));
+            }
+        } catch (SQLException e) {
+        }
+        return cours;
+    }
     
 }
