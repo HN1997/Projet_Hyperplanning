@@ -4,7 +4,9 @@ import java.sql.SQLException;
 import package_modele.Seance;
 import package_modele.*;
 import java.lang.String;
+import java.sql.Date;
 import java.sql.Time;
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -59,6 +61,38 @@ public class MiseAJourDonnees
             mois2 = "11";
         } else if (mois.equalsIgnoreCase("Décembre")) {
             mois2 = "12";
+        }
+        return mois2;
+    }
+    
+    public String MoisToString2(String mois)
+    {
+        String mois2 = "";
+        
+        if (mois.equalsIgnoreCase("Janvier")) {
+            mois2 = "0";
+        } else if (mois.equalsIgnoreCase("Février")) {
+            mois2 = "1";
+        } else if (mois.equalsIgnoreCase("Mars")) {
+            mois2 = "2";
+        } else if (mois.equalsIgnoreCase("Avril")) {
+            mois2 = "3";
+        } else if (mois.equalsIgnoreCase("Mai")) {
+            mois2 = "4";
+        } else if (mois.equalsIgnoreCase("Juin")) {
+            mois2 = "5";
+        } else if (mois.equalsIgnoreCase("Juillet")) {
+            mois2 = "6";
+        } else if (mois.equalsIgnoreCase("Août")) {
+            mois2 = "7";
+        } else if (mois.equalsIgnoreCase("Septembre")) {
+            mois2 = "8";
+        } else if (mois.equalsIgnoreCase("Octobre")) {
+            mois2 = "9";
+        } else if (mois.equalsIgnoreCase("Novembre")) {
+            mois2 = "10";
+        } else if (mois.equalsIgnoreCase("Décembre")) {
+            mois2 = "11";
         }
         return mois2;
     }
@@ -358,13 +392,152 @@ public class MiseAJourDonnees
     }
     
     
+    
+    /** renvoie true si il est dispo */
+    public boolean CheckDispo1Prof(JComboBox personne, String annee, String mois, String jour, Time hDebut, Time hFin)
+    {
+        boolean dispo = true;
+        
+        String nom = personne.getSelectedItem().toString();
+        ArrayList<Integer> list_id_seance = new ArrayList<>();
+        
+        try 
+        {
+            DAO<Utilisateur> utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            int iduser = utilisateurd.ID(nom);
+            Utilisateur user = utilisateurd.find(iduser);
+            
+            DAO<Enseignant> enseignantd = new EnseignantDAO(ConnexionSQL.getInstance());
+            int id_cours = enseignantd.find(iduser).getID_cours();
+
+            DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
+            list_id_seance = seance_enseignantd.FindAllSeance(iduser, id_cours);
+
+            if (!CheckHoraire(list_id_seance, annee, mois, jour, hDebut, hFin)) 
+            {
+                dispo = false;
+            }
+            
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dispo;
+    }
+    
+    /** renvoie true si il est dispo */
+    public boolean CheckDispo1Groupe(JComboBox groupe, String annee, String mois, String jour, Time hDebut, Time hFin)
+    {
+        boolean dispo = true;
+        
+        String nom_groupe = groupe.getSelectedItem().toString();
+        ArrayList<Integer> list_id_seance = new ArrayList<>();
+        
+        try 
+        {
+            DAO<Groupe> grouped = new GroupeDAO(ConnexionSQL.getInstance());
+            int id_groupe = grouped.ID(nom_groupe);
+
+            DAO<Seance_Groupe> seance_grouped = new Seance_GroupeDAO(ConnexionSQL.getInstance());
+            list_id_seance = seance_grouped.ComposerFindSeance(id_groupe);
+            
+            if(!CheckHoraire(list_id_seance, annee, mois, jour, hDebut, hFin))
+            {
+                dispo = false;
+            }
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dispo;
+    }
+    
+    /** renvoie true si il est dispo */
+    public boolean CheckDispoSalle(JComboBox salle, String annee, String mois, String jour, Time hDebut, Time hFin)
+    {
+        boolean dispo = true;
+        
+        String nom_salle = salle.getSelectedItem().toString();
+        ArrayList<Integer> list_id_seance = new ArrayList<>();
+        
+        try 
+        {
+            DAO<Salle> salled = new SalleDAO(ConnexionSQL.getInstance());
+            int id_salle = salled.ID(nom_salle);
+            
+            DAO<Seance_Salle> seance_salled = new Seance_SalleDAO(ConnexionSQL.getInstance());
+            list_id_seance = seance_salled.ComposerFindSeance(id_salle);
+            
+            if(!CheckHoraire(list_id_seance, annee, mois, jour, hDebut, hFin))
+            {
+                dispo = false;
+            }
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return dispo;
+    }
+    
+    /** renvoie true si l'horaire est disponible */
+    public boolean CheckHoraire(ArrayList<Integer> list_id_seance, String annee, String mois, String jour, Time hDebut, Time hFin)
+    {
+        boolean ckeckOk = true;
+        
+        int anneeInt = Integer.parseInt(annee);
+        int moisInt = Integer.parseInt(mois);
+        int joursInt = Integer.parseInt(jour);
+        Calendar cal = Calendar.getInstance();
+        cal.set(anneeInt, moisInt, joursInt);
+        Date dateD = new Date(cal.getTimeInMillis());
+        java.sql.Date sqlDate = new java.sql.Date(dateD.getTime());
+        
+        for(int i=0; i<list_id_seance.size(); i++)
+        {
+            try 
+            {
+                DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
+                Seance seance = seanced.GetSeanceInfo(list_id_seance.get(i), sqlDate);
+                if(seance.getHeure_Debut() != null && seance.getHeure_Fin()!= null)
+                {
+                    if(  !(hDebut.before(seance.getHeure_Debut()) && hFin.before(seance.getHeure_Debut()) ||  hDebut.after(seance.getHeure_Fin()) && hFin.after(seance.getHeure_Fin())) ) 
+                    {
+                        ckeckOk = false;
+                    }
+                }
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return ckeckOk;
+    }
+    
+    public boolean CheckDispoTous( JComboBox prof1, JComboBox etu1, JComboBox salle, String annee, String mois, String jour, Time hDebut, Time hFin)
+    {
+        if(CheckDispo1Prof(prof1, annee, mois, jour, hDebut, hFin) && CheckDispo1Groupe( etu1, annee, mois, jour, hDebut, hFin) && CheckDispoSalle( salle,  annee,  mois,  jour,  hDebut,  hFin))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    
     /** Fonction pour inserer un cours dans la bdd*/
     public void Insertion(JComboBox jour, JComboBox mois, JComboBox annee, JComboBox hdebut, JComboBox hfin, JComboBox typecours, JComboBox nbenseignant, JComboBox prof1, JComboBox prof2, JComboBox prof3, JComboBox prof4, JComboBox prof5, JComboBox nomPromo, JComboBox nbGroupe, JComboBox td1, JComboBox td2, JComboBox td3, JComboBox td4, JComboBox td5, JComboBox td6, JComboBox td7, JComboBox td8, JComboBox td9, JComboBox td10, JComboBox site, JComboBox salle, JComboBox nomCours, JLabel resumeInsertionLabel) 
     {
         //JOUR
        String jourStringBDD = jour.getSelectedItem().toString(); 
-       String moisString = mois.getSelectedItem().toString();
-       String moisStrinbBDD = MoisToString(moisString);
+       String moisString = mois.getSelectedItem().toString(); //Janvier
+       String moisStrinbBDD = MoisToString(moisString); //janvier c'est 01
+       String moisStringString = MoisToString2(moisString); //0 = janvier
        String anneStringBDD = annee.getSelectedItem().toString(); 
        String date = anneStringBDD + "-" + moisStrinbBDD + "-" + jourStringBDD; // A ENVOYER
        int numSemaine = rih.DateStringToNumSem(jourStringBDD, moisString, anneStringBDD); //A ENVOYER
@@ -417,11 +590,11 @@ public class MiseAJourDonnees
         
         // NOM DU COURS
         String nomDuCours = nomCours.getSelectedItem().toString();
-        
+        int id_cours = 1;
         try 
         {
             DAO<Cours> coursd = new CoursDAO(ConnexionSQL.getInstance());
-            int id_cours = coursd.ID(nomDuCours);
+            id_cours = coursd.ID(nomDuCours);
             rvb = coursd.ComposerFindSeance(id_cours);
         } 
         catch (SQLException ex) 
@@ -462,16 +635,51 @@ public class MiseAJourDonnees
         String salleS = salle.getSelectedItem().toString();
         
        
-       //On verifie : le jour est ok -- le cours est bien >=90minutes -- on ne rentre jamais 2 fois le meme prof
-       if(CheckDayOk(jourStringBDD, moisString, anneStringBDD) && CheckTimeOk(diffInMinutes) && CheckDifferentProf(nbEns, prof1, prof2, prof3, prof4, prof5) && CheckTDDifferent(nbGroupe, td1, td2, td3, td4, td5, td6, td7, td8, td9, td10))
+       //On verifie : le créneau horaire est dispo pour prof + etudiant + salle -- le jour est ok -- le cours est bien >=90minutes -- on ne rentre jamais 2 fois le meme prof
+       if(CheckDispoTous(prof1, td1, salle, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin) && CheckDayOk(jourStringBDD, moisString, anneStringBDD) && CheckTimeOk(diffInMinutes) && CheckDifferentProf(nbEns, prof1, prof2, prof3, prof4, prof5) && CheckTDDifferent(nbGroupe, td1, td2, td3, td4, td5, td6, td7, td8, td9, td10))
        {
            resumeInsertionLabel.setText("Insertion Effectuée!");
+           
+           //Creation d'une seance
+           Seance seance = new Seance();
+           seance.setSemaine(numSemaine);
+           seance.setdate(date);
+           seance.setHeure_Debut(hdebutStringBDD);
+           seance.setHeure_Fin(hfinStringBDD);
+           seance.setStatus(statusCours);
+           seance.setR(rouge);
+           seance.setV(vert);
+           seance.setB(bleu);
+           seance.setId_cours(id_cours);
+           seance.setId_type(id_typeBDD);
+           try 
+           {
+               DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
+               seanced.create(seance);
+               int i = seance.getId();
+               System.out.println(i);
+           } 
+           catch (SQLException ex) 
+           {
+               Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           
+           //Creation d'une seance enseignant
+               
+               
+           //Creation d'une seance groupe
+               
+               
+           //Creation d'une seance salle
        }
        else
        {
            resumeInsertionLabel.setText("Problème d'insertion.");
        }
        
+       //CheckDispo1Prof(prof1, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
+       //CheckDispo1Groupe(td1, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
+       //CheckDispoSalle(salle, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
     }
 }
       

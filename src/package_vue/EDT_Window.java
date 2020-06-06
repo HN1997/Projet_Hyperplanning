@@ -348,7 +348,6 @@ public class EDT_Window extends javax.swing.JFrame {
         nomDuCoursLabel = new javax.swing.JLabel();
         salleCB1 = new javax.swing.JComboBox<>();
         modifierPanel = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Emploi du temps");
@@ -2047,7 +2046,7 @@ public class EDT_Window extends javax.swing.JFrame {
             anneeLabel.setText("Année : ");
 
             anneeCB.setBackground(new java.awt.Color(0, 153, 153));
-            anneeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2021" }));
+            anneeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020" }));
             anneeCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             heureDebutlabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
@@ -2079,7 +2078,7 @@ public class EDT_Window extends javax.swing.JFrame {
             nbrEnseignantLabel.setText("Nombre d'Enseignant : ");
 
             nbrEnseignantCB.setBackground(new java.awt.Color(0, 153, 153));
-            nbrEnseignantCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+            nbrEnseignantCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1" }));
             nbrEnseignantCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
             nbrEnseignantCB.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2128,7 +2127,7 @@ public class EDT_Window extends javax.swing.JFrame {
             nbrGroupeLabel.setText("Nombre de Groupe :");
 
             nbrGroupeCB.setBackground(new java.awt.Color(0, 153, 153));
-            nbrGroupeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4" }));
+            nbrGroupeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1" }));
             nbrGroupeCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
             nbrGroupeCB.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2404,23 +2403,15 @@ public class EDT_Window extends javax.swing.JFrame {
             modifierPanel.setBackground(new java.awt.Color(153, 153, 153));
             modifierPanel.setForeground(new java.awt.Color(153, 153, 153));
 
-            jLabel3.setText("Modifier test");
-
             javax.swing.GroupLayout modifierPanelLayout = new javax.swing.GroupLayout(modifierPanel);
             modifierPanel.setLayout(modifierPanelLayout);
             modifierPanelLayout.setHorizontalGroup(
                 modifierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(modifierPanelLayout.createSequentialGroup()
-                    .addGap(379, 379, 379)
-                    .addComponent(jLabel3)
-                    .addContainerGap(654, Short.MAX_VALUE))
+                .addGap(0, 1104, Short.MAX_VALUE)
             );
             modifierPanelLayout.setVerticalGroup(
                 modifierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(modifierPanelLayout.createSequentialGroup()
-                    .addGap(137, 137, 137)
-                    .addComponent(jLabel3)
-                    .addContainerGap(649, Short.MAX_VALUE))
+                .addGap(0, 802, Short.MAX_VALUE)
             );
 
             gestionnaireContainerPanel.add(modifierPanel, "card4");
@@ -3363,7 +3354,6 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JButton insererButton;
     private javax.swing.JLabel insererLabel;
     private javax.swing.JPanel insererPanel;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
