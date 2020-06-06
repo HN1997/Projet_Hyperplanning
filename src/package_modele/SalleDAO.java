@@ -89,7 +89,7 @@ public class SalleDAO extends DAO<Salle> {
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM salle WHERE Nom='" + nom );
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `salle` WHERE `Nom`= " +"'" + nom+ "'");
             while (result.next()) {
 //                System.out.println(result.getInt("ID_Seance"));
                 i = result.getInt("ID_Salle");

@@ -92,7 +92,7 @@ public class GroupeDAO extends DAO<Groupe> {
         try {
             ResultSet result = this.connect.createStatement(
                     ResultSet.TYPE_SCROLL_INSENSITIVE,
-                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM groupe WHERE Nom='" + nom );
+                    ResultSet.CONCUR_READ_ONLY).executeQuery("SELECT * FROM `groupe` WHERE `Nom`= " +"'" + nom+ "'");
             while (result.next()) {
 //                System.out.println(result.getInt("ID_Seance"));
                 i = result.getInt("ID_Groupe");
