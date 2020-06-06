@@ -2046,7 +2046,7 @@ public class EDT_Window extends javax.swing.JFrame {
             anneeLabel.setText("Année : ");
 
             anneeCB.setBackground(new java.awt.Color(0, 153, 153));
-            anneeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020", "2021" }));
+            anneeCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2020" }));
             anneeCB.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
             heureDebutlabel.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N

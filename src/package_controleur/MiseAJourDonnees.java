@@ -391,6 +391,8 @@ public class MiseAJourDonnees
         return ok;
     }
     
+    
+    
     /** renvoie true si il est dispo */
     public boolean CheckDispo1Prof(JComboBox personne, String annee, String mois, String jour, Time hDebut, Time hFin)
     {
@@ -404,17 +406,18 @@ public class MiseAJourDonnees
             DAO<Utilisateur> utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
             int iduser = utilisateurd.ID(nom);
             Utilisateur user = utilisateurd.find(iduser);
-            int droit = user.getDroit();
             
-            if(droit == 3) //un prof
+            DAO<Enseignant> enseignantd = new EnseignantDAO(ConnexionSQL.getInstance());
+            int id_cours = enseignantd.find(iduser).getID_cours();
+
+            DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
+            list_id_seance = seance_enseignantd.FindAllSeance(iduser, id_cours);
+
+            if (!CheckHoraire(list_id_seance, annee, mois, jour, hDebut, hFin)) 
             {
-                DAO<Enseignant> enseignantd = new EnseignantDAO(ConnexionSQL.getInstance());
-                int id_cours = enseignantd.find(iduser).getID_cours();
-                
-                DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
-                list_id_seance = seance_enseignantd.FindAllSeance(iduser, id_cours);
-                
+                dispo = false;
             }
+            
         } 
         catch (SQLException ex) 
         {
@@ -425,6 +428,7 @@ public class MiseAJourDonnees
         return dispo;
     }
     
+    /** renvoie true si il est dispo */
     public boolean CheckDispo1Groupe(JComboBox groupe, String annee, String mois, String jour, Time hDebut, Time hFin)
     {
         boolean dispo = true;
@@ -440,7 +444,10 @@ public class MiseAJourDonnees
             DAO<Seance_Groupe> seance_grouped = new Seance_GroupeDAO(ConnexionSQL.getInstance());
             list_id_seance = seance_grouped.ComposerFindSeance(id_groupe);
             
-            
+            if(!CheckHoraire(list_id_seance, annee, mois, jour, hDebut, hFin))
+            {
+                dispo = false;
+            }
         } 
         catch (SQLException ex) 
         {
@@ -449,6 +456,7 @@ public class MiseAJourDonnees
         return dispo;
     }
     
+    /** renvoie true si il est dispo */
     public boolean CheckDispoSalle(JComboBox salle, String annee, String mois, String jour, Time hDebut, Time hFin)
     {
         boolean dispo = true;
@@ -464,7 +472,10 @@ public class MiseAJourDonnees
             DAO<Seance_Salle> seance_salled = new Seance_SalleDAO(ConnexionSQL.getInstance());
             list_id_seance = seance_salled.ComposerFindSeance(id_salle);
             
-            CheckHoraire(list_id_seance, annee, mois, jour, hDebut, hFin);
+            if(!CheckHoraire(list_id_seance, annee, mois, jour, hDebut, hFin))
+            {
+                dispo = false;
+            }
         } 
         catch (SQLException ex) 
         {
@@ -476,16 +487,34 @@ public class MiseAJourDonnees
     /** renvoie true si l'horaire est disponible */
     public boolean CheckHoraire(ArrayList<Integer> list_id_seance, String annee, String mois, String jour, Time hDebut, Time hFin)
     {
+        boolean ckeckOk = true;
+        
         int anneeInt = Integer.parseInt(annee);
         int moisInt = Integer.parseInt(mois);
         int joursInt = Integer.parseInt(jour);
         Calendar cal = Calendar.getInstance();
         cal.set(anneeInt, moisInt, joursInt);
         Date dateD = new Date(cal.getTimeInMillis());
+        java.sql.Date sqlDate = new java.sql.Date(dateD.getTime());
+        System.out.println(sqlDate);
         
+        for(int i=0; i<list_id_seance.size(); i++)
+        {
+            try 
+            {
+                DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
+                Seance seance = seanced.GetSeanceInfo(list_id_seance.get(i), sqlDate);
+                
+                System.out.println(seance.getHeure_Debut());
+                //System.out.println(dateD);
+            } 
+            catch (SQLException ex) 
+            {
+                Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
         
-        
-        return true;
+        return ckeckOk;
     }
     
     
@@ -604,8 +633,8 @@ public class MiseAJourDonnees
            resumeInsertionLabel.setText("Problème d'insertion.");
        }
        
-       CheckDispo1Prof(prof1, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
-       CheckDispo1Groupe(td1, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
+       //CheckDispo1Prof(prof1, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
+       //CheckDispo1Groupe(td1, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
        CheckDispoSalle(salle, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
     }
 }
