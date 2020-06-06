@@ -357,6 +357,80 @@ public class MiseAJourDonnees
         return ok;
     }
     
+    /** renvoie true si il est dispo */
+    public boolean CheckDispo1Prof(JComboBox personne)
+    {
+        boolean dispo = true;
+        
+        String nom = personne.getSelectedItem().toString();
+        ArrayList<Integer> list_id_seance = new ArrayList<>();
+        
+        try 
+        {
+            DAO<Utilisateur> utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            int iduser = utilisateurd.ID(nom);
+            Utilisateur user = utilisateurd.find(iduser);
+            int droit = user.getDroit();
+            
+            if(droit == 3) //un prof
+            {
+                DAO<Enseignant> enseignantd = new EnseignantDAO(ConnexionSQL.getInstance());
+                int id_cours = enseignantd.find(iduser).getID_cours();
+                
+                DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
+                list_id_seance = seance_enseignantd.FindAllSeance(iduser, id_cours);
+                
+            }
+            
+            
+            
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return dispo;
+    }
+    
+    public boolean CheckDispo1Groupe(JComboBox groupe)
+    {
+        boolean dispo = true;
+        
+        String nom_groupe = groupe.getSelectedItem().toString();
+        ArrayList<Integer> list_id_seance = new ArrayList<>();
+        
+        try 
+        {
+            DAO<Groupe> grouped = new GroupeDAO(ConnexionSQL.getInstance());
+            int id_groupe = grouped.ID(nom_groupe);
+            System.out.println(id_groupe);
+
+            DAO<Seance_Groupe> seance_grouped = new Seance_GroupeDAO(ConnexionSQL.getInstance());
+            list_id_seance = seance_grouped.ComposerFindSeance(id_groupe);
+
+            for (int i = 0; i < list_id_seance.size(); i++) 
+            {
+                System.out.println(list_id_seance.get(i));
+            }
+            
+            
+        } 
+        catch (SQLException ex) 
+        {
+            Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return dispo;
+    }
+    
+    public void CheckDispoSalle()
+    {
+        
+    }
+    
     
     /** Fonction pour inserer un cours dans la bdd*/
     public void Insertion(JComboBox jour, JComboBox mois, JComboBox annee, JComboBox hdebut, JComboBox hfin, JComboBox typecours, JComboBox nbenseignant, JComboBox prof1, JComboBox prof2, JComboBox prof3, JComboBox prof4, JComboBox prof5, JComboBox nomPromo, JComboBox nbGroupe, JComboBox td1, JComboBox td2, JComboBox td3, JComboBox td4, JComboBox td5, JComboBox td6, JComboBox td7, JComboBox td8, JComboBox td9, JComboBox td10, JComboBox site, JComboBox salle, JComboBox nomCours, JLabel resumeInsertionLabel) 
@@ -472,6 +546,8 @@ public class MiseAJourDonnees
            resumeInsertionLabel.setText("Problème d'insertion.");
        }
        
+       CheckDispo1Prof(prof1);
+       CheckDispo1Groupe(td1);
     }
 }
       

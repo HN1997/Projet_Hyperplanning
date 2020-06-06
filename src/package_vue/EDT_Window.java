@@ -348,7 +348,6 @@ public class EDT_Window extends javax.swing.JFrame {
         nomDuCoursLabel = new javax.swing.JLabel();
         salleCB1 = new javax.swing.JComboBox<>();
         modifierPanel = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Emploi du temps");
@@ -2404,23 +2403,15 @@ public class EDT_Window extends javax.swing.JFrame {
             modifierPanel.setBackground(new java.awt.Color(153, 153, 153));
             modifierPanel.setForeground(new java.awt.Color(153, 153, 153));
 
-            jLabel3.setText("Modifier test");
-
             javax.swing.GroupLayout modifierPanelLayout = new javax.swing.GroupLayout(modifierPanel);
             modifierPanel.setLayout(modifierPanelLayout);
             modifierPanelLayout.setHorizontalGroup(
                 modifierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(modifierPanelLayout.createSequentialGroup()
-                    .addGap(379, 379, 379)
-                    .addComponent(jLabel3)
-                    .addContainerGap(654, Short.MAX_VALUE))
+                .addGap(0, 1104, Short.MAX_VALUE)
             );
             modifierPanelLayout.setVerticalGroup(
                 modifierPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(modifierPanelLayout.createSequentialGroup()
-                    .addGap(137, 137, 137)
-                    .addComponent(jLabel3)
-                    .addContainerGap(649, Short.MAX_VALUE))
+                .addGap(0, 802, Short.MAX_VALUE)
             );
 
             gestionnaireContainerPanel.add(modifierPanel, "card4");
@@ -3363,7 +3354,6 @@ public class EDT_Window extends javax.swing.JFrame {
     private javax.swing.JButton insererButton;
     private javax.swing.JLabel insererLabel;
     private javax.swing.JPanel insererPanel;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
