@@ -28,9 +28,7 @@ public class Seance_SalleDAO extends DAO<Seance_Salle> {
            
            st.setInt(1, obj.getId_seance());
            st.setInt(2, obj.getId_salle());
-           
-           
-           System.out.print(obj.getId_salle()+"-"+obj.getId_seance());
+
            st.executeUpdate();
        } catch (SQLException e) {
        }
