@@ -67,8 +67,8 @@ public class EDT_Window extends javax.swing.JFrame {
     String password4 = "159"; 
     
     //Ce qui est utilise dans le programme
-    String email = email2;
-    String password = password2;
+    String email = email4;
+    String password = password4;
     
     //Fin variable Rechercheinformations ///////////////////
     
@@ -140,7 +140,7 @@ public class EDT_Window extends javax.swing.JFrame {
         rih.UpdateNomPromotion(promotionInsererCB);
         rih.UpdateSiteCB(siteCB);
         rih.UpdateNomsDesCours(salleCB1);
-        
+        rih.changeRecapPeriodeSearch(recapSearch1, recapSearch2);
         rih.changeRecapPeriodeSearch(reportingSearch1, reportingSearch2);
     }
     
