@@ -582,6 +582,15 @@ public class MiseAJourDonnees
         String ens4 = prof4.getSelectedItem().toString();
         String ens5 = prof5.getSelectedItem().toString();
         
+        int id_ens1 = 1;
+        try {
+            DAO<Utilisateur> utilisateurd = new UtilisateurDAO(ConnexionSQL.getInstance());
+            id_ens1 = utilisateurd.ID(ens1);
+        } catch (SQLException ex) {
+            Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
         //LES COULEURS
         ArrayList<Integer> rvb = new ArrayList<>(); 
         rvb.add(0, 110);
@@ -680,12 +689,12 @@ public class MiseAJourDonnees
            seance.setId_cours(id_cours);
            seance.setId_type(id_typeBDD);
            
+           int i = 1;
            try 
            {
                DAO<Seance> seanced = new SeanceDAO(ConnexionSQL.getInstance());
                seanced.create(seance);
-               int i = seance.getId();
-               System.out.println(i);
+               i = seance.getId();
            } 
            catch (SQLException ex) 
            {
@@ -693,21 +702,69 @@ public class MiseAJourDonnees
            }
            
             //Creation d'une seance enseignant
-            //Seance_Enseignant seance_enseignant = new Seance_Enseignant();
+            Seance_Enseignant seance_enseignant = new Seance_Enseignant();
+            seance_enseignant.setId_seance(i);
+            seance_enseignant.setId_enseignant(id_ens1);
+            seance_enseignant.setId_cours(id_cours);
+            
+           try {
+               DAO<Seance_Enseignant> seance_enseignantd = new Seance_EnseignantDAO(ConnexionSQL.getInstance());
+               //seance_enseignantd.create(seance_enseignant);
                
+           } catch (SQLException ex) {
+               Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           
            //Creation d'une seance groupe
+           Seance_Groupe seance_groupe = new Seance_Groupe();
+           seance_groupe.setId_seance(i);
+           int id_groupe = 1;
+           try 
+           {
+               DAO<Groupe> grouped = new GroupeDAO(ConnexionSQL.getInstance());
+               id_groupe = grouped.ID(groupe1);
+           }
+           catch (SQLException ex)
+           {
+               Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           seance_groupe.setId_groupe(id_groupe);
+           
+           try {
+               DAO<Seance_Groupe> seance_grouped = new Seance_GroupeDAO(ConnexionSQL.getInstance());
+               //seance_grouped.create(seance_groupe);
                
-               
+           } catch (SQLException ex) {
+               Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           
            //Creation d'une seance salle
+           Seance_Salle seance_salle = new Seance_Salle();
+           
+           int id_salle = 1;
+           try 
+           {
+               DAO<Salle> salled = new SalleDAO(ConnexionSQL.getInstance());
+               id_salle = salled.ID(salleS);
+           }
+           catch (SQLException ex)
+           {
+               Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           seance_salle.setId_salle(id_salle);
+           seance_salle.setId_seance(i);
+           try {
+               DAO<Seance_Salle> Seance_salled = new Seance_SalleDAO(ConnexionSQL.getInstance());
+               Seance_salled.create(seance_salle);
+               
+           } catch (SQLException ex) {
+               Logger.getLogger(MiseAJourDonnees.class.getName()).log(Level.SEVERE, null, ex);
+           }
        }
        else
        {
            resumeInsertionLabel.setText("Problème d'insertion.");
        }
-       
-       //CheckDispo1Prof(prof1, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
-       //CheckDispo1Groupe(td1, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
-       //CheckDispoSalle(salle, anneStringBDD, moisStringString, jourStringBDD, timeDebut, timeFin);
     }
 }
       
