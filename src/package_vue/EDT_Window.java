@@ -7,6 +7,8 @@ package package_vue;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import javax.swing.JComboBox;
@@ -3255,6 +3257,22 @@ public class EDT_Window extends javax.swing.JFrame {
         this.dispose();
         Login_Form lf = new Login_Form();
         lf.setVisible(true);
+        
+        /* oublie le mdp de l'utilisateur */
+        
+        try
+        {
+            FileWriter fw = new FileWriter("LOGMDP.txt");    //On peut spécifier ici le chemin que l'on veut, si on ne le fait pas ce sera automatiquement fait dans le pojet
+                                                                    //Pour indiquer le chemin, par exemple : "C:\\Documents\\GestionFichier\\File1.txt"
+            fw.write("");
+            fw.close();
+            //System.out.println("Ecriture sur le fichier reussi");
+        }
+        catch(IOException e)
+        {
+            System.out.println("An error has occured");
+                e.printStackTrace();
+        }
     }//GEN-LAST:event_deconnexionLabelMouseClicked
 
    

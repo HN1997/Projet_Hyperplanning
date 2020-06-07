@@ -1,5 +1,13 @@
 package package_vue;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.stage.Stage;
 import javax.swing.*;
 import package_controleur.RechercheInformations;
@@ -13,6 +21,53 @@ public class Login_Form extends javax.swing.JFrame {
     public Login_Form() {
         ri = new RechercheInformations();
         initComponents();
+        
+    }
+    
+    /** methode pour recup l'email et le password dans le fichier */
+    public ArrayList<String> GetEmailPasswordLog()
+    {
+        String email = "";
+        String password = "";
+        ArrayList<String> retour = new ArrayList<>();
+        
+        try {
+            File fichier = new File("LOGMDP.txt"); 
+            Scanner scan = new Scanner(fichier);
+            if(scan.hasNextLine())
+            {
+                email = scan.nextLine();
+            }
+            if(scan.hasNextLine())
+            {
+                password = scan.nextLine();
+            }
+        } 
+        catch (FileNotFoundException ex) 
+        {
+            System.out.println("An error occured.");
+            Logger.getLogger(Login_Form.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        retour.add(email);
+        retour.add(password);
+        return retour;
+    }
+    
+    /* va a la prochaine fenetre si le fichier log comprend un email et mdp, renvoie true si cela a ete effectue */
+    public boolean GoNextWindow(ArrayList<String> emailPassword)
+    {
+        String email = emailPassword.get(0);
+        String password = emailPassword.get(1);
+        Object[] res = ri.Connexion(email, password);
+        if((boolean)res[0])
+        {
+            edt = new EDT_Window(email, password);
+            edt.setVisible(true);
+            SauvegardeFichier();
+            return true;
+        }
+        return false;
     }
 
     @SuppressWarnings("unchecked")
@@ -168,6 +223,43 @@ public class Login_Form extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /** sauvegarde dans le fichier l'email et le mot de passe, où rien */
+    public void SauvegardeFichier()
+    {
+        if(rememberCheckBox.isSelected()) //si il choisit de garder son mdp 
+            {
+                try
+                {
+                    FileWriter fw = new FileWriter("LOGMDP.txt");    //On peut spécifier ici le chemin que l'on veut, si on ne le fait pas ce sera automatiquement fait dans le pojet
+                                                                    //Pour indiquer le chemin, par exemple : "C:\\Documents\\GestionFichier\\File1.txt"
+                    fw.write(emailInput.getText() + "\n" + passwordInput.getText());
+                    fw.close();
+                    //System.out.println("Ecriture sur le fichier reussi");
+                }
+                catch(IOException e)
+                {
+                    System.out.println("An error has occured");
+                    e.printStackTrace();
+                }
+            }
+            else
+            {
+                try
+                {
+                    FileWriter fw = new FileWriter("LOGMDP.txt");    //On peut spécifier ici le chemin que l'on veut, si on ne le fait pas ce sera automatiquement fait dans le pojet
+                                                                    //Pour indiquer le chemin, par exemple : "C:\\Documents\\GestionFichier\\File1.txt"
+                    fw.write("");
+                    fw.close();
+                    //System.out.println("Ecriture sur le fichier reussi");
+                }
+                catch(IOException e)
+                {
+                    System.out.println("An error has occured");
+                    e.printStackTrace();
+                }
+            }
+    }
+    
     /** Appuie sur le bouton "connexion" */
     private void connexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connexionButtonActionPerformed
         Object[] res = ri.Connexion(emailInput.getText(), passwordInput.getText());
@@ -177,6 +269,7 @@ public class Login_Form extends javax.swing.JFrame {
             this.dispose();
             edt = new EDT_Window(emailInput.getText(), passwordInput.getText());
             edt.setVisible(true);
+            SauvegardeFichier();
         }
         else
         {
@@ -194,10 +287,15 @@ public class Login_Form extends javax.swing.JFrame {
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login_Form().setVisible(true);
+                Login_Form lf = new Login_Form();
+                boolean f = lf.GoNextWindow(lf.GetEmailPasswordLog());
+                if(!f)
+                    lf.setVisible(true);
             }
         });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton connexionButton;
