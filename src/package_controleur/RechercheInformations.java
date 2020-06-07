@@ -37,6 +37,7 @@ public class RechercheInformations
     ConnexionSQL connSQL;
     // Fin des variables
     
+    
     ////////////////////////////////////////////////// CONSTRUCTEUR ///////////////////////////////////////
     public RechercheInformations() 
     {
