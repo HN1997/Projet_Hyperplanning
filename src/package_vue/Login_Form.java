@@ -1,5 +1,7 @@
 package package_vue;
 import java.awt.event.WindowEvent;
+import java.io.FileWriter;
+import java.io.IOException;
 import javafx.stage.Stage;
 import javax.swing.*;
 import package_controleur.RechercheInformations;
@@ -168,6 +170,43 @@ public class Login_Form extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /** sauvegarde dans le fichier l'email et le mot de passe, où rien */
+    public void SauvegardeFichier()
+    {
+        if(rememberCheckBox.isSelected()) //si il choisit de garder son mdp 
+            {
+                try
+                {
+                    FileWriter fw = new FileWriter("LOGMDP.txt");    //On peut spécifier ici le chemin que l'on veut, si on ne le fait pas ce sera automatiquement fait dans le pojet
+                                                                    //Pour indiquer le chemin, par exemple : "C:\\Documents\\GestionFichier\\File1.txt"
+                    fw.write(emailInput.getText() + "\n" + passwordInput.getText());
+                    fw.close();
+                    //System.out.println("Ecriture sur le fichier reussi");
+                }
+                catch(IOException e)
+                {
+                    System.out.println("An error has occured");
+                    e.printStackTrace();
+                }
+            }
+            else
+            {
+                try
+                {
+                    FileWriter fw = new FileWriter("LOGMDP.txt");    //On peut spécifier ici le chemin que l'on veut, si on ne le fait pas ce sera automatiquement fait dans le pojet
+                                                                    //Pour indiquer le chemin, par exemple : "C:\\Documents\\GestionFichier\\File1.txt"
+                    fw.write("");
+                    fw.close();
+                    //System.out.println("Ecriture sur le fichier reussi");
+                }
+                catch(IOException e)
+                {
+                    System.out.println("An error has occured");
+                    e.printStackTrace();
+                }
+            }
+    }
+    
     /** Appuie sur le bouton "connexion" */
     private void connexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connexionButtonActionPerformed
         Object[] res = ri.Connexion(emailInput.getText(), passwordInput.getText());
@@ -177,6 +216,8 @@ public class Login_Form extends javax.swing.JFrame {
             this.dispose();
             edt = new EDT_Window(emailInput.getText(), passwordInput.getText());
             edt.setVisible(true);
+            
+            SauvegardeFichier();
         }
         else
         {
