@@ -2,11 +2,6 @@ package package_modele;
 import java.sql.*;
 import java.util.ArrayList;
 
-/**
- *
- * @author ShadowZeus
- */
-
 public class Type_CoursDAO extends DAO<Type_Cours> {
     
     public Type_CoursDAO(Connection conn) {

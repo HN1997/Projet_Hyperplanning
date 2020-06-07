@@ -1,33 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package package_vue;
 
 import java.awt.Color;
 import java.awt.Component;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import package_controleur.MiseAJourDonnees;
 import package_controleur.RechercheInformations;
 import package_controleur.Reporting;
 
-/**
- *
- * @author hugon
- */
 public class EDT_Window extends javax.swing.JFrame {
 
     // Variables pour savoir quelle fenetre est ouverte
