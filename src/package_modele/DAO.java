@@ -39,7 +39,7 @@ public abstract class DAO<T> {
   public abstract void update(T obj);
 
   /**
-  * Méthode de recherche des informations
+  * Méthode de recherche des informations avec l'Email et le Mot de Passe
      * @param Email
      * @param Passwd
   * @return T
@@ -47,15 +47,15 @@ public abstract class DAO<T> {
   public abstract T find(String Email, String Passwd);
   
     /**
-     *
+     *Méthode de recherche des informations avec l'ID
      * @param id
      * @return
      */
     public abstract T find(int id);
     
     
-        /**
-     *
+    /**
+     *Méthode de recherche des informations avec les ID
      * @param id
      * @param id2
      * @param id3
@@ -63,8 +63,8 @@ public abstract class DAO<T> {
      */
     public abstract T find(int id,int id2, int id3);
     
-     /**
-     *
+    /**
+     *Méthode de recherche des informations avec les ID
      * @param id
      * @param id2
      * @return
@@ -72,14 +72,14 @@ public abstract class DAO<T> {
     public abstract T find(int id,int id2);
     
     /**
-     *
+     *Méthode qui renvoie une liste des seances pour une personne ou un groupe ou une salle en particulier 
      * @param id
      * @return
      */
     public abstract ArrayList<Integer> ComposerFindSeance (int id);
     
     /**
-     *
+     *Méthode qui renvoie une liste des enseignants
      * @param id
      * @return
      */
@@ -87,44 +87,46 @@ public abstract class DAO<T> {
 
     
     /**
-     *
+     *Méthode qui renvoie une liste des groupes
      * @param id
      * @return
      */
     public abstract ArrayList<Integer> ComposerFindGroupe(int id);
     
     /**
-     *
+     *Méthode qui renvoie une liste des étudiants
      * @return
      */
     public abstract ArrayList<Integer> FindEtudiant();
     
     /**
-     *
+     *Méthode qui renvoie une liste des ID des enseignants
      * @return
      */
     public abstract ArrayList<Integer> FindEnseignant();
     
     /**
-     *
+     *Méthode qui renvoie une liste des ID des promotions
      * @return
      */
     public abstract ArrayList<Integer> FindPromotion();
     
     /**
-     *
+     *Méthode qui renvoie une liste des ID des sites
      * @return
      */
     public abstract ArrayList<Integer> FindSite();
     
     /**
-     *
+     *Méthode qui renvoie une liste de toutes les seances
+     * @param id
+     * @param id2
      * @return
      */
     public abstract ArrayList<Integer> FindAllSeance(int id, int id2);
     
     /**
-     *
+     *Méthode qui renvoie une liste des Emails et des Mot de Passe 
      * @param Nom
      * @param Prenom
      * @return
@@ -132,21 +134,21 @@ public abstract class DAO<T> {
     public abstract ArrayList<String> FindEmailPasswd(String Nom,String Prenom);
     
     /**
-     *
+     *Méthode qui renvoie l'ID avec Nom du groupe ou de l'enseignant 
      * @param nom
      * @return
      */
     public abstract int ID (String nom);
     
     /**
-     *
+     *Méthode qui renvoie une liste des Nom des sites des groupes...
      * @param id
      * @return
      */
     public abstract ArrayList<String> ListInfo (int id);
     
     /**
-     *
+     * Méthode qui renvoie l'unique ID 
      * @param id
      * @param Nom
      * @return
@@ -154,7 +156,7 @@ public abstract class DAO<T> {
     public abstract int GetUniqID (int id, String Nom);
     
     /**
-     *
+     *Méthode qui renvoie une seance en fonction de la date
      * @param id
      * @param date
      * @return

@@ -3,18 +3,24 @@ package package_modele;
 public class Enseignant {
 
 /************************************************************* Attributs *****************************************************************************************************/
-    
-    //ID de l'enseignant récupéré de l'Utilisateur
+
+    /**
+     * ID de l'enseignant récupéré de l'Utilisateur 
+     */
     protected int id;
-    //ID du cours au quel il est affecté 
+    //
+
+    /**
+     * ID du cours au quel il est affecté 
+     */
     protected int ID_cours;
 
 /********************************************************** Mise en place des constructeurs***********************************************************************************/
     
     /**
-     *
-     * @param id
-     * @param ID_cours
+     *Constructeur de la class Enseignant
+     * @param id ID de l'enseignant récupéré de l'Utilisateur
+     * @param ID_cours ID du cours au quel il est affecté 
      */
     public Enseignant(int id, int ID_cours)
     {
@@ -23,7 +29,7 @@ public class Enseignant {
     }
     
     /**
-     *
+     *Constructeur de la class Enseignant avec en paramètre une variable de type Enseignant 
      * @param enseignant
      */
     public Enseignant(Enseignant enseignant)
@@ -32,14 +38,17 @@ public class Enseignant {
         this.ID_cours=enseignant.ID_cours;
     }
 
+    /**
+     *Constructeur par défault
+     */
     Enseignant() {
     }
 
 /********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
     
     /**
-     *
-     * @return
+     * Récupére l'ID de l'Enseignant
+     * @return ID de l'enseignant récupéré de l'Utilisateur
      */
     public int getId()
     {
@@ -47,8 +56,8 @@ public class Enseignant {
     }
     
     /**
-     *
-     * @param id
+     * Affecter une valeur à ID
+     * @param id ID de l'enseignant récupéré de l'Utilisateur
      */
     public void setId(int id)
     {
@@ -56,8 +65,8 @@ public class Enseignant {
     }
     
     /**
-     *
-     * @return
+     * Récupére l'ID du Cours
+     * @return ID du cours au quel il est affecté 
      */
     public int getID_cours()
     {
@@ -65,8 +74,8 @@ public class Enseignant {
     }
     
     /**
-     *
-     * @param ID_cours
+     * Affecter une valeur du cours
+     * @param ID_cours ID du cours au quel il est affecté 
      */
     public void setID_cours(int ID_cours)
     {

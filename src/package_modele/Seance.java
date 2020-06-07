@@ -8,45 +8,91 @@ public class Seance {
 
 /************************************************************* Attributs *****************************************************************************************************/
     
-    //ID de la Seance
+    /**
+     * ID de la Seance
+     */
     protected int id;
-    //Numéro de la semaine de la Seance
+
+    /**
+     * Numéro de la semaine de la Seance
+     */
     protected int semaine;
-    //Date de la Seance
+
+    /**
+     * Date de la Seance
+     */
     protected String date1;
+
+    /**
+     * Date de la Seance
+     */
     protected Date date;
-    //Heure de début de la Seance
+
+    /**
+     * Heure de début de la Seance
+     */
     protected String Heure_Debut1;
+
+    /**
+     * Heure de début de la Seance
+     */
     protected Time Heure_Debut;
-    //Heure de fin de la Seance
+
+    /**
+     * Heure de fin de la Seance
+     */
     protected String Heure_Fin1;
+
+    /**
+     * Heure de fin de la Seance
+     */
     protected Time Heure_Fin;
-    //Status de la Seance
-    protected String Status ;
-    // R.V.B pour le code couleur de la Seance 
+
+    /**
+     * Status de la Seance (Validé, En cours de validation, Annulé)
+     */
+    protected String Status ; 
+
+    /**
+     * Couleur Rouge
+     */
     protected int R;
+
+    /**
+     * Couleur Vert 
+     */
     protected int V;
+
+    /**
+     * Couleur bleu
+     */
     protected int B;
-    //ID du cours référencier par la Seance (Quel cours est concerné par la Seance)
+
+    /**
+     * ID du cours référencier par la Seance (Quel cours est concerné par la Seance)
+     */
     protected int id_cours;
-    //ID du Type de cours en question cad si c'est un cours magistral , un TD...
+
+    /**
+     * ID du Type de cours en question cad si c'est un cours magistral , un TD...
+     */
     protected int id_type;
     //
 /********************************************************** Mise en place des constructeurs***********************************************************************************/
     
     /**
-     *
-     * @param semaine
-     * @param id
-     * @param date
-     * @param Heure_Debut
-     * @param Heure_Fin
-     * @param Status
-     * @param R
-     * @param V
-     * @param B
-     * @param id_cours
-     * @param id_type
+     * Constructeur de la class Seance 
+     * @param semaine Numéro de la semaine de la Seance
+     * @param id ID de la Seance
+     * @param date Date du seance
+     * @param Heure_Debut Heure de début de la Seance
+     * @param Heure_Fin Heure de fin de la Seance
+     * @param Status Status de la Seance (Validé, En cours de validation, Annulé)
+     * @param R Couleur Rouge
+     * @param V Couleur Vert
+     * @param B Couleur Bleu
+     * @param id_cours ID du cours référencier par la Seance (Quel cours est concerné par la Seance)
+     * @param id_type ID du Type de cours en question cad si c'est un cours magistral , un TD...
      */
     public Seance(int semaine, int id,Date date,Time Heure_Debut,Time Heure_Fin,String Status, int R, int V, int B,int id_cours,int id_type)
     {
@@ -64,7 +110,7 @@ public class Seance {
     }
     
     /**
-     *
+     * Constructeur de la class Seance en paramètre un attribut de type Seance
      * @param seance
      */
     public Seance(Seance seance)
@@ -80,14 +126,17 @@ public class Seance {
         this.B=seance.B;
     }
 
+    /**
+     * Constructeur par défault
+     */
     public Seance() {
     }
 
 /********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
     
     /**
-     *
-     * @return
+     * Récupère l'ID de la seance
+     * @return ID de la Seance
      */
     public int getId()
     {
@@ -95,8 +144,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @param id
+     * Affecte l'ID de la seance 
+     * @param id ID de la Seance
      */
     public void setId(int id)
     {
@@ -104,8 +153,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @return
+     * Récupère le numéro de la semaine 
+     * @return Numéro de la semaine de la Seance
      */
     public int getSemaine()
     {
@@ -113,8 +162,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @param semaine
+     * Affecte un numéro de la semaine
+     * @param semaine Numéro de la semaine de la Seance
      */
     public void setSemaine(int semaine)
     {
@@ -122,8 +171,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @return
+     * Récupère la date de la seance (Type Date)
+     * @return Date de la Seance
      */
     public Date getdate()
     {
@@ -131,16 +180,16 @@ public class Seance {
     }
 
     /**
-     *
-     * @return
+     * Récupère la date de la seance (Type String)
+     * @return Date de la Seance
      */
     public String getdate1() {
         return date1;
     }
     
     /**
-     *
-     * @param date
+     * Affecte à une seance une date 
+     * @param date Date de la Seance
      */
     public void setdate(String date)
     {
@@ -148,21 +197,25 @@ public class Seance {
     }
     
     /**
-     *
-     * @return
+     * Récupère l'Heure de début de la seance (Type Time)
+     * @return Heure de début de la Seance
      */
     public Time getHeure_Debut()
     {
         return Heure_Debut;
     }
     
+    /**
+     * Récupère l'Heure de début de la seance (Type String)
+     * @return Heure de début de la Seance
+     */
     public String getHeure_Debut1() {
         return Heure_Debut1;
     }
     
     /**
-     *
-     * @param Heure_Debut
+     * Affecte à une seance une heure de début 
+     * @param Heure_Debut Heure de début de la Seance 
      */
     public void setHeure_Debut(String Heure_Debut)
     {
@@ -170,21 +223,26 @@ public class Seance {
     }
     
     /**
-     *
-     * @return
+     * Récupère l'Heure de fin de la seance (Type Time)
+     * @return Heure de fin de la Seance
      */
     public Time getHeure_Fin()
     {
         return Heure_Fin;
     }
 
+    /**
+     * Récupère l'Heure de fin de la seance (Type String) 
+     * @return Heure de fin de la Seance
+     */
     public String getHeure_Fin1()
     {
         return Heure_Fin1;
-    }    
+    }
+    
     /**
-     *
-     * @param Heure_Fin
+     * Affecte une heure de fin à une seance
+     * @param Heure_Fin Heure de fin de la Seance
      */
     public void setHeure_Fin(String Heure_Fin)
     {
@@ -192,8 +250,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @return
+     * Récupère le status de la seance
+     * @return Status de la Seance (Validé, En cours de validation, Annulé)
      */
     public String getStatus()
     {
@@ -201,8 +259,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @param Status
+     * Affecte un status à la seance
+     * @param Status Status de la Seance (Validé, En cours de validation, Annulé)
      */
     public void setStatus (String Status)
     {
@@ -210,8 +268,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @return
+     * Récupère la couleur Rouge 
+     * @return Couleur Rouge
      */
     public int getR()
     {
@@ -219,8 +277,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @param R
+     * Affecte la couleur
+     * @param R Couleur Rouge
      */
     public void setR(int R)
     {
@@ -228,8 +286,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @return
+     * Récupère la couleur verte
+     * @return Couleur Vert
      */
     public int getV()
     {
@@ -237,8 +295,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @param V
+     *Affecte la couleur verte 
+     * @param V Couleur Vert
      */
     public void setV(int V)
     {
@@ -246,8 +304,8 @@ public class Seance {
     }
 
     /**
-     *
-     * @return
+     * Récupère la couleur bleu 
+     * @return Couleur Bleu
      */
     public int getB()
     {
@@ -255,8 +313,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @param B
+     * Affecte la couleur bleu 
+     * @param B Couleur Bleu
      */
     public void setB(int B)
     {
@@ -264,8 +322,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @return
+     * Récupère l'ID du cours référencier par la Seance (Quel cours est concerné par la Seance)
+     * @return ID du cours référencier par la Seance (Quel cours est concerné par la Seance)
      */
     public int getId_cours()
     {
@@ -273,8 +331,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @param id_cours
+     *Affecte un ID du cours référencier par la Seance (Quel cours est concerné par la Seance)
+     * @param id_cours ID du cours référencier par la Seance (Quel cours est concerné par la Seance)
      */
     public void setId_cours(int id_cours)
     {
@@ -282,8 +340,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @return
+     * Récupère l'ID du Type de cours en question cad si c'est un cours magistral , un TD...
+     * @return ID du Type de cours en question cad si c'est un cours magistral , un TD...
      */
     public int getId_type()
     {
@@ -291,8 +349,8 @@ public class Seance {
     }
     
     /**
-     *
-     * @param id_type
+     *Affecte un ID du Type de cours en question cad si c'est un cours magistral , un TD...
+     * @param id_type ID du Type de cours en question cad si c'est un cours magistral , un TD...
      */
     public void setId_type(int id_type)
     {
