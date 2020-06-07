@@ -169,7 +169,7 @@ public class Login_Form extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    // Appuie sur le bouton "connexion"
+    /** Appuie sur le bouton "connexion" */
     private void connexionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_connexionButtonActionPerformed
         Object[] res = ri.Connexion(emailInput.getText(), passwordInput.getText());
         if((boolean)res[0])

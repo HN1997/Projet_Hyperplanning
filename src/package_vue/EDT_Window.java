@@ -43,7 +43,6 @@ public class EDT_Window extends javax.swing.JFrame {
     // Fin
     
     //////////// Variable Rechercheinformations ////////////
-    private Rechercheinformations ri;
     private RechercheInformationsHugo rih;
     private MiseAJourDonnees majDonnees;
     
