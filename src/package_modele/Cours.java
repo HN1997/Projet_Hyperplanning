@@ -4,21 +4,37 @@ public class Cours {
 
 /************************************************************* Attributs *****************************************************************************************************/
     
-    //ID du cours 
+    /**
+     *ID du cours
+     */    
     protected int id;
-    //Nom du cours
+
+    /**
+     *Nom du cours
+     */
     protected String Nom;
     
+    /**
+     *Valeur de Rouge
+     */
     protected int R;
+
+    /**
+     *Valeur de Vert
+     */
     protected int V;
+
+    /**
+     *Valeur de Bleu
+     */
     protected int B;
 
 /********************************************************** Mise en place des constructeurs***********************************************************************************/
     
     /**
      *Constructeur de la class cours 
-     * @param id
-     * @param Nom
+     * @param id ID du cours
+     * @param Nom Nom du cours
      */
     public Cours(int id, String Nom)
     {
@@ -36,6 +52,9 @@ public class Cours {
         this.Nom=cours.Nom;
     }
 
+    /**
+     * Constructeur par défaut
+     */
     public Cours() {
     }
 
@@ -43,7 +62,7 @@ public class Cours {
     
     /**
      * Récupére l'ID du cours
-     * @return
+     * @return ID du cours
      */
     public int getId()
     {
@@ -52,7 +71,7 @@ public class Cours {
     
     /**
      * Affecter une valeur à ID 
-     * @param id
+     * @param id ID du cours
      */
     public void setId(int id)
     {
@@ -61,7 +80,7 @@ public class Cours {
     
     /**
      *Récupére le nom du cours
-     * @return
+     * @return Nom du cours 
      */
     public String getNom()
     {
@@ -70,16 +89,17 @@ public class Cours {
     
     /**
      *Affecte une valeur à nom 
-     * @param Nom
+     * @param Nom Nom du cours
      */
     public void setNom(String Nom)
     {
         this.Nom = Nom;
     }
     
-        /**
-     *
-     * @return
+    
+    /**
+     *Permet de récupèrer la couleur ROUGE de la table COURS
+     * @return Valeur de Rouge 
      */
     public int getR()
     {
@@ -87,8 +107,8 @@ public class Cours {
     }
     
     /**
-     *
-     * @param R
+     *Affecte une valeur de ROUGE
+     * @param R Valeur de Rouge
      */
     public void setR(int R)
     {
@@ -96,8 +116,8 @@ public class Cours {
     }
     
     /**
-     *
-     * @return
+     *Permet de récupèrer la couleur VERTE de la table COURS
+     * @return Valeur de Vert
      */
     public int getV()
     {
@@ -105,8 +125,8 @@ public class Cours {
     }
     
     /**
-     *
-     * @param V
+     *Affecte une valeur de VERT
+     * @param V Valeur de Vert
      */
     public void setV(int V)
     {
@@ -114,8 +134,8 @@ public class Cours {
     }
 
     /**
-     *
-     * @return
+     *Permet de récupèrer la couleur BLEU de la table COURS
+     * @return Valeur de bleu
      */
     public int getB()
     {
@@ -123,8 +143,8 @@ public class Cours {
     }
     
     /**
-     *
-     * @param B
+     *Affecte une valeur de BlEU
+     * @param B Valeur de bleu
      */
     public void setB(int B)
     {
