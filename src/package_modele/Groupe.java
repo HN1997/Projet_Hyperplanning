@@ -5,20 +5,28 @@ public class Groupe {
 
 /************************************************************* Attributs *****************************************************************************************************/
     
-    //ID du groupe   
+    /**
+     * ID du groupe
+     */
     protected int id;
-    //Nom du groupe
+
+    /**
+     * Nom du groupe
+     */
     protected String Nom;
-    //ID de la promotion à laquelle appartient le groupe
+
+    /**
+     *ID de la promotion à laquelle appartient le groupe
+     */
     protected int id_promotion;
 
 /********************************************************** Mise en place des constructeurs***********************************************************************************/    
     
     /**
-     *
-     * @param id
-     * @param Nom
-     * @param id_promotion
+     * Construteur de la class Groupe 
+     * @param id ID du Groupe
+     * @param Nom Nom du Groupe
+     * @param id_promotion ID de la promotion à laquelle appartient le Groupe
      */
     public Groupe(int id, String Nom, int id_promotion) {
         this.id = id;
@@ -27,8 +35,8 @@ public class Groupe {
     }
 
     /**
-     *
-     * @param groupe
+     * Construteur de la class Groupe avec en variable un type Groupe 
+     * @param groupe 
      */
     public Groupe(Groupe groupe) {
         this.id = groupe.id;
@@ -36,54 +44,57 @@ public class Groupe {
         this.id_promotion = groupe.id_promotion;
     }
 
-    Groupe() {
+    /**
+     * Constructeur par défaut
+     */
+    public Groupe() {
     }
 
 /********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/    
     
     /**
-     *
-     * @return
+     * Récupère l'ID du Groupe
+     * @return L'ID du groupe
      */
     public int getId() {
         return id;
     }
 
     /**
-     *
-     * @param id
+     * Affecte un ID en particulier 
+     * @param id L'ID du groupe
      */
     public void setId(int id) {
         this.id = id;
     }
 
     /**
-     *
-     * @return
+     * Récupère le Nom du Groupe
+     * @return Le Nom du groupe
      */
     public String getNom() {
         return Nom;
     }
 
     /**
-     *
-     * @param Nom
+     * Affecte un Nom du Groupe en particulier 
+     * @param Nom Nom du Groupe
      */
     public void setNom(String Nom) {
         this.Nom = Nom;
     }
 
     /**
-     *
-     * @return
+     * Récupère l'ID du promotion en fonction de la promotion
+     * @return L'ID de la promotion au quel appartient le groupe 
      */
     public int getId_promotion() {
         return id_promotion;
     }
 
     /**
-     *
-     * @param id_promotion
+     * Affecte un ID à la promotion en adéquation avec le nom du groupe
+     * @param id_promotion L'ID de la promotion au quel appartient le groupe
      */
     public void setId_promotion(int id_promotion) {
         this.id_promotion = id_promotion;
