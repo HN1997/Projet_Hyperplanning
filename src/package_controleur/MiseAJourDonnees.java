@@ -24,12 +24,12 @@ import javax.swing.JTextField;
 
 public class MiseAJourDonnees 
 {
-    private RechercheInformationsHugo rih;
+    private RechercheInformations rih;
     private ConnexionSQL connSQL;
     
     public MiseAJourDonnees()
     {
-        rih = new RechercheInformationsHugo();
+        rih = new RechercheInformations();
     }
     
     /** transforme un nom de mois en son entier en string ex : Janvier devient 01" */
