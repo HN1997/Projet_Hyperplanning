@@ -13,7 +13,7 @@ public class Seance_Salle {
     protected int id_salle;
     
      /**
-     *
+     *Constructeur de la class Seance_Salle
      * @param id_seance ID de la Seance
      * @param id_salle ID de la salle
      */
@@ -24,7 +24,7 @@ public class Seance_Salle {
     }
     
     /**
-     *
+     *Constructeur de la class Seance_Salle avec en paramètre un attribut de type Seance_Salle
      * @param salle
      */
     public Seance_Salle(Seance_Salle salle)
@@ -33,6 +33,9 @@ public class Seance_Salle {
         this.id_seance=salle.id_seance;
     }
 
+    /**
+     *Constructeur par défault
+     */
     public Seance_Salle() {
     }
 
