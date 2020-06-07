@@ -35,6 +35,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private boolean reportingSelected = false;
     // Fin
     
+    
     // Variables pour savoir quelle categorie du gestionnaire de l'edt est ouverte
     private boolean insererBool = true;
     private boolean supprimerBool = false;
