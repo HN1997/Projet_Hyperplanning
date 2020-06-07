@@ -1,5 +1,4 @@
 package package_vue;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -8,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.stage.Stage;
 import javax.swing.*;
 import package_controleur.RechercheInformations;
 
