@@ -1,39 +1,48 @@
 package package_modele;
 
-/**
- *
- * @author ShadowZeus and OpenclassRoom("https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/26830-liez-vos-tables-avec-des-objets-java-le-pattern-dao") 
- */
-
-
 public class Utilisateur {
-    
 
-  //ID de l'utilisateur
+    /**
+     *ID de l'utilisateur
+     */
   protected int id = 0;
-  //Nom de l'utilisateur
+
+    /**
+     *Nom de l'utilisateur
+     */
   protected String nom = "";
-  //Prenom de l'utilisateur
+
+    /**
+     *Prenom de l'utilisateur
+     */
   protected String prenom = "";
-  //Email de l'utilisateur
+
+    /**
+     *Email de l'utilisateur
+     */
   protected String email = "";
-  //Mot de Passe de l'utilisateur
+
+    /**
+     *Mot de Passe de l'utilisateur
+     */
   protected String passwd = "";
-  //Droit de l'utilisateur
+  //
+
+    /**
+     * Droit de l'utilisateur(1=Admin ; 2=Respo Pedagogique; 3= Enseignant ; 4= Etudiant )
+     */
   protected int droit = 0;
 
 /********************************************************** Mise en place des constructeurs***********************************************************************************/  
-   
-  //Constructeur par défaut surchargé
-  
+    
     /**
-     *
-     * @param id
-     * @param nom
-     * @param prenom
-     * @param email
-     * @param passwd
-     * @param droit
+     * Constructeur pour la class Utilisateur 
+     * @param id ID de l'utilisateur
+     * @param nom Nom de l'utilisateur
+     * @param prenom Prenom de l'utilisateur
+     * @param email Email de l'utilisateur
+     * @param passwd Mot de Passe de l'utilisateur
+     * @param droit Droit de l'utilisateur(1=Admin ; 2=Respo Pedagogique; 3= Enseignant ; 4= Etudiant )
      */
     public Utilisateur(int id, String nom, String prenom,String email,String passwd,int droit ) {
     this.id = id;
@@ -43,11 +52,9 @@ public class Utilisateur {
     this.passwd=passwd;
     this.droit=droit;
   }
-  
-  //Constructeur par défaut 
 
     /**
-     *
+     *Constructeur par défaut
      */
   public Utilisateur(){};
   
@@ -55,17 +62,17 @@ public class Utilisateur {
     
 
 // Getter et Setter pour l'ID  
-  /**
-     *
-     * @return
+    /**
+     * Récupérer l'ID de l'utilisateur 
+     * @return ID de l'utilisateur
      */
   public int getId() {
     return id;
   }
 
     /**
-     *
-     * @param id
+     *Affecter un ID à l'utilisateur
+     * @param id ID de l'utilisateur
      */
     public void setId(int id) {
     this.id = id;
@@ -75,8 +82,8 @@ public class Utilisateur {
 // Getter et Setter pour le Nom  
 
     /**
-     *
-     * @return
+     *Récupérer le Nom de l'utilisateur
+     * @return Nom de l'utilisateur
      */
 
   public String getNom() {
@@ -84,8 +91,8 @@ public class Utilisateur {
   }
 
     /**
-     *
-     * @param nom
+     *Affecter un Nom à l'utilisateur
+     * @param nom Nom de l'utilisateur
      */
     public void setNom(String nom) {
     this.nom = nom;
@@ -94,8 +101,8 @@ public class Utilisateur {
 // Getter et Setter pour le Prenom
 
     /**
-     *
-     * @return
+     * Recuperer le Prenom de l'utilisateur
+     * @return Prenom de l'utilisateur
      */
   
   public String getPrenom() {
@@ -103,8 +110,8 @@ public class Utilisateur {
   }
 
     /**
-     *
-     * @param prenom
+     * Affecter un Prenom à l'utilisateur
+     * @param prenom Prenom de l'utilisateur
      */
     public void setPrenom(String prenom) {
     this.prenom = prenom;
@@ -114,15 +121,15 @@ public class Utilisateur {
 // Getter et Setter pour l'Email      
     
     /**
-     *
-     * @return
+     * Récupérer l'Email de l'utilisateur
+     * @return Email de l'utilisateur
      */
     public String getEmail() {
     return email;
   }
 
     /**
-     *
+     *Affecter un Email à l'utilisateur 
      * @param email
      */
     public void setEmail(String email) {
@@ -132,16 +139,16 @@ public class Utilisateur {
 // Getter et Setter pour le Mot de passe    
   
     /**
-     *
-     * @return
+     * Récupérer le mot de passe de l'utilisateur 
+     * @return Mot de passe de l'utilisateur 
      */
     public String getPasswd() {
     return passwd;
   }
 
     /**
-     *
-     * @param passwd
+     *Affecter un mot de passe à un utilisateur 
+     * @param passwd Mot de passe de l'utilisateur 
      */
     public void setPasswd(String passwd) {
     this.passwd = passwd;
@@ -150,16 +157,16 @@ public class Utilisateur {
 // Getter et Setter pour le droit    
   
     /**
-     *
-     * @return
+     *Récuperer le droit de l'utilisateur 
+     * @return Droit de l'utilisateur(1=Admin ; 2=Respo Pedagogique; 3= Enseignant ; 4= Etudiant )
      */
     public int getDroit() {
     return droit;
   }
 
     /**
-     *
-     * @param droit
+     *Affecter un droit à l'utilisateur 
+     * @param droit Droit de l'utilisateur(1=Admin ; 2=Respo Pedagogique; 3= Enseignant ; 4= Etudiant )
      */
     public void setDroit(int droit) {
     this.droit = droit;
