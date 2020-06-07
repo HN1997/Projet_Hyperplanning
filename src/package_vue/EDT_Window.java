@@ -28,6 +28,8 @@ import package_controleur.Reporting;
  *
  * @author hugon
  */
+
+/** Affiche l'edt */
 public class EDT_Window extends javax.swing.JFrame {
 
     // Variables pour savoir quelle fenetre est ouverte
@@ -57,7 +59,7 @@ public class EDT_Window extends javax.swing.JFrame {
     private String password;
     
     
-    //Initialisation du User
+    /** Initialise l'utilisateur */
     private void InitilisationUser(String email, String password)
     {
         rih = new RechercheInformations();
@@ -2456,7 +2458,7 @@ public class EDT_Window extends javax.swing.JFrame {
     //////////////////////////////////// ACTIVATION/DESACTIVATION DES PANELS //////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    //Pour les 4 catégories a gauche
+    /** Initilialise les 4 catégories a gauche */
     public void clickItemMenu(JPanel active, boolean panel, JLabel labelSelected) //Quand on appuie a gauche sur un menu, on desactive tous les panels, on réactive celui passé en parametre et on change la couleur de tous les textes a gauche du menu
     {
         //Desactive tous les panels
@@ -2513,7 +2515,7 @@ public class EDT_Window extends javax.swing.JFrame {
     
     //////////////////////////////////// FIN ACTIVATION/DESACTIVATION DES PANELS //////////////////////////////////
     
-    //Fonction pour pré-selectionner la semaine a l'ouverture de l'application
+    /** Fonction pour pré-selectionner la semaine a l'ouverture de l'application */
     public void InitialiseSemaine(int semaineActuelle) 
     {
         switch(semaineActuelle)
@@ -2731,32 +2733,32 @@ public class EDT_Window extends javax.swing.JFrame {
         }
     }
     
-    // Si on clique sur le bouton Gestionnaire de l'EDT
+    /** Si on clique sur le bouton Gestionnaire de l'EDT */
     private void gestionnaireLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gestionnaireLabelMouseClicked
         clickItemMenu(gestionnairePanel, majSelected, gestionnaireLabel);
     }//GEN-LAST:event_gestionnaireLabelMouseClicked
 
-    //Quand on clique sur le bouton Reporting
+    /**Quand on clique sur le bouton Reporting*/
     private void reportingLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportingLabelMouseClicked
         clickItemMenu(reportingPanel, reportingSelected, reportingLabel);
     }//GEN-LAST:event_reportingLabelMouseClicked
 
-    // Quand on clique sur le bouton recapitulatif de la periode
+    /** Quand on clique sur le bouton recapitulatif de la periode */
     private void recapitulatifLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recapitulatifLabelMouseClicked
         clickItemMenu(recapPanel, recapSelected, recapitulatifLabel);
     }//GEN-LAST:event_recapitulatifLabelMouseClicked
 
-    //Si la souris quitte le texte emploi du temps
+    /**Si la souris quitte le texte emploi du temps*/
     private void emploidutempsLabelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseExited
 
     }//GEN-LAST:event_emploidutempsLabelMouseExited
 
-    //Si la souris passe sur le texte emploi du temps
+    /**Si la souris passe sur le texte emploi du temps*/
     private void emploidutempsLabelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseEntered
 
     }//GEN-LAST:event_emploidutempsLabelMouseEntered
 
-    // Si on clique sur l'onglet emploi du temps
+    /** Si on clique sur l'onglet emploi du temps */
     private void emploidutempsLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_emploidutempsLabelMouseClicked
         // TODO add your handling code here:
         clickItemMenu(edtPanel, edtSelected, emploidutempsLabel); //On ouvre la fenetre de l'emploi du temps
@@ -2768,7 +2770,7 @@ public class EDT_Window extends javax.swing.JFrame {
     //////////////////////////////////// TABLEAU RECAPITULATIF PERIODE ////////////////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    //Quand on clique sur le tableau du recapitulatif de la periode
+    /**Quand on clique sur le tableau du recapitulatif de la periode*/
     private void recapTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recapTableMouseClicked
         // TODO add your handling code here:
         
@@ -2786,7 +2788,7 @@ public class EDT_Window extends javax.swing.JFrame {
     //////////////////////////////////// LES 3 BOUTONS INSERER SUPPRIMER MODIFIER /////////////////////////////
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////
     
-    
+    /**Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda dans le recapitulatif de la periode*/
     private void insererLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insererLabelMouseClicked
         // TODO add your handling code here:
         clickItemGestionnaire(insererPanel, insererBool, insererLabel);
@@ -2799,13 +2801,13 @@ public class EDT_Window extends javax.swing.JFrame {
 
     //////////////////////////////////// FIN - LES 3 BOUTONS INSERER SUPPRIMER MODIFIER ////////////////////////
     
-    //Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda dans le recapitulatif de la periode
+    /**Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda dans le recapitulatif de la periode*/
     private void recapRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapRechercherButtonActionPerformed
         //On update le message d'erreur - recherche reussi ou non
         rih.changeMessageLabelRecapPeriode(recapSearch2, recapMessageErreur, recapTable);
     }//GEN-LAST:event_recapRechercherButtonActionPerformed
 
-    //Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda dans le reporting
+    /**Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda dans le reporting*/
     private void reportingRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reportingRechercherButtonActionPerformed
         //On update le message d'erreur - recherche reussi ou non
         String emailRep = rih.RecupEmailPassword(reportingSearch2).get(0);
@@ -2813,13 +2815,14 @@ public class EDT_Window extends javax.swing.JFrame {
         rep.AfficheCours(emailRep, passwordRep, reportingResumePanel2);
     }//GEN-LAST:event_reportingRechercherButtonActionPerformed
 
+    /** inserer bouton */
     private void insererButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insererButtonActionPerformed
         // TODO add your handling code here:
         majDonnees.Insertion(jourCB, moisCB, anneeCB, heureDebutCB, heureFinCB, typeCoursCB, nbrEnseignantCB, enseignantCB1, enseignantCB2, enseignantCB3, enseignantCB4, enseignantCB5, promotionInsererCB, nbrGroupeCB, tdCB1, tdCB2, tdCB3, tdCB4, tdCB5, tdCB6, tdCB7, tdCB8, tdCB8, tdCB10, siteCB, salleCB, salleCB1, resumeInsertionLabel); 
         
     }//GEN-LAST:event_insererButtonActionPerformed
 
-    //Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda pour afficher l'edt
+    /**Quand on appuie sur le bouton "Rechercher" en tant qu'admin ou ref peda pour afficher l'edt */
     private void recapEdtRechercherButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapEdtRechercherButtonActionPerformed
         //On update le message d'erreur - recherche reussi ou non
         rih.changeMessageErreur(recapMessageErreurEdt, recapEdtSearch2, recapEdtSearch3);
@@ -2831,6 +2834,7 @@ public class EDT_Window extends javax.swing.JFrame {
 
     /////////////////////////// QUAND ON APPUIE SUR LES BOUTONS DES SEMAINES ///////////////////////////
     
+    /** quand on appuie sur un des boutons en haut sur le num de semaine */
     private void semaine31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_semaine31ActionPerformed
         // TODO add your handling code here:
         rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, 31);
@@ -3201,7 +3205,7 @@ public class EDT_Window extends javax.swing.JFrame {
     /////////////////////////// QUAND ON FAIT UNE RECHERCHE SUR L'EDT (admin & ref ped) ///////////////////////////
     
     
-    //Quand on appuie sur une des options (enseignant etudiant promotion salle)
+    /**Quand on appuie sur une des options (enseignant etudiant promotion salle)*/
     private void recapEdtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recapEdtSearchActionPerformed
         //On change la valeur de recapedtseach2
         rih.changeRecapEdtSearch2(recapEdtSearch, recapEdtSearch2, recapEdtSearch3);
@@ -3251,7 +3255,7 @@ public class EDT_Window extends javax.swing.JFrame {
 
     //////////////////////////////////// CLIQUE SUR LES JOURS DE LA SEMAINE ///////////////////////////////////
     
-    // Si on appuie sur le bouton deconnexion
+    /** Si on appuie sur le bouton deconnexion */
     private void deconnexionLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deconnexionLabelMouseClicked
         // TODO add your handling code here:
         this.dispose();

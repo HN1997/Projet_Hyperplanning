@@ -47,7 +47,7 @@ public class Reporting
     private RechercheInformations rih;
     // Fin des variables
     
-    
+    /** constructeur */
     public Reporting()
     {
         rih = new RechercheInformations();

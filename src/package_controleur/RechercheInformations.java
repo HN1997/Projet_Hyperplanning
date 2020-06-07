@@ -46,7 +46,7 @@ public class RechercheInformations
     
     ////////////////////////////////////////////////// PARTIE LIEE AU TEMPS ///////////////////////////////////////
     
-    //Fonction qui permet de modifier le label date à la date actuelle, et le label heure à l'heure actuelle
+    /**Fonction qui permet de modifier le label date à la date actuelle, et le label heure à l'heure actuelle */
     public static void Clock(JLabel date, JLabel heure) //Modifie le label date et heure en continu
     {
         Thread clock = new Thread()
@@ -217,12 +217,13 @@ public class RechercheInformations
         return numSemaine;
     }
     
-    //Cette méthode renvoie la semaine actuelle à laquelle on est
+    /**Cette méthode renvoie la semaine actuelle à laquelle on est*/
     public static int GetSemaine()
     {
         return Calendar.getInstance().get(Calendar.WEEK_OF_YEAR);
     }
     
+    /** get les nums de semaines */
     public static int[] getSemaineNumbers(int numeroSemaine) //En fonction du numero de semaine, renvoie le numero du lundi mardi mercredi jeudi vendredi
     {
         int[] semNumb = new int[5];
@@ -275,7 +276,7 @@ public class RechercheInformations
         return semNumb;
     }
     
-    
+    /** renvois une chaine des mois */
     public String[] getMoisString(int numeroSemaine) //en fonction du numero de semaine, envoie le mois associé au lundi mardi mercredi jeudi vendredi
     {
         String[] moisString = new String[5];
@@ -327,7 +328,7 @@ public class RechercheInformations
         return moisString;
     }
     
-    //Fonction pour transformer un entier representant le mois en string ( 0 = janvier)
+    /**Fonction pour transformer un entier representant le mois en string ( 0 = janvier) */
     public String monthIntToString(int month)
     {
         switch(month)
@@ -361,7 +362,7 @@ public class RechercheInformations
         }
     }
     
-    //Fonction pour changer le label des 5 jours quand on clique sur l'un des 52 boutons en haut
+    /**Fonction pour changer le label des 5 jours quand on clique sur l'un des 52 boutons en haut */
     public void ChangeLabelJours(JLabel lundi, JLabel mardi, JLabel mercredi, JLabel jeudi, JLabel vendredi, int numeroSemaine)
     {
         int[] sem = getSemaineNumbers(numeroSemaine);
@@ -374,7 +375,7 @@ public class RechercheInformations
     }
     
 
-    //Fonction pour changer le numéro de l'année
+    /**Fonction pour changer le numéro de l'année */
     public void ChangeAnneeProgramme(JLabel anneeLabel, int numeroSemaine)
     {
         int annee = Calendar.getInstance().get(Calendar.YEAR); //L'année actuelle a laquelle on est
@@ -393,7 +394,7 @@ public class RechercheInformations
     
     ////////////////////////////////////////////////// PARTIE LIEE A L USER ///////////////////////////////////////
     
-    //Fonction pour récupérer le nom et prenom de l'utilisateur
+    /**Fonction pour récupérer le nom et prenom de l'utilisateur */
     public String GetPrenomNom(String Email, String Passwd) 
     {
         try {
@@ -407,7 +408,7 @@ public class RechercheInformations
         }
     }
     
-    //Fonction pour récupérer le droit de l'utilisateur
+    /**Fonction pour récupérer le droit de l'utilisateur */
     public String GetDroit(String Email, String Passwd) 
     {
         String droitstring = "";
@@ -442,7 +443,7 @@ public class RechercheInformations
         return droitstring;
     }
     
-    //Fonction qui renvoie le droit de l'utilisateur sous forme d'int
+    /**Fonction qui renvoie le droit de l'utilisateur sous forme d'int */
     public int GetDroitInt(String Email, String Passwd)
     {
         int droit = 0;
@@ -460,7 +461,7 @@ public class RechercheInformations
         return droit;
     }
     
-    //Fonction pour récupérer la promotion de l'utilisateur, chaine vide si admin ou ref
+    /**Fonction pour récupérer la promotion de l'utilisateur, chaine vide si admin ou ref */
     public String getPromotion(String email, String pass)
     {
         String prom = "";
@@ -486,7 +487,7 @@ public class RechercheInformations
         return prom;
     }
     
-    //Fonction pour récupérer le td de l'utilisateur, chaine vide si admin ou ref ou enseignant
+    /**Fonction pour récupérer le td de l'utilisateur, chaine vide si admin ou ref ou enseignant */
     public String getTD(String email, String pass)
     {
         String groupenom = "";
@@ -516,7 +517,7 @@ public class RechercheInformations
     
      ////////////////////////////////////////////////// Affichage des cours sur l'edt ///////////////////////////////////////
     
-    //Dessine sur l'edt les cours
+    /**Dessine sur l'edt les cours */
     public void Draw(int numSemaine, JPanel lundiP, JPanel mardiP, JPanel mercrediP, JPanel jeudiP, JPanel vendrediP, String email, String password)
     {
         //On vide tous les panels
@@ -550,7 +551,7 @@ public class RechercheInformations
         }
     }
     
-    //Dessine sur l'edt les cours
+    /**Dessine sur l'edt les cours */
     public void DrawSupprimer(int numSemaine, JPanel lundiP, JPanel mardiP, JPanel mercrediP, JPanel jeudiP, JPanel vendrediP, String email, String password, int droit2)
     {
         //On vide tous les panels
@@ -595,6 +596,7 @@ public class RechercheInformations
         }
     }
     
+    /** draw le prof */
     public void DrawPanelProfesseur(int numSemaine, int jour, JPanel panel, String email, String password)
     {
         try 
@@ -755,7 +757,7 @@ public class RechercheInformations
         }
     }
     
-    //Dessine sur 1'EDT en fonction du numero de semaine et du jour, celui de l'étudiant
+    /**Dessine sur 1'EDT en fonction du numero de semaine et du jour, celui de l'étudiant */
     public void DrawPanelEtudiant(int numSemaine, int jour, JPanel panel, String email, String password)
     {
         try 
@@ -945,7 +947,7 @@ public class RechercheInformations
         }
     }
     
-    
+    /** draw panel supprimer */
     public void DrawPanelProfesseurSupprimer(int numSemaine, int jour, JPanel panel, String email, String password)
     {
         try 
@@ -1176,7 +1178,7 @@ public class RechercheInformations
             
     
     
-    //Methode pour vider un JPanel de son contenu
+    /**Methode pour vider un JPanel de son contenu */
     public void Empty(JPanel panel)
     {
         Component[] componentList = panel.getComponents();
@@ -1366,7 +1368,7 @@ public class RechercheInformations
         labelErreur.setText(labelErreurString);
     }
     
-    //Avec le combobox fourni, recul l'email et le password 
+    /**Avec le combobox fourni, recul l'email et le password */
     public void dessineEtudiantProfesseur(String email, String password, JComboBox recapEdtSearch, JComboBox prenomNom, JComboBox numSemaineCB, JPanel lundi, JPanel mardi, JPanel mercredi, JPanel jeudi, JPanel vendredi, JLabel lundiLabel, JLabel mardiLabel, JLabel mercrediLabel, JLabel jeudiLabel, JLabel vendrediLabel, JLabel anneeEdtLabel)
     {
         String typeRecherche = (String)recapEdtSearch.getSelectedItem();
@@ -1462,7 +1464,7 @@ public class RechercheInformations
         }
     }
     
-    //Pour dessiner dans les panels si c'est une recherche via promotion(+groupe) ou via un site(+salle) 
+    /**Pour dessiner dans les panels si c'est une recherche via promotion(+groupe) ou via un site(+salle) */
     public void drawPromotionSite(ArrayList<Integer> id_seances, int numSemaine, int jour, JPanel panel)
     {
         try
@@ -1680,6 +1682,7 @@ public class RechercheInformations
         return id_seances;
     }
     
+    /** mis a jour d el'edt */
     public void MAJEdt(int numSemaine,JLabel anneeEdtLabel, JLabel lundiLabel, JLabel mardiLabel,JLabel mercrediLabel,JLabel jeudiLabel,JLabel vendrediLabel, JPanel lundiDisplayPanel, JPanel mardiDisplayPanel, JPanel mercrediDisplayPanel, JPanel jeudiDisplayPanel, JPanel vendrediDisplayPanel, String email, String password)
     {
         ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, numSemaine);
@@ -1893,6 +1896,7 @@ public class RechercheInformations
         }
     }
     
+    /** recap periode de 'ladmin */
     public void MAJRecapPeriodeRefAdmin(JTable table, JComboBox prenomNom)
     {
         String prenomNomString = (String)prenomNom.getSelectedItem();
@@ -2105,6 +2109,7 @@ public class RechercheInformations
         }
     }
     
+    /** update nom des ens */
     public void UpdateNomsEnseignant(JComboBox ens1, JComboBox ens2, JComboBox ens3, JComboBox ens4, JComboBox ens5)
     {
         ens1.removeAllItems();
@@ -2137,7 +2142,7 @@ public class RechercheInformations
     }
     
     
-    
+    /** update nom promo */
     public void UpdateNomPromotion(JComboBox promotionInsererCB)
     {
         
@@ -2159,6 +2164,7 @@ public class RechercheInformations
         }
     }
     
+    /** chance nom du td */
     public void ChangeTdNom(JComboBox promotionInserer, JComboBox td1, JComboBox td2, JComboBox td3, JComboBox td4, JComboBox td5, JComboBox td6, JComboBox td7, JComboBox td8, JComboBox td9, JComboBox td10)
     {
         td1.removeAllItems();
@@ -2228,6 +2234,7 @@ public class RechercheInformations
         }
     }
     
+    /* change le nom des salles */
     public void UpdateNomSalles(JComboBox siteCB, JComboBox salleCB)
     {
         String nomSite = siteCB.getSelectedItem().toString();

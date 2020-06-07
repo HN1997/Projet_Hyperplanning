@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import package_controleur.RechercheInformations;
 
-
+/** Aiffche le menu du login */
 public class Login_Form extends javax.swing.JFrame {
     
     RechercheInformations ri;
@@ -278,12 +278,13 @@ public class Login_Form extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_connexionButtonActionPerformed
 
-    //Si on decide de se rappeler de son email/password
+    
     private void rememberCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rememberCheckBoxActionPerformed
         // TODO add your handling code here:
         //blabla
     }//GEN-LAST:event_rememberCheckBoxActionPerformed
 
+    /** lance l'appli */
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
