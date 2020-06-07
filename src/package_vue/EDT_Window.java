@@ -43,38 +43,21 @@ public class EDT_Window extends javax.swing.JFrame {
     // Fin
     
     //////////// Variable Rechercheinformations ////////////
-    Rechercheinformations ri;
-    RechercheInformationsHugo rih;
-    MiseAJourDonnees majDonnees;
+    private Rechercheinformations ri;
+    private RechercheInformationsHugo rih;
+    private MiseAJourDonnees majDonnees;
     
     //////////// Variable Reporting ////////////
-    Reporting rep;
+    private Reporting rep;
     
-    //Un etudiant
-    String email1 = "anand.maisuria@edu.ece.fr"; 
-    String password1 = "753";
     
-    //Un ref pegagogique
-    String email2 = "arthur.jaillard@edu.ece.fr"; 
-    String password2 = "456"; 
-    
-    //Un enseignant
-    String email3 = "hugo.navillod@edu.ece.fr"; 
-    String password3 = "123"; 
-    
-    //Un admin -- droit 1
-    String email4 = "anand_maisuria@yahoo.fr"; 
-    String password4 = "159"; 
-    
-    //Ce qui est utilise dans le programme
-    String email = email4;
-    String password = password4;
-    
-    //Fin variable Rechercheinformations ///////////////////
+   //////////// EMAIL ET PASSWORD ////////////
+    private String email;
+    private String password;
     
     
     //Initialisation du User
-    private void InitilisationUser()
+    private void InitilisationUser(String email, String password)
     {
         rih = new RechercheInformationsHugo();
         rep = new Reporting();
@@ -149,9 +132,11 @@ public class EDT_Window extends javax.swing.JFrame {
     /**
      * Creates new form EDT_Window
      */
-    public EDT_Window() {
+    public EDT_Window(String email, String password) {
+        this.email = email;
+        this.password = password;
         initComponents();
-        InitilisationUser();
+        InitilisationUser(email, password);
         
     }
 
@@ -2745,14 +2730,6 @@ public class EDT_Window extends javax.swing.JFrame {
         }
     }
     
-    //////////////////////////////////// CLIQUE SUR LES JOURS DE LA SEMAINE ///////////////////////////////////
-    
-    // Si on appuie sur le bouton deconnexion
-    private void deconnexionLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deconnexionLabelMouseClicked
-        // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_deconnexionLabelMouseClicked
-
     // Si on clique sur le bouton Gestionnaire de l'EDT
     private void gestionnaireLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gestionnaireLabelMouseClicked
         clickItemMenu(gestionnairePanel, majSelected, gestionnaireLabel);
@@ -3271,6 +3248,16 @@ public class EDT_Window extends javax.swing.JFrame {
         rih.changeRecapPeriodeSearch(reportingSearch1, reportingSearch2);
     }//GEN-LAST:event_reportingSearch1ActionPerformed
 
+    //////////////////////////////////// CLIQUE SUR LES JOURS DE LA SEMAINE ///////////////////////////////////
+    
+    // Si on appuie sur le bouton deconnexion
+    private void deconnexionLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deconnexionLabelMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        Login_Form lf = new Login_Form();
+        lf.setVisible(true);
+    }//GEN-LAST:event_deconnexionLabelMouseClicked
+
    
     /////////////////////////// FIN QUAND ON FAIT UNE RECHERCHE SUR L'EDT (admin & ref ped) ///////////////////////////
     
@@ -3279,42 +3266,8 @@ public class EDT_Window extends javax.swing.JFrame {
     
     
     
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EDT_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EDT_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EDT_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EDT_Window.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EDT_Window().setVisible(true);
-                
-            }
-        });
-        
-    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ReportingLabelTop;

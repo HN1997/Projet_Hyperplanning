@@ -1,4 +1,6 @@
 package package_vue;
+import java.awt.event.WindowEvent;
+import javafx.stage.Stage;
 import javax.swing.*;
 import package_controleur.RechercheInformationsHugo;
 import package_controleur.Rechercheinformations;
@@ -7,6 +9,7 @@ import package_controleur.Rechercheinformations;
 public class Login_Form extends javax.swing.JFrame {
     
     RechercheInformationsHugo ri;
+    EDT_Window edt;
     
     public Login_Form() {
         ri = new RechercheInformationsHugo();
@@ -171,7 +174,10 @@ public class Login_Form extends javax.swing.JFrame {
         Object[] res = ri.Connexion(emailInput.getText(), passwordInput.getText());
         if((boolean)res[0])
         {
-            JOptionPane.showMessageDialog(null, "L'utilisateur s'est bien connetecte! Son droit est = " + (Integer)res[1]);
+            //JOptionPane.showMessageDialog(null, "L'utilisateur s'est bien connetecte! Son droit est = " + (Integer)res[1]);
+            this.dispose();
+            edt = new EDT_Window(emailInput.getText(), passwordInput.getText());
+            edt.setVisible(true);
         }
         else
         {
