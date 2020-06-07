@@ -1,7 +1,13 @@
 package package_vue;
 import java.awt.event.WindowEvent;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.stage.Stage;
 import javax.swing.*;
 import package_controleur.RechercheInformations;
@@ -15,6 +21,53 @@ public class Login_Form extends javax.swing.JFrame {
     public Login_Form() {
         ri = new RechercheInformations();
         initComponents();
+        
+    }
+    
+    /** methode pour recup l'email et le password dans le fichier */
+    public ArrayList<String> GetEmailPasswordLog()
+    {
+        String email = "";
+        String password = "";
+        ArrayList<String> retour = new ArrayList<>();
+        
+        try {
+            File fichier = new File("LOGMDP.txt"); 
+            Scanner scan = new Scanner(fichier);
+            if(scan.hasNextLine())
+            {
+                email = scan.nextLine();
+            }
+            if(scan.hasNextLine())
+            {
+                password = scan.nextLine();
+            }
+        } 
+        catch (FileNotFoundException ex) 
+        {
+            System.out.println("An error occured.");
+            Logger.getLogger(Login_Form.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        retour.add(email);
+        retour.add(password);
+        return retour;
+    }
+    
+    /* va a la prochaine fenetre si le fichier log comprend un email et mdp, renvoie true si cela a ete effectue */
+    public boolean GoNextWindow(ArrayList<String> emailPassword)
+    {
+        String email = emailPassword.get(0);
+        String password = emailPassword.get(1);
+        Object[] res = ri.Connexion(email, password);
+        if((boolean)res[0])
+        {
+            edt = new EDT_Window(email, password);
+            edt.setVisible(true);
+            SauvegardeFichier();
+            return true;
+        }
+        return false;
     }
 
     @SuppressWarnings("unchecked")
@@ -216,7 +269,6 @@ public class Login_Form extends javax.swing.JFrame {
             this.dispose();
             edt = new EDT_Window(emailInput.getText(), passwordInput.getText());
             edt.setVisible(true);
-            
             SauvegardeFichier();
         }
         else
@@ -235,10 +287,15 @@ public class Login_Form extends javax.swing.JFrame {
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Login_Form().setVisible(true);
+                Login_Form lf = new Login_Form();
+                boolean f = lf.GoNextWindow(lf.GetEmailPasswordLog());
+                if(!f)
+                    lf.setVisible(true);
             }
         });
     }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton connexionButton;
