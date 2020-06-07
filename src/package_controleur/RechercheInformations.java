@@ -31,14 +31,14 @@ import java.text.SimpleDateFormat;
 import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
-public class RechercheInformationsHugo 
+public class RechercheInformations
 {
     // Début des variables
     ConnexionSQL connSQL;
     // Fin des variables
     
     ////////////////////////////////////////////////// CONSTRUCTEUR ///////////////////////////////////////
-    public RechercheInformationsHugo() 
+    public RechercheInformations() 
     {
         this.connSQL = new ConnexionSQL();
     }
@@ -136,7 +136,7 @@ public class RechercheInformationsHugo
             }
         } catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result;
     }
@@ -401,7 +401,7 @@ public class RechercheInformationsHugo
             Utilisateur user = Utilisateurd.find(Email,Passwd);
             return (user.getPrenom()+" "+user.getNom());
         } catch (SQLException ex) {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
             return "";
         }
     }
@@ -435,7 +435,7 @@ public class RechercheInformationsHugo
                     break;
             }
         }catch (SQLException ex) {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return droitstring;
@@ -454,7 +454,7 @@ public class RechercheInformationsHugo
             droit = user.getDroit();
             return droit;
         }catch (SQLException ex) {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
         return droit;
     }
@@ -480,7 +480,7 @@ public class RechercheInformationsHugo
             }
             
         } catch (SQLException ex) {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
         return prom;
     }
@@ -506,7 +506,7 @@ public class RechercheInformationsHugo
             }
             
         }catch (SQLException ex) {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return groupenom;
@@ -750,7 +750,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -940,7 +940,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -1109,7 +1109,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -1164,7 +1164,7 @@ public class RechercheInformationsHugo
                 dao.delete(t);
                 
             } catch (SQLException ex) {
-                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             Empty(panel);
@@ -1219,7 +1219,7 @@ public class RechercheInformationsHugo
             } 
             catch (SQLException ex) 
             {
-                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         else if(recherche == "Etudiant")
@@ -1240,7 +1240,7 @@ public class RechercheInformationsHugo
             } 
             catch (SQLException ex) 
             {
-                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         else if(recherche == "Promotion")
@@ -1261,7 +1261,7 @@ public class RechercheInformationsHugo
             } 
             catch (SQLException ex) 
             {
-                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         else if(recherche == "Site")
@@ -1282,7 +1282,7 @@ public class RechercheInformationsHugo
             } 
             catch (SQLException ex) 
             {
-                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -1314,7 +1314,7 @@ public class RechercheInformationsHugo
                         
                     } catch (SQLException ex) 
                     {
-                        Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
                 else if(result1=="Site")
@@ -1334,7 +1334,7 @@ public class RechercheInformationsHugo
                         
                     } catch (SQLException ex) 
                     {
-                        Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
                     }
                 }
             }
@@ -1395,7 +1395,7 @@ public class RechercheInformationsHugo
                 } 
                 catch (SQLException ex) 
                 {
-                    Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -1626,7 +1626,7 @@ public class RechercheInformationsHugo
         }
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -1649,7 +1649,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return id_seances;
@@ -1673,7 +1673,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return id_seances;
@@ -1801,7 +1801,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         table.setModel(model);
@@ -1866,7 +1866,7 @@ public class RechercheInformationsHugo
             } 
             catch (SQLException ex) 
             {
-                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         else if(recherche == "Etudiant")
@@ -1887,7 +1887,7 @@ public class RechercheInformationsHugo
             } 
             catch (SQLException ex) 
             {
-                Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -1908,7 +1908,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
@@ -1931,7 +1931,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         return emailPassword;
@@ -2201,7 +2201,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
@@ -2223,7 +2223,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -2247,7 +2247,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -2270,7 +2270,7 @@ public class RechercheInformationsHugo
         } 
         catch (SQLException ex) 
         {
-            Logger.getLogger(RechercheInformationsHugo.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(RechercheInformations.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

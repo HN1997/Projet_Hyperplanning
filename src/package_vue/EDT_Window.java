@@ -19,8 +19,7 @@ import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import package_controleur.MiseAJourDonnees;
-import package_controleur.RechercheInformationsHugo;
-import package_controleur.Rechercheinformations;
+import package_controleur.RechercheInformations;
 import package_controleur.Reporting;
 
 /**
@@ -43,7 +42,7 @@ public class EDT_Window extends javax.swing.JFrame {
     // Fin
     
     //////////// Variable Rechercheinformations ////////////
-    private RechercheInformationsHugo rih;
+    private RechercheInformations rih;
     private MiseAJourDonnees majDonnees;
     
     //////////// Variable Reporting ////////////
@@ -58,13 +57,13 @@ public class EDT_Window extends javax.swing.JFrame {
     //Initialisation du User
     private void InitilisationUser(String email, String password)
     {
-        rih = new RechercheInformationsHugo();
+        rih = new RechercheInformations();
         rep = new Reporting();
         majDonnees = new MiseAJourDonnees();
-        RechercheInformationsHugo.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
+        RechercheInformations.Clock(dateLabel, heureLabel); //Modifie l'heure et la date toutes les 1s
         InitialiseSemaine(rih.GetSemaine()); //Selectionne la semaine actuelle
-        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, RechercheInformationsHugo.GetSemaine()); //maj des labels semaines 
-        rih.ChangeAnneeProgramme(anneeEdtLabel, RechercheInformationsHugo.GetSemaine()); //maj de l'annee 
+        rih.ChangeLabelJours(lundiLabel, mardiLabel, mercrediLabel, jeudiLabel, vendrediLabel, RechercheInformations.GetSemaine()); //maj des labels semaines 
+        rih.ChangeAnneeProgramme(anneeEdtLabel, RechercheInformations.GetSemaine()); //maj de l'annee 
         
         nameUserLabel.setText(rih.GetPrenomNom(email, password)); //Change le prenom nom de l'utilsateur
         droitLabel.setText(rih.GetDroit(email, password)); //Change le droit pas ex "etudiant"

@@ -44,13 +44,13 @@ public class Reporting
 {
     // Début des variables
     private ConnexionSQL connSQL;
-    private RechercheInformationsHugo rih;
+    private RechercheInformations rih;
     // Fin des variables
     
     
     public Reporting()
     {
-        rih = new RechercheInformationsHugo();
+        rih = new RechercheInformations();
     }
     
     /** Pour afficher les cours du reporting */

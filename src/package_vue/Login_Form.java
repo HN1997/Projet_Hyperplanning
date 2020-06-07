@@ -2,17 +2,16 @@ package package_vue;
 import java.awt.event.WindowEvent;
 import javafx.stage.Stage;
 import javax.swing.*;
-import package_controleur.RechercheInformationsHugo;
-import package_controleur.Rechercheinformations;
+import package_controleur.RechercheInformations;
 
 
 public class Login_Form extends javax.swing.JFrame {
     
-    RechercheInformationsHugo ri;
+    RechercheInformations ri;
     EDT_Window edt;
     
     public Login_Form() {
-        ri = new RechercheInformationsHugo();
+        ri = new RechercheInformations();
         initComponents();
     }
 
