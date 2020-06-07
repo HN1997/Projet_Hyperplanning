@@ -7,15 +7,21 @@ public class Type_Cours
 
 /************************************************************* Attributs *****************************************************************************************************/    
     
+    
+    /**
+     *ID du type de cours 
+     */
     protected int id;
+
+    /**
+     * Nom du type de cours 
+     */
     protected String Nom;
 
 /********************************************************** Mise en place des constructeurs***********************************************************************************/    
-
-//Création d'un constructeur surchargé
     
     /**
-     *
+     *Constructeur de la class Type_Cours
      * @param id
      * @param Nom
      */
@@ -23,55 +29,53 @@ public class Type_Cours
         this.id = id;
         this.Nom = Nom;
     }
-
-//Création d'un constructeur surchargé    
     
     /**
-     *
+     *Création d'un constructeur surchargé
      * @param type_cours
      */
     public Type_Cours(Type_Cours type_cours) {
         this.id = type_cours.id;
         this.Nom = type_cours.Nom;
-    }
+    }    
 
-//Création d'un constructeur par défault     
+    /**
+     *Création d'un constructeur par défault
+     */
     
-    Type_Cours() {}
+    public Type_Cours() {}
     
 /********************************************** Mise en place des Getters et des Setters pour les différents attribut********************************************************/
     
 //Getter et Setter pour l'ID    
     
     /**
-     *
-     * @return
+     *Récupérer ID du type de cours
+     * @return ID du type de cours
      */
     public int getId() {
         return id;
     }
 
     /**
-     *
-     * @param id
+     *Affecter un ID au type de cours
+     * @param id ID du type de cours
      */
     public void setId(int id) {
         this.id = id;
-    }
-
-//Getter et Setter pour le Nom    
+    }    
     
     /**
-     *
-     * @return
+     *Récupérer le Nom du type de cours
+     * @return Nom du type de cours
      */
     public String getNom() {
         return Nom;
     }
 
     /**
-     *
-     * @param Nom
+     *Affecte un Nom à au type de cours 
+     * @param Nom Nom du type de cours
      */
     public void setNom(String Nom) {
         this.Nom = Nom;
